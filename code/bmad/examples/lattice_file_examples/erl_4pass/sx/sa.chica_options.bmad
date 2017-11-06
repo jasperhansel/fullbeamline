@@ -1,0 +1,4 @@
+
+
+s1.chica.angle.accel = 1e-6
+s1.chica.angle.decel = 14.5878*pi/180 

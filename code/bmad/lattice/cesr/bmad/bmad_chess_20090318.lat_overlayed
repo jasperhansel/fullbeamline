@@ -1,0 +1,207 @@
+
+! BMAD input file
+
+parameter[lattice] = CHESS_20090318
+beam, energy =   5.289
+call, file=layout/cesrta_02.bmad
+
+wig_w[b_max] = 0.78
+wig_e[b_max] = 1.17
+
+wig_01w[is_on]= .false.
+wig1_02w[is_on]= .false.
+wig2_02w[is_on]= .false.
+wig1_18w[is_on]= .false.
+wig2_18w[is_on]= .false.
+wig3_18w[is_on]= .false.
+wig_01e[is_on]= .false.
+wig1_02e[is_on]= .false.
+wig2_02e[is_on]= .false.
+wig1_18e[is_on]= .false.
+wig2_18e[is_on]= .false.
+wig3_18e[is_on]= .false.
+
+
+wig_damp_drift: drift, l=1.6
+dwig: drift, l=0.065
+
+! element attributes
+deltax= 0.001
+deltay=0.015
+deltas = -0.004
+
+Q00[k1] =  -2.0009468740472422E-01
+Q01W[k1] =  -0.0E-01
+Q01E[k1] =  -0.0E-01
+Q02 : overlay = {Q02W,Q02E },K1 =   2.4237104360761527E-01
+Q03 : overlay = {Q03W,Q03E },K1 =  -3.5926255857350742E-01
+Q04 : overlay = {Q04W,Q04E },K1 =   4.4368324992918201E-01
+Q05 : overlay = {Q05W,Q05E },K1 =  -3.2684732789248727E-01
+Q06 : overlay = {Q06W,Q06E },K1 =   4.9999343173490435E-01
+Q07 : overlay = {Q07W,Q07E },K1 =  -4.0267514780840424E-01
+
+Q08W[K1]=   2.0620037728193427E-01
+Q08E[K1]=   2.2848078015230489E-01
+Q08AW[K1]:=   8.4950658139193641E-02
+Q09W[K1]:=  -2.7556018193370363E-01
+Q09E[K1]:=  -2.6703865744758021E-01
+Q10W[K1]:=   2.8744469761842956E-01
+Q10E[K1]:=   2.8412155879367451E-01
+
+Q11 : overlay = {Q11W,Q11E },K1 =  -2.2767681986813609E-01
+Q12 : overlay = {Q12W,Q12E },K1 =   3.6512778805910490E-01
+Q13 : overlay = {Q13W,Q13E },K1 =  -3.1938520832336187E-01
+Q14 : overlay = {Q14W,Q14E },K1 =   3.7255037238418215E-01
+Q15 : overlay = {Q15W,Q15E },K1 =  -3.0659836141514801E-01
+Q16 : overlay = {Q16W,Q16E },K1 =   3.7075775987245463E-01
+Q17 : overlay = {Q17W,Q17E },K1 =  -3.5838168776932589E-01
+Q18 : overlay = {Q18W,Q18E },K1 =   3.4108854119313059E-01
+Q19 : overlay = {Q19W,Q19E },K1 =  -3.2481303900975650E-01
+Q20 : overlay = {Q20W,Q20E },K1 =   3.0084470279599662E-01
+Q21 : overlay = {Q21W,Q21E },K1 =  -2.2239184522190333E-01
+Q22 : overlay = {Q22W,Q22E },K1 =   3.4662667397256736E-01
+Q23 : overlay = {Q23W,Q23E },K1 =  -2.3026220876557807E-01
+Q24 : overlay = {Q24W,Q24E },K1 =   3.5913205643201207E-01
+Q25 : overlay = {Q25W,Q25E },K1 =  -2.6686433351999034E-01
+Q26 : overlay = {Q26W,Q26E },K1 =   3.8365170109611857E-01
+Q27 : overlay = {Q27W,Q27E },K1 =  -2.5149891672471192E-01
+Q28 : overlay = {Q28W,Q28E },K1 =   3.6235802848498055E-01
+Q29 : overlay = {Q29W,Q29E },K1 =  -2.4425184453209706E-01
+Q30 : overlay = {Q30W,Q30E },K1 =   2.9521518940434271E-01
+Q31 : overlay = {Q31W,Q31E },K1 =  -2.1963730548861460E-01
+Q32 : overlay = {Q32W,Q32E },K1 =   2.5346375855457742E-01
+Q33 : overlay = {Q33W,Q33E },K1 =  -2.2450260605241629E-01
+Q34 : overlay = {Q34W,Q34E },K1 =   2.7160461004521663E-01
+Q35 : overlay = {Q35W,Q35E },K1 =  -1.9801001606892754E-01
+Q36 : overlay = {Q36W,Q36E },K1 =   3.0093726933435810E-01
+Q37 : overlay = {Q37W,Q37E },K1 =  -3.0883392270566457E-01
+Q38 : overlay = {Q38W,Q38E },K1 =   3.8462722256406795E-01
+Q39 : overlay = {Q39W,Q39E },K1 =  -2.8782360064903095E-01
+Q40 : overlay = {Q40W,Q40E },K1 =   3.7410748686609968E-01
+Q41 : overlay = {Q41W,Q41E },K1 =  -2.2731580127680895E-01
+Q42 : overlay = {Q42W,Q42E },K1 =   3.0658473005555259E-01
+Q43 : overlay = {Q43W,Q43E },K1 =  -2.9840656508688274E-01
+Q43a : overlay = {Q43AW,Q43AE },K1 =   3.7398651000778665E-01
+Q44 : overlay = {Q44W,Q44E },K1 =  -2.2813679388688160E-01
+Q45 : overlay = {Q45W,Q45E },K1 =   3.7732929249631630E-01
+Q46 : overlay = {Q46W,Q46E },K1 =  -2.8871455571341009E-01
+Q47 : overlay = {Q47W,Q47E },K1 =   3.9998291742813785E-01
+Q47a : overlay = {Q47AW,Q47AE },K1 =  -3.3340180342593284E-01
+Q48 : overlay = {Q48W,Q48E },K1 =   3.0129606472289611E-01
+q49w[k1]  =  -2.5915897407921623E-01
+
+
+fact = 0.2
+
+!H_SEP_08 : overlay = {H_SEP_08W,H_SEP_08E/-1}, HKICK =  -1.02448E-04
+H_SEP_08W[HKICK] =  -0.0e-05
+H_SEP_08E[HKICK] =  -0.0E-04
+!H_SEP_45 : overlay = {H_SEP_45W,H_SEP_45E/-1}, HKICK =  -2.51994E-04
+H_SEP_45W[HKICK] =  -0.0E-05
+H_SEP_45E[HKICK] =  -0.0E-05
+
+
+RF_W1[VOLT] := 3.75e6
+RF_W2[VOLT] := 3.75e6
+RF_E1[VOLT] := 3.75e6
+RF_E2[VOLT] := 3.75e6
+RF_W1[HARMON] := 1281
+RF_W2[HARMON] := 1281
+RF_E1[HARMON] := 1281
+RF_E2[HARMON] := 1281
+
+sexh =1.03
+sexv =-1.58
+
+SEX_08W[k2]:= sexh
+SEX_08E[k2]:= sexh
+SEX_09W[k2]:= sexv
+SEX_09E[k2]:= sexv
+SEX_10W[k2]:= sexh
+SEX_10E[k2]:= sexh
+SEX_11E[k2]:= sexv
+SEX_12W[k2]:= sexh
+SEX_12E[k2]:= sexh
+SEX_13W[k2]:= sexv
+SEX_13E[k2]:= sexv
+SEX_14W[k2]:= sexh
+SEX_14E[k2]:= sexh
+SEX_15W[k2]:= sexv
+SEX_15E[k2]:= sexv
+SEX_16W[k2]:= sexh
+SEX_16E[k2]:= sexh
+SEX_17W[k2]:= sexv
+SEX_17E[k2]:= sexv
+SEX_18W[k2]:= sexh
+SEX_18E[k2]:= sexh
+SEX_19W[k2]:= sexv
+SEX_19E[k2]:= sexv
+SEX_20W[k2]:= sexh
+SEX_20E[k2]:= sexh
+SEX_21W[k2]:= sexv
+SEX_21E[k2]:= sexv
+SEX_22W[k2]:= sexh
+SEX_22E[k2]:= sexh
+SEX_23W[k2]:= sexv
+SEX_23E[k2]:= sexv
+SEX_24W[k2]:= sexh
+SEX_24E[k2]:= sexh
+SEX_25W[k2]:= sexv
+SEX_25E[k2]:= sexv
+SEX_26W[k2]:= sexh
+SEX_26E[k2]:= sexh
+SEX_27W[k2]:= sexv
+SEX_27E[k2]:= sexv
+SEX_28W[k2]:= sexh
+SEX_28E[k2]:= sexh
+SEX_29W[k2]:= sexv
+SEX_29E[k2]:= sexv
+SEX_30W[k2]:= sexh
+SEX_30E[k2]:= sexh
+SEX_31W[k2]:= sexv
+SEX_31E[k2]:= sexv
+SEX_32W[k2]:= sexh
+SEX_32E[k2]:= sexh
+SEX_33W[k2]:= sexv
+SEX_33E[k2]:= sexv
+SEX_34W[k2]:= sexh
+SEX_34E[k2]:= sexh
+SEX_35W[k2]:= sexv
+SEX_35E[k2]:= sexv
+SEX_36W[k2]:= sexh
+SEX_36E[k2]:= sexh
+SEX_37W[k2]:= sexv
+SEX_37E[k2]:= sexv
+SEX_38W[k2]:= sexh
+SEX_38E[k2]:= sexh
+SEX_39W[k2]:= sexv
+SEX_39E[k2]:= sexv
+SEX_40W[k2]:= sexh
+SEX_40E[k2]:= sexh
+SEX_41W[k2]:= sexv
+SEX_41E[k2]:= sexv
+SEX_42W[k2]:= sexh
+SEX_42E[k2]:= sexh
+SEX_43W[k2]:= sexv
+SEX_43E[k2]:= sexv
+SEX_44W[k2]:= sexh
+SEX_44E[k2]:= sexh
+SEX_45W[k2]:= sexv
+SEX_45E[k2]:= sexv
+
+!call, file=/home/dlr/lat/2fam.bmad
+
+
+use, cesr
+
+ ! Vars not in original file
+
+SK_Q02W[K1] =  0.0
+SK_Q02E[K1] =  0.0
+SK_Q06W[K1] =  0.0
+SK_Q06E[K1] =  0.0
+SK_Q07W[K1] =  0.0
+SK_Q07E[K1] =  0.0
+
+
+

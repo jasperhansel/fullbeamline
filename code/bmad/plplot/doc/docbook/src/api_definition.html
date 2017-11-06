@@ -1,0 +1,216 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>What is in the API?</title><link rel="stylesheet" type="text/css" href="stylesheet.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="Documentation of the PLplot plotting software"><link rel="up" href="api-compat.html" title="Chapter 21. API compatibility definition"><link rel="prev" href="api-compat.html" title="Chapter 21. API compatibility definition"><link rel="next" href="api_regression_tests.html" title="Regression test for backwards compatibility"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">
+      What is in the API?
+    </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="api-compat.html">Prev</a> </td><th width="60%" align="center">Chapter 21. API compatibility definition</th><td width="20%" align="right"> <a accesskey="n" href="api_regression_tests.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="api_definition"></a>
+      What is in the API?
+    </h2></div></div></div><p>
+      The formal definition of the PLplot C API is everything that is defined
+      in the include file <code class="filename">plplot.h</code>.  This includes all
+      the function prototypes, the defined structures and the semantics of
+      the constants.  The list of symbols currently exported by the shared
+      library <code class="filename">libplplot.h</code> that are declared in
+      <code class="filename">plplot.h</code> is the following:
+    </p><p>
+      </p><pre class="programlisting">plAlloc2dGrid           plgcol0a                plscmap1a
+plClearOpts             plgcolbg                plscmap1l
+plFindCommand           plgcolbga               plscmap1la
+plFindName              plgcompression          plscmap1n
+plFree2dGrid            plgdev                  plscol0
+plGetCursor             plgdidev                plscol0a
+plGetFlt                plgdiori                plscolbg
+plGetInt                plgdiplt                plscolbga
+plGetName               plgdrawmode             plscolor
+plMergeOpts             plgesc                  plscompression
+plMinMax2dGrid          plgfam                  plsdev
+plOptUsage              plgfci                  plsdevdata
+plResetOpts             plgfile                 plsdidev
+plSetUsage              plgfnam                 plsdimap
+plTranslateCursor       plgfont                 plsdiori
+pl_cmd                  plglevel                plsdiplt
+pl_setcontlabelformat   plgpage                 plsdiplz
+pl_setcontlabelparam    plgra                   plsdrawmode
+pladv                   plgradient              plseed
+plarc                   plgriddata              plseopH
+plaxes                  plgspa                  plsesc
+plbin                   plgstrm                 plsetopt
+plbop                   plgver                  plsexit
+plbox                   plgvpd                  plsfam
+plbox3                  plgvpw                  plsfci
+plbtime                 plgxax                  plsfile
+plcalc_world            plgyax                  plsfnam
+plclear                 plgzax                  plsfont
+plcol0                  plhist                  plshade
+plcol1                  plhlsrgb                plshade1
+plcolorbar              plimage                 plshades
+plconfigtime            plimagefr               plslabelfunc
+plcont                  plinit                  plsmaj
+plcpstrm                pljoin                  plsmem
+plctime                 pllab                   plsmema
+pldid2pc                pllegend                plsmin
+pldip2dc                pllightsource           plsori
+plend                   plline                  plspage
+plend1                  plline3                 plspal0
+plenv                   pllsty                  plspal1
+plenv0                  plmap                   plspause
+pleop                   plmapfill               plsstrm
+plerrx                  plmapline               plssub
+plerry                  plmapstring             plssym
+plf2eval                plmaptex                plstar
+plf2eval1               plmeridians             plstart
+plf2eval2               plmesh                  plstransform
+plf2evalr               plmeshc                 plstring
+plf2ops_c               plmkstrm                plstring3
+plf2ops_grid_c          plmtex                  plstripa
+plf2ops_grid_col_major  plmtex3                 plstripc
+plf2ops_grid_row_major  plot3d                  plstripd
+plfamadv                plot3dc                 plstyl
+plfcont                 plot3dcl                plsurf3d
+plfgriddata             plparseopts             plsurf3dl
+plfill                  plpat                   plsvect
+plfill3                 plpath                  plsvpa
+plfimage                plpoin                  plsxax
+plfimagefr              plpoin3                 plsxwin
+plflush                 plpoly3                 plsyax
+plfmesh                 plprec                  plsym
+plfmeshc                plpsty                  plszax
+plfont                  plptex                  pltext
+plfontld                plptex3                 pltimefmt
+plfplot3d               plrandd                 pltr0
+plfplot3dc              plreplot                pltr1
+plfplot3dcl             plrgbhls                pltr2
+plfshade                plsButtonEH             pltr2f
+plfshade1               plsError                pltr2p
+plfshades               plsKeyEH                plvasp
+plfsurf3d               plsabort                plvect
+plfsurf3dl              plsbopH                 plvpas
+plfvect                 plschr                  plvpor
+plgDevs                 plscmap0                plvsta
+plgFileDevs             plscmap0a               plw3d
+plgchr                  plscmap0n               plwidth
+plgcmap1_range          plscmap1                plwind
+plgcol0                 plscmap1_range          plxormod
+</pre><p>
+    </p><p>
+      Another important aspect of compatibility regard the Application
+      Binary Interface (ABI).  Backwards compatibility can be broken by
+      changes in the C structures made public through
+      <code class="filename">plplot.h</code>.  Currently, they are:
+    </p><p>
+      </p><pre class="programlisting">typedef struct
+{
+    PLCHAR_VECTOR         opt;
+    int ( *handler )( PLCHAR_VECTOR, PLCHAR_VECTOR, PL_NC_GENERIC_POINTER );
+    PL_NC_GENERIC_POINTER client_data;
+    PL_NC_GENERIC_POINTER var;
+    long mode;
+    PLCHAR_VECTOR         syntax;
+    PLCHAR_VECTOR         desc;
+} PLOptionTable;
+
+typedef struct
+{
+    int          type;              // of event (CURRENTLY UNUSED)
+    unsigned int state;             // key or button mask
+    unsigned int keysym;            // key selected
+    unsigned int button;            // mouse button selected
+    PLINT        subwindow;         // subwindow (alias subpage, alias subplot) number
+    char         string[PL_MAXKEY]; // translated string
+    int          pX, pY;            // absolute device coordinates of pointer
+    PLFLT        dX, dY;            // relative device coordinates of pointer
+    PLFLT        wX, wY;            // world coordinates of pointer
+} PLGraphicsIn;
+
+typedef struct
+{
+    PLFLT dxmi, dxma, dymi, dyma;       // min, max window rel dev coords
+    PLFLT wxmi, wxma, wymi, wyma;       // min, max window world coords
+} PLWindow;
+
+typedef struct
+{
+    unsigned int x, y;                  // upper left hand corner
+    unsigned int width, height;         // window dimensions
+} PLDisplay;
+
+typedef struct
+{
+    PLFLT_FE_POINTER f;
+    PLINT            nx, ny, nz;
+} PLfGrid;
+
+typedef struct
+{
+    PLFLT_NC_MATRIX f;
+    PLINT           nx, ny;
+} PLfGrid2;
+
+typedef struct
+{
+    PLFLT_NC_FE_POINTER xg, yg, zg;
+    PLINT nx, ny, nz;
+} PLcGrid;
+
+typedef struct
+{
+    PLFLT_NC_MATRIX xg, yg, zg;
+    PLINT           nx, ny;
+} PLcGrid2;
+
+typedef struct
+{
+    unsigned char r;            // red
+    unsigned char g;            // green
+    unsigned char b;            // blue
+    PLFLT         a;            // alpha (or transparency)
+    PLCHAR_VECTOR name;
+} PLColor;
+
+typedef struct
+{
+    PLFLT h;                    // hue
+    PLFLT l;                    // lightness
+    PLFLT s;                    // saturation
+    PLFLT p;                    // position
+    PLFLT a;                    // alpha (or transparency)
+    int   alt_hue_path;         // if set, interpolate through h=0
+} PLControlPt;
+
+typedef struct
+{
+    PLINT cmd;
+    PLINT result;
+} PLBufferingCB;
+
+typedef struct
+{
+    PLFLT exp_label_disp;
+    PLFLT exp_label_pos;
+    PLFLT exp_label_just;
+} PLLabelDefaults;
+
+typedef struct
+{
+    PLFLT ( *get )( PL_GENERIC_POINTER p, PLINT ix, PLINT iy );
+    PLFLT ( *set )( PL_NC_GENERIC_POINTER p, PLINT ix, PLINT iy, PLFLT z );
+    PLFLT ( *add )( PL_NC_GENERIC_POINTER p, PLINT ix, PLINT iy, PLFLT z );
+    PLFLT ( *sub )( PL_NC_GENERIC_POINTER p, PLINT ix, PLINT iy, PLFLT z );
+    PLFLT ( *mul )( PL_NC_GENERIC_POINTER p, PLINT ix, PLINT iy, PLFLT z );
+    PLFLT ( *div )( PL_NC_GENERIC_POINTER p, PLINT ix, PLINT iy, PLFLT z );
+    PLINT ( *is_nan )( PL_GENERIC_POINTER p, PLINT ix, PLINT iy );
+    void ( *minmax )( PL_GENERIC_POINTER p, PLINT nx, PLINT ny, PLFLT_NC_SCALAR zmin, PLFLT_NC_SCALAR zmax );
+    //
+    // f2eval is backwards compatible signature for "f2eval" functions that
+    // existed before plf2ops "operator function families" were used.
+    //
+    PLFLT ( *f2eval )( PLINT ix, PLINT iy, PL_GENERIC_POINTER p );
+} plf2ops_t;
+
+typedef struct
+{
+    size_t size;
+    PL_NC_GENERIC_POINTER buffer;
+} plbuffer;
+
+</pre><p>
+    </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="api-compat.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="api-compat.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="api_regression_tests.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 21. API compatibility definition </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 
+      Regression test for backwards compatibility
+    </td></tr></table></div></body></html>

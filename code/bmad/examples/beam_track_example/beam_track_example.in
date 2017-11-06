@@ -1,0 +1,10 @@
+&beam_track_params
+	lat_filename = 'lat.bmad'
+	outfile_name = 'beam.dat'
+	beam_init%n_particle = 10
+	beam_init%n_bunch = 2
+	beam_init%a_emit = 1e-6
+	beam_init%b_emit = 2e-6
+	beam_init%sig_z = 1e-2
+	beam_init%sig_e = 1e-4
+/

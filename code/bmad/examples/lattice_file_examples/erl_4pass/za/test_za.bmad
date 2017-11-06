@@ -1,0 +1,58 @@
+d1: drift, L = 2
+
+test_lat: line = (Mar.BEG,
+  ZA.CELL01,
+  ZA.CELL02,
+  ZA.CELL03,
+  ZA.CELL04,
+  ZA.CELL05,
+  ZA.CELL06,
+  !ZA.CELL07,
+  !ZA.CELL08,
+  !ZA.CELL09,
+  !ZA.CELL10,
+  !d1,
+  !Mar.MID,
+  ZA.Qua99,
+Mar.END)
+
+
+o_d1: overlay = {
+za.pip01, 
+za.pip03, 
+za.pip05, 
+za.pip07, 
+za.pip09, 
+za.pip11}, L 
+o_d1[L] = 0.050
+
+o_d2: overlay = {
+za.pip02, 
+za.pip04, 
+za.pip06, 
+za.pip08, 
+za.pip10, 
+za.pip12}, L 
+
+o_qL1: overlay = {
+za.qua01, 
+za.qua03, 
+za.qua05, 
+za.qua07, 
+za.qua09, 
+za.qua11}, L
+o_qL1[L] = 0.08 
+
+o_qL2: overlay = {
+za.qua02, 
+za.qua04, 
+za.qua06, 
+za.qua08, 
+za.qua10, 
+za.qua12}, L
+o_qL2[L] = 0.11
+
+
+o_d2[L] = 0.065 
+
+call, file = sol.X.bmad

@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# Script to make the FGSL libraries.
+# Exit Codes found in /usr/include/sysexits.h
+
+#set -x
+
+
+# Function to configure, make and then install the Package - contains Package Specific build configuration
+
+func_configure_make_install () {
+
+    cd ${WORK_DIR}
+
+    if [ ! -e ALREADY_BUILT ] ; then
+
+	if ( [[ "${ACC_PKG}" ]] && [[ "${ACC_PKG}/${BUILD_TYPE}/lib/libgsl*19*" ]] ) ; then
+	    export GSLLIBDIR=${ACC_PKG}/${BUILD_TYPE}/lib
+	    export GSLINCDIR=${ACC_PKG}/${BUILD_TYPE}/include
+	    echo -e "Uisng GSL version 2.3 library in ${ACC_PKG}/${BUILD_TYPE}/lib\n"
+	elif [[ "${OUTPUT_DIR}/lib/libgsl*19*" ]] ; then
+	    export GSLLIBDIR=${OUTPUT_DIR}/lib
+	    export GSLINCDIR=${OUTPUT_DIR}/include
+	    echo -e "Uisng GSL version 2.3 library in ${OUTPUT_DIR}/lib\n"
+	else
+	    echo -e "Required GSL version 2.3 not found, exiting...\n"
+	    exit 72
+	fi
+
+	[ "${ACC_ENABLE_OPENMP}" == "Y" ] && CONFIG_OPTIONS="--enable-openmp"
+
+	export gsl_LIBS="-L${GSLLIBDIR} -lgsl -lgslcblas -lm"
+	export gsl_CFLAGS="-I${GSLINCDIR}"
+
+	# required for some macOS systems 
+	[ "$(uname -s)" == "Darwin" ] \
+	    && autoreconf -i
+
+	./configure \
+	    --prefix=${OUTPUT_DIR} \
+	    "${CONFIG_OPTIONS[@]}" 
+
+	export RETVAL=$?
+	[ "${RETVAL}" -eq 0 ] || exit ${RETVAL}
+
+	func_print_compiler_linker_flags
+
+	${GMAKE} -j 1
+	${GMAKE} install
+
+	export RETVAL=$?
+	[ "${RETVAL}" -eq 0 ] || exit ${RETVAL}
+    fi
+
+    if [ "${ARGUMENTS[1]}" == "-test" ] ; then 
+	echo -e "\nBuilding tests for `echo ${PACKAGE_VERSION}`...\n" 
+
+	export LD_LIBRARY_PATH=${OUTPUT_DIR}/lib:${LD_LIBRARY_PATH}
+
+	${GMAKE} -j ${ACC_SET_GMAKE_JOBS} check
+
+	export RETVAL=$?
+
+	if ( [ -e ${WORK_DIR}/tests/test-suite.log ] && [ ${RETVAL} -eq 0 ] ) ; then
+	    echo -e "\nCheck for test logs in: \n\n      ${WORK_DIR}/tests/ \n"
+	fi
+    fi 
+
+    if ( [ -e ${OUTPUT_DIR}/include/fgsl/fgsl.mod ] && [ ${RETVAL} -eq 0 ] ) ; then
+	[ ! -L ${OUTPUT_DIR}/modules/fgsl.mod ] && cd ${OUTPUT_DIR}/modules && ln -s ../include/fgsl/fgsl.mod .
+    fi
+
+}
+
+
+# Function that contains Package Specific files and directories to be removed
+
+func_remove_package () {
+
+    rm -f ${OUTPUT_DIR}/lib/libfgsl*
+    rm -f ${OUTPUT_DIR}/lib/pkgconfig/fgsl*
+    rm -rf ${OUTPUT_DIR}/include/fgsl
+    rm -f ${OUTPUT_DIR}/modules/fgsl.mod
+    rm -rf ${OUTPUT_DIR}/share/examples/fgsl
+    rm -rf ${OUTPUT_DIR}/share/doc/fgsl
+    rm -rf ${BUILD_TYPE}
+
+}

@@ -1,0 +1,424 @@
+! BMAD input file
+! bigger beta at 5e
+
+parameter[lattice] = CTA_2500_XR40M_V15M_20131219
+beam, energy =   2.5
+
+call, file=layout/cesrta_08.bmad
+
+dline : marker, superimpose, offset=744.826 ! updated 2013.03.14, JSh
+cline : marker, superimpose, offset = 23.4506 ! updated 2013.03.14, JSh
+vbsm_positrons : marker, superimpose, offset=374.2468
+vbsm_electrons : marker, superimpose, offset=2* 384.214 - 374.2468
+
+feed_kick_v : marker, superimpose, offset = 55.5
+feed_kick_h : marker, superimpose, offset = 55.
+wig_w[b_max] = 0.0
+wig_e[b_max] = 0.0
+
+
+wig_damp_drift: drift, l=1.6
+dwig: drift, l=0.065
+
+
+ wig_01w[polarity] = 0.9765258
+ wig_01w[tracking_method] = taylor
+ wig_01w[mat6_calc_method] = taylor
+
+ wig1_02w[polarity] = 0.9765258
+ wig1_02w[tracking_method] = taylor
+ wig1_02w[mat6_calc_method] = taylor
+
+ wig2_02w[polarity] = 0.9765258
+ wig2_02w[tracking_method] = taylor
+ wig2_02w[mat6_calc_method] = taylor
+
+ wig1_18w[polarity] = 0.9765258
+ wig1_18w[tracking_method] = taylor
+ wig1_18w[mat6_calc_method] = taylor
+
+ wig2_18w[polarity] = 0.9765258
+ wig2_18w[tracking_method] = taylor
+ wig2_18w[mat6_calc_method] = taylor
+
+ wig3_18w[polarity] = 0.9765258
+ wig3_18w[tracking_method] = taylor
+ wig3_18w[mat6_calc_method] = taylor
+
+ wig3_18e[polarity] = 0.9765258
+ wig3_18e[tracking_method] = taylor
+ wig3_18e[mat6_calc_method] = taylor
+
+ wig2_18e[polarity] = 0.9765258
+ wig2_18e[tracking_method] = taylor
+ wig2_18e[mat6_calc_method] = taylor
+
+ wig1_18e[polarity] = 0.9765258
+ wig1_18e[tracking_method] = taylor
+ wig1_18e[mat6_calc_method] = taylor
+
+ wig2_02e[polarity] = 0.9765258
+ wig2_02e[tracking_method] = taylor
+ wig2_02e[mat6_calc_method] = taylor
+
+ wig1_02e[polarity] = 0.9765258
+ wig1_02e[tracking_method] = taylor
+ wig1_02e[mat6_calc_method] = taylor
+
+ wig_01e[polarity] = 0.9765258
+ wig_01e[tracking_method] = taylor
+ wig_01e[mat6_calc_method] = taylor
+
+deltax=0.02
+deltay=-0.007
+Q00[K1]:=      4.5656358523E-01
+!Q01 : overlay = {Q01W, Q01E}, K1 =     -2.0956393215E-01
+Q01W[K1]:=     -2.6433254560E-01
+Q01E[K1]:=     -1.9574847985E-01
+Q02W[k1] =      4.8817295850E-01
+Q02E[k1] =      4.7045941151E-01
+Q03W[K1] =     -3.3362464473E-01
+Q03E[K1] =     -3.4774577367E-01
+Q04W[K1] =      6.4177113995E-01
+Q04E[K1] =      6.7749774580E-01
+Q05W[K1] =     -3.4031202055E-01
+Q05E[K1] =     -4.6522975653E-01
+Q06W[K1] =      4.7223421003E-01
+Q06E[K1] =      5.2549872722E-01
+Q07W[K1]=     -3.6758779352E-01
+Q07E[K1]=     -4.7787720585E-01
+Q08W[K1]=      2.2024825598E-01
+Q08E[K1]=      1.9594350246E-01
+Q08AW[K1]:=     -5.7096334007E-03
+Q09W[K1]:=     -2.6934776724E-01
+Q09E[K1]:=     -2.2614932570E-01
+Q10W[K1]:=      3.0550724918E-01
+Q10E[K1]:=      2.7581212541E-01
+Q11W[K1]:=     -2.3137136484E-01
+Q11E[K1]:=     -2.2905089014E-01
+Q12W[K1]:=      3.0055467327E-01
+Q12E[K1]:=      2.3575307178E-01
+Q13W[K1]:=     -3.3362356593E-01
+Q13E[K1]:=     -3.2573465362E-01
+
+!Q14 : overlay = {Q14W,Q14E },K1 =      3.3316855321E-01
+Q14W[K1]:=      3.3104284674E-01
+Q14E[K1]:=      3.2707144938E-01
+!Q15 : overlay = {Q15W,Q15E },K1 =     -2.8206821425E-01
+Q15W[K1]:=     -2.7781208049E-01
+Q15E[K1]:=     -2.7079004637E-01
+!Q16 : overlay = {Q16W,Q16E },K1 =      3.4416757738E-01
+Q16W[K1]:=      3.4178122237E-01
+Q16E[K1]:=      3.4423135514E-01
+!Q17 : overlay = {Q17W,Q17E },K1 =     -3.1203181312E-01
+Q17W[K1]:=     -3.0448851649E-01
+Q17E[K1]:=     -3.0674895640E-01
+!Q18 : overlay = {Q18W,Q18E },K1 =      4.5136652250E-01
+Q18W[K1]:=      4.5089649608E-01
+Q18E[K1]:=      4.3193898472E-01
+!Q19 : overlay = {Q19W,Q19E },K1 =     -1.9510400769E-01
+Q19W[K1]:=     -1.9339504586E-01
+Q19E[K1]:=     -2.3118743979E-01
+!Q20 : overlay = {Q20W,Q20E },K1 =      3.6565972233E-01
+Q20W[K1]:=      3.6737495194E-01
+Q20E[K1]:=      3.6510585581E-01
+!Q21 : overlay = {Q21W,Q21E },K1 =     -2.5319094724E-01
+Q21W[K1]:=     -2.5357453363E-01
+Q21E[K1]:=     -2.5185005134E-01
+!Q22 : overlay = {Q22W,Q22E },K1 =      3.1393088594E-01
+Q22W[K1]:=      3.1663219957E-01
+Q22E[K1]:=      2.9885963752E-01
+!Q23 : overlay = {Q23W,Q23E },K1 =     -2.3668395410E-01
+Q23W[K1]:=     -2.4243064867E-01
+Q23E[K1]:=     -2.2976432921E-01
+!Q24 : overlay = {Q24W,Q24E },K1 =      2.9698673745E-01
+Q24W[K1]:=      2.9676226949E-01
+Q24E[K1]:=      2.9650783257E-01
+!Q25 : overlay = {Q25W,Q25E },K1 =     -3.0297398018E-01
+Q25W[K1]:=     -3.0501104487E-01
+Q25E[K1]:=     -3.1502627163E-01
+!Q26 : overlay = {Q26W,Q26E },K1 =      3.5385617651E-01
+Q26W[K1]:=      3.6056691658E-01
+Q26E[K1]:=      3.5505415930E-01
+!Q27 : overlay = {Q27W,Q27E },K1 =     -2.5632740047E-01
+Q27W[K1]:=     -2.5528880875E-01
+Q27E[K1]:=     -2.6244012744E-01
+!Q28 : overlay = {Q28W,Q28E },K1 =      3.6591290099E-01
+Q28W[K1]:=      3.6705934499E-01
+Q28E[K1]:=      3.6090958304E-01
+!Q29 : overlay = {Q29W,Q29E },K1 =     -2.3846857907E-01
+Q29W[K1]:=     -2.4234326765E-01
+Q29E[K1]:=     -2.4082408645E-01
+!Q30 : overlay = {Q30W,Q30E },K1 =      2.8731756932E-01
+Q30W[K1]:=      2.8889969130E-01
+Q30E[K1]:=      2.8177229418E-01
+!Q31 : overlay = {Q31W,Q31E },K1 =     -1.9545043312E-01
+Q31W[K1]:=     -1.9551335320E-01
+Q31E[K1]:=     -2.1762978630E-01
+!Q32 : overlay = {Q32W,Q32E },K1 =      2.4634238769E-01
+Q32W[K1]:=      2.4517813454E-01
+Q32E[K1]:=      2.2760013179E-01
+!Q33 : overlay = {Q33W,Q33E },K1 =     -2.4107924051E-01
+Q33W[K1]:=     -2.3843195495E-01
+Q33E[K1]:=     -2.4201859652E-01
+!Q34 : overlay = {Q34W,Q34E },K1 =      2.6997850946E-01
+Q34W[K1]:=      2.7147265418E-01
+Q34E[K1]:=      2.6928489447E-01
+!Q35 : overlay = {Q35W,Q35E },K1 =     -1.6137187013E-01
+Q35W[K1]:=     -1.5370867060E-01
+Q35E[K1]:=     -1.6501866526E-01
+!Q36 : overlay = {Q36W,Q36E },K1 =      2.4773284360E-01
+Q36W[K1]:=      2.4890867875E-01
+Q36E[K1]:=      2.4340831832E-01
+!Q37 : overlay = {Q37W,Q37E },K1 =     -2.6781378216E-01
+Q37W[K1]:=     -2.6370707624E-01
+Q37E[K1]:=     -2.7252458498E-01
+!Q38 : overlay = {Q38W,Q38E },K1 =      3.1243531100E-01
+Q38W[K1]:=      3.1316887061E-01
+Q38E[K1]:=      3.1227370121E-01
+!Q39 : overlay = {Q39W,Q39E },K1 =     -2.8854814698E-01
+Q39W[K1]:=     -2.9215542422E-01
+Q39E[K1]:=     -3.1313059017E-01
+!Q40 : overlay = {Q40W,Q40E },K1 =      3.3053061671E-01
+Q40W[K1]:=      3.3143533741E-01
+Q40E[K1]:=      3.2258770010E-01
+!Q41 : overlay = {Q41W,Q41E },K1 =     -2.5841459072E-01
+Q41W[K1]:=     -2.5457036000E-01
+Q41E[K1]:=     -2.6318907387E-01
+!Q42 : overlay = {Q42W,Q42E },K1 =      2.5019437764E-01
+Q42W[K1]:=      2.5132167043E-01
+Q42E[K1]:=      2.4511455482E-01
+!Q43 : overlay = {Q43W,Q43E },K1 =     -2.8101819884E-01
+Q43W[K1]:=     -2.8027951539E-01
+Q43E[K1]:=     -2.9281887679E-01
+!Q43A : overlay = {Q43AW,Q43AE },K1 =      3.4188528261E-01
+Q43AW[K1]:=      3.4216991740E-01
+Q43AE[K1]:=      3.4293675353E-01
+!Q44 : overlay = {Q44W,Q44E },K1 =     -3.0627796147E-01
+Q44W[K1]:=     -2.9795678959E-01
+Q44E[K1]:=     -3.1426052340E-01
+!Q45 : overlay = {Q45W,Q45E },K1 =      3.2711704877E-01
+Q45W[K1]:=      3.2697322476E-01
+Q45E[K1]:=      3.2663871797E-01
+!Q46 : overlay = {Q46W,Q46E },K1 =     -3.2931257044E-01
+Q46W[K1]:=     -3.3351475407E-01
+Q46E[K1]:=     -3.2601823333E-01
+!Q47 : overlay = {Q47W,Q47E },K1 =      4.5022709641E-01
+Q47W[K1]:=      4.5104555234E-01
+Q47E[K1]:=      4.5316708063E-01
+!Q47a : overlay = {Q47aW,Q47aE },K1 =     -2.9598367635E-01
+Q47aW[K1]:=     -2.9863182478E-01
+Q47aE[K1]:=     -2.9471317163E-01
+!Q48 : overlay = {Q48W,Q48E },K1 =      5.3160978478E-01
+Q48W[K1]:=      5.3095167276E-01
+Q48E[K1]:=      5.3115024201E-01
+Q49[K1]:=     -2.4902558095E-01
+
+k2h=0.95
+k2v=-1.4
+!SEX_08 : overlay = {sex_08w, sex_08e}, K2 = k2h
+sex_08w[K2]:= k2h
+sex_08e[K2]:= k2h
+!SEX_09 : overlay = {sex_09w, sex_09e}, K2 = k2v
+sex_09w[K2]:= k2v
+sex_09e[K2]:= k2v
+!SEX_10 : overlay = {sex_10w, sex_10e}, K2 = k2h
+sex_10w[K2]:= k2h
+sex_10e[K2]:= k2h
+!SEX_11 : overlay = {sex_11w, sex_11e}, K2 = k2v
+!SEX_12 : overlay = {sex_12w, sex_12e}, K2 = k2h
+sex_12w[K2]:= k2h
+sex_12e[K2]:= k2h
+!SEX_13 : overlay = {sex_13w, sex_13e}, K2 = k2v
+sex_13w[K2]:= k2v
+sex_13e[K2]:= k2v
+!SEX_14 : overlay = {sex_14w, sex_14e}, K2 = k2h
+sex_14w[K2]:= k2h
+sex_14e[K2]:= k2h
+!SEX_15 : overlay = {sex_15w, sex_15e}, K2 = k2v
+sex_15w[K2]:= k2v
+sex_15e[K2]:= k2v
+!SEX_16 : overlay = {sex_16w, sex_16e}, K2 = k2h
+sex_16w[K2]:= k2h
+sex_16e[K2]:= k2h
+!SEX_17 : overlay = {sex_17w, sex_17e}, K2 = k2v
+sex_17w[K2]:= k2v
+sex_17e[K2]:= k2v
+!SEX_18 : overlay = {sex_18w, sex_18e}, K2 = k2h
+sex_18w[K2]:= k2h
+sex_18e[K2]:= k2h
+!SEX_19 : overlay = {sex_19w, sex_19e}, K2 = k2v
+sex_19w[K2]:= k2v
+sex_19e[K2]:= k2v
+!SEX_20 : overlay = {sex_20w, sex_20e}, K2 = k2h
+sex_20w[K2]:= k2h
+sex_20e[K2]:= k2h
+!SEX_21 : overlay = {sex_21w, sex_21e}, K2 = k2v
+sex_21w[K2]:= k2v
+sex_21e[K2]:= k2v
+!SEX_22 : overlay = {sex_22w, sex_22e}, K2 = k2h
+sex_22w[K2]:= k2h
+sex_22e[K2]:= k2h
+!SEX_23 : overlay = {sex_23w, sex_23e}, K2 = k2v
+sex_23w[K2]:= k2v
+sex_23e[K2]:= k2v
+!SEX_24 : overlay = {sex_24w, sex_24e}, K2 = k2h
+sex_24w[K2]:= k2h
+sex_24e[K2]:= k2h
+!SEX_25 : overlay = {sex_25w, sex_25e}, K2 = k2v
+sex_25w[K2]:= k2v
+sex_25e[K2]:= k2v
+!SEX_26 : overlay = {sex_26w, sex_26e}, K2 = k2h
+sex_26w[K2]:= k2h
+sex_26e[K2]:= k2h
+!SEX_27 : overlay = {sex_27w, sex_27e}, K2 = k2v
+sex_27w[K2]:= k2v
+sex_27e[K2]:= k2v
+!SEX_28 : overlay = {sex_28w, sex_28e}, K2 = k2h
+sex_28w[K2]:= k2h
+sex_28e[K2]:= k2h
+!SEX_29 : overlay = {sex_29w, sex_29e}, K2 = k2v
+sex_29w[K2]:= k2v
+sex_29e[K2]:= k2v
+!SEX_30 : overlay = {sex_30w, sex_30e}, K2 = k2h
+sex_30w[K2]:= k2h
+sex_30e[K2]:= k2h
+!SEX_31 : overlay = {sex_31w, sex_31e}, K2 = k2v
+sex_31w[K2]:= k2v
+sex_31e[K2]:= k2v
+!SEX_32 : overlay = {sex_32w, sex_32e}, K2 = k2h
+sex_32w[K2]:= k2h
+sex_32e[K2]:= k2h
+!SEX_33 : overlay = {sex_33w, sex_33e}, K2 = k2v
+sex_33w[K2]:= k2v
+sex_33e[K2]:= k2v
+!SEX_34 : overlay = {sex_34w, sex_34e}, K2 = k2h
+sex_34w[K2]:= k2h
+sex_34e[K2]:= k2h
+!SEX_35 : overlay = {sex_35w, sex_35e}, K2 = k2v
+sex_35w[K2]:= k2v
+sex_35e[K2]:= k2v
+!SEX_36 : overlay = {sex_36w, sex_36e}, K2 = k2h
+sex_36w[K2]:= k2h
+sex_36e[K2]:= k2h
+!SEX_37 : overlay = {sex_37w, sex_37e}, K2 = k2v
+sex_37w[K2]:= k2v
+sex_37e[K2]:= k2v
+!SEX_38 : overlay = {sex_38w, sex_38e}, K2 = k2h
+sex_38w[K2]:= k2h
+sex_38e[K2]:= k2h
+!SEX_39 : overlay = {sex_39w, sex_39e}, K2 = k2v
+sex_39w[K2]:= k2v
+sex_39e[K2]:= k2v
+!SEX_40 : overlay = {sex_40w, sex_40e}, K2 = k2h
+sex_40w[K2]:= k2h
+sex_40e[K2]:= k2h
+!SEX_41 : overlay = {sex_41w, sex_41e}, K2 = k2v
+sex_41w[K2]:= k2v
+sex_41e[K2]:= k2v
+!SEX_42 : overlay = {sex_42w, sex_42e}, K2 = k2h
+sex_42w[K2]:= k2h
+sex_42e[K2]:= k2h
+!SEX_43 : overlay = {sex_43w, sex_43e}, K2 = k2v
+sex_43w[K2]:= k2v
+sex_43e[K2]:= k2v
+!SEX_44 : overlay = {sex_44w, sex_44e}, K2 = k2v
+sex_44w[K2]:= k2v
+sex_44e[K2]:= k2v
+!SEX_45 : overlay = {sex_45w, sex_45e}, K2 = k2h
+sex_45w[K2]:= k2h
+sex_45e[K2]:= k2h
+!SEX_47 : overlay = {sex_47w, sex_47e}, K2 = k2v
+sex_47w[K2]:= k2v
+sex_47e[K2]:= k2v
+
+! /a/lnx113/nfs/acc/user/dlr/knobs/xquneing1/cta_2085mev_20090516_2fam.lat
+RAW_XQUNEING_1  : GROUP = {SEX_08W/ 0.259922,SEX_08E/ 0.259922, &
+        SEX_09W/-0.120354,SEX_09E/-0.120354,SEX_10W/-0.030813, &
+        SEX_10E/-0.030813,SEX_12W/-2.074769,SEX_12E/-2.074769, &
+        SEX_13W/-0.134757,SEX_13E/-0.134757,SEX_14W/ 0.020840, &
+        SEX_14E/ 0.020840,SEX_15W/-0.071905,SEX_15E/-0.071905, &
+        SEX_16W/-0.175376,SEX_16E/-0.175376,SEX_17W/-0.678671, &
+        SEX_17E/-0.678671,SEX_18W/-0.417058,SEX_18E/-0.417058, &
+        SEX_19W/ 3.608634,SEX_19E/ 3.608634,SEX_20W/ 0.328196, &
+        SEX_20E/ 0.328196,SEX_21W/-0.124907,SEX_21E/-0.124907, &
+        SEX_22W/-0.063754,SEX_22E/-0.063754,SEX_23W/-0.088850, &
+        SEX_23E/-0.088850,SEX_24W/-0.024617,SEX_24E/-0.024617, &
+        SEX_25W/-1.354698,SEX_25E/-1.354698,SEX_26W/ 0.034187, &
+        SEX_26E/ 0.034187,SEX_27W/-0.407311,SEX_27E/-0.407311, &
+        SEX_28W/-0.227801,SEX_28E/-0.227801,SEX_29W/-0.141494, &
+        SEX_29E/-0.141494,SEX_30W/ 0.199875,SEX_30E/ 0.199875, &
+        SEX_31W/-0.165039,SEX_31E/-0.165039,SEX_32W/-0.247319, &
+        SEX_32E/-0.247319,SEX_33W/-0.081965,SEX_33E/-0.081965, &
+        SEX_34W/ 0.061746,SEX_34E/ 0.061746,SEX_35W/-0.153041, &
+        SEX_35E/-0.153041,SEX_36W/-0.014855,SEX_36E/-0.014855, &
+        SEX_37W/-0.117617,SEX_37E/-0.117617,SEX_38W/-0.053293, &
+        SEX_38E/-0.053293,SEX_39W/-0.202149,SEX_39E/-0.202149, &
+        SEX_40W/-0.013225,SEX_40E/-0.013225,SEX_41W/-0.031585, &
+        SEX_41E/-0.031585,SEX_42W/ 0.095855,SEX_42E/ 0.095855, &
+        SEX_43W/-0.118856,SEX_43E/-0.118856,SEX_44W/-0.142672, &
+        SEX_44E/-0.142672,SEX_45W/ 0.207110,SEX_45E/ 0.207110, &
+        SEX_47W/ 0.123890,SEX_47E/ 0.123890}, K2, &
+         Type = "CSR XQUNEING   1"
+! /a/lnx113/nfs/acc/user/dlr/knobs/xquneing1/cta_2085mev_20090516_2fam.lat
+RAW_XQUNEING_2  : GROUP = {SEX_08W/ 0.390136,SEX_08E/ 0.390136, &
+        SEX_09W/-0.124330,SEX_09E/-0.124330,SEX_10W/-0.011486, &
+        SEX_10E/-0.011486,SEX_12W/ 0.171039,SEX_12E/ 0.171039, &
+        SEX_13W/-0.101351,SEX_13E/-0.101351,SEX_14W/ 0.189714, &
+        SEX_14E/ 0.189714,SEX_15W/-0.046744,SEX_15E/-0.046744, &
+        SEX_16W/-0.032188,SEX_16E/-0.032188,SEX_17W/-0.307112, &
+        SEX_17E/-0.307112,SEX_18W/-0.202631,SEX_18E/-0.202631, &
+        SEX_19W/ 2.027051,SEX_19E/ 2.027051,SEX_20W/ 0.333839, &
+        SEX_20E/ 0.333839,SEX_21W/-0.065042,SEX_21E/-0.065042, &
+        SEX_22W/-0.067645,SEX_22E/-0.067645,SEX_23W/ 0.003402, &
+        SEX_23E/ 0.003402,SEX_24W/ 0.096145,SEX_24E/ 0.096145, &
+        SEX_25W/-1.009707,SEX_25E/-1.009707,SEX_26W/ 0.381890, &
+        SEX_26E/ 0.381890,SEX_27W/-0.116039,SEX_27E/-0.116039, &
+        SEX_28W/-0.046766,SEX_28E/-0.046766,SEX_29W/-0.058767, &
+        SEX_29E/-0.058767,SEX_30W/ 0.382979,SEX_30E/ 0.382979, &
+        SEX_31W/ 0.191699,SEX_31E/ 0.191699,SEX_32W/-0.128332, &
+        SEX_32E/-0.128332,SEX_33W/ 0.011364,SEX_33E/ 0.011364, &
+        SEX_34W/ 0.071314,SEX_34E/ 0.071314,SEX_35W/ 0.560536, &
+        SEX_35E/ 0.560536,SEX_36W/-0.007747,SEX_36E/-0.007747, &
+        SEX_37W/-0.070790,SEX_37E/-0.070790,SEX_38W/-0.000956, &
+        SEX_38E/-0.000956,SEX_39W/ 0.095362,SEX_39E/ 0.095362, &
+        SEX_40W/ 0.078087,SEX_40E/ 0.078087,SEX_41W/-0.015786, &
+        SEX_41E/-0.015786,SEX_42W/ 0.182419,SEX_42E/ 0.182419, &
+        SEX_43W/-0.052854,SEX_43E/-0.052854,SEX_44W/-0.070463, &
+        SEX_44E/-0.070463,SEX_45W/ 0.093577,SEX_45E/ 0.093577, &
+        SEX_47W/ 0.140761,SEX_47E/ 0.140761}, K2, &
+         Type = "CSR XQUNEING   2"
+
+
+
+
+
+
+RF_W1[VOLT] := 2.02e6
+RF_W2[VOLT] := 2.02e6
+RF_E1[VOLT] := 2.02e6
+RF_E2[VOLT] := 2.02e6
+RF_W1[HARMON] := 1281
+RF_W2[HARMON] := 1281
+RF_E1[HARMON] := 1281
+RF_E2[HARMON] := 1281
+
+use, cesr
+
+Q06W[k1]:=      4.7223421003E-01
+Q05W[k1]:=     -3.4031202055E-01
+Q04W[k1]:=      6.4177113995E-01
+Q03W[k1]:=     -3.3362464473E-01
+Q02W[k1]:=      4.8817295850E-01
+Q02E[k1]:=      4.7045941151E-01
+Q03E[k1]:=     -3.4774577367E-01
+Q04E[k1]:=      6.7749774580E-01
+Q05E[k1]:=     -4.6522975653E-01
+Q06E[k1]:=      5.2549872722E-01
+Q07E[k1]:=     -4.7787720585E-01
+Q08E[k1]:=      1.9594350246E-01
+Q09E[k1]:=     -2.2614932570E-01
+Q10E[k1]:=      2.7581212541E-01
+Q11E[k1]:=     -2.2905089014E-01
+Q12E[k1]:=      2.3575307178E-01
+Q13E[k1]:=     -3.2573465362E-01

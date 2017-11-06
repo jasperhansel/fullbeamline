@@ -1,0 +1,4 @@
+#ifndef __H5T_TRIM_STORE_PRIVATE_H
+#define __H5T_TRIM_STORE_PRIVATE_H
+
+#endif

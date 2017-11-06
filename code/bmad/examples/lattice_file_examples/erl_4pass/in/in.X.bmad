@@ -1,0 +1,43 @@
+
+
+in.gun[voltage] = 500e3 !V
+
+in.a1.sol01[bs_field] = 0.025331      !T 
+!in.a1.bun01[field_scale] =0.85885e6 !V/m
+in.a1.bun01[voltage] = 50e3 !V
+in.a1.sol02[bs_field] = -0.01661     !T
+
+in.crmod.voltage = 6e6 - m_electron - in.gun[voltage] !V
+in.crmod.rfc.voltage = in.crmod.voltage/5
+
+
+in.crmod.rfc01[voltage] = in.crmod.rfc.voltage
+in.crmod.rfc02[voltage] = in.crmod.rfc.voltage
+in.crmod.rfc03[voltage] = in.crmod.rfc.voltage
+in.crmod.rfc04[voltage] = in.crmod.rfc.voltage
+in.crmod.rfc05[voltage] = in.crmod.rfc.voltage
+
+!in.crmod.rfc01[field_scale] = 7.7253e6 !V/m
+!in.crmod.rfc02[field_scale] = 7.7253e6 !V/m
+!in.crmod.rfc03[field_scale] = 7.7253e6 !V/m
+!in.crmod.rfc04[field_scale] = 7.7253e6 !V/m
+!in.crmod.rfc05[field_scale] = 7.7253e6 !V/m
+
+!in.crmod.rfc01[phi0] = 0.65/360
+!in.crmod.rfc02[phi0] =-30/360
+
+!The above settings correspond to:
+!Edcgunset=250;
+!BSLA01set=0.025331;
+!ECTB01set=0.85885;
+!BSLA02set=-0.01661;
+!ECTC01set=7.7253;
+!ECTC02set=7.7253;
+!ECTC03set=7.7253;
+!ECTC04set=7.7253;
+!ECTC05set=7.7253;
+
+IN.merge.Qua01[k1] = 3.939
+IN.merge.Qua02[k1] = 3.939
+
+

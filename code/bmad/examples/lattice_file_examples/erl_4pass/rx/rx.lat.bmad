@@ -1,0 +1,225 @@
+
+BEGINNING[BETA_A]  = 50
+BEGINNING[ALPHA_A]=  -10
+BEGINNING[BETA_B] = 50
+BEGINNING[ALPHA_B] = -10
+
+
+parameter[geometry] = open
+
+PARAMETER[particle] = electron
+
+parameter[e_tot] = 6e6
+
+parameter[absolute_time_tracking] = F
+
+
+r1_middle_angle = 3.30627157E-01
+
+beginning[z_position] = 15
+beginning[x_position] = 15.16
+beginning[theta_position] = -15*pi/180  -r1_middle_angle
+call, file = ../in/merge/in.merge.bmad
+IN.merge.Qua01[k1] = 3.939
+IN.merge.Qua02[k1] = 3.939
+ 
+call, file = ../fab/cell/cell.bmad 
+ 
+call, file = ../sx/sx.bmad
+call, file = ../sx/s1.quads.bmad
+call, file = ../sx/s1.X.bmad
+call, file = ../sx/s2.quads.bmad
+call, file = ../sx/s2.X.bmad
+call, file = ../sx/s3.quads.bmad
+call, file = ../sx/s3.X.bmad
+call, file = ../sx/s4.quads.bmad
+call, file = ../sx/s4.X.bmad
+
+! For energy recovery pass 1
+!call, file = ../sx/s1.R.bmad
+!call, file = ../sx/s1.recovery.bmad
+!call, file = ../sx/s1.symmetrize.bmad
+
+
+call, file =rx.bmad
+
+! FFAG with reverse merge settings
+call, file = ../fab/fab.bmad
+call, file = ../fab/fa.X.bmad
+call, file = ../fab/fb.X.bmad
+
+
+FB.match1: match, match_end = T, match_end_orbit = T
+FB.match2: FB.match1
+FB.match3: FB.match1
+FB.match4: FB.match1
+
+! marker for matching
+!FFAG.cellmatch: marker, superimpose, ref = FB.BEN02
+
+
+! Linac
+LA.fakecavity: lcavity, L=1, rf_frequency=1.3e9, voltage = 70e6
+!LA: line[multipass] = (LA.fakecavity)
+call, file = ../la/la.bmad
+call, file = ../la/la.X.bmad
+
+
+
+
+LA.match1: match, match_end = T
+LA.match1[beta_a1] = 12.5
+LA.match1[beta_b1] = 12.5
+LA.match1[alpha_a1] = -1
+LA.match1[alpha_b1] = -1
+LA.match2: LA.match1, alpha_a1=1, alpha_b1=1
+LA.match3: LA.match1, alpha_a1=1, alpha_b1=1
+LA.match4: LA.match1, alpha_a1=1, alpha_b1=1
+
+LA.match0: match, match_end=T, match_end_orbit = T, beta_a1=12.5, beta_b1=12.5, alpha_a1=1, alpha_b1=1
+LA.match0[x1] = 0
+LA.match0[px1] = 0
+LA.match0[y1] = 0
+LA.match0[py1] = 0
+LA.match0[z1] = 0
+LA.match0[pz1] = 0
+
+
+! Time patches
+return1.time_patch: patch
+return2.time_patch: patch
+return3.time_patch: patch
+return4.time_patch: patch
+
+! recirculate patches
+r0: patch
+RETURN1: patch
+RETURN2: patch
+RETURN3: patch
+RETURN4: patch
+
+! from the full model
+Mar.BEG: marker
+Mar.END: marker
+recirculate: floor_shift, origin_ele = Mar.BEG
+recirculate[x_offset] =  -3.67532019E+00
+recirculate[z_offset] =  -1.09580651E+01
+recirculate[x_pitch] =  -5.41052068E+00
+
+
+magic: match, beta_a1 = 1, beta_b1 = 1, match_end = T
+
+!r3_dummy: pipe, L = 2
+!r4_dummy: pipe, L = 2
+
+
+!lat: line = (Mar.BEG,
+!!LA.match0, 
+!magic,
+!LA, LA.match1,
+!R1,  pEref.1, FA.short, 1*fa.cell03, pErefReverse.1,
+!RETURN1, recirculate, LA.match0,  LA, 
+!R2, pEref.2, FA.short, 1*fa.cell03, pErefReverse.2,
+!RETURN2, recirculate, LA.match0,  LA,
+!R3, pEref.3, FA.short, 1*fa.cell03, pErefReverse.3,
+!RETURN3, recirculate, LA.match0,  LA,
+!R4, pEref.4, FA.short, 1*fa.cell03, pErefReverse.4,
+!Mar.END)
+!
+
+lat: line = (in.merge.part1, IN.MERGE.part2, Mar.BEG,
+LA,
+recirculate,
+FB.match1, FB.short,
+
+R1,
+R1_connect, IN.MERGE.part2, return1.time_patch, 
+LA, recirculate,
+
+RETURN2, FB.match2, FB.short, 
+R2,
+R1_connect, IN.MERGE.part2, return2.time_patch, 
+LA, recirculate,
+  
+FB.match3, FB.short, 
+R3,
+R1_connect, IN.MERGE.part2, return3.time_patch, 
+LA, recirculate,
+
+FB.match4, FB.short,
+R4,
+R1_connect, IN.MERGE.part2, return4.time_patch, 
+LA, recirculate,
+  
+Mar.END)
+
+
+! Start of FB cell (reversed FA cell)
+! from reverse_beam_start1.bmad
+FB.MATCH1[X1]       =  -0.0225994599  
+FB.MATCH1[PX1]      =   0.0931077876
+FB.MATCH1[beta_a1]  =    0.6518688279
+FB.MATCH1[alpha_a1] =   3.3381379602
+FB.MATCH1[beta_b1]  =  0.1575382991
+FB.MATCH1[alpha_b1] =  -1.1160906634
+FB.MATCH1[eta_x1]   =    -0.0024409855
+FB.MATCH1[etap_x1]  =     -0.0670949519
+
+
+  
+! from reverse_beam_start2.bmad
+FB.MATCH2[x1]       =     -0.0174593268
+FB.MATCH2[px1]      = 0.0449457612
+FB.MATCH2[beta_a1]  =    0.5578449924   
+FB.MATCH2[alpha_a1] =    1.3655462243
+FB.MATCH2[beta_b1]  =    0.4587893423  
+FB.MATCH2[alpha_b1] =   -1.1744299679
+FB.MATCH2[eta_x1]   =    0.0249870868  
+FB.MATCH2[etap_x1]  =    -0.0889259265
+
+! from reverse_beam_start3.bmad
+FB.MATCH3[x1]       =    -0.0007008649
+FB.MATCH3[px1]      =     0.0084010848
+FB.MATCH3[beta_a1]  =     0.6962090738  
+FB.MATCH3[alpha_a1] =     1.1392470940
+FB.MATCH3[beta_b1]  =     0.9532733061 
+FB.MATCH3[alpha_b1] =   -1.5793860700
+FB.MATCH3[eta_x1]   =    0.0677376979  
+FB.MATCH3[etap_x1]  =  -0.1031719271 
+
+! from reverse_beam_start4.bmad
+FB.MATCH4[x1]       =      0.0237035621
+FB.MATCH4[px1]      =  -0.0203099651
+FB.MATCH4[beta_a1]  =    0.8004683435
+FB.MATCH4[alpha_a1] =   1.0064331337   
+FB.MATCH4[beta_b1]  =   1.5847729622
+FB.MATCH4[alpha_b1] =   -1.9344035439
+FB.MATCH4[eta_x1]   =   0.1101487224
+FB.MATCH4[etap_x1]  =   -0.1027397117
+
+
+ 
+ 
+
+call, file = r1.quads.bmad
+call, file = r1.X.bmad
+
+!call, file = r1.R.bmad
+
+call, file = r2.quads.bmad 
+call, file = r2.X.bmad
+call, file = r3.quads.bmad
+call, file = r3.X.bmad
+call, file = r4.quads.bmad 
+call, file = r4.X.bmad  
+
+*[ds_step] = .01
+
+!beginning[theta_position] = -15*pi/180 
+use,  lat
+
+
+
+
+
+

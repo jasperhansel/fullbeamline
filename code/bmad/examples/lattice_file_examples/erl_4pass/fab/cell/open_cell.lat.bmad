@@ -1,0 +1,59 @@
+parameter[absolute_time_tracking] = T
+parameter[geometry] = open
+parameter[particle] = electron
+
+
+beginning[theta_position] = 4.5*pi/180
+
+call, file = beam_start5.bmad
+
+
+
+call, file = cell.bmad
+call, file = cell.use_fields.bmad
+
+
+! FA without reverse merge or align patch
+call, file = ../fab.bmad
+
+
+FA.Qua01[field_overlaps] = {FA.Pip00b, FA.Pip01, FA.Qua02}
+FA.Qua02[field_overlaps] = {FA.Qua01, FA.Pip01, FA.Pip02a, FA.Pip02b}
+FA.Qua03[field_overlaps] = {FA.Pip02a, FA.Pip02b, FA.Pip03, FA.Qua04}
+FA.Qua04[field_overlaps] = {FA.Qua03, FA.Pip03, FA.Pip04a, FA.Pip04b}
+FA.Qua05[field_overlaps] = {FA.Pip04a, FA.Pip04b, FA.Pip05, FA.Qua06}
+FA.Qua06[field_overlaps] = {FA.Qua05, FA.Pip05, FA.Pip06a}
+
+
+Mar.BEG: marker
+Mar.END: marker
+FF.wall_radius = 32e-3
+Mar.BEG[wall] = {
+section = {s = 0,            v(1) = {0, 0, FF.wall_radius}}}
+Mar.END[wall] = Mar.BEG[wall]
+
+FA.Qua01[wall] = Mar.BEG[wall]
+FA.Qua02[wall] = Mar.BEG[wall]
+FA.Qua03[wall] = Mar.BEG[wall]
+FA.Qua04[wall] = Mar.BEG[wall]
+FA.Qua05[wall] = Mar.BEG[wall]
+FA.Qua06[wall] = Mar.BEG[wall]
+
+
+
+FA.Mar.BEG2: marker
+FA.Mar.END2: marker
+
+cell1: line = (FA.cell01)
+cell2: line = (FA.Mar.BEG2, FA.cell02, FA.Mar.END2)
+cell3: line = (FA.cell03)
+
+parameter[geometry] = closed
+beginning[theta_position] = 0
+F1: fiducial, origin_ele = FA.Mar.BEG2
+F2: fiducial, origin_ele = FA.Mar.END2
+A: line = (cell1, F1)
+B: line = (cell2)
+C: line = (F2, cell3)
+
+use, B, A, C

@@ -1,0 +1,72 @@
+
+BEGINNING[BETA_A]  = 5
+BEGINNING[ALPHA_A]=  1
+BEGINNING[BETA_B] = 5
+BEGINNING[ALPHA_B] = 1
+
+parameter[geometry] = open
+PARAMETER[particle] = electron
+
+parameter[e_tot] = 6e6
+
+
+! ZA
+call, file = ../fab/cell/cell.bmad
+call, file = za.bmad
+!call, file = fa.X.bmad
+!call, file = fa.overlays.bmad
+!call, file = fa.bpms.bmad
+
+!*[tracking_method] = symp_lie_ptc
+!*[mat6_calc_method] = symp_lie_ptc
+
+!*[tracking_method] = time_runge_kutta
+!*[mat6_calc_method] = tracking
+
+*[ds_step] = .01
+
+Mar.BEG: marker
+Mar.END: marker
+
+
+!call, file = za.X.bmad
+!call, file = zb.X.bmad
+
+!call, file = simple_stretch.bmad
+
+!call, file = cell/beam_start1.bmad
+lat: line = (Mar.BEG,
+  ZA,
+  ZB,
+  Mar.END)
+
+
+Mar.MID: marker, superimpose, ref = ZA.QUA99
+
+!call, file = test_za.bmad
+
+test_lat: line = (Mar.BEG,
+  !FF.PIP0B,
+  ZA.CELL01,
+  !ZA.CELL02,
+  !ZA.CELL03,
+  !ZA.CELL04,
+  !ZA.CELL05,
+  !ZA.CELL06,
+  !ZA.CELL07,
+  !ZA.CELL08,
+  !ZA.CELL09,
+  !ZA.CELL10,
+  !d1,
+  !Mar.MID,
+  ZA.Qua99,
+  -zb.straight_cells,
+Mar.END)
+
+!ZA.PIP01[L] =   6.67029552459987E-02
+!ZA.PIP02[L] =   1.19416184256106E-01
+
+use, lat
+!use, test_lat
+
+

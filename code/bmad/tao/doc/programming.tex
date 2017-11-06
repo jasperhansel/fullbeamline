@@ -1,0 +1,107 @@
+\chapter{Programming Tao}
+\index{programming}
+\label{c:programming}
+
+This chapter gives an overview of the coding structure of Tao.
+Knowledge of this structure is needed in order to create custom
+versions of \tao. See Chapter \sref{c:custom.tao} for details of
+how to create custom versions.
+
+%-----------------------------------------------------------------
+\section{Overview}
+\index{programming!overview}
+
+The \tao code files are stored in the following directories:
+\begin{example}
+  tao/code
+  tao/hooks
+  tao/program
+\end{example}
+Here \vn{tao} is the root directory of \tao. Ask your local guru
+where to find this directory.
+
+The files in \vn{tao/code} should not be modified when creating
+custom versions of \tao. The files in \vn{tao/hooks}, as
+explained in Chapter \sref{c:custom.tao}, are templates used
+for customization. Finally, the directory \vn{tao/program} holds
+the program file \vn{tao_program.f90}.
+
+The structures used by tao are defined in the file \vn{tao_struct.f90}.
+All \tao structures begin with the prefix \vn{tao_} so any structure
+encountered that does not begin with \vn{tao_} must be defined in some other library
+
+%-----------------------------------------------------------------
+\section{tao_super_universe_struct}
+\index{tao_super_universe_struct}
+
+The "root" structure in \tao is the \vn{tao_super_universe_struct}. 
+The definition of this structure is:
+\begin{example}
+  type tao_super_universe_struct
+    type (tao_global_struct) global                      ! Global variables.
+    type (tao_common_struct) :: com                      ! Global variables
+    type (tao_plotting_struct) :: plotting               ! Plot parameters.
+    type (tao_v1_var_struct), allocatable :: v1_var(:)   ! V1 Variable array
+    type (tao_var_struct), allocatable :: var(:)         ! Array of all variables.
+    type (tao_universe_struct), allocatable :: u(:)      ! Array of universes.
+    type (tao_mpi_struct) mpi
+    integer, allocatable :: key(:)
+    type (tao_building_wall_struct) :: building_wall
+    type (tao_wave_struct) :: wave 
+    integer n_var_used
+    integer n_v1_var_used
+    type (tao_cmd_history_struct) :: history(1000)        ! command history
+  end type
+\end{example}
+An instance of this structure called \vn{s} is defined in \vn{tao_struct.f90}:
+\begin{example}
+  type (tao_super_universe_struct), save, target :: s
+\end{example}
+This \vn{s} variable is common to all of \tao's routines and serves as a giant common block for \tao.
+
+The components of the \vn{tao_super_universe_struct} are:
+  \begin{description}
+  \index{tao_global_struct}
+  \item[\%global] \Newline
+The \vn{%global} component contains global variables that a user can set
+in an initialization file.
+See \sref{s:globals} for more details.
+  \index{tao_common_struct}
+  \item[\%com] \Newline
+The \vn{%com} component is for global variables that are not directly
+user accessible.
+  \index{tao_plotting_struct}
+  \item[\%plot_page] \Newline
+The \vn{%plot_page} component holds parameters used in plotting.
+  \index{tao_v1_var_struct}
+  \item[\%v1_var(:)] \Newline
+The \vn{%v1_var(:)} component is an array of all the \vn{v1_var} blocks
+(\sref{c:var}) that the user has defined. The range of valid blocks
+goes from 1 to \vn{%n_v1_var_used}.
+  \index{tao_var_struct}
+  \item[\%var(:)]
+The \vn{%var(:)} array holds a list of all variables (\sref{c:var})
+that the user has defined. The range of valid variables goes from
+1 to \vn{n_var_used}.
+  \index{tao_universe_struct}
+  \item[\%u(:)] \Newline
+The \vn{%u(:)} component is an array of universes (\sref{s:universe}).
+  \index{tao_mpi_struct}
+  \item[\%mpi] \Newline
+The \vn{%mpi} component holds parameters needed for parallel processing.
+  \item[\%key(:)] \Newline
+The \vn{%key(:)} component is an array of indexes used for key bindings 
+(\sref{s:key.bind}). The value of \vn{%key(i)} is the index in the 
+\vn{%var(:)} array associated with the $i$\th key.
+  \index{tao_building_wall_struct}
+  \item[\%building_wall] \Newline
+The \vn{%building_wall} component holds parameters associated
+with a building wall (\sref{s:building.wall}).
+  \index{tao_wave_struct}
+  \item[\%wave] \Newline
+The \vn{%wave} component holds parameters needed for the wave analysis
+(\sref{c:wave}).
+  \end{description}
+  
+
+

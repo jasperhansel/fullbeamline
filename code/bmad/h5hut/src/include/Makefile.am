@@ -1,0 +1,3 @@
+
+SUBDIRS = h5core
+

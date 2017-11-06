@@ -1,0 +1,16 @@
+FA.BPM01: instrument, superimpose, ref = FA.Pip01
+FA.BPM02: instrument, superimpose, ref = FA.Pip03
+FA.BPM03: instrument, superimpose, ref = FA.Pip05
+FA.BPM04: instrument, superimpose, ref = FA.Pip07
+FA.BPM05: instrument, superimpose, ref = FA.Pip09
+FA.BPM06: instrument, superimpose, ref = FA.Pip11
+FA.BPM07: instrument, superimpose, ref = FA.Pip13
+FA.BPM08: instrument, superimpose, ref = FA.Pip15
+FA.BPM09: instrument, superimpose, ref = FA.Pip17
+FA.BPM10: instrument, superimpose, ref = FA.Pip19
+FA.BPM11: instrument, superimpose, ref = FA.Pip21
+FA.BPM12: instrument, superimpose, ref = FA.Pip23
+FA.BPM13: instrument, superimpose, ref = FA.Pip25
+FA.BPM14: instrument, superimpose, ref = FA.Pip27
+FA.BPM15: instrument, superimpose, ref = FA.Pip29
+FA.BPM16: instrument, superimpose, ref = FA.Pip31

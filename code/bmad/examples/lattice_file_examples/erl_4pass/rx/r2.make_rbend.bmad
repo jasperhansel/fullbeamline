@@ -1,0 +1,13 @@
+
+R2.Ben02[e1] = R2.Ben02[g]*R2.Ben02[L]/2
+R2.Ben02[e2] = R2.Ben02[g]*R2.Ben02[L]/2
+R2.Ben03[e1] = R2.Ben03[g]*R2.Ben03[L]/2
+R2.Ben03[e2] = R2.Ben03[g]*R2.Ben03[L]/2
+R2.Ben04[e1] = R2.Ben04[g]*R2.Ben04[L]/2
+R2.Ben04[e2] = R2.Ben04[g]*R2.Ben04[L]/2
+R2.Ben05[e1] = R2.Ben05[g]*R2.Ben05[L]/2
+R2.Ben05[e2] = R2.Ben05[g]*R2.Ben05[L]/2
+R2.Ben06[e1] = R2.Ben06[g]*R2.Ben06[L]/2
+R2.Ben06[e2] = R2.Ben06[g]*R2.Ben06[L]/2
+R2.Ben07[e1] = R2.Ben07[g]*R2.Ben07[L]/2
+R2.Ben07[e2] = R2.Ben07[g]*R2.Ben07[L]/2

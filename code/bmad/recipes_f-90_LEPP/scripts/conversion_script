@@ -1,0 +1,185 @@
+#!/usr/bin/perl
+#-*-perl-*-
+#
+# program to convert numerical recipes from
+# a single precision version to a toggable
+# single-double precision set up using pre-
+# processor conditionals. the conditionals
+# respond to the env variable CESR_F90_DOUBLE
+
+@obj_list=('badluk.f90', 'fredex.f90', 'sfroid.f90', 'sphfpt.f90', 'sphoot.f90', 'xlinbcg.f90');
+@exc_list=('shoot.f90', 'shootf.f90');
+@demo_inc=('xlinbcg.f90');
+
+get_recipes();
+convert_and_distribute();
+clean_up();
+
+#------------------------------------------------------------------------------
+
+sub clean_up
+ {system("rm -fr recipes_f-90");
+  system("rm -fr temp.out");
+ }
+
+sub get_recipes
+ {
+  system("cvs checkout recipes_f-90");
+  system("mkdir recipes_f-90_LEPP");
+  system("mkdir recipes_f-90_LEPP/lib_src");
+  system("mkdir recipes_f-90_LEPP/obj_src");
+  system("mkdir recipes_f-90_LEPP/scripts");
+  system("cp -p conversion_script recipes_f-90_LEPP/scripts");
+ }
+
+sub convert_and_distribute
+ {
+  chdir("./recipes_f-90/demo/src");
+  foreach $file (@demo_inc)
+   {system("cp $file ../../recipes");}
+  chdir("../../recipes");  
+  foreach $file (@exc_list)
+   {
+    if(-e $file)
+     {system("rm $file");}
+   }
+  foreach $file (@obj_list)
+   {
+    if(-e $file)
+     {
+      convert_file($file);
+      system("mv temp.out ../../recipes_f-90_LEPP/obj_src/$file");
+      system("rm $file");
+     }
+   } 
+  while($file=<./*>)
+   {
+    convert_file($file);
+    system("mv temp.out ../../recipes_f-90_LEPP/lib_src/$file");    
+   }
+  chdir("../..");
+ }
+
+#------------------------------------------------------
+# convert to double routine.
+# program/end program and module/end module statements must be outside the #if defined.
+
+sub convert_file {
+
+  $file_name=$_[0];
+  print "Converting $file_name\n";
+  open (F_in, $file_name) || die ("cannot open file");
+  open (F_out, ">temp.out");
+
+  $in_if = 0;
+  @list = ();
+
+
+  loop: while(<F_in>) {
+
+# check for program or module lines
+# delete from module procedure any double precision routines.
+# geop_dv is an exception since for some strange reason there is no geop_rv.
+
+    if ($procedure_here || /^\s*module procedure/i) {
+      @list = (@list, $_);
+      s/,[^,]*_ddv([,\s])/$1/i;
+      if (/,[^,]*_dv([,\s])/i && ! /geop_dv/i) {s/,[^,]*_dv([,\s])/$1/i;}
+      s/,[^,]*_dd([,\s])/$1/i;
+      s/,[^,]*_d([,\s])/$1/i;
+      s/,[^,]*_zv([,\s])/$1/i;
+      s/,[^,]*_zm([,\s])/$1/i;
+      s/,[^,]*_z([,\s])/$1/i;
+      if (/&\w*$/) {
+        $procedure_here = 1;
+      } else {
+        $procedure_here = 0;
+      }
+
+    } elsif (/^\s*program/i || /^\s*end\s*program/i || 
+          /^\s*module/i || /^\s*end\s*module/i) {
+      if ($in_if) {else_out();}
+      print F_out;
+      next loop;
+
+    } elsif (/^\s$/ && !$in_if) {
+      print F_out;
+      next loop;
+
+    } else {
+      if (!$in_if) {print F_out ("#if defined(CESR_F90_DOUBLE)\n");}
+      $in_if = 1;
+      @list = (@list, $_);
+    }
+
+# remove sp and spc parameter defs
+
+    if (/parameter :: sp/i) {next;}
+
+# remove all type and subroutine parts whose name ends with _dp
+
+    if (/^\s*type *\w*_dp/i) {         # match to: "type xxxx_dp"
+      while (<F_in>) {
+        @list = (@list, $_);
+        if (/^\s*end type/i) {next loop;}
+      }
+    }
+
+    if (/^\s*function *\w*_dp/i) {         # match to: "type xxxx_dp"
+      while (<F_in>) {
+        @list = (@list, $_);
+        if (/^\s*end function/i) {next loop;}
+      }
+    }
+
+    if (/^\s*subroutine *\w*_dp/i) {   # match to: "subroutine xxxx_dp"
+      while (<F_in>) {
+        @list = (@list, $_);
+        if (/^\s*end subroutine/i) {next loop;}
+      }
+    }
+
+# convert single to double
+
+    s/_spc/_dpc/gi;
+    s/\(spc\)/\(dpc\)/gi;
+		s/ spc / dpc /gi;
+		s/ spc\)/ dpc\)/gi;
+		s/,spc\)/,dpc\)/gi;
+    s/=spc\)/=dpc\)/gi; 
+
+    s/_sp/_dp/gi;         # _sp               -> _dp
+    s/\(sp\)/\(dp\)/gi;   # (sp)              -> (dp)
+		s/ sp / dp /gi;       # <space>sp<space>  -> <space>dp<space>
+		s/ sp\)/ dp\)/gi;     # <space>sp)        -> <space>dp)
+		s/,sp\)/,dp\)/gi;     # ,sp)              -> ,dp)
+    s/=sp\)/=dp\)/gi;     # =sp)              -> =sp)
+
+    print (F_out);
+
+  }
+
+# straightforward transfer
+
+  if ($in_if) {else_out();}
+
+  close (F_in);
+  close (F_out);
+
+}
+
+#------------------------------------------------------
+
+sub else_out {
+  print F_out ("#else\n");
+
+  foreach $string (@list) {
+    print F_out ($string);
+  }
+
+  print F_out ("#endif\n");
+  $in_if = 0;
+  @list = ();
+
+}
+#

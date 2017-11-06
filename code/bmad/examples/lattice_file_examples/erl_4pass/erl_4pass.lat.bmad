@@ -1,0 +1,188 @@
+
+parameter[lattice]  = "CBETA 4-pass"
+
+BEGINNING[BETA_A]  = 40
+BEGINNING[ALPHA_A]=  1
+BEGINNING[BETA_B] = 40
+BEGINNING[ALPHA_B] = 1
+
+
+BEGINNING[BETA_A] =   3.42951568804910E-01
+BEGINNING[ALPHA_A] =   7.23214431958691E-01
+BEGINNING[BETA_B] =   1.00043835761851E+00
+BEGINNING[ALPHA_B] =   1.88421450045897E-01
+
+parameter[geometry] = open
+
+PARAMETER[particle] = Electron
+
+parameter[absolute_time_tracking] = T
+
+!beginning[z_position] = 3.048  +  9*0.0254*cos(15*pi/180) + 8.758964*cos(15*pi/180)
+!beginning[x_position] = 15.240  + 9*0.0254*sin(-15*pi/180)  + 8.758964*sin(-15*pi/180)
+!beginning[theta_position] = -15*pi/180
+!beginning[s] = 8.758964  ! IN.Merge.Mar.BEG location
+!call, file = in/merge/in.merge.bmad
+!IN.merge.Qua01[k1] = 3.939
+!IN.merge.Qua02[k1] = 3.939
+!parameter[e_tot] = 6e6
+
+! Starting at the gun
+BEGINNING[BETA_A] =   2.73763181311022E+02
+BEGINNING[ALPHA_A] =  -5.00604463143621E+01
+BEGINNING[BETA_B] =   3.32351919314653E+00
+BEGINNING[ALPHA_B] =   1.55502906625488E+00
+parameter[p0c] = 0 
+call, file = in/in.bmad
+call, file = in/in.X.bmad
+beginning[z_position] =  3.048      +  9*0.0254*cos(15*pi/180)
+beginning[x_position] =  15.240     + 9*0.0254*sin(-15*pi/180)
+beginning[theta_position] = -15*pi/180
+
+
+! Main call
+call, file = erl/erl.bmad
+
+
+MAGIC[BETA_A1] =   1.41372596966258E+00
+MAGIC[ALPHA_A1] =   3.06916938531451E-01
+MAGIC[BETA_B1] =   1.21149171195480E+01
+MAGIC[ALPHA_B1] =   4.20450441543630E+00
+MAGIC[ETA_X1] =  -2.92404085150848E-03
+MAGIC[ETAP_X1] =   2.06433039932732E-03
+
+
+call, file = sx/s1.quads.bmad
+call, file = sx/s2.quads.bmad
+call, file = sx/s3.quads.bmad
+call, file = sx/s4.quads.bmad
+call, file = sx/s1.X.bmad
+call, file = sx/s2.X.bmad
+call, file = sx/s3.X.bmad
+call, file = sx/s4.X.bmad
+
+call, file = sx/s1.bpms.bmad
+call, file = sx/s2.bpms.bmad
+call, file = sx/s3.bpms.bmad
+call, file = sx/s4.bpms.bmad
+
+call, file = rx/r1.quads.bmad
+call, file = rx/r2.quads.bmad
+call, file = rx/r3.quads.bmad
+call, file = rx/r4.quads.bmad
+call, file = rx/r1.X.bmad
+call, file = rx/r2.X.bmad
+call, file = rx/r3.X.bmad
+call, file = rx/r4.X.bmad
+
+call, file = rx/r1.bpms.bmad
+call, file = rx/r2.bpms.bmad
+call, file = rx/r3.bpms.bmad
+call, file = rx/r4.bpms.bmad
+
+call, file = za/za.X.bmad
+call, file = za/zb.X.bmad
+
+!call, file = sx/sx.bpms.bmad
+!call, file = rx/rx.bpms.bmad
+
+call, file = fab/fa.bpms.bmad
+call, file = fab/fb.bpms.bmad
+call, file = fab/ta.bpms.bmad
+call, file = fab/tb.bpms.bmad
+call, file = za/za.bpms.bmad
+call, file = za/zb.bpms.bmad  
+
+
+ 
+
+
+
+
+
+! Timing
+RETURN1.TIME_PATCH[T_OFFSET] =   7.04818233710873E-11
+RETURN2.TIME_PATCH[T_OFFSET] =  -8.33995728963809E-11
+RETURN3.TIME_PATCH[T_OFFSET] =   1.68760778394731E-10
+RETURN4.TIME_PATCH[T_OFFSET] =   5.88943801540316E-10
+RETURN5.TIME_PATCH[T_OFFSET] =   1.68760778393782E-10
+RETURN6.TIME_PATCH[T_OFFSET] =  -8.33990743088676E-11
+RETURN7.TIME_PATCH[T_OFFSET] =   7.03946359394300E-11
+
+! Fine orbit alignment 
+! Pass 1 
+FB.QUA31[BL_HKICK] =   4.15978388895147E-06
+FB.QUA29[BL_HKICK] =  -1.00089763798903E-06
+
+FB.QUA31[BL_HKICK] =   5.81801056173201E-06
+FB.QUA29[BL_HKICK] =  -3.14892437147606E-07
+FB.QUA27[BL_HKICK] =  -4.51295091833500E-07
+FB.QUA25[BL_HKICK] =  -1.74641296863166E-06
+FB.QUA23[BL_HKICK] =  -2.21928809435112E-07
+
+FB.QUA31[BL_HKICK] =   4.33678874027654E-06
+FB.QUA29[BL_HKICK] =  -3.65520522361199E-06
+FB.QUA27[BL_HKICK] =  -6.02077014914686E-06
+FB.QUA25[BL_HKICK] =  -3.64387807177182E-06
+FB.QUA23[BL_HKICK] =   3.00672102469831E-06
+FB.QUA21[BL_HKICK] =   5.19331356920801E-06
+FB.QUA19[BL_HKICK] =   6.05531502072840E-06
+FB.QUA17[BL_HKICK] =   5.61560213295476E-06
+FB.QUA15[BL_HKICK] =   4.62229053428185E-06
+FB.QUA13[BL_HKICK] =  -3.00187691853718E-07
+FB.QUA11[BL_HKICK] =  -4.20270244921156E-06
+FB.QUA09[BL_HKICK] =  -4.71388730704077E-06
+FB.QUA07[BL_HKICK] =  -3.16686619296713E-06
+
+FB.QUA32[BL_HKICK] =  -4.15582526009301E-07
+FB.QUA30[BL_HKICK] =   3.63168153521146E-08
+FB.QUA28[BL_HKICK] =   4.67853690057976E-07
+FB.QUA26[BL_HKICK] =   9.28288322367191E-07
+FB.QUA24[BL_HKICK] =   5.58408581765953E-07
+FB.QUA22[BL_HKICK] =   4.88342507537032E-09
+FB.QUA20[BL_HKICK] =  -3.22615286398533E-07
+FB.QUA18[BL_HKICK] =  -8.38582519839811E-07
+FB.QUA16[BL_HKICK] =  -1.07244343470417E-06
+FB.QUA14[BL_HKICK] =  -7.52047066308602E-07
+FB.QUA12[BL_HKICK] =  -3.45169500589405E-07
+FB.QUA10[BL_HKICK] =   2.79433912307320E-07
+FB.QUA08[BL_HKICK] =   6.55672760355526E-07
+FB.QUA06[BL_HKICK] =   1.02495762263650E-06
+FB.QUA04[BL_HKICK] =   6.25291274033617E-07
+FB.QUA02[BL_HKICK] =   1.01867228562623E-07
+TB.QUA48[BL_HKICK] =  -1.55407571260484E-07
+TB.QUA46[BL_HKICK] =  -7.81863595007622E-07
+TB.QUA44[BL_HKICK] =  -1.12135003077668E-06
+TB.QUA42[BL_HKICK] =  -8.05680823321502E-07
+TB.QUA40[BL_HKICK] =  -5.06958737782489E-07
+TB.QUA38[BL_HKICK] =   1.94854453888550E-07
+TB.QUA36[BL_HKICK] =   7.95091624544728E-07
+TB.QUA34[BL_HKICK] =   1.08770336324540E-06
+TB.QUA32[BL_HKICK] =   8.44062980491851E-07
+TB.QUA30[BL_HKICK] =   4.06462105175313E-07
+TB.QUA28[BL_HKICK] =  -2.88676631555431E-07
+TB.QUA26[BL_HKICK] =  -6.65027921103176E-07
+TB.QUA24[BL_HKICK] =  -8.71743016440226E-07
+TB.QUA22[BL_HKICK] =  -7.05670102183873E-07
+TB.QUA20[BL_HKICK] =  -3.39229149629656E-07
+TB.QUA18[BL_HKICK] =   1.29753462845082E-07
+TB.QUA16[BL_HKICK] =   7.90984815666834E-07
+TB.QUA14[BL_HKICK] =   9.12769685138117E-07
+TB.QUA12[BL_HKICK] =   7.53646312814046E-07
+TB.QUA10[BL_HKICK] =   3.30960680760625E-07
+TB.QUA08[BL_HKICK] =  -1.08394702402245E-07
+TB.QUA06[BL_HKICK] =  -5.71616838013664E-07
+TB.QUA04[BL_HKICK] =  -1.09824628083630E-06
+TB.QUA02[BL_HKICK] =  -7.53051072035512E-07
+
+! Clear some models
+!in.gun[descrip] = "3DMODEL=MK2_Gun/MK2_Gun_bare.blend"
+!in.crmod.tap02[descrip] = ""
+!LA.CRMOD.FLX01[descrip] = ""
+
+*[ds_step] = .01
+
+
+use, erl_4pass
+
+

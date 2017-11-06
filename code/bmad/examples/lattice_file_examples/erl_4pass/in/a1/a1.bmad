@@ -1,0 +1,84 @@
+!============ 
+!A1 section
+!============
+
+call, file = solenoid/in.solenoid.bmad
+
+
+
+!--- Solenoids
+in.a1.sol01: IN.SOLENOID, superimpose, ref = IN.Mar.BEG, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+
+in.a1.sol02: IN.SOLENOID, superimpose, ref = IN.Mar.BEG, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+
+
+!--- Buncher
+!Clipped wall (only the non-reentrant part)
+call, file = buncher/in.buncher.bmad
+
+in.a1.bun01: in.buncher, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+
+
+!--- Correctors
+
+in.a1.Cor01: KICKER, L = 0.047625, superimpose, ref = IN.Mar.BEG, field_master = T, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+!in.a1.COH01: Overlay = {in.a1.Cor01}, bl_hkick
+!in.a1.COV01: Overlay = {in.a1.Cor01}, bl_vkick
+
+in.a1.Cor02: KICKER, L = 0.117475, superimpose, ref = IN.Mar.BEG, field_master = T, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+!in.a1.COH02: Overlay = {in.a1.Cor02}, bl_hkick
+!in.a1.COV02: Overlay = {in.a1.Cor02}, bl_vkick
+
+in.a1.Cor03: KICKER, L = 0.117475 , superimpose, ref = IN.Mar.BEG, field_master = T, mat6_calc_method = tracking, tracking_method=time_runge_kutta
+!in.a1.COH03: Overlay = {in.a1.Cor03}, bl_hkick
+!in.a1.COV03: Overlay = {in.a1.Cor03}, bl_vkick
+
+!--- Markers
+IN.A1.Mar.BEG: MARKER
+IN.A1.Mar.END: MARKER
+
+!--- Pipes
+! Note: Buncher center is at 0.744835 m relative to the cathode face
+IN.A1.Pip01: PIPE, L = 0.6135 -.15 + 0.031335 !old: 0.6135 - 0.15
+IN.A1.Pip02: PIPE, L = 0.421338 !old: 1.2203 - 0.814
+
+
+IN.A1.Pip01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, 0.02600}},
+	section = { s = IN.A1.Pip01[L],
+	  v(1) = {0, 0, 0.02375}}}
+
+IN.A1.Pip02[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, 0.02375}},
+	section = { s = IN.A1.Pip02[L],
+	  v(1) = {0, 0, 0.02375}}}
+
+!--- Offsets
+
+
+in.a1.Cor01[offset] = .124474 + 0.031335
+in.a1.sol01[offset] = 0.306757+ 0.031335 !Note: This used to be 0.303
+in.a1.Cor02[offset] = .327061+ 0.031335
+
+in.a1.sol02[offset] = 1.129327 + 0.031335!Old: 1.128000
+in.a1.Cor03[offset] = 1.156997+ 0.031335
+
+!--- Aliases
+!in.a1.sol01[alias] = MA1SLA01
+!in.a1.sol02[alias] = MA1SLA02
+in.a1.bun01[alias] = RA1CTB01
+
+in.a1.Cor01[alias] = MA1CHA01_and_MA1CVA01  
+in.a1.Cor02[alias] = MA1CHB01_and_MA1CVB01
+in.a1.Cor03[alias] = MA1CHB02_and_MA1CVB02
+
+
+!--- Lines
+
+IN.A1: LINE = (IN.A1.Mar.BEG, 
+  IN.A1.Pip01, 
+  IN.A1.Bun01,
+  IN.A1.Pip02, 
+  IN.A1.Mar.END)

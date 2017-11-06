@@ -1,0 +1,57 @@
+\chapter{Python/GUI Interface}
+\index{python interface}
+\label{c:python}
+
+%--------------------------------------------------------------------------
+\section{Python Interface Via Pexpect}
+
+A python module, \vn{tao_pipe.py}, for interfacing \tao to \vn{Python}
+is provided in the \vn{tao/python} directory. 
+
+The \vn{tao_pipe} module uses the \vn{pexpect} module. The
+\vn{pexpect} module is a general purpose tool for interfacing
+Python with programs like \tao. If \vn{pexpect} is not present
+your system, it can be downloaded from
+\vn{http://www.noah.org/wiki/pexpect}. 
+
+Example:
+\begin{example}
+  >>> import tao_pipe                                       # import module
+  >>> p = tao_pipe.tao_io("../bin/tao -lat my_lat.bmad")    # init session
+  >>> p.cmd_in("show global")               # Command to Tao
+  >>> print(p.output)                       # print the output from Tao
+  >>> p.cmd("show global")                  # Like p.cmd_in() excepts prints the output too.
+\end{example}
+
+After each call to \vn{tao_io.cmd} and \vn{tao_io.cmd_in}, the
+\vn{tao_io.output} variable is set to the multiline output string
+returned by \tao. To chop this string into lines, use the splitlines()
+string method.
+
+\index{python}
+To get information from \tao into Python, the output from \tao,
+contained in \vn{tao_io.output}, needs to be parsed. For long term
+maintainability of python scripts, use the \vn{python} (\sref{s:python}) command 
+as opposed to the \vn{show} command . See the \vn{python} command for more details.
+
+%--------------------------------------------------------------------------
+\section{Tao Python command}
+
+
+
+
+%--------------------------------------------------------------------------
+\section{Plotting Issues}
+\label{s:gui.plot}
+
+When using \tao with a \vn{gui}, and when the \vn{gui} is doing the plotting, the \vn{-noplot}
+option (\sref{s:command.line}) should be used when starting \tao. The \vn{-noplot} option prevents
+\tao from opening a plotting window.
+
+Even though \tao is not displaying the plot page when the \vn{-noplot} option is used, \tao will
+still calculate the points needed for plotting curves for use by the \vn{gui}. In this case, a few
+points must be kept in mind: First the names of the default plot regions are simplified to be 'r1',
+'r2', etc. Use the \vn{show plot} command (\sref{s:show.plot}) to view a list. Second, to prevent
+unneeded computation, the \vn{visible} parameter of template plots that are placed (\sref{s:place})
+is set to False and must be set to True, using the \vn{set plot} command (\sref{s:set.plot}), to
+enable computation of the curve points.

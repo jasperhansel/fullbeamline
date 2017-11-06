@@ -1,0 +1,42 @@
+
+BEGINNING[BETA_A]  = 5
+BEGINNING[ALPHA_A]=  1
+BEGINNING[BETA_B] = 5
+BEGINNING[ALPHA_B] = 1
+
+parameter[geometry] = open
+PARAMETER[particle] = electron
+
+parameter[e_tot] = 6e6
+
+
+! ZA
+call, file = ../fab/cell/cell.bmad
+call, file = scott_za.bmad
+
+
+
+
+Mar.BEG: marker
+Mar.END: marker
+
+
+
+
+lat: line = (Mar.BEG,
+  scott_ZA,
+
+  Mar.END)
+
+
+Mar.MID: marker, superimpose, ref = ZA.QUA99
+
+
+
+
+*[ds_step] = .01
+
+use, lat
+!use, test_lat
+
+

@@ -1,0 +1,9 @@
+
+R4.Ben01[e1] = R4.Ben01[g]*R4.Ben01[L]/2
+R4.Ben01[e2] = R4.Ben01[g]*R4.Ben01[L]/2
+R4.Ben02[e1] = R4.Ben02[g]*R4.Ben01[L]/2
+R4.Ben02[e2] = R4.Ben02[g]*R4.Ben01[L]/2
+R4.Ben03[e1] = R4.Ben03[g]*R4.Ben01[L]/2
+R4.Ben03[e2] = R4.Ben03[g]*R4.Ben01[L]/2
+R4.Ben04[e1] = R4.Ben04[g]*R4.Ben01[L]/2
+R4.Ben04[e2] = R4.Ben04[g]*R4.Ben01[L]/2

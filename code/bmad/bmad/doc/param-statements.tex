@@ -1,0 +1,466 @@
+\chapter{Lattice File Global Parameters}
+
+This chapter deals with statements that can be used to set ``global''
+parameter values. That is, parameter values that are associated with
+the lattice as a whole and not simply associated with a single element.
+
+%-----------------------------------------------------------------------------
+\section{Parameter Statements}
+\label{s:param}
+\index{parameter statement|hyperbf}
+
+
+\index{lattice}\index{geometry}\index{photon_type}\index{live_branch}
+\index{taylor_order}\index{e_tot}
+\index{p0c}\index{ran_seed}\index{absolute_time_tracking}
+\index{n_part}\index{no_end_marker}
+\index{ptc_exact_model}\index{ptc_exact_misalign}
+\vn{Parameter} statements are used to set a number of global variables.
+If multiple branches are present (\sref{s:branch.def}), these variables pertain
+to the \vn{root} branch. The variables that can be set by \vn{parameter} are
+\begin{example}
+  parameter[absolute_time_tracking]   = <Logical>  ! Absolute time used for RF clock?
+  parameter[custom_attributeN]        = <string>   ! Defining custom attributes (\sref{s:cust.att}).
+  parameter[default_tracking_species] = <Switch>   ! Default type of tracked particle. 
+                                                   !    Default is ref_particle.
+  parameter[e_tot]                    = <Real>     ! Reference total Energy. 
+                                                   !      Default: 1000 * rest_energy.
+  parameter[electric_dipole_moment]   = <Real>     ! Electric dipole moment of tracked particles.
+  parameter[live_branch]              = <Logical>  ! Is branch fit for tracking? See below.
+  parameter[geometry]                 = <Switch>   ! Open or closed
+  parameter[lattice]                  = <String>   ! Lattice name 
+  parameter[n_part]                   = <Real>     ! Number of particles in a bunch.
+  parameter[no_end_marker]            = <Logical>  ! Default: False.
+  parameter[p0c]                      = <Real>     ! Reference momentum.
+  parameter[particle]                 = <Switch>   ! Reference species: positron, proton, etc.
+  parameter[photon_type]              = <Switch>   ! Incoherent or coherent photons?
+  parameter[ptc_exact_model]          = <Logical>  ! PTC to do "exact" tracking?
+  parameter[ptc_exact_misalignment]   = <Logical>  ! PTC to "exactly" misalign elements?
+  parameter[ptc_max_fringe_order]     = <Integer>  ! Max fringe order. 
+                                                   !    Default: 2 => Quadrupole.
+  parameter[ran_seed]                 = <Integer>  ! Random number generator init.
+  parameter[taylor_order]             = <Integer>  ! Default: 3
+  parameter[use_hard_edge_drifts]     = <Logical>
+\end{example}
+
+\noindent
+Examples
+\begin{example}
+  parameter[lattice]      = "L9A19C501.FD93S_4S_15KG"
+  parameter[geometry]     = closed
+  parameter[taylor_order] = 5
+  parameter[E_tot]        = 5.6e9    ! eV
+\end{example}
+
+  \begin{description}
+  \index{absolute_time_tracking}\index{lcavity}\index{rfcavity}
+  \item[{parameter[absolute_time_tracking]}] \Newline
+The \vn{absolute_time_tracking} switch sets whether the clock for the \vn{lcavity} and
+\vn{rfcavity} elements is tied to the reference particle or to uses the absolute time
+(\sref{s:rf.time}). A value of \vn{False} (the default) mandates relative time and a value
+of \vn{True} mandates absolute time. The exception is that for an \vn{e_gun} element
+(\sref{s:e.gun}), absolute time tracking is always used in order to be able to avoid
+problems with a zero reference momentum at the beginning of the element.
+  \index{custom_attributeN}
+  \item[{parameter[custom_attributeN]}] \Newline
+For more information on defining custom attributes, see \sref{s:cust.att}.
+  \index{live_branch}
+  \item[{parameter[live_branch}] \Newline
+Setting \vn{live_branch} to \vn{False} (default is \vn{True}) indicates to a program that
+no tracking or other analysis of the root branch should be done. This can be useful if the
+lattice has multiple branches and analysis of the root branch is not necessary. Other
+branches can also be marked as alive/dead using line parameter statements
+(\sref{s:beginning}). Note that the \bmad library itself ignores the setting of
+\vn{live_branch} and it is up to the program being run to decide if this parameter is
+ignored or not. In particular, the \tao program (\sref{s:tao.intro}) {\em will} respect the
+setting of \vn{live_branch}.
+  \index{default_tracking_species}
+  \item[{parameter[default_tracking_species]}] \Newline
+The \vn{parameter[default_tracking_species]} switch establishes the
+default type of particles to be tracked. Possible setting include
+all the settings of \vn{parameter[particle]}. In addition, 
+this switch can be set to:
+\begin{example}
+  ref_particle     ! default
+  anti_ref_particle
+\end{example}
+By default, \vn{default_tracking_species} is set to \vn{ref_particle}
+so that the particle being tracked is the same as the reference
+particle set by \vn{param[particle]}. In the case, for example,
+where there are particles going one way and antiparticles going the another,
+\vn{default_tracking_species} can be used to switch between
+tracking the particles or antiparticles.
+  \index{e_tot}\index{p0c}
+  \index{lcavity}\index{patch}
+  \item[{parameter[e_tot], parameter[p0c]}] \Newline
+The \vn{parameter[e_tot]} and \vn{parameter[p0c]} are the reference
+total energy and momentum at the start of the lattice. Each element
+in a lattice has an individual reference \vn{e_tot} and \vn{p0c} attributes
+which are dependent parameters. The reference energy and momentum will only
+change between \vn{LCavity} or \vn{Patch} elements. The starting
+reference energy, if not set, will be set to 1000 time the particle
+rest energy.  Note: \vn{beginning[e_tot]} and \vn{beginning[p0c]} (\sref{s:beginning}) are
+equivalent to \vn{parameter[e_tot]} and \vn{parameter[p0c]}.
+  \index{electric_dipole_moment}
+  \item[{parameter[electric_dipole_moment]}] \Newline
+The \vn{electric_dipole_moment} sets the electric dipole moment value $\eta$ for use
+when tracking with spin (\sref{s:spin.dyn}). 
+  \index{geometry}\index{closed}\index{open}
+  \index{lcavity!and geometry}
+  \item[{parameter[geometry]}] \Newline
+Valid \vn{geometry} settings are
+\begin{example}
+  closed  ! Default w/o LCavity element present.
+  open    ! Default if LCavity elements present.
+\end{example}
+A machine with a \vn{closed} geometry is something like a storage ring
+where the particle beam recirculates through the machine.  A machine
+with an \vn{open} geometry is something like a linac.  In this case,
+the initial Twiss parameters need to be specified in the lattice
+file. If the \vn{geometry} is not specified, \vn{closed} is the
+default. The exception is that if there is an \vn{Lcavity} element
+present or the reference particle is a photon, \vn{open} will be the
+default.
+
+Notice that by specifying a \vn{closed} geometry it {\em does} not
+mean that the downstream end of the last element of the lattice has
+the same global coordinates (\sref{s:global}) as the global
+coordinates at the beginning. Setting the geometry to \vn{closed}
+simply signals to a program to compute closed orbits and periodic
+Twiss parameters as opposed to calculating orbits and Twiss parameters
+based upon initial orbit and Twiss parameters at the beginning of the
+lattice. And indeed, it is sometimes convenient to treat lattices as
+closed even though there is no closure in the global coordinate sense.
+
+Note: \vn{geometry} used to be called \vn{lattice_type}, \vn{closed}
+used to be called \vn{circular_lattice} and \vn{open} used to be
+called \vn{linear_lattice}.
+  \index{lattice}
+  \item[{parameter[lattice]}] \Newline
+Used to set the lattice name. The \vn{lattice} name is stored by \bmad
+for use by a program but it does not otherwise effect any \bmad
+routines.
+  \index{n_part}\index{beambeam}\index{lcavity}
+  \item[{parameter[n_part]}] \Newline
+The \vn{parameter[n_part]} is the number of particle in a bunch.
+it is used with \vn{BeamBeam} elements and is used to calculate the
+change in energy through an \vn{Lcavity}. See~\sref{s:lcav} for more
+details.
+  \index{no_end_marker}\index{end element}
+  \item[{parameter[no_end_marker]}] \Newline
+The \vn{parameter[no_end_marker]} is use to suppress the automatic inclusion
+of a marker named \vn{END} at the end of the lattice (\sref{s:branch.construct}). 
+  \item[{parameter[p0c]}] \Newline
+See \vn{parameter[e_tot]}.
+  \index{particle}
+  \index{positron}\index{electron}\index{proton}\index{antiproton}\index{photon}
+  \index{muon}\index{antimuon}\index{pion0}\index{pion-}\index{pion+}
+  \item[{parameter[particle]}] \Newline
+The \vn{parameter[particle]} switch sets the reference species. The possible settings for
+this attribute can be divided into four groups. One group are are fundamental
+particles. These are:
+\begin{example}
+  electron,  positron,
+  muon,      antimuon,
+  proton,    antiproton,
+  photon, 
+  pion+,      pion0,      pion-
+  deuteron
+\end{example}
+Names for the fundamental particles are {\em not} case sensitive.
+
+Another group are atoms. The general syntax for atoms is:
+\begin{example}
+  \{\#nnn\}AA\{ccc\}
+\end{example}
+The curly brackets \{...\} denote optional prefixes and suffixes. \vn{AA} here is the
+atomic symbol, \vn{\#nnn} is the number of nucleons, and \vn{ccc} is the charge. Examples:
+\begin{example}
+  parameter[particle] = \#12C+3       ! Triply charged carbon-12
+  parameter[particle] = He--          ! Doubly charged He.
+\end{example}
+If the number of nucleons is given, the appropriate weight for that isotope is used. If
+the number of nucleons is not present, the mass is an average weighted by the isotopic
+abundances of the element. The charge may be given by using the appropriate number of plus
+(+) or minus (-) signs or by using a plus or minus sign followed by a number. Thus
+``\vn{-{-}-}'' is equivalent to ``-3''. Names here are case sensitive. ``@M'' must be used
+and not ``@m'' for specifying the mass.
+
+Another group of particles are the ``known'' molecules. The syntax for these are:
+\begin{example}
+  BBB\{@Mmmmm\}\{ccc\}
+\end{example}
+\vn{@Mmmmm} is the mass in AMU, \vn{ccc} is the charge, and \vn{BBB} is the molecular
+formula. The mass may to specified to hundredths of an AMU. The known molecules are:
+\begin{example}
+CO       CO2      
+D2       D2O      
+OH       O2      
+H2       H2O      HF
+N2       NH2      NH3      
+CH2      CH3      CH4      
+C2H3     C2H4     C2H5
+\end{example}
+Like with atoms, if the mass is not specified, the average isotopic mass is used. Examples:
+\begin{example}
+  C2H3@M28.4+     ! Singly charged C2H3 with mass of 28.4
+  CH2             ! Neutral CH2
+\end{example}
+Like the atomic formulas, molecular formulas are case sensitive.
+
+The last group of particle are particles where only the mass and charge are specified.
+The syntax for these are:
+\begin{example}
+  @Mmmmm\{ccc\}
+\end{example}
+
+The setting of the reference particle is
+used, for example, to determine the direction of the field in a magnet
+and given the normalized field strength (EG: \vn{k1} for a
+quadrupole).  Generally, the particles that by default are tracked
+through a lattice are the same as the reference particle. This default
+behavior can be altered by setting
+\vn{parameter[default_tracking_species]}.
+
+  \index{photon_type}
+  \item[{parameter[photon_type]}] \Newline
+The \vn{photon_type} switch is used to set the type of photons that
+are used in tracking. Possible settings are:
+\begin{example}
+  incoherent    ! Default
+  coherent 
+\end{example}
+The general rule is use incoherent tracking except when there is a
+\vn{diffraction_plate} element in the lattice. 
+
+  \index{ptc_exact_model}\index{ptc_exact_misalign}
+  \item[{parameter[ptc_exact_model]}] \Newline
+The \vn{ptc_exact_model} and \vn{ptc_exact_misalign} switches affect
+tracking using the \vn{PTC} library. See \sref{s:integ} for more
+details.
+
+  \index{ptc_max_fringe_order}
+  \item[{parameter[ptc_max_fringe_order]}] \Newline
+When using PTC tracking (\sref{s:ptc.intro}), the
+\vn{parameter[ptc_max_fringe_order]} determines the maximum order of
+the calculated fringe fields. The default is 2 which means that fringe
+fields due to a quadrupolar field. These fields are 3\Rd order in the
+transverse coordinates.
+
+  \index{ran_seed}
+  \item[{parameter[ran_seed]}] \Newline
+For more information on \vn{parameter[ran_seed]} see \sref{s:functions}.
+
+  \index{taylor_order}
+  \item[{parameter[taylor_order]}] \Newline
+The Taylor order (\sref{s:taylor.phys}) is set by
+\vn{parameter[taylor_order]} and is the maximum order for a Taylor map.
+
+  \index{use_hard_edge_drifts}
+  \item[{parameter[use_hard_edge_drifts]}] \Newline
+The \vn{use_hard_edge_drifts} switch determines if a ``hard edge''
+model of certain elements is used. For example, if \vn{runge_kutta}
+tracking is used for an \vn{rfcavity} or \vn{lcavity} using a standing
+wave model then the cavity length should be a multiple of the RF
+wavelength/2. To achieve this, during tracking, the cavity length is
+appropriately modified and drifts are inserted at either ends of the
+cavity to keep the total length constant. Default is \vn{True}.
+
+  \end{description}
+
+%-----------------------------------------------------------------------------
+\section{Beam_Start Statements} 
+\label{s:beam.start}
+\index{beam_start statement|hyperbf}
+
+\index{e_gun}
+\index{x}\index{px}\index{y}\index{py}\index{z}\index{pz}
+\index{emittance_a}\index{emittance_b}\index{emittance_z}
+\index{field_x}\index{field_y}\index{phase_x}\index{phase_y}
+\index{spin_x}\index{spin_y}\index{spin_z}\index{spinor_theta}
+\index{spinor_phi}\index{spinor_xi}\index{spinor_polarization}
+\vn{Beam_start} statements are used, among other things to set the starting coordinates
+for particle tracking. If multiple branches are present (\sref{s:branch.def}), these
+variables pertain to the \vn{root} branch.
+\begin{example}
+  beam_start[x]                   = <Real>   ! Horizontal position.
+  beam_start[px]                  = <Real>   ! Horizontal momentum.
+  beam_start[y]                   = <Real>   ! Vertical position.
+  beam_start[py]                  = <Real>   ! Vertical momentum.
+  beam_start[z]                   = <Real>   ! Longitudinal position.
+  beam_start[pz]                  = <Real>   ! Momentum deviation. Only for non-photons.
+  beam_start[direction]           = +/-1     ! Longitudinal direction of travel.
+  beam_start[E_photon]            = <Real>   ! Energy (eV). Only used for photons.
+  beam_start[emittance_a]         = <Real>   ! A-mode emittance
+  beam_start[emittance_b]         = <Real>   ! B-mode emittance
+  beam_start[emittance_z]         = <Real>   ! Z-mode emittance
+  beam_start[sig_z]               = <Real>   ! Beam sigma in z-direction
+  beam_start[sig_e]               = <Real>   ! Sigma_E/E relative beam energy sigma.
+  beam_start[field_x]             = <Real>   ! Photon beam field along x-axis
+  beam_start[field_y]             = <Real>   ! Photon beam field along y-axis
+  beam_start[phase_x]             = <Real>   ! Photon beam phase along x-axis
+  beam_start[phase_y]             = <Real>   ! Photon beam phase along y-axis
+  beam_start[t]                   = <Real>   ! Absolute time
+  beam_start[spin_x]              = <Real>   ! Spin polarization x-coordinate
+  beam_start[spin_y]              = <Real>   ! Spin polarization y-coordinate
+  beam_start[spin_z]              = <Real>   ! Spin polarization z-coordinate
+  beam_start[spinor_polarization] = <Real>   ! Spin polarization
+  beam_start[spinor_theta]        = <Real>   ! Spin angle
+  beam_start[spinor_phi]          = <Real>   ! Spin angle
+  beam_start[spinor_xi]           = <Real>   ! Spin angle
+\end{example}
+Normally the absolute time, set by \vn{beam_start[t]}, is a dependent
+parameter set by solving \Eq{zbctt} for $t$. The exception is when the
+initial velocity is zero. (This can happen if there is an \vn{e_gun}
+(\sref{s:e.gun}) element in the lattice). In this case, $z$ must be
+zero and $t$ is an independent parameter that can be set.
+
+The longitudinal direction of travel is set by \vn{beam_start[direction]}.  This can be set
+to +1 (travel in the +s direction) or -1 for the reverse.  +1 is the default. Generally
+\vn{beam_start[direction]} should not be set to -1 since most programs will not be
+constructed to handle this situation. To track a particle in the reverse direction see
+\sref{s:reverse}. 
+
+For particles with spin, the spin can be specified in one of two ways:
+One way is to specify the $(x, y, z)$ spin components using
+\vn{spin_x}, \vn{spin_y}, and \vn{spin_z}. The second way is by
+specifying the polar angles and magnitude with \vn{spinor_theta},
+\vn{spinor_phi}, \vn{spinor_xi}, and \vn{spinor_polarization}. The
+relationship between the two spin representations is given by
+\Eq{pp1p2}. To prevent ambiguity, only one representation can can be
+used in lattice. The default is
+\begin{example}
+  spinor_polarization = 1
+  spinor_theta        = 0
+  spinor_phi          = 0
+  spinor_xi           = 0
+
+  spin_x              = 0
+  spin_y              = 0
+  spin_z              = 1
+\end{example}
+
+For photons, \vn{px}, \vn{py}, and \vn{pz} are the normalized velocity components
+(Cf.~\Eq{xbybzb}). For photons \vn{pz} is a dependent parameter which will be set
+so that \Eq{bbb1} is obeyed.
+
+
+Example
+\begin{example}
+  beam_start[y] = 2 * beam_start[x]
+\end{example}
+
+%-----------------------------------------------------------------------------
+\section{Beam Statement}
+\index{beam statement|hyperbf}
+
+\index{energy}
+\index{particle}
+\index{n_part}
+\index{MAD!beam statement}
+The \vn{beam} statement is provided for compatibility with \mad. The syntax is
+\begin{example}
+  beam, energy = GeV, pc = GeV, particle = <Switch>, n_part = <Real>
+\end{example}
+For example
+\index{MAD}
+\begin{example}
+  beam, energy = 5.6  ! Note: GeV to be compatible with \mad
+  beam, particle = electron, n_part = 1.6e10
+\end{example}
+Setting the reference energy using the \vn{energy} attribute is the
+same as using \vn{parameter[e_tot]}. Similarly, setting \vn{pc} is
+equivalent to setting \vn{parameter[p0c]}. Valid \vn{particle} switches
+are the same as \vn{parameter[particle]}.
+
+%--------------------------------------------------------------------------
+\section{Beginning and Line Parameter Statements}
+\label{s:beginning}
+\index{beginning statement|hyperbf}
+
+\index{beta_a}\index{alpha_a}
+\index{phi_a}\index{eta_x}
+\index{etap_x}\index{beta_b}
+\index{alpha_b}\index{phi_b}
+\index{eta_y}\index{etap_y}
+\index{cmat_ij}\index{e_tot}
+\index{p0c}\index{ref_time}
+For non--circular lattices, the \vn{beginning} statement can be used to
+set the Twiss parameters and beam energy at the beginning of the first lattice branch.
+\begin{example}
+  beginning[alpha_a]  = <Real>  ! "a" mode alpha
+  beginning[alpha_b]  = <Real>  ! "b" mode alpha
+  beginning[beta_a]   = <Real>  ! "a" mode beta
+  beginning[beta_b]   = <Real>  ! "b" mode beta
+  beginning[cmat_ij]  = <Real>  ! C coupling matrix. i, j = \{``1'', or ``2''\} 
+  beginning[e_tot]    = <Real>  ! Reference total energy in eV.
+  beginning[eta_x]    = <Real>  ! x-axis dispersion
+  beginning[eta_y]    = <Real>  ! y-axis dispersion
+  beginning[etap_x]   = <Real>  ! x-axis dispersion derivative.
+  beginning[etap_y]   = <Real>  ! y-axis dispersion derivative.
+  beginning[p0c]      = <Real>  ! Reference momentum in eV.
+  beginning[phi_a]    = <Real>  ! "a" mode phase.
+  beginning[phi_b]    = <Real>  ! "b" mode phase.
+  beginning[ref_time] = <Real>  ! Starting reference time.
+  beginning[s]        = <Real>  ! Longitudinal starting position.
+\end{example}
+\index{e_tot}
+The \vn{gamma_a}, \vn{gamma_b}, and \vn{gamma_c} (the coupling gamma
+factor) will be kept consistent with the values set. If not set the
+default values are all zero.  \vn{beginning[e_tot]} and
+\vn{parameter[e_tot]} are equivalent and one or the other may be
+set but not both. Similarly, \vn{beginning[p0c]} and
+\vn{parameter[p0c]} are equivalent.
+
+\index{x_position}\index{y_position}\index{z_position}
+\index{theta_position}\index{phi_position}\index{psi_position}
+For any lattice the \vn{beginning} statement can be used to set the
+starting floor position of the first lattice branch
+(see~\sref{s:global}). The syntax is
+\begin{example}
+  beginning[x_position]     = <Real>  ! X position
+  beginning[y_position]     = <Real>  ! Y position
+  beginning[z_position]     = <Real>  ! Z position
+  beginning[theta_position] = <Real>  ! Angle on floor
+  beginning[phi_position]   = <Real>  ! Angle of attack
+  beginning[psi_position]   = <Real>  ! Roll angle
+\end{example}
+If the floor position is not specified, the default is to place
+beginning element at the origin with all angles set to zero.
+
+\index{root branch}\index{branch}
+The \vn{beginning} statement is useful in situations where only parameters for
+the first branch need be specified. If this is not the case, the parameters for
+any branch can be specified using a statement of the form
+\begin{example}
+  line_name[parameter] = <Value>
+\end{example}
+This construct is called a \vn{line parameter} statement
+Here \vn{line_name} is the name of a line and \vn{parameter} is the
+name of a parameter. The parameters that can be set here are the same
+parameters that can be set with the \vn{beginning} statement with the additional
+parameters from the \vn{parameter} statement:
+\index{geometry}\index{particle}\index{default_tracking_species}
+\begin{example}
+  default_tracking_species
+  geometry
+  live_branch
+  particle
+\end{example}
+Example:
+\begin{example}
+  x_ray_fork: fork, to_line = x_ray
+  x_ray = (...)
+  x_ray[E_tot] = 100
+\end{example}
+
+Rules:
+  \begin{enumerate}
+  \item
+The floor position of a line can only be set if the line is used for a 
+\vn{root} \vn{branch}. 
+  \item
+Line parameters statements must come after the associated line. This
+rule is similar to the rule that element attribute redefinitions must
+come after the definition of the element.
+ \end{enumerate}

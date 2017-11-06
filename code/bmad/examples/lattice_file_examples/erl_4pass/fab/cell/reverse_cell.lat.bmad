@@ -1,0 +1,8 @@
+call, file = cell.lat.bmad
+
+call, file = reverse_beam_start1.bmad
+
+reverse_lat: LINE = (-FF.arc_cell)
+
+use, reverse_lat
+

@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Central Wrapper Scipt to run all Distribution User Utilities  
+
+#set -x
+
+# Check if the Distribution environment has been set
+[ -d "${DIST_BASE_DIR}" ] || echo -e '\nPlease first initalize the Distribution environment by typing: "source util/dist_source_me"\n'
+
+# Set Plotting package directory 
+[ "${ACC_PLOT_PACKAGE}" == "pgplot" ] && export ACC_PLOT_PACKAGE_DIR="PGPLOT" || ACC_PLOT_PACKAGE_DIR="${ACC_PLOT_PACKAGE}"
+
+# List of Project Directories - Order here matters!
+DIRLIST=( hdf5 h5hut ${ACC_PLOT_PACKAGE_DIR} xsif lapack gsl fgsl forest recipes_f-90_LEPP sim_utils xraylib bmad tao cpp_bmad_interface examples bsim util_programs regression_tests )
+
+# Build OpenMPI, if requested
+[ "${ACC_ENABLE_MPI}" == "Y" ] && DIRLIST=( openmpi ${DIRLIST[*]} )
+
+# General Distribution Build Function
+func_dist_build () { 
+
+    for DIR in "${DIRLIST[@]}"
+    do
+	cd ${DIST_BASE_DIR}/${DIR};
+	echo -e "\nBuilding directory: ${DIR}\n"
+	${MK_SCRIPT} -j ${ACC_SET_GMAKE_JOBS} ${1}
+	if ( [ ${?} != 0 ] ) then
+	    echo -e "\nError in distribution build.\n"
+	    exit 1
+	fi
+    done
+    
+    cd ${DIST_BASE_DIR}
+    
+    exit 0
+}
+
+# General Distribution Cleanup Function
+func_dist_clean () { 
+
+    cd ${DIST_BASE_DIR}/${DIRLIST[1]}
+    mk obliterate
+    mkd obliterate
+
+}
+
+# Check for the script requested 
+[ -z "${DIST_SCRIPT}" ] &&  DIST_SCRIPT=$(basename $0)
+
+# Perform the requested script
+case ${DIST_SCRIPT} in
+
+    dist_clean)
+	# Cleanup the distribution.
+	func_dist_clean
+        ;;
+
+    dist_build_debug)
+        # Build the debug version of the distribution.
+	MK_SCRIPT=${DIST_UTIL}/mkd
+	func_dist_build
+	;;
+
+    dist_build_production)
+        # Build the production version of the distribution.
+	MK_SCRIPT=${DIST_UTIL}/mk
+	func_dist_build
+	;;
+
+    dist_test_debug)
+        # Test the debug version of the distribution.
+	MK_SCRIPT=${DIST_UTIL}/mkd
+	func_dist_build test
+	;;
+
+    dist_test_production)
+        # Test the production version of the distribution.
+	MK_SCRIPT=${DIST_UTIL}/mk
+	func_dist_build test
+	;;
+
+    *)
+	;;
+esac

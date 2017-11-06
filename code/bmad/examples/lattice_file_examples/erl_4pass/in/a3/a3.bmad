@@ -1,0 +1,88 @@
+
+
+!IN.a3
+!Telescope section simplified from A3 definition
+
+IN.A3.Pip01.aperture = 0.034798/2
+IN.A3.Pip01: PIPE, L = 2.461 ! + 0.7 ! Extension for CBETA
+
+IN.A3.Pip01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A3.Pip01.aperture }},
+	section = { s = IN.A3.Pip01[L],
+	  v(1) = {0, 0, IN.A3.Pip01.aperture}}}
+
+IN.A3.qua01: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A3.Pip01, ref_origin=beginning, ele_origin=center
+IN.A3.qua02: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A3.Pip01, ref_origin=beginning, ele_origin=center
+IN.A3.qua03: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A3.Pip01, ref_origin=beginning, ele_origin=center
+IN.A3.qua04: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A3.Pip01, ref_origin=beginning, ele_origin=center
+
+
+
+IN.A3.Ben01.aperture = 0.034798/2
+IN.A3.Ben01.Pad01: PIPE, L = 0.088, aperture = IN.A3.Ben01.aperture
+IN.A3.Ben01:       RBEND, L = 0.254, aperture = IN.A3.Ben01.aperture
+IN.A3.Ben01_off:   RBEND, L = 0.254, aperture = IN.A3.Ben01.aperture, angle = 0.00001*pi/180
+IN.A3.Ben01.Pad02: PIPE, L = 0.088, aperture = IN.A3.Ben01.aperture
+
+IN.A3.Ben01.Pad01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A3.Ben01.Pad01[aperture]}},
+	section = { s = IN.A3.Ben01.Pad01[L],
+	  v(1) = {0, 0, IN.A3.Ben01.Pad01[aperture]}}}
+
+IN.A3.Ben01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A3.Ben01[aperture]}},
+	section = { s = IN.A3.Ben01[L],
+	  v(1) = {0, 0, IN.A3.Ben01[aperture]}}}
+
+IN.A3.Ben01_off[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A3.Ben01_off[aperture]}},
+	section = { s = IN.A3.Ben01_off[L],
+	  v(1) = {0, 0, IN.A3.Ben01_off[aperture]}}}
+
+IN.A3.Ben01.Pad02[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A3.Ben01.Pad02[aperture]}},
+	section = { s = IN.A3.Ben01.Pad02[L],
+	  v(1) = {0, 0, IN.A3.Ben01.Pad02[aperture]}}}
+
+
+!--- Offsets
+!IN.A3.Mar.Beg is at s = 6.25209 m
+! GPT centers of quads are at:
+!   ZMA3QUA01 = 6.542
+!   ZMA3QUA02 = 7.142
+!   ZMA3QUA03 = 7.742
+!   ZMA3QUA04 = 8.342
+
+
+
+IN.A3.qua01[offset] = 0.28991 !old: 1.2015
+IN.A3.qua02[offset] = 0.88991 !1.8015
+IN.A3.qua03[offset] = 1.48991 !2.4015
+IN.A3.qua04[offset] = 2.08991 !3.0015
+
+
+!--- Aliases
+IN.A3.Qua01[alias] = MA3QUA01
+IN.A3.Qua02[alias] = MA3QUA02
+IN.A3.Qua03[alias] = MA3QUA03
+IN.A3.Qua04[alias] = MA3QUA04
+
+IN.A3.Ben01[alias] = MA3DPA01
+
+!--- Markers
+in.A3.Mar.BEG: Marker
+in.A3.Mar.END: Marker
+
+
+!--- Line
+in.A3: LINE = (IN.A3.Mar.BEG, &
+   	       IN.A3.Pip01,
+  IN.A3.Ben01.Pad01,
+  IN.A3.Ben01_off,
+  IN.A3.Ben01.Pad02,
+	       IN.A3.Mar.END)

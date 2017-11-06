@@ -1,0 +1,487 @@
+
+
+!- - - S1 - - - 
+S1.Ben01.angle = 5.6669016E-01
+S1.Ben01.L = 0.3 * S1.Ben01.angle/sin(S1.Ben01.angle) ! To make projected length 
+S1.Ben01: SBEND, L = S1.Ben01.L,
+  fringe_type = full, 
+  e2 = S1.Ben01.angle
+S1.BEN01[G] =   1.78947513091389E+00
+
+
+S1.Ben08.angle = (30) * pi/180
+S1.Ben08.L = 0.3 * S1.Ben08.angle/sin(S1.Ben08.angle) ! To make projected length 
+S1.Ben08: SBEND, L = S1.Ben08.L, fringe_type = full
+S1.Ben08[angle]  = S1.Ben08.angle
+S1.Ben08[e1]  = S1.Ben08.angle
+
+S1.Demer.Mar.BEG: marker
+S1.Merge.Mar.END: marker
+S1.Pip00: pipe, L = 0.4
+S1.Demerge : line[multipass] = (S1.Demer.Mar.BEG, S1.Pip00, S1.Ben01)
+
+! FFAG quads in tail
+S1.align_patch: patch
+S1.Qua09: FF.Qua01, type="FFAG_QF weakened"
+S1.Qua10: FF.Qua02, type="FFAG_QD weakened"
+! Gate valve + space for flanges
+S1.Pip08: FF.Pip01, L = 5.75e-2
+S1.Gat01: instrument, L = 8.5e-2, type = 'Gate Valve'
+S1.Gat01[descrip] = "3DMODEL=Gate_Valve/Gate_Valve.blend"
+S1.Pip09: FF.Pip01, L = 5.75e-2
+
+S1.Pip10: FF.Pip01
+S1.Pip11: FF.Pip02
+
+! FFAG quads
+S1.QUA09[B1_GRADIENT] =  -3.38421334116667E+00
+S1.QUA09[X_OFFSET] =  -1.53612584265714E-03
+S1.QUA10[X_OFFSET] =   4.55936269230394E-03
+
+
+
+S1_FFAG_TAIL: line = (S1.Pip08, S1.Gat01, S1.Pip09, S1.Qua09, S1.Pip10, S1.Qua10, S1.Pip11)
+
+
+S1.Merge : line[multipass] = (S1.Ben08, S1.align_patch, S1_FFAG_TAIL, S1.Merge.Mar.END)
+
+
+
+S1.Ben: SBEND, L = 0.2, fringe_type = full 
+S1.Ben[descrip] = "3DMODEL=Splitter_H_Dipole/Splitter_H_Dipole.blend"
+
+S1.Ben02: S1.Ben
+S1.Ben03: S1.Ben
+S1.Ben04: S1.Ben
+S1.Ben05: S1.Ben
+S1.Ben06: S1.Ben
+S1.Ben07: S1.Ben
+
+
+
+S1.Pip: pipe, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S1.Pip01: S1.Pip, x_limit=0, y_limit=0
+S1.Pip02: S1.Pip
+S1.Pip03a: S1.Pip
+S1.Pip03b: S1.Pip
+S1.Pip04a: S1.Pip
+S1.Pip04b: S1.Pip
+S1.Pip05a: S1.Pip
+S1.Pip05b: S1.Pip
+S1.Pip06: S1.Pip
+S1.Pip07: S1.Pip
+
+!S1.Pip03: overlay = {S1.Pip03a:0.5, S1.Pip03b:0.5}, L
+!S1.Pip05: overlay = {S1.Pip05a:0.5, S1.Pip05b:0.5}, L
+
+! sliding joints
+S1.Sli.L = 0.2
+S1.Sli: instrument, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S1.Sli01:  S1.Sli, L = S1.Sli.L
+S1.Sli02a: S1.Sli, L = S1.Sli.L
+S1.Sli02b: S1.Sli, L = S1.Sli.L
+S1.Sli03:  S1.Sli, L = S1.Sli.L
+
+! Path length adjustment. Delta is the actual path length change
+O_S1.Sli: group = {S1.Sli01[L]:delta/(1-cos(S1.Ben04[angle]))/2, 
+                    S1.Sli02a[L]:-delta*cos(S1.Ben04[angle])/(1-cos(S1.Ben04[angle]))/2,
+                    S1.Sli02b[L]:-delta*cos(S1.Ben04[angle])/(1-cos(S1.Ben04[angle]))/2,
+                    S1.Sli03[L]:delta/(1-cos(S1.Ben04[angle]))/2}, var = {delta}
+
+
+S1.Mar.BEG: MARKER
+S1.Mar.END: MARKER
+S1.Mar.PARALLEL: marker
+S1.Mar.MID: MARKER
+S1.Mar.ETA0: MARKER
+
+S1.part1: line = (S1.Mar.BEG,
+S1.Pip01,
+S1.Ben02, 
+  S1.Pip02, 
+S1.Ben03,
+S1.Pip03a, S1.Sli01, S1.Pip03b, 
+S1.Ben04, S1.Mar.ETA0, S1.Pip04a, S1.Sli02a, 
+S1.Mar.PARALLEL)
+
+S1.part2: line = (
+S1.Sli02b,
+S1.Pip04b,
+S1.Ben05, 
+S1.Pip05a, S1.Sli03, S1.Pip05b,
+S1.Ben06, S1.Pip06,
+S1.Ben07, S1.Pip07,
+S1.Mar.END)
+
+
+S1.body: line = (S1.part1, 
+S1.Mar.MID,
+S1.part2)
+
+
+
+!- - - S2 - - 
+
+! Multipass bends
+S2.Ben01.angle = 7.3823*pi/180
+S2.Ben08.angle = 7.3823*pi/180
+S2.Ben01: SBEND, L = 0.2, fringe_type = full , e2 = S2.Ben01.angle
+S2.Ben08: SBEND, L = 0.2, fringe_type = full , e1 = S2.Ben08.angle
+!S2.Ben01[angle] = S2.Ben01.angle
+!S2.Ben08[angle] = S2.Ben01.angle
+S2.BEN01[G] =   6.44231007458498E-01
+S2.BEN08[G] = S2.BEN01[G] ! S2.Ben08.angle / S2.Ben08[L] 
+
+! Center bends
+S2.Ben: SBEND, L = 0.2, fringe_type = full
+S2.Ben[descrip] = "3DMODEL=Splitter_H_Dipole/Splitter_H_Dipole.blend"
+S2.Ben_30cm: SBEND, L = 0.3, fringe_type = full
+!S2.Ben_30cm[descrip] = "3DMODEL=Splitter_H_Dipole/Splitter_H_Dipole.blend"
+
+S2.Ben02: S2.Ben
+!S2.Ben03: S2.Ben
+S2.Ben03: S2.Ben_30cm
+S2.Ben04: S2.Ben 
+S2.Ben05: S2.Ben
+S2.Ben06: S2.Ben_30cm
+S2.Ben07: S2.Ben
+
+S2.Pip: pipe, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S2.Pip00: S2.Pip, L = 0.2, x_limit=0, y_limit=0
+S2.Pip01: S2.Pip
+S2.Pip02: S2.Pip
+S2.Pip03a: S2.Pip
+S2.Pip03b: S2.Pip
+
+S2.Pip04a: S2.Pip
+S2.Pip04b: S2.Pip
+S2.Pip05a: S2.Pip
+S2.Pip05b: S2.Pip
+S2.Pip06: S2.Pip
+S2.Pip07: S2.Pip
+S2.Pip08: S2.Pip, L = 0.1, x_limit=0, y_limit=0
+
+! sliding joints
+S2.Sli.L = 0.18
+S2.Sli: instrument, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S2.Sli01:  S2.Sli, L = S2.Sli.L
+S2.Sli02a: S2.Sli, L = S2.Sli.L
+S2.Sli02b: S2.Sli, L = S2.Sli.L
+S2.Sli03:  S2.Sli, L = S2.Sli.L
+
+! Path length adjustment. Delta is the actual path length change
+O_S2.Sli: group = {S2.Sli01[L]:delta/(1-cos(S2.Ben04[angle]))/2, 
+                    S2.Sli02a[L]:-delta*cos(S2.Ben04[angle])/(1-cos(S2.Ben04[angle]))/2,
+                    S2.Sli02b[L]:-delta*cos(S2.Ben04[angle])/(1-cos(S2.Ben04[angle]))/2,
+                    S2.Sli03[L]:delta/(1-cos(S2.Ben04[angle]))/2}, var = {delta}
+
+S2.Mar.BEG: MARKER
+S2.Mar.END: MARKER
+S2.Mar.MID: Marker
+S2.Mar.PARALLEL: marker
+
+S2.Demerge : line[multipass] = (S2.Pip00, S2.Ben01)
+S2.Merge : line[multipass] = (S2.Ben08, S2.Pip08)
+
+S2.part1: line = (S2.Mar.BEG,
+S2.Pip01,
+S2.Ben02,
+  S2.Pip02, 
+S2.Ben03,
+S2.Pip03a, S2.Sli01, S2.Pip03b, 
+S2.Ben04, 
+S2.Pip04a, S2.Sli02a, S2.Mar.PARALLEL)
+
+S2.part2: line = (
+S2.Sli02b,
+S2.Pip04b,
+S2.Ben05,
+ S2.Pip05a, S2.Sli03, S2.Pip05b,
+S2.Ben06, S2.Pip06,
+S2.Ben07, S2.Pip07,
+S2.Mar.END)
+
+S2.body: line = (S2.part1, 
+S2.Mar.MID,
+S2.part2)
+
+
+!- - - S3 - - 
+S3.Ben: SBEND, L = 0.2, fringe_type = full
+S3.Ben[descrip] = "3DMODEL=Splitter_H_Dipole/Splitter_H_Dipole.blend"
+S3.Ben_30cm: SBEND, L = 0.3, fringe_type = full
+S3.Ben01: S3.Ben
+S3.Ben02: S3.Ben_30cm
+ 
+S3.Ben03: S3.Ben_30cm
+S3.Ben04: S3.Ben
+
+
+S3.Pip: pipe, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S3.Pip01: S3.Pip
+S3.Pip02a: S3.Pip
+S3.Pip02b: S3.Pip
+
+S3.Pip03a: S3.Pip
+S3.Pip03b: S3.Pip
+S3.Pip04a: S3.Pip
+S3.Pip04b: S3.Pip
+
+S3.Pip05: S3.Pip
+ 
+
+! sliding joints
+S3.Sli.L = 0.2
+S3.Sli: instrument, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S3.Sli01:  S3.Sli, L = S3.Sli.L
+S3.Sli02a: S3.Sli, L = S3.Sli.L
+S3.Sli02b: S3.Sli, L = S3.Sli.L
+S3.Sli03:  S3.Sli, L = S3.Sli.L
+
+! Path length adjustment. Delta is the actual path length change
+O_S3.Sli: group = {S3.Sli01[L]:delta/(1-cos(S3.Ben02[angle]))/2, 
+                    S3.Sli02a[L]:-delta*cos(S3.Ben02[angle])/(1-cos(S3.Ben02[angle]))/2,
+                    S3.Sli02b[L]:-delta*cos(S3.Ben02[angle])/(1-cos(S3.Ben02[angle]))/2,
+                    S3.Sli03[L]:delta/(1-cos(S3.Ben02[angle]))/2}, var = {delta}
+
+S3.Mar.BEG: MARKER
+S3.Mar.END: MARKER
+S3.Mar.MID: Marker
+
+S3.Mar.PARALLEL: marker
+
+S3.part1: line = (S3.Mar.BEG,
+S3.Pip01,
+S3.Ben01,  
+  S3.Pip02a,  S3.Sli01, S3.Pip02b,
+S3.Ben02, 
+S3.Pip03a, S3.Sli02a, S3.Mar.PARALLEL)
+
+S3.part2: line = (S3.Sli02b, S3.Pip03b,
+S3.Ben03,
+S3.Pip04a, S3.Sli03, S3.Pip04b,
+S3.Ben04, S3.Pip05,
+S3.Mar.END)
+
+S3.body: line = (S3.part1, 
+S3.Mar.MID,
+S3.part2)
+
+!- - - S4 - - 
+
+
+
+S4.Ben: SBEND, L = 0.2, fringe_type = full
+S4.Ben[descrip] = "3DMODEL=Splitter_H_Dipole/Splitter_H_Dipole.blend"
+S4.Ben_30cm: SBEND, L = 0.3, fringe_type = full
+
+
+S4.Ben01: S4.Ben
+S4.Ben02: S4.Ben_30cm
+S4.Ben03: S4.Ben_30cm
+S4.Ben04: S4.Ben
+
+
+S4.Pip: pipe, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S4.Pip01: S4.Pip
+S4.Pip02a: S4.Pip
+S4.Pip02b: S4.Pip
+S4.Pip03a: S4.Pip
+S4.Pip03b: S4.Pip
+S4.Pip04a: S4.Pip
+S4.Pip04b: S4.Pip
+S4.Pip05: S4.Pip
+
+! sliding joints
+S4.Sli.L = 0.2
+S4.Sli: instrument, aperture_type = elliptical, aperture_at=both_ends, x_limit=18e-3, y_limit=12e-3
+S4.Sli01:  S4.Sli, L = S4.Sli.L
+S4.Sli02a: S4.Sli, L = S4.Sli.L
+S4.Sli02b: S4.Sli, L = S4.Sli.L
+S4.Sli03:  S4.Sli, L = S4.Sli.L
+
+! Path length adjustment. Delta is the actual path length change
+O_S4.Sli: group = {S4.Sli01[L]:delta/(1-cos(S4.Ben02[angle]))/2, 
+                    S4.Sli02a[L]:-delta*cos(S4.Ben02[angle])/(1-cos(S4.Ben02[angle]))/2,
+                    S4.Sli02b[L]:-delta*cos(S4.Ben02[angle])/(1-cos(S4.Ben02[angle]))/2,
+                    S4.Sli03[L]:delta/(1-cos(S4.Ben02[angle]))/2}, var = {delta}
+
+S4.Mar.BEG: MARKER
+S4.Mar.END: MARKER
+S4.Mar.MID: MARKER
+S4.Mar.PARALLEL: marker
+
+S4.part1: line = (S4.Mar.BEG,
+S4.Pip01, S4.Ben01, 
+S4.Pip02a, S4.Sli01, S4.Pip02b, 
+S4.Ben02, S4.Pip03a, S4.Sli02a, S4.Mar.PARALLEL )
+
+S4.part2: line = ( S4.Sli02b, S4.Pip03b,
+S4.Ben03, 
+S4.Pip04a, S4.Sli03, S4.Pip04b, 
+S4.Ben04, S4.Pip05,
+S4.Mar.END)
+
+S4.body: line = (S4.part1,
+S4.Mar.MID,
+ S4.part2)
+
+
+
+!- - - - - - - - Merge control
+S1.demerge_patch: patch
+S2.demerge_patch: patch
+S3.demerge_patch: patch
+S4.demerge_patch: patch
+
+! Align patch for FFAG
+S1.ALIGN_PATCH[X_OFFSET] =   1.11792446395824E-02
+
+
+!Merge patches
+S2.merge_patch: patch, flexible = T
+S3.merge_patch1: patch, flexible = T
+S3.merge_patch2: patch, flexible = T
+S4.merge_patch1: patch, flexible = T
+S4.merge_patch2: patch, flexible = T
+
+S1.DEMERGE_PATCH[X_OFFSET] =   2.71303142167492E-02
+S1.DEMERGE_PATCH[X_PITCH] =   4.30913831549218E-02
+
+S2.DEMERGE_PATCH[X_OFFSET] =   5.95323981345850E-02
+S2.DEMERGE_PATCH[X_PITCH] =   2.94110632286223E-01
+
+S3.DEMERGE_PATCH[X_OFFSET] =   5.13884108898000E-02
+S3.DEMERGE_PATCH[X_PITCH] =   1.28144979811224E-01
+
+S4.DEMERGE_PATCH[X_OFFSET] =   7.86749306741955E-02
+S4.DEMERGE_PATCH[X_PITCH] =   1.93821790775596E-01
+
+!- - - - - - - - Full lines:
+
+S1: line = (S1.Demerge, S1.demerge_patch, S1.body, S1.Merge)
+!S1.body_multi: line[multipass] = (S1.body)
+!S1_multi: line = (S1.Demerge, S1.demerge_patch, S1.body_multi, S1.Merge)
+S1_multi: line[multipass] = (S1)
+
+S2: line = (S1.Demerge,  S2.demerge_patch, S2.Demerge, S2.body, 
+            S2.merge, S2.merge_patch, S1.Merge)
+
+
+S2_multi: line[multipass] = (S2)
+
+S3: line = (S1.Demerge, S2.demerge_patch,  S2.Demerge, S3.demerge_patch, S3.body, 
+            S3.merge_patch1, S2.merge, S3.merge_patch2, S1.Merge)
+
+S3_multi: line[multipass] = (S3)
+
+S4: line = (S1.Demerge, S2.demerge_patch,  S2.Demerge, S4.demerge_patch, S4.body, 
+            S4.merge_patch1, S2.merge, S4.merge_patch2, S1.Merge)
+S4_multi: line[multipass] = (S4)
+
+!— - - - - - - - Geometry
+
+
+!- - - S1
+call, file = s1.geometry.bmad
+
+S1.Ben02[g] = -18*pi/180 / S1.Ben02[L]
+S1.Ben03[g] =  24*pi/180 / S1.Ben03[L]
+S1.Ben04[g] = -16*pi/180 / S1.Ben04[L]
+
+! Symmetrize
+call, file = s1.symmetrize.bmad
+
+! Make SBENDs
+call, file = s1.make_rbend.bmad
+
+!- - - S2
+
+call, file = s2.geometry.bmad
+
+S2.Ben02[g] = -15*pi/180 / S2.Ben02[L]
+S2.Ben03[g] =  36*pi/180 / S2.Ben03[L]
+S2.Ben04[g] = -24*pi/180 / S2.Ben04[L]
+
+! Symmetrize
+S2.PIP04b[L] = S2.PIP04a[L]
+S2.PIP05a[L] = S2.PIP03b[L]
+S2.PIP05b[L] = S2.PIP03a[L]
+S2.PIP06[L] = S2.PIP02[L]
+S2.PIP07[L] = S2.PIP01[L]
+S2.PIP08[L] = S2.PIP00[L]
+
+S2.Ben05[g] = S2.Ben04[g]
+S2.Ben06[g] = S2.Ben03[g]
+S2.Ben07[g] = S2.Ben02[g]
+
+
+
+! Orbit alignment into FA
+S2.BEN06[G] =   2.07964290466010E+00
+S2.BEN07[G] =  -1.29457636337303E+00
+S2.PIP07[L] =   9.68355590129245E-01
+
+! Make RBEND
+call, file = s2.make_rbend.bmad
+
+!- - - S3
+
+call, file = s3.geometry.bmad   
+
+S3.Ben02[g] = 1.01493313820671E+00
+
+O_S3.Pip02: overlay = {S3.Pip02a, S3.Pip04b}, L 
+O_S3.Pip02[L] = S3.Pip02a[L]
+
+O_S3.Pip03: overlay = {S3.Pip03a, S3.Pip03b}, L 
+S3.Pip03b[L] = S3.Pip03a[L]
+O_S3.Pip03[L] = S3.Pip03a[L]
+
+! Symmetrize
+S3.PIP04a[L] = S3.PIP02b[L]
+S3.PIP04b[L] = S3.PIP02a[L]
+S3.PIP05[L] = S3.PIP01[L]
+
+S3.Ben03[g] = S3.Ben02[g]
+S3.Ben04[g] = S3.Ben01[g]
+
+
+
+
+! Orbit corrected
+S3.BEN04[G] =  -1.12494559549272E+00
+O_S3.PIP02[L] =   3.61823533070983E-01
+
+! Make RBEND
+call, file = s3.make_rbend.bmad
+
+!- - - S4
+S4.Ben02[g] =  17*pi/180 / S4.Ben02[L]
+S4.Ben03[g] = S4.Ben02[g]
+
+
+S4.PIP01[L] =  0.44
+S4.BEN01[G] =  -7.5000000E-01
+
+
+call, file = s4.geometry.bmad
+
+! Symmetrize
+S4.PIP03b[L] = S4.PIP03a[L]
+S4.PIP04a[L] = S4.PIP02b[L]
+S4.PIP04b[L] = S4.PIP02a[L]
+S4.PIP05[L] = S4.PIP01[L] 
+S4.BEN03[G] = S4.BEN02[G]
+S4.BEN04[G] = S4.BEN01[G]
+
+
+! orbit corrected
+S4.BEN01[G] =  -8.11777619182912E-01
+S4.BEN04[G] =  -7.36356856039166E-01
+S4.PIP04B[L] =   1.59302498063609E+00
+
+! Make RBEND
+call, file = s4.make_rbend.bmad
+
+

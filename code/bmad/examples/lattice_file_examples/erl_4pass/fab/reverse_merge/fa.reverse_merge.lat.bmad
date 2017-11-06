@@ -1,0 +1,80 @@
+
+BEGINNING[BETA_A]  = 40
+BEGINNING[ALPHA_A]=  0
+BEGINNING[BETA_B] = 40
+BEGINNING[ALPHA_B] = 0
+
+parameter[geometry] = open
+PARAMETER[particle] = electron
+
+call, file = ../energy0.bmad
+
+!parameter[ptc_exact_model]  = T
+
+!parameter[absolute_time_tracking] = T
+
+call, file = ../cell/cell.bmad
+call, file = ../fab.bmad
+call, file = ../../sx/sx.bmad
+
+!*[tracking_method] = symp_lie_ptc
+!*[mat6_calc_method] = symp_lie_ptc
+
+!*[tracking_method] = time_runge_kutta
+!*[mat6_calc_method] = tracking
+
+XFA.CELL01: line = (
+  FA.Pip01a,
+  FA.Qua01,
+  FA.Pip01,
+  FA.Qua02,
+  FA.Pip02,
+  FA.patch01,
+  FA.patch02)
+
+
+
+XFA.CELL02: line = (
+  FA.Pip03a,
+  FA.Qua03,
+  FA.Pip03,
+  FA.Qua04,
+  FA.Pip04,
+  FA.patch03,
+  FA.patch04)
+
+
+XFA.CELL03: line = (
+  FA.Pip05a,
+  FA.Qua05,
+  FA.Pip05,
+  FA.Qua06,
+  FA.Pip06,
+  FA.patch05,
+  FA.patch06)
+
+Mar.BEG: marker
+Mar.END: marker
+
+lat: line = (Mar.BEG,
+-FA.CELL02,
+-FA.CELL01,
+-S1_FFAG_TAIL,
+Mar.END)
+
+
+
+!call, file = settings.bmad
+
+
+!lat: line = (fa.merge)
+
+
+*[aperture] = 0.10
+
+*[ds_step] = .01
+
+use, lat
+
+
+

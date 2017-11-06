@@ -1,0 +1,34 @@
+
+!--- FX cell ZZ
+
+!--- Quads
+FX.QuaX1: FF.Qua01, x_offset = 0
+FX.QuaX2: FF.Qua02, x_offset = 0
+
+FX.QuaX1[L] = .133
+FX.QuaX2[L] = .122
+
+FX.QuaX1[B1_GRADIENT] = -1.0909482913674269e+01
+FX.QuaX2[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+FX.PipX1: FF.Pip01, L = 0.073
+FX.PipX2: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+FX.cellZZ.Mar.BEG: marker
+
+!FX.QuaX1.Mar.MID: marker, superimpose, ref = FX.QuaX1
+!FX.QuaX2.Mar.MID: marker, superimpose, ref = FX.QuaX2
+
+!---  Lines
+FX.cellZZ: line = (
+ FX.cellZZ.Mar.BEG,
+ FX.QuaX1,
+ FX.PipX1,  
+ FX.QuaX2, 
+ FX.PipX2)
+
+
+

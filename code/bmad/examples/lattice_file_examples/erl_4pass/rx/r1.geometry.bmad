@@ -1,0 +1,13 @@
+
+! Copy from S1
+R1.PIP01[L] =  S1.PIP01[L]
+R1.BEN02[g] =  S1.BEN02[g]
+R1.PIP02[L] =  S1.PIP02[L]
+R1.BEN03[g] =  S1.BEN03[g]
+R1.PIP03a[L] =  S1.PIP03a[L]
+R1.PIP03b[L] =  S1.PIP03b[L]
+
+R1.BEN04[g] =  S1.BEN04[g]
+R1.PIP04A[L] =  S1.PIP04A[L]
+
+

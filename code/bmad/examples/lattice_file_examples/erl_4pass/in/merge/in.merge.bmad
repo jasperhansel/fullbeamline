@@ -1,0 +1,75 @@
+
+!--- Bends
+!in.merge.ben: sbend, fringe_type = full_bend, L = 0.254
+in.merge.ben: sbend, fringe_type = full, L = 0.254
+
+in.merge.angle = -15*pi/180
+in.merge.ben01: in.merge.ben, angle =  in.merge.angle, e1 = 0, e2 = in.merge.angle
+in.merge.ben02: in.merge.ben, angle = -in.merge.angle, e1 = -in.merge.angle/2, e2 = -in.merge.angle/2
+in.merge.ben03: in.merge.ben, angle =  in.merge.angle, e1 = in.merge.angle, e2 = 0
+
+
+
+!--- Pipes
+in.merge.pip: pipe
+in.merge.pip01: in.merge.pip, L = 0.9
+in.merge.pip02: in.merge.pip, L = 0.9
+
+
+!--- Quads
+IN.merge.Qua01: QUADRUPOLE, L=0.1510, superimpose, ref = IN.merge.pip01, ref_origin=end, ele_origin=end
+IN.merge.Qua02: QUADRUPOLE, L=0.1510, superimpose, ref = IN.merge.pip02, ref_origin=beginning, ele_origin=beginning
+
+IN.merge.Qua01[offset] =  -.0722
+IN.merge.Qua02[offset] =   .0722
+
+
+!--- Markers
+in.merge.mar.beg: marker
+in.merge.mar.end: marker
+
+in.merge.part1: line = (in.merge.mar.beg,
+in.merge.ben01,
+in.merge.pip01,
+in.merge.ben02,
+in.merge.pip02)
+
+in.merge.part2: line[multipass] = (
+in.merge.ben03,
+in.merge.mar.end)                  
+
+in.merge: line = (in.merge.part1, in.merge.part2)
+
+!--- Mirror merge
+in.mirror.mar.beg: marker
+in.mirror.mar.end: marker
+
+in.mirror.ben01: in.merge.ben, angle =  -in.merge.angle, e1 = 0, e2 = -in.merge.angle
+in.mirror.ben02: in.merge.ben, angle =  in.merge.angle, e1 = in.merge.angle/2, e2 = in.merge.angle/2
+in.mirror.ben03: in.merge.ben, angle =  -in.merge.angle, e1 = -in.merge.angle, e2 = 0
+
+in.mirror.pip: pipe
+in.mirror.pip01: in.merge.pip, L = 0.9
+in.mirror.pip02: in.merge.pip, L = 0.9
+in.mirror.pip03: in.merge.pip, L = 4
+
+IN.mirror.Qua01: QUADRUPOLE, L=0.1510, superimpose, ref = IN.mirror.pip01, ref_origin=end, ele_origin=end
+IN.mirror.Qua02: QUADRUPOLE, L=0.1510, superimpose, ref = IN.mirror.pip02, ref_origin=beginning, ele_origin=beginning
+
+IN.mirror.Qua01[offset] =  -.0722
+IN.mirror.Qua02[offset] =   .0722
+
+!---Beam Stop
+IN.mirror.Dum01: INSTRUMENT, TYPE = "BEAMSTOP", L = 0.5, APERTURE = 0.3
+
+in.mirror_merge: line = (in.mirror.mar.beg,
+in.mirror.ben01,
+in.mirror.pip01,
+in.mirror.ben02,
+in.mirror.pip02,
+in.mirror.ben03,
+in.mirror.pip03,
+IN.mirror.Dum01,
+in.mirror.mar.end)   
+
+in.mirror_merge[geometry] = open

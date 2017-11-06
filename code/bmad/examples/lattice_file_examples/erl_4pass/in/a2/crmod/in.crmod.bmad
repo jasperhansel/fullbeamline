@@ -1,0 +1,220 @@
+!---------------- CRMOD ------------
+!
+!
+!    ___                                                _         
+!   / (_)                                    |         | |     
+!  |      ,_          __   _  _  _    __   __|         | |  _    
+!  |     /  |  |   | /  \_/ |/ |/ |  /  \_/  |  |   |  |/  |/    
+!   \___/   |_/ \_/|/\__/   |  |  |_/\__/ \_/|_/ \_/|_/|__/|__/ 
+!                 /|                                                   
+!                 \|   
+! 
+
+
+CALL, FILE = ../cavity2/in.cavity2.bmad
+CALL, FILE = ../cavity2/in.cavity2_reverse.bmad
+
+
+!---Standard Elements
+
+
+
+IN.CRMOD.HOMABSORBER_AHALF: INSTRUMENT, type = "HOMABSORBER", L = 0.32512,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, 0.060198/2}},
+	section = { s = IN.CRMOD.HOMABSORBER_AHALF[L],
+	  v(1) = {0, 0, .106/2}}}
+IN.CRMOD.HOMABSORBER_A: INSTRUMENT, type = "HOMABSORBER", L = 0.308102,  aperture = 0.106/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.HOMABSORBER_A[aperture]}},
+!	section = { s = IN.CRMOD.HOMABSORBER_A[L],
+!	  v(1) = {0, 0, IN.CRMOD.HOMABSORBER_A[aperture]}}}	
+
+IN.CRMOD.HOMABSORBER_B: INSTRUMENT, type = "HOMABSORBER", L = 0.26797,   aperture = 0.078/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.HOMABSORBER_B[aperture]}},
+!	section = { s = IN.CRMOD.HOMABSORBER_B[L],
+!	  v(1) = {0, 0, IN.CRMOD.HOMABSORBER_B[aperture]}}}
+
+!---Markers
+IN.CRMOD.Mar.BEG: MARKER
+IN.CRMOD.Mar.END: MARKER
+
+
+IN.CRMOD.Pip01: PIPE, L = 0.1350772, aperture = 0.060198/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.Pip01[aperture]}},
+	section = { s = IN.CRMOD.Pip01[L],
+	  v(1) = {0, 0, IN.CRMOD.Pip01[aperture]}}}
+
+IN.CRMOD.Gat01: PIPE, L = 0.0750062, aperture = 0.060198/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.Gat01[aperture]}},
+	section = { s = IN.CRMOD.Gat01[L],
+	  v(1) = {0, 0, IN.CRMOD.Gat01[aperture]}}}
+
+IN.CRMOD.HOM01: IN.CRMOD.HOMABSORBER_AHALF
+
+IN.CRMOD.RFC01.PAD01: PIPE, L = 0.00547, aperture = .106/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.RFC01.PAD01[aperture]}},
+	section = { s = IN.CRMOD.RFC01.PAD01[L],
+	  v(1) = {0, 0, IN.CRMOD.RFC01.PAD01[aperture]}}}
+IN.CRMOD.RFC01: in.cavity2_reverse 
+IN.CRMOD.RFC01.PAD02: PIPE, L = 0.060978, aperture = .078/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.RFC01.PAD02[aperture]}},
+!	section = { s = IN.CRMOD.RFC01.PAD02[L],
+!	  v(1) = {0, 0, IN.CRMOD.RFC01.PAD02[aperture]}}}
+
+IN.CRMOD.HOM02: IN.CRMOD.HOMABSORBER_B
+
+
+
+IN.CRMOD.RFC02.PAD01: PIPE, L = 0.060978, aperture = .078/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.RFC02.PAD01[aperture]}},
+	section = { s = IN.CRMOD.RFC02.PAD01[L],
+	  v(1) = {0, 0, IN.CRMOD.RFC02.PAD01[aperture]}}}
+IN.CRMOD.RFC02: in.cavity2
+IN.CRMOD.RFC02.PAD02: PIPE, L = 0.00547, aperture = .106/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.RFC02.PAD02[aperture]}},
+!	section = { s = IN.CRMOD.RFC02.PAD02[L],
+!	  v(1) = {0, 0, IN.CRMOD.RFC02.PAD02[aperture]}}}
+
+IN.CRMOD.HOM03: IN.CRMOD.HOMABSORBER_A
+
+
+IN.CRMOD.RFC03.PAD01: PIPE, L = 0.00547, aperture = .106/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.RFC03.PAD01[aperture]}},
+	section = { s = IN.CRMOD.RFC03.PAD01[L],
+	  v(1) = {0, 0, IN.CRMOD.RFC03.PAD01[aperture]}}}
+IN.CRMOD.RFC03: in.cavity2_reverse 
+IN.CRMOD.RFC03.PAD02: PIPE, L = 0.060978, aperture = .078/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.RFC03.PAD02[aperture]}},
+!	section = { s = IN.CRMOD.RFC03.PAD02[L],
+!	  v(1) = {0, 0, IN.CRMOD.RFC03.PAD02[aperture]}}}
+
+IN.CRMOD.HOM04: IN.CRMOD.HOMABSORBER_B
+
+IN.CRMOD.RFC04.PAD01: PIPE, L = 0.060978, aperture = .078/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.RFC04.PAD01[aperture]}},
+	section = { s = IN.CRMOD.RFC04.PAD01[L],
+	  v(1) = {0, 0, IN.CRMOD.RFC04.PAD01[aperture]}}}
+IN.CRMOD.RFC04: in.cavity2
+IN.CRMOD.RFC04.PAD02: PIPE, L = 0.00547, aperture = .106/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.RFC04.PAD02[aperture]}},
+!	section = { s = IN.CRMOD.RFC04.PAD02[L],
+!	  v(1) = {0, 0, IN.CRMOD.RFC04.PAD02[aperture]}}}
+
+IN.CRMOD.HOM05: IN.CRMOD.HOMABSORBER_A
+
+IN.CRMOD.RFC05.PAD01: PIPE, L = 0.00547, aperture = .106/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.RFC05.PAD01[aperture]}},
+	section = { s = IN.CRMOD.RFC05.PAD01[L],
+	  v(1) = {0, 0, IN.CRMOD.RFC05.PAD01[aperture]}}}
+IN.CRMOD.RFC05: in.cavity2_reverse 
+IN.CRMOD.RFC05.PAD02: PIPE, L = 0.060978, aperture = .078/2
+!    wall = {
+!	section = { s = 0,
+!	  v(1) = {0, 0, IN.CRMOD.RFC05.PAD02[aperture]}},
+!	section = { s = IN.CRMOD.RFC05.PAD02[L],
+!	  v(1) = {0, 0, IN.CRMOD.RFC05.PAD02[aperture]}}}
+
+IN.CRMOD.HOM06: IN.CRMOD.HOMABSORBER_B
+
+IN.CRMOD.Tap01: PIPE, L = 0.1594866,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, 0.078/2}},
+	section = { s = IN.CRMOD.Tap01[L],
+	  v(1) = {0, 0, 0.060198/2}}}
+
+IN.CRMOD.Gat02: PIPE, L = 0.0750062, aperture = 0.060198/2,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.Gat02[aperture]}},
+	section = { s = IN.CRMOD.Gat02[L],
+	  v(1) = {0, 0, IN.CRMOD.Gat02[aperture]}}}
+
+IN.CRMOD.Tap02: PIPE, L = 0.1597406,
+    wall = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.CRMOD.Gat02[aperture]}},
+	section = { s = IN.CRMOD.Tap02[L],
+	  v(1) = {0, 0, 0.034798/2}}}
+
+
+
+IN.CRMOD: LINE = (IN.CRMOD.Mar.BEG, &
+
+	IN.CRMOD.Pip01,
+
+	IN.CRMOD.Gat01,
+
+	IN.CRMOD.HOM01,
+
+	IN.CRMOD.RFC01.PAD01,
+	IN.CRMOD.RFC01,
+	IN.CRMOD.RFC01.PAD02,
+	
+	IN.CRMOD.HOM02,
+
+	IN.CRMOD.RFC02.PAD01,
+	IN.CRMOD.RFC02,
+	IN.CRMOD.RFC02.PAD02,
+	
+	IN.CRMOD.HOM03,
+
+
+	IN.CRMOD.RFC03.PAD01,
+	IN.CRMOD.RFC03,
+	IN.CRMOD.RFC03.PAD02,
+
+	IN.CRMOD.HOM04,
+
+	IN.CRMOD.RFC04.PAD01,
+	IN.CRMOD.RFC04,
+	IN.CRMOD.RFC04.PAD02,
+
+	IN.CRMOD.HOM05,
+
+	IN.CRMOD.RFC05.PAD01,
+	IN.CRMOD.RFC05,
+	IN.CRMOD.RFC05.PAD02,
+
+	IN.CRMOD.HOM06,
+
+	IN.CRMOD.Tap01,
+
+	IN.CRMOD.Gat02,
+
+	IN.CRMOD.Tap02,
+
+	IN.CRMOD.Mar.END)
+
+
+
+
+
+!----------------------------------------------------------------------------						   

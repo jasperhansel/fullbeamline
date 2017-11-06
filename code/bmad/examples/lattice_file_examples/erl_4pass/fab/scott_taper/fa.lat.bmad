@@ -1,0 +1,52 @@
+
+
+parameter[lattice] = "CBETA full FFAG arc without entrance patches"
+BEGINNING[BETA_A]  = 5
+BEGINNING[ALPHA_A]=  1
+BEGINNING[BETA_B] = 5
+BEGINNING[ALPHA_B] = 1
+
+parameter[geometry] = open
+PARAMETER[particle] = electron
+
+!beginning[theta_position] = (-49.5 +4.5)*pi/180  
+beginning[theta_position] = (-45)*pi/180  
+
+
+parameter[e_tot] = 6e6
+
+
+call, file = ../cell/cell.bmad
+ 
+
+call, file = scott.bmad
+call, file = ../../za/scott_za.bmad
+
+
+quad::*[fringe_type] = full
+
+*[ds_step] = .01
+
+Mar.BEG: marker
+Mar.END: marker
+
+
+LA.ORBIT_SHIFT: MATCH, 
+  beta_a0  = 1, alpha_a0 = 0, beta_a1  = 1, alpha_a1 = 0,
+  beta_b0  = 1, alpha_b0 = 0, beta_b1  = 1, alpha_b1 = 0
+
+
+
+call, file = ../cell/beam_start1.bmad
+lat: line = (Mar.BEG,
+  scott_TA,  
+  scott_ZA,
+  Mar.END)
+
+
+
+
+
+
+use, lat
+

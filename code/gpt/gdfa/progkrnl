@@ -1,0 +1,78 @@
+# List of all programs
+
+avgBx		Avgs/avgbx
+avgBy		Avgs/avgby
+avgBz		Avgs/avgbz
+avgfBx		Avgs/avgfbx
+avgfBy		Avgs/avgfby
+avgfBz		Avgs/avgfbz
+avgfEx		Avgs/avgfex
+avgfEy		Avgs/avgfey
+avgfEz		Avgs/avgfez
+avgG		Avgs/avgg
+avgr		Avgs/avgr
+avgt		Avgs/avgt
+avgx		Avgs/avgx
+avgy		Avgs/avgy
+avgz		Avgs/avgz
+avgp		Avgs/avgp
+
+stdx		Stds/stdx
+stdy		Stds/stdy
+stdz		Stds/stdz
+stdBx		Stds/stdbx
+stdBy		Stds/stdby
+stdBz		Stds/stdbz
+stdG		Stds/stdg
+stdt		Stds/stdt
+
+nemixrms	Emit/nemixrms
+nemiyrms	Emit/nemiyrms
+nemirrms	Emit/nemirrms
+nemizrms	Emit/nemizrms
+nemix90		Emit/nemix90
+nemiy90		Emit/nemiy90
+nemiz90		Emit/nemiz90
+nemix100	Emit/nemix100
+nemiy100	Emit/nemiy100
+nemiz100	Emit/nemiz100
+
+CSalphax	CS/csalphax
+CSalphay	CS/csalphay
+CSalphaz	CS/csalphaz
+CSbetax		CS/csbetax
+CSbetay		CS/csbetay
+CSbetaz		CS/csbetaz
+CSgammax	CS/csgammax
+CSgammay	CS/csgammay
+CSgammaz	CS/csgammaz
+
+cputime		Misc/cputime
+rmax		Misc/rmax
+numpar		Misc/numpar
+numderivs	Misc/numderiv
+Q			Misc/Q
+
+nemix		Obsolete/nemix
+nemiy		Obsolete/nemiy
+
+scatterI01	Scatter/scatterI01
+scatterI02	Scatter/scatterI02
+scatterI03	Scatter/scatterI03
+scatterI04	Scatter/scatterI04
+scatterI05	Scatter/scatterI05
+scatterI06	Scatter/scatterI06
+scatterI07	Scatter/scatterI07
+scatterI08	Scatter/scatterI08
+scatterI09	Scatter/scatterI09
+scatterI10	Scatter/scatterI10
+scatterP01	Scatter/scatterP01
+scatterP02	Scatter/scatterP02
+scatterP03	Scatter/scatterP03
+scatterP04	Scatter/scatterP04
+scatterP05	Scatter/scatterP05
+scatterP06	Scatter/scatterP06
+scatterP07	Scatter/scatterP07
+scatterP08	Scatter/scatterP08
+scatterP09	Scatter/scatterP09
+scatterP10	Scatter/scatterP10

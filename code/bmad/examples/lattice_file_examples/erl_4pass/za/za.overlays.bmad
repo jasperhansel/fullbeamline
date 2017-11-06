@@ -1,0 +1,29 @@
+
+
+O_ZA.PATHLENGTH1: overlay = {
+  ZA.PIP01, 
+  ZA.PIP03,
+  ZA.PIP05,
+  ZA.PIP07,
+  ZA.PIP09,
+  ZA.PIP11,
+  ZA.PIP13,
+  ZA.PIP15,
+  ZA.PIP17,
+  ZA.PIP19,
+  ZA.PIP21,
+  ZA.PIP23}, L = ZA.PIP01[L]  
+
+  O_ZA.PATHLENGTH2: overlay = {
+    ZA.PIP02, 
+    ZA.PIP04,
+    ZA.PIP06,
+    ZA.PIP08,
+    ZA.PIP10,
+    ZA.PIP12,
+    ZA.PIP14,
+    ZA.PIP16,
+    ZA.PIP18,
+    ZA.PIP20,
+    ZA.PIP22,
+    ZA.PIP24}, L = ZA.PIP02[L]  

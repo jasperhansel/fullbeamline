@@ -1,0 +1,22 @@
+! Copy from S3
+R3.PIP01[L]  =  S3.PIP01[L]   
+R3.BEN01[G]  =  S3.BEN01[G] 
+R3.PIP02b[L]  =   S3.PIP02b[L] 
+R3.PIP04a[L]  =   S3.PIP04a[L] 
+ 
+ 
+R3.Ben02[g] = S3.Ben02[g]
+R3.Ben03[g] = S3.Ben03[g] 
+ 
+! Need to set these to for quad overlays to work out 
+R3.Pip02a[L] = S3.Pip02a[L] 
+R3.Pip04b[L] = S3.Pip04b[L] 
+ 
+
+
+O_R3.Pip02[L] = O_S3.Pip02[L]
+O_R3.Pip03[L] = O_S3.Pip03[L]
+
+R3.BEN04[G] = S3.BEN04[G] 
+
+R3.PIP05[L] = S3.PIP05[L]

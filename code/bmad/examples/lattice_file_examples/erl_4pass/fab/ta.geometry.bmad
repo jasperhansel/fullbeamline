@@ -1,0 +1,240 @@
+!--- Geometry for TA cell 1
+TA.Qua01[x_offset] = FF.Qua01[x_offset]*0.9976763856715776
+TA.Qua02[x_offset] = FF.Qua02[x_offset]*0.9976763856715776
+TA.patch01a[x_pitch] = FF.patch1[x_pitch]*0.9976763856715776
+TA.patch01b[x_pitch] = FF.patch2[x_pitch]*0.9976763856715776
+TA.patch02a[x_pitch] = FF.patch3[x_pitch]*0.9976763856715776
+TA.patch02b[x_pitch] = FF.patch4[x_pitch]*0.9976763856715776
+TA.Pip01[L] = FF.Pip01[L] + 3e-3*0.0023236143284224298
+TA.Pip02[L] = FF.Pip02[L] + 3e-3*0.0023236143284224298
+
+!--- Geometry for TA cell 2
+TA.Qua03[x_offset] = FF.Qua01[x_offset]*0.9908733116284928
+TA.Qua04[x_offset] = FF.Qua02[x_offset]*0.9908733116284928
+TA.patch03a[x_pitch] = FF.patch1[x_pitch]*0.9908733116284928
+TA.patch03b[x_pitch] = FF.patch2[x_pitch]*0.9908733116284928
+TA.patch04a[x_pitch] = FF.patch3[x_pitch]*0.9908733116284928
+TA.patch04b[x_pitch] = FF.patch4[x_pitch]*0.9908733116284928
+TA.Pip03[L] = FF.Pip01[L] + 3e-3*0.009126688371507208
+TA.Pip04[L] = FF.Pip02[L] + 3e-3*0.009126688371507208
+
+!--- Geometry for TA cell 3
+TA.Qua05[x_offset] = FF.Qua01[x_offset]*0.9790959318925312
+TA.Qua06[x_offset] = FF.Qua02[x_offset]*0.9790959318925312
+TA.patch05a[x_pitch] = FF.patch1[x_pitch]*0.9790959318925312
+TA.patch05b[x_pitch] = FF.patch2[x_pitch]*0.9790959318925312
+TA.patch06a[x_pitch] = FF.patch3[x_pitch]*0.9790959318925312
+TA.patch06b[x_pitch] = FF.patch4[x_pitch]*0.9790959318925312
+TA.Pip05[L] = FF.Pip01[L] + 3e-3*0.02090406810746881
+TA.Pip06[L] = FF.Pip02[L] + 3e-3*0.02090406810746881
+
+!--- Geometry for TA cell 4
+TA.Qua07[x_offset] = FF.Qua01[x_offset]*0.9612866700509184
+TA.Qua08[x_offset] = FF.Qua02[x_offset]*0.9612866700509184
+TA.patch07a[x_pitch] = FF.patch1[x_pitch]*0.9612866700509184
+TA.patch07b[x_pitch] = FF.patch2[x_pitch]*0.9612866700509184
+TA.patch08a[x_pitch] = FF.patch3[x_pitch]*0.9612866700509184
+TA.patch08b[x_pitch] = FF.patch4[x_pitch]*0.9612866700509184
+TA.Pip07[L] = FF.Pip01[L] + 3e-3*0.03871332994908161
+TA.Pip08[L] = FF.Pip02[L] + 3e-3*0.03871332994908161
+
+!--- Geometry for TA cell 5
+TA.Qua09[x_offset] = FF.Qua01[x_offset]*0.936261632
+TA.Qua10[x_offset] = FF.Qua02[x_offset]*0.936261632
+TA.patch09a[x_pitch] = FF.patch1[x_pitch]*0.936261632
+TA.patch09b[x_pitch] = FF.patch2[x_pitch]*0.936261632
+TA.patch10a[x_pitch] = FF.patch3[x_pitch]*0.936261632
+TA.patch10b[x_pitch] = FF.patch4[x_pitch]*0.936261632
+TA.Pip09[L] = FF.Pip01[L] + 3e-3*0.06373836799999999
+TA.Pip10[L] = FF.Pip02[L] + 3e-3*0.06373836799999999
+
+!--- Geometry for TA cell 6
+TA.Qua11[x_offset] = FF.Qua01[x_offset]*0.9030321728782336
+TA.Qua12[x_offset] = FF.Qua02[x_offset]*0.9030321728782336
+TA.patch11a[x_pitch] = FF.patch1[x_pitch]*0.9030321728782336
+TA.patch11b[x_pitch] = FF.patch2[x_pitch]*0.9030321728782336
+TA.patch12a[x_pitch] = FF.patch3[x_pitch]*0.9030321728782336
+TA.patch12b[x_pitch] = FF.patch4[x_pitch]*0.9030321728782336
+TA.Pip11[L] = FF.Pip01[L] + 3e-3*0.09696782712176644
+TA.Pip12[L] = FF.Pip02[L] + 3e-3*0.09696782712176644
+
+!--- Geometry for TA cell 7
+TA.Qua13[x_offset] = FF.Qua01[x_offset]*0.8610237072211968
+TA.Qua14[x_offset] = FF.Qua02[x_offset]*0.8610237072211968
+TA.patch13a[x_pitch] = FF.patch1[x_pitch]*0.8610237072211968
+TA.patch13b[x_pitch] = FF.patch2[x_pitch]*0.8610237072211968
+TA.patch14a[x_pitch] = FF.patch3[x_pitch]*0.8610237072211968
+TA.patch14b[x_pitch] = FF.patch4[x_pitch]*0.8610237072211968
+TA.Pip13[L] = FF.Pip01[L] + 3e-3*0.1389762927788032
+TA.Pip14[L] = FF.Pip02[L] + 3e-3*0.1389762927788032
+
+!--- Geometry for TA cell 8
+TA.Qua15[x_offset] = FF.Qua01[x_offset]*0.8102038513713152
+TA.Qua16[x_offset] = FF.Qua02[x_offset]*0.8102038513713152
+TA.patch15a[x_pitch] = FF.patch1[x_pitch]*0.8102038513713152
+TA.patch15b[x_pitch] = FF.patch2[x_pitch]*0.8102038513713152
+TA.patch16a[x_pitch] = FF.patch3[x_pitch]*0.8102038513713152
+TA.patch16b[x_pitch] = FF.patch4[x_pitch]*0.8102038513713152
+TA.Pip15[L] = FF.Pip01[L] + 3e-3*0.18979614862868477
+TA.Pip16[L] = FF.Pip02[L] + 3e-3*0.18979614862868477
+
+!--- Geometry for TA cell 9
+TA.Qua17[x_offset] = FF.Qua01[x_offset]*0.7511319871750144
+TA.Qua18[x_offset] = FF.Qua02[x_offset]*0.7511319871750144
+TA.patch17a[x_pitch] = FF.patch1[x_pitch]*0.7511319871750144
+TA.patch17b[x_pitch] = FF.patch2[x_pitch]*0.7511319871750144
+TA.patch18a[x_pitch] = FF.patch3[x_pitch]*0.7511319871750144
+TA.patch18b[x_pitch] = FF.patch4[x_pitch]*0.7511319871750144
+TA.Pip17[L] = FF.Pip01[L] + 3e-3*0.2488680128249856
+TA.Pip18[L] = FF.Pip02[L] + 3e-3*0.2488680128249856
+
+!--- Geometry for TA cell 10
+TA.Qua19[x_offset] = FF.Qua01[x_offset]*0.6849423359999999
+TA.Qua20[x_offset] = FF.Qua02[x_offset]*0.6849423359999999
+TA.patch19a[x_pitch] = FF.patch1[x_pitch]*0.6849423359999999
+TA.patch19b[x_pitch] = FF.patch2[x_pitch]*0.6849423359999999
+TA.patch20a[x_pitch] = FF.patch3[x_pitch]*0.6849423359999999
+TA.patch20b[x_pitch] = FF.patch4[x_pitch]*0.6849423359999999
+TA.Pip19[L] = FF.Pip01[L] + 3e-3*0.3150576640000001
+TA.Pip20[L] = FF.Pip02[L] + 3e-3*0.3150576640000001
+
+!--- Geometry for TA cell 11
+TA.Qua21[x_offset] = FF.Qua01[x_offset]*0.6132726321053696
+TA.Qua22[x_offset] = FF.Qua02[x_offset]*0.6132726321053696
+TA.patch21a[x_pitch] = FF.patch1[x_pitch]*0.6132726321053696
+TA.patch21b[x_pitch] = FF.patch2[x_pitch]*0.6132726321053696
+TA.patch22a[x_pitch] = FF.patch3[x_pitch]*0.6132726321053696
+TA.patch22b[x_pitch] = FF.patch4[x_pitch]*0.6132726321053696
+TA.Pip21[L] = FF.Pip01[L] + 3e-3*0.38672736789463036
+TA.Pip22[L] = FF.Pip02[L] + 3e-3*0.38672736789463036
+
+!--- Geometry for TA cell 12
+TA.Qua23[x_offset] = FF.Qua01[x_offset]*0.5381504843972609
+TA.Qua24[x_offset] = FF.Qua02[x_offset]*0.5381504843972609
+TA.patch23a[x_pitch] = FF.patch1[x_pitch]*0.5381504843972609
+TA.patch23b[x_pitch] = FF.patch2[x_pitch]*0.5381504843972609
+TA.patch24a[x_pitch] = FF.patch3[x_pitch]*0.5381504843972609
+TA.patch24b[x_pitch] = FF.patch4[x_pitch]*0.5381504843972609
+TA.Pip23[L] = FF.Pip01[L] + 3e-3*0.4618495156027391
+TA.Pip24[L] = FF.Pip02[L] + 3e-3*0.4618495156027391
+
+!--- Geometry for TA cell 13
+TA.Qua25[x_offset] = FF.Qua01[x_offset]*0.46184951560273924
+TA.Qua26[x_offset] = FF.Qua02[x_offset]*0.46184951560273924
+TA.patch25a[x_pitch] = FF.patch1[x_pitch]*0.46184951560273924
+TA.patch25b[x_pitch] = FF.patch2[x_pitch]*0.46184951560273924
+TA.patch26a[x_pitch] = FF.patch3[x_pitch]*0.46184951560273924
+TA.patch26b[x_pitch] = FF.patch4[x_pitch]*0.46184951560273924
+TA.Pip25[L] = FF.Pip01[L] + 3e-3*0.5381504843972608
+TA.Pip26[L] = FF.Pip02[L] + 3e-3*0.5381504843972608
+
+!--- Geometry for TA cell 14
+TA.Qua27[x_offset] = FF.Qua01[x_offset]*0.38672736789463025
+TA.Qua28[x_offset] = FF.Qua02[x_offset]*0.38672736789463025
+TA.patch27a[x_pitch] = FF.patch1[x_pitch]*0.38672736789463025
+TA.patch27b[x_pitch] = FF.patch2[x_pitch]*0.38672736789463025
+TA.patch28a[x_pitch] = FF.patch3[x_pitch]*0.38672736789463025
+TA.patch28b[x_pitch] = FF.patch4[x_pitch]*0.38672736789463025
+TA.Pip27[L] = FF.Pip01[L] + 3e-3*0.6132726321053698
+TA.Pip28[L] = FF.Pip02[L] + 3e-3*0.6132726321053698
+
+!--- Geometry for TA cell 15
+TA.Qua29[x_offset] = FF.Qua01[x_offset]*0.3150576639999999
+TA.Qua30[x_offset] = FF.Qua02[x_offset]*0.3150576639999999
+TA.patch29a[x_pitch] = FF.patch1[x_pitch]*0.3150576639999999
+TA.patch29b[x_pitch] = FF.patch2[x_pitch]*0.3150576639999999
+TA.patch30a[x_pitch] = FF.patch3[x_pitch]*0.3150576639999999
+TA.patch30b[x_pitch] = FF.patch4[x_pitch]*0.3150576639999999
+TA.Pip29[L] = FF.Pip01[L] + 3e-3*0.6849423360000001
+TA.Pip30[L] = FF.Pip02[L] + 3e-3*0.6849423360000001
+
+!--- Geometry for TA cell 16
+TA.Qua31[x_offset] = FF.Qua01[x_offset]*0.2488680128249856
+TA.Qua32[x_offset] = FF.Qua02[x_offset]*0.2488680128249856
+TA.patch31a[x_pitch] = FF.patch1[x_pitch]*0.2488680128249856
+TA.patch31b[x_pitch] = FF.patch2[x_pitch]*0.2488680128249856
+TA.patch32a[x_pitch] = FF.patch3[x_pitch]*0.2488680128249856
+TA.patch32b[x_pitch] = FF.patch4[x_pitch]*0.2488680128249856
+TA.Pip31[L] = FF.Pip01[L] + 3e-3*0.7511319871750144
+TA.Pip32[L] = FF.Pip02[L] + 3e-3*0.7511319871750144
+
+!--- Geometry for TA cell 17
+TA.Qua33[x_offset] = FF.Qua01[x_offset]*0.18979614862868466
+TA.Qua34[x_offset] = FF.Qua02[x_offset]*0.18979614862868466
+TA.patch33a[x_pitch] = FF.patch1[x_pitch]*0.18979614862868466
+TA.patch33b[x_pitch] = FF.patch2[x_pitch]*0.18979614862868466
+TA.patch34a[x_pitch] = FF.patch3[x_pitch]*0.18979614862868466
+TA.patch34b[x_pitch] = FF.patch4[x_pitch]*0.18979614862868466
+TA.Pip33[L] = FF.Pip01[L] + 3e-3*0.8102038513713153
+TA.Pip34[L] = FF.Pip02[L] + 3e-3*0.8102038513713153
+
+!--- Geometry for TA cell 18
+TA.Qua35[x_offset] = FF.Qua01[x_offset]*0.1389762927788032
+TA.Qua36[x_offset] = FF.Qua02[x_offset]*0.1389762927788032
+TA.patch35a[x_pitch] = FF.patch1[x_pitch]*0.1389762927788032
+TA.patch35b[x_pitch] = FF.patch2[x_pitch]*0.1389762927788032
+TA.patch36a[x_pitch] = FF.patch3[x_pitch]*0.1389762927788032
+TA.patch36b[x_pitch] = FF.patch4[x_pitch]*0.1389762927788032
+TA.Pip35[L] = FF.Pip01[L] + 3e-3*0.8610237072211968
+TA.Pip36[L] = FF.Pip02[L] + 3e-3*0.8610237072211968
+
+!--- Geometry for TA cell 19
+TA.Qua37[x_offset] = FF.Qua01[x_offset]*0.09696782712176655
+TA.Qua38[x_offset] = FF.Qua02[x_offset]*0.09696782712176655
+TA.patch37a[x_pitch] = FF.patch1[x_pitch]*0.09696782712176655
+TA.patch37b[x_pitch] = FF.patch2[x_pitch]*0.09696782712176655
+TA.patch38a[x_pitch] = FF.patch3[x_pitch]*0.09696782712176655
+TA.patch38b[x_pitch] = FF.patch4[x_pitch]*0.09696782712176655
+TA.Pip37[L] = FF.Pip01[L] + 3e-3*0.9030321728782335
+TA.Pip38[L] = FF.Pip02[L] + 3e-3*0.9030321728782335
+
+!--- Geometry for TA cell 20
+TA.Qua39[x_offset] = FF.Qua01[x_offset]*0.06373836799999988
+TA.Qua40[x_offset] = FF.Qua02[x_offset]*0.06373836799999988
+TA.patch39a[x_pitch] = FF.patch1[x_pitch]*0.06373836799999988
+TA.patch39b[x_pitch] = FF.patch2[x_pitch]*0.06373836799999988
+TA.patch40a[x_pitch] = FF.patch3[x_pitch]*0.06373836799999988
+TA.patch40b[x_pitch] = FF.patch4[x_pitch]*0.06373836799999988
+TA.Pip39[L] = FF.Pip01[L] + 3e-3*0.9362616320000001
+TA.Pip40[L] = FF.Pip02[L] + 3e-3*0.9362616320000001
+
+!--- Geometry for TA cell 21
+TA.Qua41[x_offset] = FF.Qua01[x_offset]*0.03871332994908161
+TA.Qua42[x_offset] = FF.Qua02[x_offset]*0.03871332994908161
+TA.patch41a[x_pitch] = FF.patch1[x_pitch]*0.03871332994908161
+TA.patch41b[x_pitch] = FF.patch2[x_pitch]*0.03871332994908161
+TA.patch42a[x_pitch] = FF.patch3[x_pitch]*0.03871332994908161
+TA.patch42b[x_pitch] = FF.patch4[x_pitch]*0.03871332994908161
+TA.Pip41[L] = FF.Pip01[L] + 3e-3*0.9612866700509184
+TA.Pip42[L] = FF.Pip02[L] + 3e-3*0.9612866700509184
+
+!--- Geometry for TA cell 22
+TA.Qua43[x_offset] = FF.Qua01[x_offset]*0.02090406810746881
+TA.Qua44[x_offset] = FF.Qua02[x_offset]*0.02090406810746881
+TA.patch43a[x_pitch] = FF.patch1[x_pitch]*0.02090406810746881
+TA.patch43b[x_pitch] = FF.patch2[x_pitch]*0.02090406810746881
+TA.patch44a[x_pitch] = FF.patch3[x_pitch]*0.02090406810746881
+TA.patch44b[x_pitch] = FF.patch4[x_pitch]*0.02090406810746881
+TA.Pip43[L] = FF.Pip01[L] + 3e-3*0.9790959318925312
+TA.Pip44[L] = FF.Pip02[L] + 3e-3*0.9790959318925312
+
+!--- Geometry for TA cell 23
+TA.Qua45[x_offset] = FF.Qua01[x_offset]*0.009126688371507208
+TA.Qua46[x_offset] = FF.Qua02[x_offset]*0.009126688371507208
+TA.patch45a[x_pitch] = FF.patch1[x_pitch]*0.009126688371507208
+TA.patch45b[x_pitch] = FF.patch2[x_pitch]*0.009126688371507208
+TA.patch46a[x_pitch] = FF.patch3[x_pitch]*0.009126688371507208
+TA.patch46b[x_pitch] = FF.patch4[x_pitch]*0.009126688371507208
+TA.Pip45[L] = FF.Pip01[L] + 3e-3*0.9908733116284928
+TA.Pip46[L] = FF.Pip02[L] + 3e-3*0.9908733116284928
+
+!--- Geometry for TA cell 24
+TA.Qua47[x_offset] = FF.Qua01[x_offset]*0.0023236143284223187
+TA.Qua48[x_offset] = FF.Qua02[x_offset]*0.0023236143284223187
+TA.patch47a[x_pitch] = FF.patch1[x_pitch]*0.0023236143284223187
+TA.patch47b[x_pitch] = FF.patch2[x_pitch]*0.0023236143284223187
+TA.patch48a[x_pitch] = FF.patch3[x_pitch]*0.0023236143284223187
+TA.patch48b[x_pitch] = FF.patch4[x_pitch]*0.0023236143284223187
+TA.Pip47[L] = FF.Pip01[L] + 3e-3*0.9976763856715777
+TA.Pip48[L] = FF.Pip02[L] + 3e-3*0.9976763856715777
+

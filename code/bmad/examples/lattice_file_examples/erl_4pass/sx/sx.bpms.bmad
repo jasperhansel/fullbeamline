@@ -1,0 +1,7 @@
+
+
+
+call, file = s1.bpms.bmad
+call, file = s2.bpms.bmad
+call, file = s3.bpms.bmad
+call, file = s4.bpms.bmad

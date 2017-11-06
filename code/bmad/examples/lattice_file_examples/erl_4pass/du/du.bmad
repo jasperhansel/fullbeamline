@@ -1,0 +1,79 @@
+!---------------------------
+!   Beam Dump Elements
+!---------------------------
+
+DU.aperture =4*0.0254/2
+
+!---Markers
+DU.Mar.BEG: MARKER
+DU.Mar.END: MARKER
+
+DU.Mar.Face: MARKER
+
+!---Pipes
+DU.Pip01: PIPE, APERTURE = DU.aperture 
+DU.Pip02: PIPE, APERTURE = DU.aperture 
+DU.Pip03: PIPE, APERTURE = DU.aperture 
+
+!---Quadrupoles
+!DU.SEX01: AB_MULTIPOLE, B2 = 7.096800,              APERTURE = DU.aperture, superimpose, ref = DU.Pip01, ele_origin=end, ref_origin=end
+!DU.Qua02: QUADRUPOLE, L = 0.150000, K1 = 33.709700, APERTURE = DU.aperture, superimpose, ref = DU.Pip01, ele_origin=end, ref_origin=end
+!DU.SEX02: AB_MULTIPOLE, B2 = 7.096800,              APERTURE = DU.aperture, superimpose, ref = DU.Pip01, ele_origin=end, ref_origin=end
+
+!---Bends
+!DU.Ben01: SBEND, L = 0.250000, G = 30.0*pi/180./0.25, APERTURE = DU.aperture, E1=0, E2=0
+!DU.Ben01: LA.CHICA01.Ben01
+DU.Ben01: sbend, L = 0.254, angle =  15*pi/180, aperture = DU.aperture
+DU.Ben02: sbend, L = 0.254, angle = -15*pi/180, aperture = DU.aperture
+
+
+!---Solenoids
+DU.SOL01: SOLENOID, L = 0.300000, KS = 40.000000, APERTURE = DU.aperture, superimpose, ref = DU.Pip03, ele_origin=end, ref_origin=end
+DU.SOL02: SOLENOID, L = 0.300000, KS = 40.000000, APERTURE = DU.aperture, superimpose, ref = DU.Pip03, ele_origin=end, ref_origin=end
+
+!---Beam Stop
+DU.Dum01: INSTRUMENT, TYPE = "BEAMSTOP", L = 3.0, APERTURE = 0.46
+DU.Dum01[descrip] = "3DMODEL=7106-300-L0-dump_STL/7106-300-L0-dump.blend"
+
+
+!---Superpositions
+!DU.Pip01.length = 1
+!DU.Pip02.length = 2.1461
+DU.Pip01[L] = 1
+DU.Pip02[L] = 1
+DU.Pip03[L] = 2
+
+
+!---Pip01
+!DU.SEX01[offset] = -0.40
+!DU.Qua02[offset] = -0.25
+!DU.SEX02[offset] = -0.25
+
+!---Pip02
+DU.SOL01[offset] = -1.3361
+DU.SOL02[offset] = -.30
+
+
+!- - - Patch
+du.demerge_patch: patch
+DU.DEMERGE_PATCH[X_OFFSET] =   2.63351266160857E-02
+DU.DEMERGE_PATCH[X_PITCH] =   2.61799387799215E-01
+
+!call, file = du.patch_settings.bmad
+
+DU: line = (
+  du.demerge_patch,
+  DU.MAR.BEG,  
+     DU.Pip01, 
+   DU.Ben01, 
+     DU.Pip02, 
+   DU.Ben02, 
+     DU.Pip03, 
+   DU.Mar.Face, 
+   DU.Dum01, 
+   DU.MAR.END)
+
+
+DU.short: line = ( DU.MAR.BEG, 
+   DU.patch,
+     DU.Pip01)

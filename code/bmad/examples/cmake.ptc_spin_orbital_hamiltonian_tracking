@@ -1,0 +1,23 @@
+set (EXENAME ptc_spin_orbital_hamiltonian_tracking)
+
+FILE (GLOB SRC_FILES "ptc_spin_orbital_hamiltonian_tracking/*.f90")
+
+# Link libraries
+
+set (LINK_LIBS
+  bmad
+  xsif
+  xrlf03
+  xrl
+  sim_utils
+  recipes_f-90_LEPP
+  forest
+  ${PLOT_LINK_LIBS}
+  xsif
+  lapack95
+  lapack
+  fgsl
+  gsl
+  blas
+  gslcblas
+)

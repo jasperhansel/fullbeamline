@@ -1,0 +1,6 @@
+call,file=/nfs/cesr/mnt/lattice/cesr/bmad/cta_5000mev_pmwig_20090314.lat
+call, file=/nfs/cesr/mnt/lattice/cesr/bmad/2fam_5000mev_pmwig_20090314.bmad
+call, file=/nfs/cesr/mnt/lattice/cesr/bmad/XQUNEING_1_2fam_5000mev_pmwig_20090314.dat
+call, file=/nfs/cesr/mnt/lattice/cesr/bmad/XQUNEING_2_2fam_5000mev_pmwig_20090314.dat
+
+

@@ -1,0 +1,16 @@
+FB.BPM01: instrument, superimpose, ref = FB.Pip01
+FB.BPM02: instrument, superimpose, ref = FB.Pip03
+FB.BPM03: instrument, superimpose, ref = FB.Pip05
+FB.BPM04: instrument, superimpose, ref = FB.Pip07
+FB.BPM05: instrument, superimpose, ref = FB.Pip09
+FB.BPM06: instrument, superimpose, ref = FB.Pip11
+FB.BPM07: instrument, superimpose, ref = FB.Pip13
+FB.BPM08: instrument, superimpose, ref = FB.Pip15
+FB.BPM09: instrument, superimpose, ref = FB.Pip17
+FB.BPM10: instrument, superimpose, ref = FB.Pip19
+FB.BPM11: instrument, superimpose, ref = FB.Pip21
+FB.BPM12: instrument, superimpose, ref = FB.Pip23
+FB.BPM13: instrument, superimpose, ref = FB.Pip25
+FB.BPM14: instrument, superimpose, ref = FB.Pip27
+FB.BPM15: instrument, superimpose, ref = FB.Pip29
+FB.BPM16: instrument, superimpose, ref = FB.Pip31

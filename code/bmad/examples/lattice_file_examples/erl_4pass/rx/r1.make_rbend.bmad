@@ -1,0 +1,32 @@
+
+R1.Ben02[e1] = R1.Ben02[g]*R1.Ben02[L]/2
+R1.Ben02[e2] = R1.Ben02[g]*R1.Ben02[L]/2
+R1.Ben03[e1] = R1.Ben03[g]*R1.Ben03[L]/2
+R1.Ben03[e2] = R1.Ben03[g]*R1.Ben03[L]/2
+R1.Ben04[e1] = R1.Ben04[g]*R1.Ben04[L]/2
+R1.Ben04[e2] = R1.Ben04[g]*R1.Ben04[L]/2
+R1.Ben05[e1] = R1.Ben05[g]*R1.Ben05[L]/2
+R1.Ben05[e2] = R1.Ben05[g]*R1.Ben05[L]/2
+R1.Ben06[e1] = R1.Ben06[g]*R1.Ben06[L]/2
+R1.Ben06[e2] = R1.Ben06[g]*R1.Ben06[L]/2
+R1.Ben07[e1] = R1.Ben07[g]*R1.Ben07[L]/2
+R1.Ben07[e2] = R1.Ben07[g]*R1.Ben07[L]/2
+
+
+!R1.Ben02[e1] = R1.Ben02[angle]/2
+!R1.Ben02[e2] = R1.Ben02[angle]/2
+
+!R1.Ben03[e1] = R1.Ben03[angle]/2
+!R1.Ben03[e2] = R1.Ben03[angle]/2
+
+!R1.Ben04[e1] = R1.Ben04[angle]/2
+!R1.Ben04[e2] = R1.Ben04[angle]/2
+
+!R1.Ben05[e1] = R1.Ben05[angle]/2
+!R1.Ben05[e2] = R1.Ben05[angle]/2
+
+!R1.Ben06[e1] = R1.Ben06[angle]/2
+!R1.Ben06[e2] = R1.Ben06[angle]/2
+
+!R1.Ben07[e1] = R1.Ben07[angle]/2
+!R1.Ben07[e2] = R1.Ben07[angle]/2

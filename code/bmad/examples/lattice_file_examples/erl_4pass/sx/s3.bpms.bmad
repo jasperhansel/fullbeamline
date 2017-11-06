@@ -1,0 +1,12 @@
+
+
+
+
+S3.BPM01: instrument, superimpose, ref = S3.qua01, ref_origin=end, offset = 0.01
+S3.BPM02: instrument, superimpose, ref = S3.qua02, ref_origin=end, offset = 0.01
+S3.BPM03: instrument, superimpose, ref = S3.qua03, ref_origin=end, offset = 0.01
+S3.BPM04: instrument, superimpose, ref = S3.qua04, ref_origin=end, offset = 0.01
+S3.BPM05: instrument, superimpose, ref = S3.qua05, ref_origin=end, offset = 0.01
+S3.BPM06: instrument, superimpose, ref = S3.qua06, ref_origin=end, offset = 0.01
+S3.BPM07: instrument, superimpose, ref = S3.qua07, ref_origin=end, offset = 0.01
+S3.BPM08: instrument, superimpose, ref = S3.qua08, ref_origin=end, offset = 0.01

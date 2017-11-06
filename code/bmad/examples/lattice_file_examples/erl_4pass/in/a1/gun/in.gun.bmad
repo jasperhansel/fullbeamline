@@ -1,0 +1,8 @@
+in.gun: E_GUN, L = 0.15, field_calc = fieldmap, tracking_method = time_runge_kutta, 
+	grid_field = call::in.gun_grid.bmad 
+
+
+in.gun[voltage] = 500e3 !Voltage in V
+
+! Wall
+call, file = in.gun_wall.bmad

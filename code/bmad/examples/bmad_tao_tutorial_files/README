@@ -1,0 +1,7 @@
+This directory contains files used in the Bmad/Tao tutorial. 
+The tutorial itself is available on the Bmad web site:
+	  www.lepp.cornell.edu/~dcs/bmad
+Click on either the "Bmad Manual" or "Tao Manual" link and there should be a link to download the tutorial.
+
+In case you are interested, the LaTeX source files are at:
+	bmad/doc/tutorial_bmad_tao

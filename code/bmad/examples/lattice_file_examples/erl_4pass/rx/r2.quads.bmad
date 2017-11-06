@@ -1,0 +1,27 @@
+! - - - - Quad overlays R2
+
+!R2.Mar.MID: MARKER, superimpose, ref = R2.Pip03
+
+R2.Qua: quadrupole, L = 0.2, aperture = 0.0254/2, field_master = T
+R2.Qua[descrip] = "3DMODEL=Splitter_Quad/Splitter_Quad.blend"
+
+R2.qua01: R2.Qua, superimpose, ref = R2.pip01, ref_origin=beginning, offset = .3
+
+R2.qua02: R2.Qua, superimpose, ref = R2.pip02, ref_origin=end, offset = -.35
+
+R2.qua03: R2.Qua, superimpose, ref = R2.pip02, ref_origin=beginning, ele_origin=beginning, offset =  0.05
+
+R2.qua04: R2.Qua, superimpose, ref = R2.pip03b, ref_origin=beginning, ele_origin=beginning, offset = 0.05
+R2.qua05: R2.Qua, superimpose, ref = R2.pip05a, ref_origin=end, ele_origin=end, offset = -0.05
+
+R2.qua06: R2.Qua, superimpose, ref = R2.pip06, ref_origin=end, ele_origin=end, offset = -0.05
+
+R2.qua07: R2.Qua, superimpose, ref = R2.pip06, ref_origin=beginning, offset = .35
+
+
+R2.qua08: R2.Qua, superimpose, ref = R2.pip07, ref_origin=end, offset = -0.15
+
+
+
+
+

@@ -1,0 +1,11 @@
+! Copy from S4
+
+
+R4.Pip01[L] = S4.Pip01[L]
+R4.BEN01[G] =  S4.BEN01[G]
+R4.PIP02a[L] =  S4.PIP02a[L]
+R4.PIP02b[L] =  S4.PIP02b[L]
+R4.BEN02[G] =  S4.BEN02[G]
+R4.PIP03A[L] = S4.PIP03A[L]
+
+

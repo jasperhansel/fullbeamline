@@ -1,0 +1,10 @@
+beam_start[x]  =     0.0237035621
+beam_start[px] =    -0.0203099651
+beam_start[pz] =     0.0000000000
+beginning[e_tot]  =   1.50000000E+08
+beginning[beta_a]  =     0.8004683435
+beginning[alpha_a] =     1.0064331337
+beginning[beta_b]  =     1.5847729622
+beginning[alpha_b] =    -1.9344035439
+beginning[eta_x]  =     0.1101487224
+beginning[etap_x] =    -0.1027397117

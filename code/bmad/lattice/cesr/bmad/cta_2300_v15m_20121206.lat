@@ -1,0 +1,499 @@
+! BMAD input file
+! bigger beta at 5e
+
+parameter[lattice] = CTA_2300_V15M_20121206
+beam, energy =   2.3
+
+call, file=layout/cesrta_08.bmad
+
+dline : marker, superimpose, offset=744.826 ! updated 2013.03.14, JSh
+cline : marker, superimpose, offset = 23.4506 ! updated 2013.03.14, JSh
+vbsm_positrons : marker, superimpose, offset=374.2468
+vbsm_electrons : marker, superimpose, offset=2* 384.214 - 374.2468
+
+feed_kick_v : marker, superimpose, offset = 55.5
+feed_kick_h : marker, superimpose, offset = 55.
+wig_w[b_max] = 0.0
+wig_e[b_max] = 0.0
+
+
+wig_damp_drift: drift, l=1.6
+dwig: drift, l=0.065
+
+
+ wig_01w[polarity] = 0.9765258
+ wig_01w[tracking_method] = taylor
+ wig_01w[mat6_calc_method] = taylor
+
+ wig1_02w[polarity] = 0.9765258
+ wig1_02w[tracking_method] = taylor
+ wig1_02w[mat6_calc_method] = taylor
+
+ wig2_02w[polarity] = 0.9765258
+ wig2_02w[tracking_method] = taylor
+ wig2_02w[mat6_calc_method] = taylor
+
+ wig1_18w[polarity] = 0.9765258
+ wig1_18w[tracking_method] = taylor
+ wig1_18w[mat6_calc_method] = taylor
+
+ wig2_18w[polarity] = 0.9765258
+ wig2_18w[tracking_method] = taylor
+ wig2_18w[mat6_calc_method] = taylor
+
+ wig3_18w[polarity] = 0.9765258
+ wig3_18w[tracking_method] = taylor
+ wig3_18w[mat6_calc_method] = taylor
+
+ wig3_18e[polarity] = 0.9765258
+ wig3_18e[tracking_method] = taylor
+ wig3_18e[mat6_calc_method] = taylor
+
+ wig2_18e[polarity] = 0.9765258
+ wig2_18e[tracking_method] = taylor
+ wig2_18e[mat6_calc_method] = taylor
+
+ wig1_18e[polarity] = 0.9765258
+ wig1_18e[tracking_method] = taylor
+ wig1_18e[mat6_calc_method] = taylor
+
+ wig2_02e[polarity] = 0.9765258
+ wig2_02e[tracking_method] = taylor
+ wig2_02e[mat6_calc_method] = taylor
+
+ wig1_02e[polarity] = 0.9765258
+ wig1_02e[tracking_method] = taylor
+ wig1_02e[mat6_calc_method] = taylor
+
+ wig_01e[polarity] = 0.9765258
+ wig_01e[tracking_method] = taylor
+ wig_01e[mat6_calc_method] = taylor
+
+deltax=0.02
+deltay=-0.007
+!Q00[K1]:=      5.1117478158E-01
+Q00[K1]:=      4.7246386750E-01
+!Q01 : overlay = {Q01W, Q01E}, K1 =     -2.0956393215E-01
+Q01W[K1]:=     -3.1891941764E-01
+Q01E[K1]:=     -1.4342524143E-01
+!Q01W[K1]:= -1.8854702655603867E-01
+!Q01E[K1]:= -1.8854702655603867E-01
+Q02W[k1] =      5.0409238661E-01
+Q02E[k1] =      4.6723238992E-01
+Q03W[K1] =     -3.3370822537E-01
+Q03E[K1] =     -3.5315463151E-01
+Q04W[K1] =      6.6715788290E-01
+Q04E[K1] =      6.5599237203E-01
+Q05W[K1] =     -3.4646197315E-01
+Q05E[K1] =     -4.6763463329E-01
+Q06W[K1] =      4.7673816464E-01
+Q06E[K1] =      5.3050130337E-01
+Q07W[K1]=     -3.6166093883E-01
+Q07E[K1]=     -4.9600443772E-01
+Q08W[K1]=      2.2343225879E-01
+Q08E[K1]=      1.9741396584E-01
+Q08AW[K1]:=     -7.2050294020E-03
+Q09W[K1]:=     -2.7047565985E-01
+Q09E[K1]:=     -2.2611387569E-01
+Q10W[K1]:=      3.0689503368E-01
+Q10E[K1]:=      2.7870149932E-01
+Q11W[K1]:=     -2.3279317186E-01
+Q11E[K1]:=     -2.0957283437E-01
+Q12W[K1]:=      2.6706357807E-01
+Q12E[K1]:=      2.7014794081E-01
+Q13W[K1]:=     -3.5269620615E-01
+Q13E[K1]:=     -3.3649492085E-01
+
+!Q14 : overlay = {Q14W,Q14E },K1 =      3.3207900889E-01
+Q14W[K1]:=      3.3249140193E-01
+Q14E[K1]:=      3.3028251771E-01
+!Q15 : overlay = {Q15W,Q15E },K1 =     -2.7870453735E-01
+Q15W[K1]:=     -2.8961362513E-01
+Q15E[K1]:=     -2.8423493284E-01
+!Q16 : overlay = {Q16W,Q16E },K1 =      3.4221868834E-01
+Q16W[K1]:=      3.4172693855E-01
+Q16E[K1]:=      3.4173304726E-01
+!Q17 : overlay = {Q17W,Q17E },K1 =     -3.1187829058E-01
+Q17W[K1]:=     -3.1303929313E-01
+Q17E[K1]:=     -2.9211326788E-01
+!Q18 : overlay = {Q18W,Q18E },K1 =      4.4086069458E-01
+Q18W[K1]:=      4.3928585279E-01
+Q18E[K1]:=      4.4554174900E-01
+!Q19 : overlay = {Q19W,Q19E },K1 =     -1.8256462475E-01
+Q19W[K1]:=     -2.1989418170E-01
+Q19E[K1]:=     -1.9733847065E-01
+!Q20 : overlay = {Q20W,Q20E },K1 =      3.6504849450E-01
+Q20W[K1]:=      3.6267421122E-01
+Q20E[K1]:=      3.6376795796E-01
+!Q21 : overlay = {Q21W,Q21E },K1 =     -2.5037582772E-01
+Q21W[K1]:=     -2.5381456577E-01
+Q21E[K1]:=     -2.4827875733E-01
+!Q22 : overlay = {Q22W,Q22E },K1 =      3.1275650060E-01
+Q22W[K1]:=      3.1019551100E-01
+Q22E[K1]:=      3.1313131957E-01
+!Q23 : overlay = {Q23W,Q23E },K1 =     -2.3679066162E-01
+Q23W[K1]:=     -2.3895815004E-01
+Q23E[K1]:=     -2.3962433301E-01
+!Q24 : overlay = {Q24W,Q24E },K1 =      2.9986468266E-01
+Q24W[K1]:=      2.9888234873E-01
+Q24E[K1]:=      2.9882860874E-01
+!Q25 : overlay = {Q25W,Q25E },K1 =     -2.9951210813E-01
+Q25W[K1]:=     -3.0540090218E-01
+Q25E[K1]:=     -3.0572610961E-01
+!Q26 : overlay = {Q26W,Q26E },K1 =      3.6177575959E-01
+Q26W[K1]:=      3.5586808323E-01
+Q26E[K1]:=      3.5738718788E-01
+!Q27 : overlay = {Q27W,Q27E },K1 =     -2.5707380935E-01
+Q27W[K1]:=     -2.5547862429E-01
+Q27E[K1]:=     -2.5675279141E-01
+!Q28 : overlay = {Q28W,Q28E },K1 =      3.6481851784E-01
+Q28W[K1]:=      3.6252083702E-01
+Q28E[K1]:=      3.6126471051E-01
+!Q29 : overlay = {Q29W,Q29E },K1 =     -2.3354065089E-01
+Q29W[K1]:=     -2.3394803648E-01
+Q29E[K1]:=     -2.3680543329E-01
+!Q30 : overlay = {Q30W,Q30E },K1 =      2.8271904808E-01
+Q30W[K1]:=      2.8545965622E-01
+Q30E[K1]:=      2.8345700023E-01
+!Q31 : overlay = {Q31W,Q31E },K1 =     -1.9290996125E-01
+Q31W[K1]:=     -1.9432162137E-01
+Q31E[K1]:=     -1.9361996420E-01
+!Q32 : overlay = {Q32W,Q32E },K1 =      2.4096634958E-01
+Q32W[K1]:=      2.3821994358E-01
+Q32E[K1]:=      2.3683120424E-01
+!Q33 : overlay = {Q33W,Q33E },K1 =     -2.4264847238E-01
+Q33W[K1]:=     -2.4283154956E-01
+Q33E[K1]:=     -2.4557137844E-01
+!Q34 : overlay = {Q34W,Q34E },K1 =      2.6974198534E-01
+Q34W[K1]:=      2.7206311870E-01
+Q34E[K1]:=      2.7044393745E-01
+!Q35 : overlay = {Q35W,Q35E },K1 =     -1.5956438351E-01
+Q35W[K1]:=     -1.5885742169E-01
+Q35E[K1]:=     -1.5941494310E-01
+!Q36 : overlay = {Q36W,Q36E },K1 =      2.3844155828E-01
+Q36W[K1]:=      2.3691947924E-01
+Q36E[K1]:=      2.3893393101E-01
+!Q37 : overlay = {Q37W,Q37E },K1 =     -2.6209334159E-01
+Q37W[K1]:=     -2.6339279730E-01
+Q37E[K1]:=     -2.6350525327E-01
+!Q38 : overlay = {Q38W,Q38E },K1 =      3.0778759490E-01
+Q38W[K1]:=      3.0624251575E-01
+Q38E[K1]:=      3.0459921016E-01
+!Q39 : overlay = {Q39W,Q39E },K1 =     -2.8436216741E-01
+Q39W[K1]:=     -2.8233740264E-01
+Q39E[K1]:=     -2.8295514644E-01
+!Q40 : overlay = {Q40W,Q40E },K1 =      3.3044345229E-01
+Q40W[K1]:=      3.2458457441E-01
+Q40E[K1]:=      3.2845396353E-01
+!Q41 : overlay = {Q41W,Q41E },K1 =     -2.5515264105E-01
+Q41W[K1]:=     -2.5846432357E-01
+Q41E[K1]:=     -2.5334008506E-01
+!Q42 : overlay = {Q42W,Q42E },K1 =      2.4629747859E-01
+Q42W[K1]:=      2.5224201766E-01
+Q42E[K1]:=      2.5016127856E-01
+!Q43 : overlay = {Q43W,Q43E },K1 =     -2.8020703428E-01
+Q43W[K1]:=     -2.8004919935E-01
+Q43E[K1]:=     -2.7794635335E-01
+!Q43A : overlay = {Q43AW,Q43AE },K1 =      3.3698327078E-01
+Q43AW[K1]:= 3.4096948495256962E-01
+Q43AE[K1]:= 3.4096948495256962E-01
+!Q44 : overlay = {Q44W,Q44E },K1 =     -2.9996273263E-01
+Q44W[K1]:=     -3.0153696336E-01
+Q44E[K1]:=     -3.0189863853E-01
+!Q45 : overlay = {Q45W,Q45E },K1 =      3.2138783173E-01
+Q45W[K1]:=      3.2066517410E-01
+Q45E[K1]:=      3.1819805529E-01
+!Q46 : overlay = {Q46W,Q46E },K1 =     -3.2771986308E-01
+Q46W[K1]:=     -3.2333241113E-01
+Q46E[K1]:=     -3.2399515924E-01
+!Q47 : overlay = {Q47W,Q47E },K1 =      4.2722421249E-01
+Q47W[K1]:=      4.3179698817E-01
+Q47E[K1]:=      4.3484979920E-01
+!Q47a : overlay = {Q47aW,Q47aE },K1 =     -2.9411999965E-01
+Q47aW[K1]:= -2.9332542420263902E-01
+Q47aE[K1]:= -2.9332542420263902E-01
+!Q48 : overlay = {Q48W,Q48E },K1 =      5.2911812231E-01
+Q48W[K1]:=      5.2199026727E-01
+Q48E[K1]:=      5.3081115856E-01
+Q49[K1]:=     -2.3986741585E-01
+
+k2h=0.95
+k2v=-1.4
+!SEX_08 : overlay = {sex_08w, sex_08e}, K2 = k2h
+sex_08w[K2]:= k2h
+sex_08e[K2]:= k2h
+!SEX_09 : overlay = {sex_09w, sex_09e}, K2 = k2v
+sex_09w[K2]:= k2v
+sex_09e[K2]:= k2v
+!SEX_10 : overlay = {sex_10w, sex_10e}, K2 = k2h
+sex_10w[K2]:= k2h
+sex_10e[K2]:= k2h
+!SEX_11 : overlay = {sex_11w, sex_11e}, K2 = k2v
+!SEX_12 : overlay = {sex_12w, sex_12e}, K2 = k2h
+sex_12w[K2]:= k2h
+sex_12e[K2]:= k2h
+!SEX_13 : overlay = {sex_13w, sex_13e}, K2 = k2v
+sex_13w[K2]:= k2v
+sex_13e[K2]:= k2v
+!SEX_14 : overlay = {sex_14w, sex_14e}, K2 = k2h
+sex_14w[K2]:= k2h
+sex_14e[K2]:= k2h
+!SEX_15 : overlay = {sex_15w, sex_15e}, K2 = k2v
+sex_15w[K2]:= k2v
+sex_15e[K2]:= k2v
+!SEX_16 : overlay = {sex_16w, sex_16e}, K2 = k2h
+sex_16w[K2]:= k2h
+sex_16e[K2]:= k2h
+!SEX_17 : overlay = {sex_17w, sex_17e}, K2 = k2v
+sex_17w[K2]:= k2v
+sex_17e[K2]:= k2v
+!SEX_18 : overlay = {sex_18w, sex_18e}, K2 = k2h
+sex_18w[K2]:= k2h
+sex_18e[K2]:= k2h
+!SEX_19 : overlay = {sex_19w, sex_19e}, K2 = k2v
+sex_19w[K2]:= k2v
+sex_19e[K2]:= k2v
+!SEX_20 : overlay = {sex_20w, sex_20e}, K2 = k2h
+sex_20w[K2]:= k2h
+sex_20e[K2]:= k2h
+!SEX_21 : overlay = {sex_21w, sex_21e}, K2 = k2v
+sex_21w[K2]:= k2v
+sex_21e[K2]:= k2v
+!SEX_22 : overlay = {sex_22w, sex_22e}, K2 = k2h
+sex_22w[K2]:= k2h
+sex_22e[K2]:= k2h
+!SEX_23 : overlay = {sex_23w, sex_23e}, K2 = k2v
+sex_23w[K2]:= k2v
+sex_23e[K2]:= k2v
+!SEX_24 : overlay = {sex_24w, sex_24e}, K2 = k2h
+sex_24w[K2]:= k2h
+sex_24e[K2]:= k2h
+!SEX_25 : overlay = {sex_25w, sex_25e}, K2 = k2v
+sex_25w[K2]:= k2v
+sex_25e[K2]:= k2v
+!SEX_26 : overlay = {sex_26w, sex_26e}, K2 = k2h
+sex_26w[K2]:= k2h
+sex_26e[K2]:= k2h
+!SEX_27 : overlay = {sex_27w, sex_27e}, K2 = k2v
+sex_27w[K2]:= k2v
+sex_27e[K2]:= k2v
+!SEX_28 : overlay = {sex_28w, sex_28e}, K2 = k2h
+sex_28w[K2]:= k2h
+sex_28e[K2]:= k2h
+!SEX_29 : overlay = {sex_29w, sex_29e}, K2 = k2v
+sex_29w[K2]:= k2v
+sex_29e[K2]:= k2v
+!SEX_30 : overlay = {sex_30w, sex_30e}, K2 = k2h
+sex_30w[K2]:= k2h
+sex_30e[K2]:= k2h
+!SEX_31 : overlay = {sex_31w, sex_31e}, K2 = k2v
+sex_31w[K2]:= k2v
+sex_31e[K2]:= k2v
+!SEX_32 : overlay = {sex_32w, sex_32e}, K2 = k2h
+sex_32w[K2]:= k2h
+sex_32e[K2]:= k2h
+!SEX_33 : overlay = {sex_33w, sex_33e}, K2 = k2v
+sex_33w[K2]:= k2v
+sex_33e[K2]:= k2v
+!SEX_34 : overlay = {sex_34w, sex_34e}, K2 = k2h
+sex_34w[K2]:= k2h
+sex_34e[K2]:= k2h
+!SEX_35 : overlay = {sex_35w, sex_35e}, K2 = k2v
+sex_35w[K2]:= k2v
+sex_35e[K2]:= k2v
+!SEX_36 : overlay = {sex_36w, sex_36e}, K2 = k2h
+sex_36w[K2]:= k2h
+sex_36e[K2]:= k2h
+!SEX_37 : overlay = {sex_37w, sex_37e}, K2 = k2v
+sex_37w[K2]:= k2v
+sex_37e[K2]:= k2v
+!SEX_38 : overlay = {sex_38w, sex_38e}, K2 = k2h
+sex_38w[K2]:= k2h
+sex_38e[K2]:= k2h
+!SEX_39 : overlay = {sex_39w, sex_39e}, K2 = k2v
+sex_39w[K2]:= k2v
+sex_39e[K2]:= k2v
+!SEX_40 : overlay = {sex_40w, sex_40e}, K2 = k2h
+sex_40w[K2]:= k2h
+sex_40e[K2]:= k2h
+!SEX_41 : overlay = {sex_41w, sex_41e}, K2 = k2v
+sex_41w[K2]:= k2v
+sex_41e[K2]:= k2v
+!SEX_42 : overlay = {sex_42w, sex_42e}, K2 = k2h
+sex_42w[K2]:= k2h
+sex_42e[K2]:= k2h
+!SEX_43 : overlay = {sex_43w, sex_43e}, K2 = k2v
+sex_43w[K2]:= k2v
+sex_43e[K2]:= k2v
+!SEX_44 : overlay = {sex_44w, sex_44e}, K2 = k2v
+sex_44w[K2]:= k2v
+sex_44e[K2]:= k2v
+!SEX_45 : overlay = {sex_45w, sex_45e}, K2 = k2h
+sex_45w[K2]:= k2h
+sex_45e[K2]:= k2h
+!SEX_47 : overlay = {sex_47w, sex_47e}, K2 = k2v
+sex_47w[K2]:= k2v
+sex_47e[K2]:= k2v
+
+! /a/lnx113/nfs/acc/user/dlr/knobs/xquneing1/cta_2085mev_20090516_2fam.lat
+RAW_XQUNEING_1  : GROUP = {SEX_08W/ 0.259922,SEX_08E/ 0.259922, &
+        SEX_09W/-0.120354,SEX_09E/-0.120354,SEX_10W/-0.030813, &
+        SEX_10E/-0.030813,SEX_12W/-2.074769,SEX_12E/-2.074769, &
+        SEX_13W/-0.134757,SEX_13E/-0.134757,SEX_14W/ 0.020840, &
+        SEX_14E/ 0.020840,SEX_15W/-0.071905,SEX_15E/-0.071905, &
+        SEX_16W/-0.175376,SEX_16E/-0.175376,SEX_17W/-0.678671, &
+        SEX_17E/-0.678671,SEX_18W/-0.417058,SEX_18E/-0.417058, &
+        SEX_19W/ 3.608634,SEX_19E/ 3.608634,SEX_20W/ 0.328196, &
+        SEX_20E/ 0.328196,SEX_21W/-0.124907,SEX_21E/-0.124907, &
+        SEX_22W/-0.063754,SEX_22E/-0.063754,SEX_23W/-0.088850, &
+        SEX_23E/-0.088850,SEX_24W/-0.024617,SEX_24E/-0.024617, &
+        SEX_25W/-1.354698,SEX_25E/-1.354698,SEX_26W/ 0.034187, &
+        SEX_26E/ 0.034187,SEX_27W/-0.407311,SEX_27E/-0.407311, &
+        SEX_28W/-0.227801,SEX_28E/-0.227801,SEX_29W/-0.141494, &
+        SEX_29E/-0.141494,SEX_30W/ 0.199875,SEX_30E/ 0.199875, &
+        SEX_31W/-0.165039,SEX_31E/-0.165039,SEX_32W/-0.247319, &
+        SEX_32E/-0.247319,SEX_33W/-0.081965,SEX_33E/-0.081965, &
+        SEX_34W/ 0.061746,SEX_34E/ 0.061746,SEX_35W/-0.153041, &
+        SEX_35E/-0.153041,SEX_36W/-0.014855,SEX_36E/-0.014855, &
+        SEX_37W/-0.117617,SEX_37E/-0.117617,SEX_38W/-0.053293, &
+        SEX_38E/-0.053293,SEX_39W/-0.202149,SEX_39E/-0.202149, &
+        SEX_40W/-0.013225,SEX_40E/-0.013225,SEX_41W/-0.031585, &
+        SEX_41E/-0.031585,SEX_42W/ 0.095855,SEX_42E/ 0.095855, &
+        SEX_43W/-0.118856,SEX_43E/-0.118856,SEX_44W/-0.142672, &
+        SEX_44E/-0.142672,SEX_45W/ 0.207110,SEX_45E/ 0.207110, &
+        SEX_47W/ 0.123890,SEX_47E/ 0.123890}, K2, &
+         Type = "CSR XQUNEING   1"
+! /a/lnx113/nfs/acc/user/dlr/knobs/xquneing1/cta_2085mev_20090516_2fam.lat
+RAW_XQUNEING_2  : GROUP = {SEX_08W/ 0.390136,SEX_08E/ 0.390136, &
+        SEX_09W/-0.124330,SEX_09E/-0.124330,SEX_10W/-0.011486, &
+        SEX_10E/-0.011486,SEX_12W/ 0.171039,SEX_12E/ 0.171039, &
+        SEX_13W/-0.101351,SEX_13E/-0.101351,SEX_14W/ 0.189714, &
+        SEX_14E/ 0.189714,SEX_15W/-0.046744,SEX_15E/-0.046744, &
+        SEX_16W/-0.032188,SEX_16E/-0.032188,SEX_17W/-0.307112, &
+        SEX_17E/-0.307112,SEX_18W/-0.202631,SEX_18E/-0.202631, &
+        SEX_19W/ 2.027051,SEX_19E/ 2.027051,SEX_20W/ 0.333839, &
+        SEX_20E/ 0.333839,SEX_21W/-0.065042,SEX_21E/-0.065042, &
+        SEX_22W/-0.067645,SEX_22E/-0.067645,SEX_23W/ 0.003402, &
+        SEX_23E/ 0.003402,SEX_24W/ 0.096145,SEX_24E/ 0.096145, &
+        SEX_25W/-1.009707,SEX_25E/-1.009707,SEX_26W/ 0.381890, &
+        SEX_26E/ 0.381890,SEX_27W/-0.116039,SEX_27E/-0.116039, &
+        SEX_28W/-0.046766,SEX_28E/-0.046766,SEX_29W/-0.058767, &
+        SEX_29E/-0.058767,SEX_30W/ 0.382979,SEX_30E/ 0.382979, &
+        SEX_31W/ 0.191699,SEX_31E/ 0.191699,SEX_32W/-0.128332, &
+        SEX_32E/-0.128332,SEX_33W/ 0.011364,SEX_33E/ 0.011364, &
+        SEX_34W/ 0.071314,SEX_34E/ 0.071314,SEX_35W/ 0.560536, &
+        SEX_35E/ 0.560536,SEX_36W/-0.007747,SEX_36E/-0.007747, &
+        SEX_37W/-0.070790,SEX_37E/-0.070790,SEX_38W/-0.000956, &
+        SEX_38E/-0.000956,SEX_39W/ 0.095362,SEX_39E/ 0.095362, &
+        SEX_40W/ 0.078087,SEX_40E/ 0.078087,SEX_41W/-0.015786, &
+        SEX_41E/-0.015786,SEX_42W/ 0.182419,SEX_42E/ 0.182419, &
+        SEX_43W/-0.052854,SEX_43E/-0.052854,SEX_44W/-0.070463, &
+        SEX_44E/-0.070463,SEX_45W/ 0.093577,SEX_45E/ 0.093577, &
+        SEX_47W/ 0.140761,SEX_47E/ 0.140761}, K2, &
+         Type = "CSR XQUNEING   2"
+
+
+
+
+! /a/lnx113/nfs/acc/user/dlr/knobs/betasing/vbsm_electrons/cta_2085mev_xr40m_cd_2
+! 0111210.lat
+! 20111210 1 command units increases beta at vbsm electrons from 9.77m to 30m
+!  and no change in dispersion
+!RAW_BETASING_1  : GROUP = {Q44W/ 0.097831,Q45W/-0.055323,Q46W/-0.034819, &
+!        Q47W/-0.002357,Q48W/ 0.049533,Q49/ 0.027276,Q48E/-0.024463, &
+!        Q47E/-0.012313,Q46E/ 0.050215,Q45E/-0.006728,Q44E/-0.145766, &
+!        Q43E/ 0.061203,Q42E/ 0.009204,Q41E/-0.039947}, K1, &
+!         Type = "CSR BETASING   1"
+
+! /a/lnx113/nfs/acc/user/dlr/knobs/betasing/vbsm_electrons/cta_2085mev_xr40m_cd_20111210.lat
+! 20111210 1 command unit increases beta at vbsm ekectribs frin 11.9 to 20m
+!  and no change in dispersion
+!RAW_BETASING_2  : GROUP = {Q44W/-0.020035,Q45W/-0.012047,Q46W/-0.010086, &
+!        Q47W/-0.017812,Q48W/ 0.042006,Q49/ 0.019979,Q48E/-0.030928, &
+!        Q47E/ 0.015570,Q46E/-0.016932,Q45E/ 0.001482,Q44E/-0.034369, &
+!        Q43E/ 0.049363,Q42E/ 0.003488,Q41E/ 0.010633}, K1, &
+!         Type = "CSR BETASING   2"
+
+! Call, file =
+! /a/lnx113/nfs/acc/user/dlr/knobs/betasing/vbsm_electrons/cta_2085mev_xr40m_cd_20111210.lat
+! 20111210 1 command unit increases beta at vbsm electrons from 11.9 to 5m
+!  and no change in dispersion
+!RAW_BETASING_3  : GROUP = {Q44W/ 0.007942,Q45W/ 0.004698,Q46W/ 0.010720, &
+!        Q47W/ 0.011098,Q48W/-0.032239,Q49/-0.018931,Q48E/ 0.065616, &
+!        Q47E/-0.010229,Q46E/-0.035152,Q45E/-0.003972,Q44E/ 0.045665, &
+!        Q43E/-0.028899,Q42E/-0.021692,Q41E/ 0.050016}, K1, &
+!         Type = "CSR BETASING   3"
+
+! /a/lnx113/nfs/acc/user/dlr/knobs/betasing/vbsm_electrons/cta_2085mev_xr40m_cd_20111210.lat
+! increase dispersion at vbsm electrons from 2.3cm to 0.49m, vertical beta to 110 at 44e
+
+!RAW_BETASING_4 : GROUP = {Q42W/-0.001239,Q43W/-0.021456,Q44W/-0.026020, &
+!        Q45W/-0.017686,Q46W/ 0.007087,Q47W/ 0.022436,Q48W/-0.026404, &
+!        Q49/ 0.021832,Q48E/ 0.021513,Q47E/-0.023023,Q47AE/-0.010142, &
+!        Q46E/-0.043396,Q45E/ 0.019432,Q44E/-0.025024,Q43E/ 0.070993, &
+!        Q43AE/ 0.001595,Q42E/ 0.001970,Q41E/ 0.015683}, K1, &
+!         Type = "CSR BETASING   4"
+
+! Call, file = cta_2085mev_xr40m_cd_20111210.lat
+!increase emittance to 10 nm using quads in east wiggler straight
+!calculation in /home/dlr/betasing/emittance/emit_east
+! 20120401
+!RAW_BETASING_5  : GROUP = {Q08E/ 0.015378,Q09E/-0.001545,Q10E/-0.013506, &
+!        Q11E/-0.000668,Q12E/ 0.000883,Q13E/-0.006370,Q14E/ 0.014556, &
+!        Q15E/ 0.010434,Q16E/ 0.001784,Q17E/-0.005240,Q18E/-0.020107, &
+!        Q19E/-0.011052,Q20E/ 0.001204,Q21E/-0.000315,Q22E/ 0.011621, &
+!        Q23E/ 0.024107,Q24E/ 0.009711,Q26E/-0.009018,Q27E/-0.025637, &
+!        Q28E/-0.008343,Q29E/ 0.003376}, K1, &
+!         Type = "CSR BETASING   5"
+
+! Call, file = cta_2085mev_xr40m_cd_20111210.lat
+!increase emittance to 20 nm using quads in east wiggler straight
+!calculation in /home/dlr/betasing/emittance/emit_east
+!20120401
+!RAW_BETASING_6  : GROUP = {Q08E/ 0.010180,Q09E/-0.004862,Q10E/-0.012668, &
+!        Q11E/ 0.000374,Q12E/ 0.003878,Q13E/-0.003548,Q14E/ 0.019122, &
+!        Q15E/ 0.009016,Q16E/-0.008998,Q17E/-0.007878,Q18E/-0.023514, &
+!        Q19E/-0.009833,Q20E/ 0.000826,Q21E/ 0.001955,Q22E/ 0.020078, &
+!        Q23E/ 0.004727,Q24E/ 0.014249,Q26E/-0.015321,Q27E/-0.005386, &
+!        Q28E/ 0.006532,Q29E/ 0.003144}, K1, &
+!         Type = "CSR BETASING   6"
+
+! /nfs/acc/user/dlr/knobs/betasing/vbsm_positrons/cta_2085mev_xr40m_cd_20111210.lat
+! increase disperison at vbsm positrons to 0.5m
+! calculation /home/dlr/betasing/vbsm_positrons/
+! 20120401
+!RAW_BETASING_7  : GROUP = {Q41W/-0.037413,Q42W/ 0.002678,Q43W/ 0.037279, &
+!        Q44W/ 0.096455,Q45W/ 0.001700,Q46W/ 0.029513,Q47W/-0.017757, &
+!        Q48W/-0.004136,Q49/-0.044665,Q48E/ 0.000854,Q47E/ 0.013933, &
+!        Q47AE/ 0.149331,Q46E/-0.015745,Q45E/-0.002127,Q44E/-0.058598, &
+!        Q43E/-0.015982,Q43AE/-0.006804,Q42E/-0.005962}, K1, &
+!         Type = "CSR BETASING   7"
+
+RF_W1[VOLT] := 2.02e6
+RF_W2[VOLT] := 2.02e6
+RF_E1[VOLT] := 2.02e6
+RF_E2[VOLT] := 2.02e6
+RF_W1[HARMON] := 1281
+RF_W2[HARMON] := 1281
+RF_E1[HARMON] := 1281
+RF_E2[HARMON] := 1281
+
+use, cesr
+
+Q06W[k1]:=      4.7673816464E-01
+Q05W[k1]:=     -3.4646197315E-01
+Q04W[k1]:=      6.6715788290E-01
+Q03W[k1]:=     -3.3370822537E-01
+Q02W[k1]:=      5.0409238661E-01
+Q02E[k1]:=      4.6723238992E-01
+Q03E[k1]:=     -3.5315463151E-01
+Q04E[k1]:=      6.5599237203E-01
+Q05E[k1]:=     -4.6763463329E-01
+Q06E[k1]:=      5.3050130337E-01
+Q07E[k1]:=     -4.9600443772E-01
+Q08E[k1]:=      1.9741396584E-01
+Q09E[k1]:=     -2.2611387569E-01
+Q10E[k1]:=      2.7870149932E-01
+Q11E[k1]:=     -2.0957283437E-01
+Q12E[k1]:=      2.7014794081E-01
+Q13E[k1]:=     -3.3649492085E-01

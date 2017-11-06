@@ -1,0 +1,39 @@
+
+!--- FX cell ZZ
+
+!--- Quads
+FX.QuaX1: FF.Qua01
+FX.QuaX2: FF.Qua02
+
+
+!--- Pipes
+FX.PipX1: FF.Pip01
+FX.PipX2: FF.Pip02
+
+!--- Patches
+
+FX.patchX1a: FF.patch1
+FX.patchX1b: FF.patch2
+FX.patchX2a: FF.patch3
+FX.patchX2b: FF.patch4
+
+
+!--- Markers
+
+FX.CELLZZ.Mar.BEG: marker
+
+!FX.QuaX1.Mar.MID: marker, superimpose, ref = FX.QuaX1
+!FX.QuaX2.Mar.MID: marker, superimpose, ref = FX.QuaX2
+
+! - - -  Lines 
+
+FX.cellZZ: line = (
+ FX.CELLZZ.Mar.BEG,
+ FX.patchX1a, 
+ FX.QuaX1,
+ FX.patchX1b, FX.PipX1, FX.patchX2a,  
+ FX.QuaX2, 
+ FX.patchX2b, FX.PipX2)
+
+ 
+

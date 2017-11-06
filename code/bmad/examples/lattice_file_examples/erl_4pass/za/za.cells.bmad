@@ -1,0 +1,457 @@
+
+!--- ZA cell 01
+
+!--- Quads
+ZA.Qua01: FF.Qua01, x_offset = 0
+ZA.Qua02: FF.Qua02, x_offset = 0
+
+ZA.Qua01[L] = .133
+ZA.Qua02[L] = .122
+
+ZA.Qua01[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua02[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip01: FF.Pip01, L = 0.073
+ZA.Pip02: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell01.Mar.BEG: marker
+
+!ZA.Qua01.Mar.MID: marker, superimpose, ref = ZA.Qua01
+!ZA.Qua02.Mar.MID: marker, superimpose, ref = ZA.Qua02
+
+!---  Lines
+ZA.cell01: line = (
+ ZA.cell01.Mar.BEG,
+ ZA.Qua01,
+ ZA.Pip01,  
+ ZA.Qua02, 
+ ZA.Pip02)
+
+
+
+
+!--- ZA cell 02
+
+!--- Quads
+ZA.Qua03: FF.Qua01, x_offset = 0
+ZA.Qua04: FF.Qua02, x_offset = 0
+
+ZA.Qua03[L] = .133
+ZA.Qua04[L] = .122
+
+ZA.Qua03[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua04[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip03: FF.Pip01, L = 0.073
+ZA.Pip04: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell02.Mar.BEG: marker
+
+!ZA.Qua03.Mar.MID: marker, superimpose, ref = ZA.Qua03
+!ZA.Qua04.Mar.MID: marker, superimpose, ref = ZA.Qua04
+
+!---  Lines
+ZA.cell02: line = (
+ ZA.cell02.Mar.BEG,
+ ZA.Qua03,
+ ZA.Pip03,  
+ ZA.Qua04, 
+ ZA.Pip04)
+
+
+
+
+!--- ZA cell 03
+
+!--- Quads
+ZA.Qua05: FF.Qua01, x_offset = 0
+ZA.Qua06: FF.Qua02, x_offset = 0
+
+ZA.Qua05[L] = .133
+ZA.Qua06[L] = .122
+
+ZA.Qua05[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua06[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip05: FF.Pip01, L = 0.073
+ZA.Pip06: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell03.Mar.BEG: marker
+
+!ZA.Qua05.Mar.MID: marker, superimpose, ref = ZA.Qua05
+!ZA.Qua06.Mar.MID: marker, superimpose, ref = ZA.Qua06
+
+!---  Lines
+ZA.cell03: line = (
+ ZA.cell03.Mar.BEG,
+ ZA.Qua05,
+ ZA.Pip05,  
+ ZA.Qua06, 
+ ZA.Pip06)
+
+
+
+
+!--- ZA cell 04
+
+!--- Quads
+ZA.Qua07: FF.Qua01, x_offset = 0
+ZA.Qua08: FF.Qua02, x_offset = 0
+
+ZA.Qua07[L] = .133
+ZA.Qua08[L] = .122
+
+ZA.Qua07[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua08[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip07: FF.Pip01, L = 0.073
+ZA.Pip08: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell04.Mar.BEG: marker
+
+!ZA.Qua07.Mar.MID: marker, superimpose, ref = ZA.Qua07
+!ZA.Qua08.Mar.MID: marker, superimpose, ref = ZA.Qua08
+
+!---  Lines
+ZA.cell04: line = (
+ ZA.cell04.Mar.BEG,
+ ZA.Qua07,
+ ZA.Pip07,  
+ ZA.Qua08, 
+ ZA.Pip08)
+
+
+
+
+!--- ZA cell 05
+
+!--- Quads
+ZA.Qua09: FF.Qua01, x_offset = 0
+ZA.Qua10: FF.Qua02, x_offset = 0
+
+ZA.Qua09[L] = .133
+ZA.Qua10[L] = .122
+
+ZA.Qua09[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua10[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip09: FF.Pip01, L = 0.073
+ZA.Pip10: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell05.Mar.BEG: marker
+
+!ZA.Qua09.Mar.MID: marker, superimpose, ref = ZA.Qua09
+!ZA.Qua10.Mar.MID: marker, superimpose, ref = ZA.Qua10
+
+!---  Lines
+ZA.cell05: line = (
+ ZA.cell05.Mar.BEG,
+ ZA.Qua09,
+ ZA.Pip09,  
+ ZA.Qua10, 
+ ZA.Pip10)
+
+
+
+
+!--- ZA cell 06
+
+!--- Quads
+ZA.Qua11: FF.Qua01, x_offset = 0
+ZA.Qua12: FF.Qua02, x_offset = 0
+
+ZA.Qua11[L] = .133
+ZA.Qua12[L] = .122
+
+ZA.Qua11[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua12[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip11: FF.Pip01, L = 0.073
+ZA.Pip12: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell06.Mar.BEG: marker
+
+!ZA.Qua11.Mar.MID: marker, superimpose, ref = ZA.Qua11
+!ZA.Qua12.Mar.MID: marker, superimpose, ref = ZA.Qua12
+
+!---  Lines
+ZA.cell06: line = (
+ ZA.cell06.Mar.BEG,
+ ZA.Qua11,
+ ZA.Pip11,  
+ ZA.Qua12, 
+ ZA.Pip12)
+
+
+
+
+!--- ZA cell 07
+
+!--- Quads
+ZA.Qua13: FF.Qua01, x_offset = 0
+ZA.Qua14: FF.Qua02, x_offset = 0
+
+ZA.Qua13[L] = .133
+ZA.Qua14[L] = .122
+
+ZA.Qua13[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua14[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip13: FF.Pip01, L = 0.073
+ZA.Pip14: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell07.Mar.BEG: marker
+
+!ZA.Qua13.Mar.MID: marker, superimpose, ref = ZA.Qua13
+!ZA.Qua14.Mar.MID: marker, superimpose, ref = ZA.Qua14
+
+!---  Lines
+ZA.cell07: line = (
+ ZA.cell07.Mar.BEG,
+ ZA.Qua13,
+ ZA.Pip13,  
+ ZA.Qua14, 
+ ZA.Pip14)
+
+
+
+
+!--- ZA cell 08
+
+!--- Quads
+ZA.Qua15: FF.Qua01, x_offset = 0
+ZA.Qua16: FF.Qua02, x_offset = 0
+
+ZA.Qua15[L] = .133
+ZA.Qua16[L] = .122
+
+ZA.Qua15[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua16[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip15: FF.Pip01, L = 0.073
+ZA.Pip16: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell08.Mar.BEG: marker
+
+!ZA.Qua15.Mar.MID: marker, superimpose, ref = ZA.Qua15
+!ZA.Qua16.Mar.MID: marker, superimpose, ref = ZA.Qua16
+
+!---  Lines
+ZA.cell08: line = (
+ ZA.cell08.Mar.BEG,
+ ZA.Qua15,
+ ZA.Pip15,  
+ ZA.Qua16, 
+ ZA.Pip16)
+
+
+
+
+!--- ZA cell 09
+
+!--- Quads
+ZA.Qua17: FF.Qua01, x_offset = 0
+ZA.Qua18: FF.Qua02, x_offset = 0
+
+ZA.Qua17[L] = .133
+ZA.Qua18[L] = .122
+
+ZA.Qua17[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua18[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip17: FF.Pip01, L = 0.073
+ZA.Pip18: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell09.Mar.BEG: marker
+
+!ZA.Qua17.Mar.MID: marker, superimpose, ref = ZA.Qua17
+!ZA.Qua18.Mar.MID: marker, superimpose, ref = ZA.Qua18
+
+!---  Lines
+ZA.cell09: line = (
+ ZA.cell09.Mar.BEG,
+ ZA.Qua17,
+ ZA.Pip17,  
+ ZA.Qua18, 
+ ZA.Pip18)
+
+
+
+
+!--- ZA cell 10
+
+!--- Quads
+ZA.Qua19: FF.Qua01, x_offset = 0
+ZA.Qua20: FF.Qua02, x_offset = 0
+
+ZA.Qua19[L] = .133
+ZA.Qua20[L] = .122
+
+ZA.Qua19[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua20[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip19: FF.Pip01, L = 0.073
+ZA.Pip20: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell10.Mar.BEG: marker
+
+!ZA.Qua19.Mar.MID: marker, superimpose, ref = ZA.Qua19
+!ZA.Qua20.Mar.MID: marker, superimpose, ref = ZA.Qua20
+
+!---  Lines
+ZA.cell10: line = (
+ ZA.cell10.Mar.BEG,
+ ZA.Qua19,
+ ZA.Pip19,  
+ ZA.Qua20, 
+ ZA.Pip20)
+
+
+
+
+!--- ZA cell 11
+
+!--- Quads
+ZA.Qua21: FF.Qua01, x_offset = 0
+ZA.Qua22: FF.Qua02, x_offset = 0
+
+ZA.Qua21[L] = .133
+ZA.Qua22[L] = .122
+
+ZA.Qua21[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua22[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip21: FF.Pip01, L = 0.073
+ZA.Pip22: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell11.Mar.BEG: marker
+
+!ZA.Qua21.Mar.MID: marker, superimpose, ref = ZA.Qua21
+!ZA.Qua22.Mar.MID: marker, superimpose, ref = ZA.Qua22
+
+!---  Lines
+ZA.cell11: line = (
+ ZA.cell11.Mar.BEG,
+ ZA.Qua21,
+ ZA.Pip21,  
+ ZA.Qua22, 
+ ZA.Pip22)
+
+
+
+
+!--- ZA cell 12
+
+!--- Quads
+ZA.Qua23: FF.Qua01, x_offset = 0
+ZA.Qua24: FF.Qua02, x_offset = 0
+
+ZA.Qua23[L] = .133
+ZA.Qua24[L] = .122
+
+ZA.Qua23[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua24[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip23: FF.Pip01, L = 0.073
+ZA.Pip24: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell12.Mar.BEG: marker
+
+!ZA.Qua23.Mar.MID: marker, superimpose, ref = ZA.Qua23
+!ZA.Qua24.Mar.MID: marker, superimpose, ref = ZA.Qua24
+
+!---  Lines
+ZA.cell12: line = (
+ ZA.cell12.Mar.BEG,
+ ZA.Qua23,
+ ZA.Pip23,  
+ ZA.Qua24, 
+ ZA.Pip24)
+
+
+
+
+!--- ZA cell 13
+
+!--- Quads
+ZA.Qua25: FF.Qua01, x_offset = 0
+ZA.Qua26: FF.Qua02, x_offset = 0
+
+ZA.Qua25[L] = .133
+ZA.Qua26[L] = .122
+
+ZA.Qua25[B1_GRADIENT] = -1.0909482913674269e+01
+ZA.Qua26[B1_GRADIENT] =  1.0395741123963081e+01
+
+!--- Pipes
+ZA.Pip25: FF.Pip01, L = 0.073
+ZA.Pip26: FF.Pip02, L = 0.123    - .03/13
+
+
+!--- Markers
+ZA.cell13.Mar.BEG: marker
+
+!ZA.Qua25.Mar.MID: marker, superimpose, ref = ZA.Qua25
+!ZA.Qua26.Mar.MID: marker, superimpose, ref = ZA.Qua26
+
+!---  Lines
+ZA.cell13: line = (
+ ZA.cell13.Mar.BEG,
+ ZA.Qua25,
+ ZA.Pip25,  
+ ZA.Qua26, 
+ ZA.Pip26)
+
+
+
+!--- ZA.straight_cells
+ZA.straight_cells: line = (
+  ZA.CELL01,
+  ZA.CELL02,
+  ZA.CELL03,
+  ZA.CELL04,
+  ZA.CELL05,
+  ZA.CELL06,
+  ZA.CELL07,
+  ZA.CELL08,
+  ZA.CELL09,
+  ZA.CELL10,
+  ZA.CELL11,
+  ZA.CELL12,
+  ZA.CELL13)

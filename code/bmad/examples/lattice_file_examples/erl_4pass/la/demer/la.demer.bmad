@@ -1,0 +1,53 @@
+
+
+
+!- - - Bends
+! soft bend for DU
+
+! Design for low energy beam, exactly the same as the injector merge bend
+!DU.e0 =  6e6 ! eV
+!DU.e1 = 67e6
+
+! reference Momenta
+!DU.p0c = sqrt(DU.e0^2 - m_electron^2)
+!DU.p1c = sqrt(DU.e1^2 - m_electron^2)
+
+! Angle
+!DU.angle0 = -15*pi/180
+!DU.L0 = .254
+!DU.g0 = DU.angle0/DU.L0
+
+!DU.g_err = (DU.p0c/DU.p1c - 1) * DU.g0
+
+ 
+la.demer.energy0 = 6e6
+la.demer.energy1 = 42e6
+la.p0 = sqrt(la.demer.energy0^2 - m_electron^2)
+la.p1 = sqrt(la.demer.energy1^2 - m_electron^2)
+la.demer.angle0 = -15*pi/180
+la.demer.ben01.angle = asin(la.p0/la.p1 * sin(la.demer.angle0))
+
+la.demer.ben01: rbend, L = 0.2, fringe_type = full, angle = la.demer.ben01.angle, e1=-la.demer.ben01.angle/2, e2=la.demer.ben01.angle/2
+
+!la.demer.ben01: sbend, L = DU.L0, fringe_type = full, e1=0, e2=DU.angle0
+!la.demer.ben01[g] = DU.g0
+!la.demer.ben01[g_err] = DU.g_err
+
+la.demer.pip01: pipe
+la.demer.pip02: pipe
+
+la.demer.mar.beg: marker
+la.demer.mar.end: marker
+
+
+! Patch for straight pipe for energies 1, 2, ...
+LA.demerge_patch: patch
+LA.DEMERGE_PATCH[X_OFFSET] =  -3.68362844861974E-03
+LA.DEMERGE_PATCH[X_PITCH] =  -3.68508792716281E-02
+LA.DEMERGE_PATCH[Z_OFFSET] =  -1.01834641154755E-04
+
+
+la.demer: line = (la.demer.mar.beg, 
+la.demer.ben01,
+LA.demerge_patch,
+la.demer.mar.end)

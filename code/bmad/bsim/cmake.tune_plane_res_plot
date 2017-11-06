@@ -1,0 +1,21 @@
+set (EXENAME tune_plane_res_plot)
+set (SRC_FILES
+  tune_plane_res_plot/tune_plane_res_plot.f90
+  tune_plane_res_plot/tune_plane_res_mod.f90
+)
+
+set (INC_DIRS
+)
+
+set (LINK_LIBS
+  bsim
+  bmad
+  xsif
+  xrlf03
+  xrl
+  sim_utils
+  recipes_f-90_LEPP
+  forest
+  ${PLOT_LINK_LIBS}
+  xsif
+)

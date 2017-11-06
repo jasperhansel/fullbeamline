@@ -1,0 +1,32 @@
+# Included makefile to add custom GPT elements: GCC
+#
+# This file is part of GPT and belongs to:
+# S.B. van der Geer, M.J. de Loos and Pulsar Physics
+
+# Compiler settings
+#EXEEXT = .exe
+SYSEXT = .unx
+
+MPIDIR = $(HOME)/gpt/mpich2-64
+RELEASEDIR = $(HOME)/gptrelease
+
+CC = g++
+CFLAGS = -O3 -Wall -Wno-write-strings -I$(MPIDIR)/include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funroll-loops
+CPPFLAGS =
+#TARGET_ARCH = -m32 -fopenmp
+TARGET_ARCH = -m64 -mfpmath=sse -fopenmp
+
+#AR = libtool
+#ARFLAGS = -o
+
+LDFLAGS = -lm
+ARFLAGS = rc
+
+CLEANFILES = *.o
+
+MV = mv -f
+RM = rm -f
+CP = cp -f
+MKDIR = mkdir -p
+TOUCH = touch
+YACCFILE = y.tab.c

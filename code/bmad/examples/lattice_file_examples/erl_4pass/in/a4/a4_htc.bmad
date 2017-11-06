@@ -1,0 +1,91 @@
+
+
+!IN.A4
+!Telescope section simplified from A4 definition
+
+IN.A4.Pip01.aperture = 0.034798/2
+IN.A4.Pip01: PIPE, L = 1.285
+
+IN.A4.Pip02.aperture = 0.034798/2
+IN.A4.Pip02: PIPE, L = 1.53
+
+IN.A4.Pip01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Pip01.aperture }},
+	section = { s = IN.A4.Pip01[L],
+	  v(1) = {0, 0, IN.A4.Pip01.aperture}}}
+
+IN.A4.Pip02[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Pip02.aperture }},
+	section = { s = IN.A4.Pip02[L],
+	  v(1) = {0, 0, IN.A4.Pip02.aperture}}}
+
+
+IN.A4.qua01: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A4.Pip01, ref_end, ele_end
+IN.A4.qua02: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A4.Mar.BEG
+
+IN.A4.qua03: QUADRUPOLE, L = 0.239, superimpose, ref = IN.A4.Pip02, ref_beginning, ele_beginning
+IN.A4.qua04: QUADRUPOLE, L = 0.239, superimpose, ref = IN.HTC.Mar.END
+!IN.A4.qua01[alias] = MA4QUA01
+
+
+IN.A4.Ben01.aperture = 0.034798/2
+
+IN.A4.Ben01.Pad01: PIPE,  L = 0.12, aperture = IN.A4.Ben01.aperture
+IN.A4.Ben01:       SBEND, L = 0.254, aperture = IN.A4.Ben01.aperture
+IN.A4.Ben01_off:   SBEND, L = 0.254, aperture = IN.A4.Ben01.aperture, angle = -1*pi/180
+IN.A4.Ben01.Pad02: PIPE,  L = 0.066, aperture = IN.A4.Ben01.aperture
+
+IN.A4.Ben01.Pad01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Ben01.Pad01[aperture]}},
+	section = { s = IN.A4.Ben01.Pad01[L],
+	  v(1) = {0, 0, IN.A4.Ben01.Pad01[aperture]}}}
+
+IN.A4.Ben01[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Ben01[aperture]}},
+	section = { s = IN.A4.Ben01[L],
+	  v(1) = {0, 0, IN.A4.Ben01[aperture]}}}
+
+IN.A4.Ben01_off[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Ben01_off[aperture]}},
+	section = { s = IN.A4.Ben01_off[L],
+	  v(1) = {0, 0, IN.A4.Ben01_off[aperture]}}}
+
+IN.A4.Ben01.Pad02[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, IN.A4.Ben01.Pad02[aperture]}},
+	section = { s = IN.A4.Ben01.Pad02[L],
+	  v(1) = {0, 0, IN.A4.Ben01.Pad02[aperture]}}}
+
+
+! Offsets
+IN.A4.qua01[offset] = -0.2
+IN.A4.qua02[offset] = .5
+
+IN.A4.qua03[offset] = 0.2
+IN.A4.qua04[offset] = 0.8
+
+in.A4.Mar.BEG: Marker
+in.A4.Mar.END: Marker
+
+call, file = ../htc/in.htc.bmad
+
+in.A4: LINE = (IN.A4.Mar.BEG, 
+  IN.A4.Pip01,
+IN.HTC, 
+  IN.A4.Pip02,
+  IN.A4.Ben01.Pad01,
+  IN.A4.Ben01_off,
+  IN.A4.Ben01.Pad02,
+	       IN.A4.Mar.END)
+
+in.A4_from_C1: LINE = ( &
+  !IN.A4.Ben01.Pad01,
+  IN.A4.Ben01,
+  IN.A4.Ben01.Pad02,
+	       IN.A4.Mar.END)
+

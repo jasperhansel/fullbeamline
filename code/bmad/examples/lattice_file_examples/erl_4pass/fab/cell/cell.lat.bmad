@@ -1,0 +1,64 @@
+
+BEGINNING[BETA_A]  = 40
+BEGINNING[ALPHA_A]=  0
+BEGINNING[BETA_B] = 40
+BEGINNING[ALPHA_B] = 0
+
+! parameter[geometry] = open
+PARAMETER[particle] = electron
+
+!call, file = ../energy0.bmad
+ call, file = beam_start1.bmad
+
+!parameter[ptc_exact_model]  = T
+
+parameter[absolute_time_tracking] = T
+
+
+
+!*[tracking_method] = symp_lie_ptc
+!*[mat6_calc_method] = symp_lie_ptc
+
+!*[tracking_method] = time_runge_kutta
+!*[mat6_calc_method] = tracking
+
+
+Mar.BEG: marker
+Mar.END: marker
+
+! Bmad cell
+call, file = cell.bmad
+call, file = cell_wall.bmad
+
+!lat: line = (Mar.BEG, FF.arc_cell, Mar.END)
+lat: line = (FF.arc_cell)
+use, lat, FF.dummy1, FF.dummy2 
+
+!call, file = cell.use_fields.bmad
+
+ 
+! 3D cell
+!call, file = ../../../fields/cell3d_250MeV/CBETA_cell.bmad 
+!call, file = ../../../fields/halbach_cell3d/CBETA_cell.bmad 
+!FF.Qua01.Mar.MID: marker, superimpose, ref = FF.Qua01
+!FF.Qua02[field_overlaps] = D1 ! wrap-around only!
+!pcell: line = (cbeta_cell)
+!FF.Qua02[x_offset] = -1e-3
+
+! Better orbits
+!FF.Qua01[b1_gradient] = 1.14
+!FF.Qua02[b1_gradient] = 1.10
+!FF.Qua02[x_offset] = -4e-3
+
+
+!call, file = open_cell.lat.bmad
+
+!cell3: line = (3*pcell)
+
+!quad::*[tracking_method] = time_runge_kutta
+!quad::*[mat6_calc_method] = tracking
+
+!*[aperture] = 0.10
+
+*[ds_step] = .01
+

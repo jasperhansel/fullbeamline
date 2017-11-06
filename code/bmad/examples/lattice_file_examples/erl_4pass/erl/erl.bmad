@@ -1,0 +1,242 @@
+
+! Markers
+
+Mar.BEG: marker
+Mar.END: marker
+
+
+! Time patches
+return1.time_patch: patch
+return2.time_patch: patch
+return3.time_patch: patch
+return4.time_patch: patch
+return5.time_patch: patch
+return6.time_patch: patch
+return7.time_patch: patch
+
+! Extra drifts
+extend1: drift
+extend2: drift
+extend3: drift
+extend4: drift
+
+
+! Magic elements
+magic: match, beta_a1 = 1, beta_b1 = 1, match_end = T
+
+LA.match1: match, match_end = T
+LA.match1[beta_a1] = 12.5
+LA.match1[beta_b1] = 12.5
+LA.match1[alpha_a1] = -1
+LA.match1[alpha_b1] = -1
+LA.match2: LA.match1
+LA.match3: LA.match1
+LA.match4: LA.match1
+
+! For simulating dispersion correction
+LA.ORBIT_SHIFT: MATCH, 
+  beta_a0  = 1, alpha_a0 = 0, beta_a1  = 1, alpha_a1 = 0,
+  beta_b0  = 1, alpha_b0 = 0, beta_b1  = 1, alpha_b1 = 0
+
+
+! recirculate patches
+return0: patch
+return1: patch
+return2: patch
+return3: patch
+return4: patch
+return5: patch
+return6: patch
+return7: patch
+
+! Linac
+LA.fakecavity: lcavity, L=1, rf_frequency=1.3e9, voltage = 70e6
+!LA: line[multipass] = (LA.fakecavity)
+call, file = ../la/la.bmad
+call, file = ../la/la.X.bmad
+
+
+LA.Pip28[descrip] = "3DMODEL=../../../../Scratch/STL/7103-108-MLC-gutted_STL/7103-108-MLC-gutted_logo.blend"
+
+
+! FFAG
+call, file = ../fab/cell/cell.bmad
+call, file = ../fab/fab.bmad
+call, file = ../fab/fa.X.bmad
+call, file = ../fab/fb.X.bmad
+
+
+
+! Splitters and Recombiners
+
+call, file = ../sx/sx.bmad
+call, file = ../rx/rx.bmad
+
+
+
+
+
+
+! ZA
+call, file = ../za/za.bmad
+
+
+za_test: line = (ZA.CELL01,
+  ZA.CELL02,
+  ZA.CELL03,
+  ZA.CELL04,
+  ZA.CELL05,
+  ZA.CELL06)
+
+
+! DU
+call, file = ../du/du.bmad
+!call, file = ../du/du.X.bmad
+
+! EX
+!call, file = ../ex/ex.bmad
+
+
+
+
+ZA.extend: drift
+
+LA.path_length_adjust2: drift
+LA.floor_shift2: floor_shift, origin_ele = Mar.BEG
+
+LA.path_length_adjust3: drift
+LA.floor_shift3: floor_shift, origin_ele = Mar.BEG
+
+LA.path_length_adjust4: drift
+LA.floor_shift4: floor_shift, origin_ele = Mar.BEG
+
+!- - - - - - ERL 1 pass - - - - - -
+erl_1pass_half: line = (magic, in.merge.part1, IN.MERGE.part2, Mar.BEG,
+LA, LA.match1, DU.part1,
+S1, 
+FA, 
+ZA)
+
+
+ 
+!erl_1pass: line = (IN_with_MERGE_part1, magic, IN.MERGE.part2, Mar.BEG,
+old_erl_1pass: line = (magic, in.merge.part1, IN.MERGE.part2, Mar.BEG,
+LA.ORBIT_SHIFT, 
+LA, 
+!LA.match1,
+DU.part1,
+S1, 
+FA, 
+TA,
+ZA, 
+ZB,
+TB, 
+FB,
+R1_multi, R1_connect, IN.MERGE.part2, return1.time_patch, 
+LA, DU.part1, 
+!DU.part1, DU,
+Mar.END)
+
+erl_1pass: line = (
+LA, LA.match1, DU.part1,
+S1_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R1_multi, R1_connect, IN.MERGE.part2, return1.time_patch,
+LA, DU.part1) 
+
+
+!- - - - - - ERL 2 pass - - - - - -
+!erl_2pass: line = (IN_with_MERGE_part1, magic, IN.MERGE.part2, Mar.BEG,
+erl_2pass: line = (magic, in.merge.part1, IN.MERGE.part2, Mar.BEG,
+LA, LA.match1, DU.part1,
+S1_multi, 
+FA, ZA, ZB, FB, 
+R1_multi, R1_connect, IN.MERGE.part2, return1.time_patch, LA, 
+
+S2_multi, 
+FA, ZA, ZB, FB,
+R2_multi, R1_connect, IN.MERGE.part2, return2.time_patch, 
+!LA.path_length_adjust2, LA.floor_shift2,
+LA, 
+
+Mar.END)
+
+
+
+
+
+!- - - - - - Z ERL 4 pass - - - - - -
+
+
+erl_4pass1: line = (
+LA, LA.match1, DU.part1,
+S1_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R1_multi, R1_connect, IN.MERGE.part2, return1.time_patch,
+LA, DU.part1) 
+
+erl_4pass2: line = (
+S2_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R2_multi, R1_connect, IN.MERGE.part2, return2.time_patch, 
+LA.path_length_adjust2, LA.floor_shift2,
+LA, DU.part1) 
+
+erl_4pass3: line = (
+S3_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R3_multi, R1_connect, IN.MERGE.part2, return3.time_patch, 
+LA.path_length_adjust3, LA.floor_shift3,
+LA, DU.part1) 
+
+erl_4pass4: line = (
+S4_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R4_multi, R1_connect, IN.MERGE.part2, return4.time_patch, 
+LA.path_length_adjust4, LA.floor_shift4,
+LA, DU.part1) 
+
+erl_4pass5: line = (
+S3_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R3_multi, R1_connect, IN.MERGE.part2, return5.time_patch, 
+LA.path_length_adjust3, LA.floor_shift3,
+LA, DU.part1) 
+ 
+erl_4pass6: line = (
+S2_multi, 
+FA, TA, ZA, ZB, TB, FB,  
+R2_multi, R1_connect, IN.MERGE.part2, return6.time_patch, 
+LA.path_length_adjust2, LA.floor_shift2,
+LA, DU.part1) 
+
+erl_4pass7: line = (
+S1_multi, 
+FA, TA, ZA, ZB, TB, FB, 
+R1_multi, R1_connect, IN.MERGE.part2, return7.time_patch,
+LA, DU.part1) 
+
+
+mirror_merge_fork: fork, to_line = in.mirror_merge
+
+!erl_4pass: line = (IN_with_MERGE_part1, magic, IN.MERGE.part2, Mar.BEG,
+erl_4pass: line = (IN_before_MERGE, mirror_merge_fork, in.merge.part1, IN.MERGE.part2, Mar.BEG,
+!erl_4pass: line = (magic, in.merge.part1, IN.MERGE.part2, Mar.BEG,
+erl_4pass1, 
+erl_4pass2, 
+erl_4pass3,
+erl_4pass4,
+erl_4pass5,
+erl_4pass6, 
+erl_4pass7,
+DU,
+!DU.short,
+Mar.END)
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+parameter[geometry] = Closed          
+
+parameter[p0c]                    = 7.7998326136E7
+parameter[particle]               = Electron
+parameter[absolute_time_tracking]    = T
+beam_start[x]  = -0.014757949
+beam_start[px] = -0.0449513246
+
+!-------------------------------------------------------
+
+FF.MAR.BEG: MARKER, x_limit = 0.042, y_limit = 0.012, aperture_type = Elliptical
+FF.PIP00B: PIPE, wall = call::wall_ff.pip00b, L = 0.06, DS_STEP = 0.01
+FF.PATCH1: PATCH, X_PITCH = -0.024807207908
+FF.QUA01.MAR.BEG: MARKER, x_limit = 0.042, y_limit = 0.012
+slave_drift_1: drift, l = 0.0665
+FF.QUA01.MAR.MID: MARKER
+slave_drift_2: drift, l = 0.0665
+FF.QUA01.MAR.END: MARKER
+FF.PATCH2: PATCH, X_PITCH = -0.019904597649
+FF.PIP01: PIPE, L = 0.07, DS_STEP = 0.01
+FF.PATCH3: PATCH, X_PITCH = -0.018826023392
+FF.QUA02.MAR.BEG: MARKER, x_limit = 0.042, y_limit = 0.012
+slave_drift_3: drift, l = 0.061
+FF.QUA02.MAR.MID: MARKER
+slave_drift_4: drift, l = 0.061
+FF.QUA02.MAR.END: MARKER
+FF.PATCH4: PATCH, X_PITCH = -0.023728633651
+FF.PIP02A: PIPE, wall = call::wall_end, L = 0.06, DS_STEP = 0.01
+FF.MAR.END: MARKER
+
+!-------------------------------------------------------
+! Overlays, groups, etc.
+
+x__FF.QUA01: null_ele
+FF.QUA01: QUADRUPOLE, descrip = "3DMODEL=FFAG_Iron/QF.blend", superimpose,
+   ele_origin = beginning, ref = x__FF.QUA01, wall = call::wall_ff.qua01, L = 0.133,
+   FRINGE_TYPE = Full, X_OFFSET = -7.1820899275E-3, B1_GRADIENT = -10.62098585,
+   DS_STEP = 0.01, x_limit = 0.042, y_limit = 0.012, aperture_at = Both_Ends,
+   aperture_type = Elliptical, field_master = T, scale_multipoles = F
+x__FF.QUA02: null_ele
+FF.QUA02: QUADRUPOLE, descrip = "3DMODEL=FFAG_Iron/QD.blend", superimpose,
+   ele_origin = beginning, ref = x__FF.QUA02, wall = call::wall_ff.qua02, L = 0.122,
+   FRINGE_TYPE = Full, X_OFFSET = 0.02013187168, B1_GRADIENT = 10.016651755, DS_STEP = 0.01,
+   x_limit = 0.042, y_limit = 0.012, aperture_at = Both_Ends, aperture_type = Elliptical,
+   field_master = T, scale_multipoles = F
+O_QUAD_LENGTH: overlay = {FF.PATCH1[X_PITCH]:(-(0.06+0.06+F*LTOT))*G/2,
+   FF.PATCH2[X_PITCH]:(-(F*LTOT+0.07))*G/2, FF.PATCH3[X_PITCH]:(-(0.07+(1-F)*LTOT))*G/2,
+   FF.PATCH4[X_PITCH]:(-((1-F)*LTOT+0.06+0.06))*G/2}, var = {F, LTOT, G},
+   F                                        = 0.52156862745,
+   LTOT                                     = 0.255,
+   G                                        = 0.19610441034
+O_APERTURE_X: overlay = {FF.MAR.BEG[X1_LIMIT], FF.MAR.BEG[X2_LIMIT], FF.QUA01[X1_LIMIT],
+   FF.QUA01[X2_LIMIT], FF.QUA01.MAR.BEG[X1_LIMIT], FF.QUA01.MAR.BEG[X2_LIMIT],
+   FF.QUA02.MAR.BEG[X1_LIMIT], FF.QUA02.MAR.BEG[X2_LIMIT], FF.QUA02[X1_LIMIT],
+   FF.QUA02[X2_LIMIT]}, var = {X_LIMIT}, X_LIMIT                                  = 0.042
+O_APERTURE_Y: overlay = {FF.MAR.BEG[Y1_LIMIT], FF.MAR.BEG[Y2_LIMIT], FF.QUA01[Y1_LIMIT],
+   FF.QUA01[Y2_LIMIT], FF.QUA01.MAR.BEG[Y1_LIMIT], FF.QUA01.MAR.BEG[Y2_LIMIT],
+   FF.QUA02.MAR.BEG[Y1_LIMIT], FF.QUA02.MAR.BEG[Y2_LIMIT], FF.QUA02[Y1_LIMIT],
+   FF.QUA02[Y2_LIMIT]}, var = {Y_LIMIT}, Y_LIMIT                                  = 0.012
+
+!-------------------------------------------------------
+! Branch: FF.DUMMY1
+
+slave_drift_5: drift, l = 0.061
+slave_drift_6: drift, l = 0.061
+F1: FIDUCIAL, origin_ele = FF.MAR.BEG
+
+!-------------------------------------------------------
+! Branch: FF.DUMMY2
+
+F2: FIDUCIAL, origin_ele = FF.MAR.END
+slave_drift_7: drift, l = 0.0665
+slave_drift_8: drift, l = 0.0665
+
+LAT: line = ( FF.MAR.BEG, FF.PIP00B, FF.PATCH1, FF.QUA01.MAR.BEG, x__FF.QUA01,
+   slave_drift_1, FF.QUA01.MAR.MID, slave_drift_2, FF.QUA01.MAR.END, FF.PATCH2, FF.PIP01,
+   FF.PATCH3, FF.QUA02.MAR.BEG, x__FF.QUA02, slave_drift_3, FF.QUA02.MAR.MID, slave_drift_4,
+   FF.QUA02.MAR.END, FF.PATCH4, FF.PIP02A, FF.MAR.END)
+
+FF.DUMMY1: line = ( x__FF.QUA02, slave_drift_5, FF.QUA02.MAR.MID, slave_drift_6,
+   FF.PATCH4, FF.PIP02A, F1)
+
+FF.DUMMY1[geometry] = Closed
+FF.DUMMY1[particle] = Electron
+FF.DUMMY1[p0c]      = 7.7998326136E7
+
+FF.DUMMY2: line = ( F2, FF.PIP00B, FF.PATCH1, x__FF.QUA01, slave_drift_7,
+   FF.QUA01.MAR.MID, slave_drift_8)
+
+FF.DUMMY2[geometry] = Closed
+FF.DUMMY2[particle] = Electron
+FF.DUMMY2[p0c]      = 7.7998326136E7
+FF.DUMMY2[x_position]     = -0.019403549055
+FF.DUMMY2[z_position]     = 0.44441462405
+FF.DUMMY2[theta_position] = -0.0872664626
+
+use, LAT, FF.DUMMY1, FF.DUMMY2

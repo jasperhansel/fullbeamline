@@ -1,0 +1,22 @@
+apex_gun: E_GUN, L = 0.15, field_calc = fieldmap, tracking_method = time_runge_kutta, 
+    rf_frequency = 187e6, 
+    grid_field = call::apex_gun_grid.bmad 
+
+r_large = 0.02
+
+! Simple 1 inch pipe at 4 cm
+apex_gun[wall] = {
+	section = { s = 0,
+	  v(1) = {0, 0, 0.0254/2}},
+	section = { s = 0.001,
+	  v(1) = {0, 0, r_large}},
+	section = { s = 0.0399,
+	  v(1) = {0, 0, r_large}},
+	section = { s = 0.04,
+	  v(1) = {0, 0, 0.0254/2}},
+	section = { s = 0.15,
+	  v(1) = {0, 0, 0.0254/2}}}
+
+
+!!apex_gun[voltage] = 750e3 !Voltage in V
+

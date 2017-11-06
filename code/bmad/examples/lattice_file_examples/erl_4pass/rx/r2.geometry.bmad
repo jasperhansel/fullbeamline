@@ -1,0 +1,27 @@
+
+! Copy from S2
+R2.PIP01[L] =  S2.PIP01[L]
+R2.Ben02[g] =  S2.Ben02[g]
+R2.PIP02[L] =  S2.PIP02[L]
+R2.Ben03[g] =  S2.Ben03[g]
+R2.PIP03a[L] =  S2.PIP03a[L]
+R2.PIP03b[L] =  S2.PIP03b[L]
+
+!R2.PIP03b[L] =  10
+
+
+R2.Ben04[g] =  S2.Ben04[g]
+R2.PIP04A[L] =  S2.PIP04A[L]
+
+R2.PIP04b[L] = S2.PIP04b[L]
+R2.PIP05a[L] = S2.PIP05a[L]
+R2.PIP05b[L] = S2.PIP05b[L]
+R2.PIP06[L] = S2.PIP06[L]
+R2.PIP07[L] = S2.PIP07[L]
+R2.PIP08[L] = S2.PIP08[L]
+
+R2.Ben05[g] = S2.Ben05[g]
+R2.Ben06[g] = S2.Ben06[g]
+R2.Ben07[g] = S2.Ben07[g]
+
+

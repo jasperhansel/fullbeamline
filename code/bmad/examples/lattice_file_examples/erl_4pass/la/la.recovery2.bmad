@@ -1,0 +1,11 @@
+
+
+! Energy recovery for pass 2
+! To be used after expand lattice when absolute_time_tracking = F
+
+la.crmod.rfc01\2[phi0_multipass] = 0.5
+la.crmod.rfc02\2[phi0_multipass] = 0.5
+la.crmod.rfc03\2[phi0_multipass] = 0.5
+la.crmod.rfc04\2[phi0_multipass] = 0.5
+la.crmod.rfc05\2[phi0_multipass] = 0.5
+la.crmod.rfc06\2[phi0_multipass] = 0.5

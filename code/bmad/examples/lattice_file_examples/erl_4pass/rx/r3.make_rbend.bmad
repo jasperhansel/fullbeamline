@@ -1,0 +1,9 @@
+
+R3.Ben01[e1] = R3.Ben01[g]*R3.Ben01[L]/2
+R3.Ben01[e2] = R3.Ben01[g]*R3.Ben01[L]/2
+R3.Ben02[e1] = R3.Ben02[g]*R3.Ben01[L]/2
+R3.Ben02[e2] = R3.Ben02[g]*R3.Ben01[L]/2
+R3.Ben03[e1] = R3.Ben03[g]*R3.Ben01[L]/2
+R3.Ben03[e2] = R3.Ben03[g]*R3.Ben01[L]/2
+R3.Ben04[e1] = R3.Ben04[g]*R3.Ben01[L]/2
+R3.Ben04[e2] = R3.Ben04[g]*R3.Ben01[L]/2

@@ -1,0 +1,1121 @@
+\chapter{Lattice File Overview}
+\label{c:lat.file}
+\index{lattice files|hyperbf}
+
+\index{Bmad!lattice file format}
+A lattice (\sref{c:lat.concepts}) defines the sequence of elements
+that a particle will travel through along with the attributes (length,
+strength, orientation, etc.) of the elements.  A lattice file (or
+files) is a file that is used to describe an accelerator or storage
+ring. 
+
+%---------------------------------------------------------------------------
+\section{Bmad Lattice File Format}
+\label{s:lattice.file.formats}
+
+The syntax that a \bmad standard lattice file must conform to is
+modeled after the lattice input format of the \mad program.
+Essentially, a \bmad lattice file is similar to a \mad lattice file
+except that a \bmad file has no ``action'' commands (action commands
+tell the program to calculate the Twiss parameters, do tracking,
+etc.).  Since \bmad is a software library, interacting with the user
+to determine what actions a program should take is left to the program
+and is not part of \bmad (although the \bmad library provides the
+routines to perform many of the standard calculations). A program is
+not required to use the \bmad parser routines but, if it does, the
+following chapters describe how to construct a valid lattice file.
+
+%---------------------------------------------------------------------------
+\section{MAD, SAD, and XSIF Lattice Files}
+\label{s:mad.xsif}
+\index{MAD} 
+\index{XSIF}
+
+Besides being able to parse \bmad lattice files, \bmad has software to
+parse XSIF\cite{b:xsif} lattice files. See \sref{s:xsif.convert} for
+more details.
+
+While \bmad cannot directly read in \mad\cite{b:maduser} or
+\vn{SAD}\cite{b:sad} files, translation between \mad and \bmad lattice
+files is possible using the \vn{Universal Accelerator Parser} as
+discussed in Chapter~\sref{c:lat.convert}.
+
+\newpage
+
+%-----------------------------------------------------------------
+\section{Units and Constants}
+\label{s:constants}
+\index{constants|hyperbf}
+
+\bmad defines commonly used physical and mathematical constants
+shown in Table~\ref{t:constants}.  All symbols use straight SI units
+except for \vn{emass} and \vn{pmass} which are provided for
+compatibility with \mad and should be avoided.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll} \toprule
+  {\em Symbol}          & {\em Value}              & {\em Units} &  {\em Name}           \\ \midrule
+  pi                    & 3.14159265359            &             &                       \\
+  twopi                 & 2 * pi                   &             &                       \\
+  fourpi                & 4 * pi                   &             &                       \\
+  e_log                 & 2.718281828              &             &                       \\
+  sqrt_2                & 1.4142135623731          &             &                       \\
+  degrad                & 180 / pi                 &             & From rad to deg       \\
+  degrees               & pi / 180                 &             & From deg to rad       \\
+  raddeg                & pi / 180                 &             & From deg to rad       \\
+  anom_moment_deuteron  & $-0.14298727047$         &             & Deuteron anomalous magnetic moment \\
+  anom_moment_electron  & $0.001159652193$         &             & Electron anomalous magnetic moment \\
+  anom_moment_muon      & $0.0011659208$           &             & muon anomalous magnetic moment     \\
+  anom_moment_proton    & $1.79285$                &             & proton anomalous magnetic moment   \\
+  fine_struct_const     & $0.00729735257$          &             & Fine structure constant            \\
+  m_deuteron            & $1.875612928 \pow{9}$    & eV          & Deuteron mass         \\  
+  m_electron            & $0.5109989461 \pow{6}$   & eV          & Electron mass         \\
+  m_muon                & $105.6583715 \pow{6}$    & eV          & Muon mass             \\
+  m_pion_0              & $134.9766 \pow{6}$       & eV          & $\pi^0$ mass          \\
+  m_pion_charged        & $139.57018 \pow{6}$      & eV          & $\pi^+$, $\pi^-$ mass \\
+  m_proton              & $0.9382720813 \pow{9}$   & eV          & Proton mass           \\
+  c_light               & $2.99792458 \pow{8}$     & m/sec       & Speed of light        \\
+  r_e                   & $2.8179403227 \pow{-15}$ & m           & Electron radius       \\
+  r_p                   & $1.5346980 \pow{-18}$    & m           & Proton radius         \\
+  e_charge              & $1.6021766208 \pow{-19}$ & Coul        & Electron charge       \\
+  h_planck              & $4.13566733 \pow{-15}$   & eV*sec      & Planck's constant     \\
+  h_bar_planck          & $6.58211899 \pow{-16}$   & eV*sec      & Planck / $2\pi$       \\
+  emass                 & $0.5109989461 \pow{-3}$  & GeV         & Electron mass         \\
+  pmass                 & $0.9382720813$           & GeV         & Proton mass           \\ \bottomrule
+\end{tabular}
+\caption{Physical and mathematical constants recognized by \bmad.}
+\label{t:constants}
+\end{table}
+
+\index{mass_of}\index{anomalous_moment_of}
+As an alternative, the \vn{mass_of}, and \vn{anomalous_moment_of} functions
+(\sref{s:functions}) may be used in place of the defined constants for mass and anomalous
+magnetic moment.
+
+\newpage
+
+\index{MAD!units}
+\index{units!with MAD}
+\bmad uses SI (Syst\`eme International) units as shown in
+Table~\ref{t:units}.  Note that \mad uses different units. For example,
+\mad's unit of Particle Energy is GeV not eV.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ll} \toprule
+  {\em Quantity}     & {\em Units}       \\ \midrule
+  Angles             &    radians        \\ 
+  Betatron Phase     &    radians        \\
+  Current            &    Amps           \\ 
+  Frequency          &    Hz             \\ 
+  Kick               &    radians        \\ 
+  Length             &    meters         \\ 
+  Magnetic Field     &    Tesla          \\ 
+  Particle Energy    &    eV             \\ 
+  RF Phase Angles    &    radians/2$\pi$ \\ 
+  Voltage            &    Volts          \\ \bottomrule
+\end{tabular}
+\caption{Physical units used by \bmad.}
+\label{t:units}
+\end{table}
+
+%---------------------------------------------------------------------------
+\section{File Example and Syntax}
+\index{Bmad!statement syntax}
+
+\index{parameter statement}
+\index{use statement}
+The following (rather silly) example shows some of the features of a
+\bmad lattice file:
+\begin{example}
+  ! This is a comment
+  parameter[E_TOT] = 5e9                   ! Parameter definition
+  pa1 = sin(3.47 * pi / c_light)                 ! Constant definition
+  bend1: sbend, type = "arc bend", l = 2.3,      ! An element definition
+      g = 2*pa1, tracking_method = bmad_standard
+  bend2: bend1, l = 3.4                          ! Another element def
+  bend2[g] = 105 - exp(2.3) / 37.5               ! Redefining an attribute
+  ln1: line = (ele1, ele2, ele3)                 ! A line definition
+  ln2: line = (ln1, ele4, ele5)                  ! Lines can contain lines
+  arg_ln(a, b): line = (ele1, a, ele2, b)        ! A line with arguments.
+  use, ln2                                       ! Which line to use for the lattice
+\end{example}
+
+\index{"! comment symbol}
+\index{comment symbol ("!)}
+A \bmad lattice file consists of a sequence of statements. An
+exclamation mark (!) denotes a comment and the exclamation mark and
+everything after the exclamation mark on a line are ignored.  \bmad is
+generally case insensitive. Most names are converted to
+uppercase. Exceptions where a name is not converted include file names
+and atomic formulas for materials used in crystal diffraction.
+
+\index{\& continuation symbol}
+\index{continuation symbol (\&)}
+Normally a statement occupies a single line in the file. Several
+statements may be placed on the same line by inserting a semicolon
+(``;'') between them. A long statement can occupy multiple lines by
+putting an ampersand (``\&'') at the end of each line of the statement
+except for the last line. Additionally, lines that end with an
+``implicit continuation character''
+are automatically continued to the next line. The implicit continuation 
+characters are
+\begin{example}
+  ,   (   \{   [   =
+\end{example}
+Notice
+that this is {\em not} like \vn{C/C++}. Thus the following is bad syntax
+\begin{example}
+  wall = \{
+    section = \{s = 0.45     ! BAD SYNTAX. NO CONTINUATION CHARACTER HERE.
+    \}                       ! BAD SYNTAX. NO CONTINUATION CHARACTER HERE.
+  \}
+\end{example}
+Correct is:
+\begin{example}
+  wall = \{
+    section = \{s = 0.45\} \}
+\end{example}
+or even:
+\begin{example}
+  wall = \{
+    section = \{s = 0.45\} \&
+  \}
+\end{example}
+
+\index{lattice files!name syntax}
+Names of constants, elements, lines, etc. are limited to 40
+characters. The first character must be a letter (\vn{A} --- \vn{Z}).
+The other characters may be a letter, a digit (\vn{0} --- \vn{9}) or
+an underscore (\vn{_}). Other characters may appear but should be avoided
+since they are used by Bmad for various purposes. For example, the 
+backslash (\vn{\B}) character is used to by Bmad when forming the names of
+superposition slaves (\sref{s:super}) and dots (\vn{.}) are used by Bmad 
+when creating names of \vn{tagged} elements (\sref{s:tag}). Also use of
+special characters may make the lattice files less portable to non-Bmad programs.
+
+\index{parameter statement}
+\index{parameter statement}
+\index{parameter statement}
+\index{beginning statement}
+The following example constructs a linear lattice with two elements: 
+\begin{example}
+  parameter[geometry] = open
+  parameter[e_tot] =2.7389062E9
+  parameter[particle] = POSITRON
+  beginning[beta_a] = 14.5011548
+  beginning[alpha_a] = -0.53828197
+  beginning[beta_b] = 31.3178048
+  beginning[alpha_b] = 0.25761815
+  q: quadrupole, l = 0.6, b1_gradient = 9.011
+  d: drift, l = 2.5
+  t: line = (q, d)
+  use, t 
+\end{example}
+here \vn{parameter[geometry]} (\sref{s:param}) is set to \vn{open}
+which specifies that the lattice is not circular. In this case, the beginning 
+Twiss parameters need to be specified and this is done by the \vn{beginning}
+statements (\sref{s:beginning}). A quadrupole named \vn{q}
+and a drift element named \vn{d} are specified
+and the entire lattice consists of element \vn{q} followed by element \vn{d}.
+
+%----------------------------------------------------------------------------
+\section{Digested Files}
+\label{s:digested}
+\index{digested files}
+
+Normally the \bmad parser routine will create what is called a
+``digested file'' after it has parsed a lattice file so that when a
+program is run and the same lattice file is to be read in again, to save
+time, the digested file can be used to load in the lattice information.
+This digested file is in binary format and is not human readable. The
+digested file will contain the transfer maps for all the elements. 
+Using a digested file can save considerable time if some of the
+elements in the lattice need to have Taylor maps computed.
+(this occurs typically with map--type wigglers).
+
+\bmad creates the digested file in the same area as the lattice file.
+If \bmad is not able to create a digested file (typically because it
+does not have write permission in the directory), an error message will
+be generated but otherwise program operation will be normal.
+
+\index{ran}
+\index{ran_gauss}
+Digested files contain the names of the lattice files used to create
+them. If a lattice file has been modified since the digested file has
+been created then the lattice files will be reread and a new
+digested file will be generated. 
+
+Note: If any of the random number functions (\sref{s:functions}) are
+used in the process of creating the lattice, the digested file will be
+ignored. In this case, each time the lattice is read into a program,
+different random numbers will be generated for expressions that use such
+random numbers.
+
+Digested files can also be used for easy transport of lattices between
+programs or between sessions of a program. For example, using one
+program you might read in a lattice, make some adjustments (say to model
+shifts in magnet positions) and then write out a digested version of the
+lattice. This adjusted lattice can now be read in by another program.
+
+%---------------------------------------------------------------------------
+\section{Element Sequence Definition}
+
+\index{line}\index{use statement|hyperbf}
+A \vn{line} defines a sequence of elements. \vn{lines} may contain
+other \vn{lines} and so a hierarchy may be established. One line is
+selected, via a \vn{use} statement, that defines the lattice. For
+example:
+\begin{example}
+  l3: line = (l1, l2)   ! Concatenate two lines
+  l1: line = (a, b, c)  ! Line with 3 elements
+  l2: line = (a, z)     ! Another line 
+  use, l3               ! Use l3 as the lattice definition.
+\end{example}
+In this case the lattice would be
+\begin{example}
+  (a, b, c, a, z)
+\end{example}
+\vn{Lines} can be defined in any order. See \cref{c:sequence} for more
+details.
+
+\index{superimpose}
+The \vn{superimpose} construct allows elements to be placed in a
+lattice at a definite longitudinal position. What happens is that
+after a lattice is expanded, there is a reshuffling of the elements to
+accommodate any new superimpose elements. See \sref{s:super} for more
+details.
+
+%---------------------------------------------------------------------------
+\section{Lattice Elements}
+
+The syntax for defining a lattice element roughly follows the
+\mad\cite{b:maduser} program:
+\begin{example}
+  ele_name: keyword [, attributes]
+\end{example}
+where \vn{ele_name} is the element name, \vn{keyword} is the type of
+element, and \vn{attributes} is a list of the elements
+attributes. \cref{c:elements} gives a list of elements types with
+their attributes.
+\vn{Overlay} and \vn{group} type elements have a slightly different syntax:
+\begin{example}
+  ele_name: keyword = \{ list \}, master-attribute [= value] [, attributes]
+\end{example}
+and \vn{Girder} elements have the syntax
+\begin{example}
+  ele_name: keyword = \{ list \} [, attributes]
+\end{example}  
+For example:
+\begin{example}
+  q01w: quadrupole, type = "A String", l = 0.6, tilt = pi/2
+  h10e: overlay = \{ b08e, b10e \}, var = \{hkick\}
+\end{example}
+
+%---------------------------------------------------------------------------
+\section{Lattice Element Names}
+\label{s:ele.names}
+\index{element!names}
+
+\index{element!name}\index{superimpose}\index{multipass}
+A valid element name may be up to 40 characters in length. The first
+character of the name must be a letter [A-Z]. After that, the rest of
+the name can contain only letters, digits [0-9], underscore ``_'',
+period ``.'', backslash ``\B'', or a hash mark ``\#''. It is best to
+avoid these last three symbols since \bmad uses them to denote
+``relationships''.  Periods are used for tagging (\sref{s:tag}), and
+backslash and hash marks are used for to compose names for
+superposition (\sref{s:super}) and multipass (\sref{s:multipass})
+slave elements.
+
+\index{reserved names}
+\index{beam}\index{beam_start}\index{beginning}
+\index{end}\index{parameter}\index{root}
+There is a short list of names that cannot be used as an element name. 
+These reserved names are:
+\begin{example}
+  beam
+  beam_start
+  beginning
+  debug_marker
+  end
+  no_digested
+  parameter
+  parser_debug
+  print
+  root
+  title
+  use
+\end{example}
+
+Where appropriate, for example when setting element attributes
+(\sref{s:lat.attribs}), the wild cards \vn{``*''} and \vn{``%''} can be
+used to select multiple elements.  The \vn{``*''} character will match
+any number of characters (including zero) while \vn{``%''} maches to
+any single character. Additionally, matching can be restricted to a
+certain element class using the syntax:
+\begin{example}
+  class::element_name
+\end{example}
+where \vn{class} is a class name. For example:
+\begin{example}
+  m*              ! Match to all elements whose name begins with "m".
+  a%c             ! Match to "abc" but not to "ac" or "azzc".
+  quadrupole::*w  ! Match to all quadrupoles whose name ends in "w"
+\end{example}
+
+After lattice expansion (\sref{s:expand}), the general syntax to
+specify a set of elements is:
+\begin{example}
+  \{class::\}\{branch_id>>\}element_id\{##N\}
+\end{example}
+where \vn{\{...\}} marks an optional component, \vn{class} is a class
+name, \vn{branch_id} is a branch name or index (\sref{s:branch.def}),
+\vn{element_id} is and element name or element index
+(\sref{s:lines.wo.arg}), and \vn{\#\#N} indicates that the N\Th matching
+element is to be used. Examples:
+\begin{example}
+  quad::x_br>>q*        ! All quadrupoles of branch "x_br" whose name begins with "q".
+  2>>45                 ! element \#45 of branch \#2.
+  q01##3                ! The 3rd element in each branch named q01.
+\end{example}
+
+Multiple elements in a lattice may share the same name.  When
+multiple branches are present, to differentiate elements that
+appear in different branches, the ``branch qualified'' element name may be
+used. The branch qualified element name is of the form
+\begin{example}
+  branch_name>>element_name
+\end{example}
+where \vn{branch_name} is the name of the branch and \vn{element_name}
+is the ``regular'' name of the element. Example:
+\begin{example}
+  root>>q10w
+  x_branch>>crystal3
+\end{example}
+
+For \vn{branch} lines (\sref{s:branch.def}), the full ``branch
+qualified'' name of an element is of the form
+\begin{example}
+  branch_name>>element_name
+\end{example}
+where \vn{branch_name} is the name of the branch and \vn{element_name} is the
+``regular'' name of the element. Example:
+\begin{example}
+  root>>q10w
+  xline>>cryst3
+\end{example}
+Using the full name is only needed to distinguish elements that have
+the same regular name in separate branches.  When parsing a lattice
+file, branches are not formed until the lattice is expanded
+(\sref{s:expand}). Therefore an \vn{expand_lattice} statement is
+required before full names can be used in statements.
+
+%---------------------------------------------------------------------------
+\section{Lattice Element Attributes}
+\label{s:lat.attribs}
+\index{element attributes|hyperbf}
+
+Any lattice element has various attributes like its name, its length,
+its strength, etc. The values of element attributes can be
+specified when the element is defined. For example:
+\begin{example}
+  b01w: sbend, l = 6.0, rho = 89.0 ! Define an element with attributes.
+\end{example}
+After an element's definition, an individual attribute may be referred
+to using the syntax
+\begin{example}
+  class::element_name[attribute_name]
+\end{example}
+Element attributes can be set or used in an algebraic expression:
+\begin{example}
+  bo1w[roll] = 6.5                  ! Set an attribute value.
+  b01w[l] = 6.5                     ! Change an attribute value.
+  b01w[l] = b01w[rho] / 12          ! OK to reset an attribute value.
+  my_const = b01w[rho] / b01w[l]    ! Use of attribute values in an expression.
+\end{example}
+Notice that there can be no space between the element name and the
+\vn{[} opening bracket.  
+
+Chapter \cref{c:elements} lists the attributes appropriate for each
+element class.
+
+When setting an attribute value, if more than one element has the
+\vn{element_name} then {\it all} such elements will be set. When
+setting an attribute value, if \vn{element_name} is the name of a type
+of element, all elements of that type will be set. For example
+\begin{example}
+  q_arc[k1] = 0.234                      ! Set all elements named Q_ARC. 
+  rfcavity::*[voltage] = 3.7             ! Set all RFcavity elements.
+\end{example}
+
+The wild cards \vn{``*''}, and \vn{``\%''} can be used to can be used
+(\sref{s:ele.names}). Examples:
+\begin{example}
+  *[tracking_method] = bmad_standard  ! Matches all elements.
+  quadrupole::Q*[k1] = 0.234    ! Matches all quadrupoles with names beginning with Q.
+  Q%1[k1] = 0.234               ! Matches to "Q01" but not "Q001".
+\end{example}
+\index{beginning element}
+Unlike when there are no wild cards used in a name, it is not an error
+if a name with wild cards does not match to any element.
+Note: A name with wild cards will never match to the \vn{BEGINNING} element (\sref{s:use}).
+
+After lattice expansion (\sref{s:expand}), the attributes of specific elements
+may be set using the syntax as discussed in Section \sref{s:ele.names}. Example:
+\begin{example}
+  expand_lattice              ! Expand the lattice.
+  97[x_offset] = 0.0023       ! Set x_offset attribute of 97th element
+  b2>>si_cryst##2[tilt] = 0.1 ! Tilt the 2nd instance of "si_cryst" in branch "b2" 
+\end{example}
+
+%---------------------------------------------------------------------------
+\section{Custom Element Attributes}
+\label{s:cust.att}
+\index{element attributes!defining custom attributes}
+
+Real scalar and vector custom element attributes may be defined for any class of
+element.  Custom element attributes are useful with programs that need
+to associate ``extra'' information with particular lattice elements
+and it is desired that this extra information be settable from within
+a lattice file. For example, a program might need error tolerance
+for the strength of quadrupoles.
+
+Adding custom attributes will not disrupt programs that are not designed to use the custom
+attributes. Currently, up to five scalar (that is, single valued) custom attributes may be
+defined for any given element type. The syntax for defining custom attributes is:
+\begin{example}
+  parameter[custom_attributeN] = "\{class::\}attribute_name"
+\end{example}
+Where ``\vn{N}'' is an integer between 1 and 5 and
+"\vn{attribute_name}" is the name of the attribute. To restrict the
+custom attribute to a particular element class, the element class can
+be prefixed to the attribute name. Examples:
+\begin{example}
+  parameter[custom_attribute1] = "mag_id"
+  parameter[custom_attribute1] = "quadrupole::error_k1"
+  parameter[custom_attribute2] = "color"
+\end{example}
+The first line in the example assigns a custom attribute name of
+\vn{mag_id} to all elements.  The second line in the example overrides
+the setting of \vn{custom_attribute1} for quadrupole elements only. 
+
+Once a custom attribute has been defined it may be set for an element
+of the correct type. Example:
+\begin{example}
+  parameter[custom_attribute2] = "lcavity::rms_phase_err"
+  ...
+  l2a: lcavity, rms_phase_err = 0.0034, ...
+\end{example}
+
+For someone creating a program, section~\sref{s:ele.gen} describes how
+to make the appropriate associations.
+
+Note: If custom string information needs to be associated with an
+element, the \vn{type}, \vn{alias} and \vn{descrip} element components
+(\sref{s:alias}) are available.
+
+\index{r_custom}
+There is a three dimensional vector custom attribute called \vn{r_custom} that can be set.
+For example:
+\begin{example}
+  qq: quadrupole, r_custom(-2,1,5) = 34.5, r_custom(-3) = 77.9
+\end{example}
+Negative indices are accepted and if only one or two indices are present, the others
+are assumed to be zero. Thus \vn{r_custom(-3)} is equivalent to \vn{r_custom(-3,0,0)}.
+
+%---------------------------------------------------------------------------
+\section{Variable Types}
+\label{s:var.types}
+\index{arithmetic expressions!variables}
+
+\index{logicals|hyperbf}
+There are five types of variables in \bmad: reals, integers, switches,
+logicals (booleans), and strings. Acceptable logical values are
+\begin{example}
+   true    false
+   t       f
+\end{example}
+For example
+\begin{example}
+  rf1[is_on] = False
+\end{example}
+
+\index{strings|hyperbf}
+String literals can be quoted using double quotes (") or single quotes ('). 
+If there are no
+blanks or commas within a string, the quotes can be omitted. For example:
+\begin{example}
+  Q00W: Quad, type = "My Type", alias = Who_knows, &
+                                  descrip = "Only the shadow knows"
+\end{example}
+Unlike most everything else, strings are not converted to uppercase.
+
+\index{switches|hyperbf}
+Switches are variables that take discrete values. For example:
+\begin{example}
+  parameter[particle] = positron          
+  q01w: quad, tracking_method = bmad_standard 
+\end{example}
+The name ``switch'' can refer to the variable (for example,
+\vn{tracking_method}) or to a value that it can take (for example,
+\vn{bmad_standard}). The name ``method'' is used interchangeably with switch.
+
+%---------------------------------------------------------------------------
+\section{Arithmetic Expressions}
+\index{arithmetic expressions} 
+\label{s:arith}
+
+Arithmetic expressions can be used in a place where a real value is required.
+The standard operators are defined: \hfil\break
+\hspace*{0.15in}
+\begin{tabular}{ll}
+  $a + b$           & Addition        \\
+  $a - b$           & Subtraction     \\
+  $a \, \ast \, b$  & Multiplication  \\
+  $a \; / \; b$     & Division        \\
+  $a \, ^{\scriptstyle\wedge} \, b$ & Exponentiation  \\
+\end{tabular}
+\hfil\break
+\bmad also has a set of intrinsic functions. A list of these is given
+in \sref{s:functions}.
+
+\index{arithmetic expressions!constants}
+Literal constants can be entered with or without a decimal point. An
+exponent is marked with the letter E. For example
+\begin{example}
+  1, 10.35, 5E3, 314.159E-2
+\end{example}
+Symbolic constants can be defined using the syntax
+\begin{example}
+  constant_name = expression
+\end{example}
+\index{MAD!syntax compatibility with BMAD}
+Alternatively, to be compatible with \mad, using ``:='' instead of ``='' is accepted
+\begin{example}
+  constant_name := expression
+\end{example}
+Examples:
+\begin{example}
+  my_const = sqrt(10.3) * pi^3
+  abc     := my_const * 23
+\end{example}
+\index{MAD!delayed substitution}
+Unlike \mad, \bmad uses immediate substitution so that all constants
+in an expression must have been previously defined. For example, the
+following is {\em not} valid:
+\begin{example}
+  abc      = my_const * 23      ! No: my_const needs to be defined first.
+  my_const = sqrt(10.3) * pi^3
+\end{example}
+here the value of \vn{my_const} is not known when the line ``\vn{abc}
+= $\ldots$'' is parsed. Once
+defined, symbolic constants cannot be redefined. For example:
+\begin{example}
+  my_const = 1
+  my_const = 2  ! No: my_const cannot be redefined.
+\end{example}
+
+\index{group}\index{overlay}\index{lattice expansion}
+\vn{group} (\sref{s:group}) and \vn{overlay} (\sref{s:overlay}) controller elements are an
+exception to the immediate evaluation rule. Since controller elements may control elements
+that do not exist until \vn{lattice expansion} (\sref{s:expand}), the arithmetic
+expressions associated with controller elements are not evaluated until lattice expansion.
+Example:
+\begin{example}
+  s_20W: sextupole, l = 0.27
+  sk: overlay = \{s_20W[a1]:-2*s_20W[l]\}, var = \{k1\}, k1 = 0.2
+  s_20W[l] = 0.34
+  s_30E: s_20W
+  ...
+  expand_lattice
+\end{example}
+Here the expression of overlay \vn{sk} is evaluated, when the lattice is expanded, to be
+\vn{-0.68 = -2*0.34}. This uses uses the length of element \vn{s_20W} at the point when
+the lattice is expanded and not at the point when \vn{sk} was defined. Additionally, the
+element \vn{s_30E}, which inherits the attributes of \vn{s_20W}, inherits a value of zero
+for \vn{a1} (skew multipole moment) since inheritance uses immediate evaluation just like
+the setting of constants.
+
+
+Element attributes can be used after they have been defined but not
+before.  Example:
+\begin{example}
+  sa: sextupole, l = 0.3, k2 = 0.01 * sa[l]  ! Good
+  sb: sextupole, k2 = 0.01 * sb[l], l = 0.3  ! BAD SET OF K2. L IS DEFINED AFTER.
+\end{example}
+In this example, the \vn{k2} attribute of element \vn{sa} is correctly
+set since \vn{k2} is defined after \vn{l}. On the other hand, \vn{k2}
+of element \vn{sb} will have a value of zero since \vn{l} of \vn{sb}
+defaults to zero before it is set.
+
+One potential pitfall with immediate substitution is that when
+an element attribute changes, it does not affect prior evaluations.
+Example:
+\begin{example}
+  s1: sextupole, k2 = 2.3
+  aa = s1[k2]              ! aa = 2.3
+  s1[k2] = 1.7             ! value of aa does not change
+\end{example}
+Here the value of constant \vn{aa} will remain fixed at 2.3 no matter how
+the value of \vn{s1[k2]} is altered after \vn{aa} is defined.
+
+Another potential pitfall is when using
+dependent element attributes (\sref{s:depend}). For example:
+\begin{example}
+  b01w: sbend, l = 0.5, angle = 0.02
+  a_const = b01w[g]    ! No: bend g has not yet been computed!
+\end{example}
+Here the bend strength \vn{g} (\sref{s:bend}) will eventually be
+computed to be 0.04 (= angle / l) but that computation does not happen
+until lattice expansion (\sref{s:expand}). In this case, the value of
+\vn{a_const} will be the default value of \vn{g} which is zero.  As a
+rule of thumb, never rely on dependent attributes having their correct
+value.
+
+%---------------------------------------------------------------------------
+\section{Intrinsic functions}
+\label{s:functions}
+\index{intrinsic functions}
+
+\index{sqrt}\index{log}\index{exp}\index{sin}\index{cos}\index{tan}\index{factorial}
+\index{asin}\index{acos}\index{atan}\index{abs}\index{ran}\index{ran_gauss}
+\index{mass_of}\index{charge_of}\index{anomalous_moment_of}\index{species}
+The following intrinsic functions are recognized by \bmad: \hfil\break
+\hspace*{0.15in}
+\begin{tabular}{ll}
+  \vn{sqrt}(x)                  & Square Root                                    \\
+  \vn{log}(x)                   & Logarithm                                      \\
+  \vn{exp}(x)                   & Exponential                                    \\
+  \vn{sin}(x)                   & Sine                                           \\
+  \vn{cos}(x)                   & Cosine                                         \\
+  \vn{tan}(x)                   & Tangent                                        \\
+  \vn{asin}(x)                  & Arc sine                                       \\
+  \vn{acos}(x)                  & Arc cosine                                     \\
+  \vn{atan}(x)                  & Arc Tangent                                    \\
+  \vn{atan2}(y, x)              & Arc Tangent of y/x                             \\
+  \vn{abs}(x)                   & Absolute Value                                 \\
+  \vn{factorial}(n)             & Factorial                                      \\
+  \vn{ran}()                    & Random number between 0 and 1                  \\
+  \vn{ran_gauss}()              & Gaussian distributed random number             \\
+  \vn{int}(x)                   & Nearest integer with magnitude less then x     \\
+  \vn{nint}(x)                  & Nearest integer to x                           \\
+  \vn{floor}(x)                 & Nearest integer less than x                    \\
+  \vn{ceiling}(x)               & Nearest integer greater than x                 \\
+  \vn{mass_of}(A)               & Mass of particle A                             \\
+  \vn{charge_of}(A)             & Charge, in units of the elementary charge, of particle A \\
+  \vn{anomalous_moment_of}(A)   & Anomalous magnetic moment of particle A        \\
+  \vn{species}(A)               & Species ID of A
+\end{tabular}
+
+\index{ran_seed}
+\vn{ran_gauss} is a Gaussian distributed random number with unit RMS. 
+Both \vn{ran} and \vn{ran_gauss} use a seeded random number generator. 
+To choose the seed set 
+\begin{example}
+  parameter[ran_seed] = <Integer>
+\end{example}
+A \vn{value} of zero will set the seed using the system clock so that
+different sequences of random numbers will be generated each time a
+program is run.  The default behavior if \vn{parameter[ran_seed]} is
+not present is to use the system clock for the seed.
+
+\index{expand_lattice}
+If an element is used multiple times in a lattice, and if \vn{ran} or
+\vn{gauss_ran} is used to set an attribute value of this element, then
+to have all instances of the element have different attribute values
+the setting of the attribute must be after the lattice has been
+expanded (\sref{s:expand}). For example:
+\begin{example}
+  a: quad, ... 
+  a[x_offset] = 0.001*ran_gauss()
+  my_line: line = (a, a)
+  use, my_line
+\end{example}
+Here, because \bmad does immediate evaluation, the \vn{x_offset}
+values for \vn{a} gets set in line 2 and so both copies of \vn{a} in
+the lattice get the same value. This is probably not what is wanted.
+On the other hand if the attribute is set after lattice expansion:
+\begin{example}
+  a: quad, ...
+  my_line: line = (a, a)
+  use, my_line
+  expand_lattice
+  a[x_offset] = 0.001*ran_gauss()
+\end{example}
+Here the two \vn{a} elements in the lattice get different values for
+\vn{x_offset}.
+
+The \vn{mass_of}, \vn{charge_of}, and \vn{anomalous_moment_of} functions give the mass of,
+charge of (in units of the elementary charge), and anomalous moment of, a particle.
+Example:
+\begin{example}
+  parameter[particle] = deuteron
+  am = anomalous_moment_of(parameter[particle])^2
+  my_particle = species(He++)      ! my_particle now represents He++
+  chg1 = charge_of(my_particle)    ! chg = charge of He++
+  chg2 = charge_of(He++)           ! Same as previous line
+  chg3 = charge_of(species(He++))  ! Same as previous line
+\end{example}
+The \vn{species} function is needed in the definition of \vn{my_particle} so that \bmad knows that
+the string ``He++'' represents a type of particle. Inside functions like \vn{mass_of}, the use of
+\vn{species} is optional since, in this case, \bmad can correctly parse the argument.
+
+%-----------------------------------------------------------------------------
+\section{Statement Order}
+\label{s:state.order}
+\index{statement order|hyperbf}
+
+With some exceptions, statements in a lattice file can be in any order. For example, the lines
+(\sref{s:lines.wo.arg}) specified in a \vn{use} statement (\sref{s:use}) can come after the \vn{use}
+statement. And \vn{group} (\sref{s:group}) and \vn{overlay} (\sref{s:overlay}) controller elements
+may be defined before the slave elements whose parameters they control are defined.
+
+The exceptions to this rule are:
+\begin{itemize}
+\item 
+If there is an \vn{expand_lattice} statement (\sref{s:expand.lat}), everything necessary for
+lattice expansion must come before. In particular, all \vn{line}s
+(\sref{s:lines.wo.arg}), \vn{list}s (\sref{s:replace.list}), and \vn{use} (\sref{s:use}) statements
+necessary for lattice expansion must come before.
+\item
+Immediate evaluation of arithmetic expressions (\sref{s:arith}) mandates that values be defined
+before use.
+\item
+A lattice element must be defined before any of its parameters are set. Example:
+\begin{example}
+  pp[z_offset] = 0.1    ! WRONG! PP HAS NOT BEEN DEFINED YET!
+  pp: patch             ! Here PP is defined
+\end{example}
+In this example, the \vn{z_offset} of the element \vn{pp} is set before \vn{pp} has been
+defined. This is an error. As a corollary to this rule, element parameters that are set 
+using wild card characters will only affect those parameters that have been already defined. For
+example:
+\begin{example}
+  crystal::*[b_param] = 0.2
+  c5: crystal
+\end{example}
+In this example, the \vn{b_param} of all \vn{crystal} elements is set to \vn{0.2} {\em except} for
+\vn{c5} and all other crystal elements that are defined after the set.
+\end{itemize}
+
+%-----------------------------------------------------------------------------
+\section{Print Statement}
+\label{s:print}
+\index{print statement|hyperbf}
+
+The \vn{print} statement prints a message at the terminal when the 
+lattice file is parsed by a program. Syntax:
+\begin{example}
+  print <String>
+\end{example}
+For example
+\begin{example}
+  print Remember! Q01 quad strength not yet optimized!
+\end{example}
+The \vn{print} statement is useful to remind someone using the lattice of important details.
+
+%-----------------------------------------------------------------------------
+\section{Title Statement}
+\index{title statement|hyperbf}
+
+The \vn{title} statement sets a title string which can be used by a program. 
+For consistency with \mad there are two possible syntaxes
+\begin{example}
+  title, <String>
+\end{example}
+or the statement can be split into two lines
+\begin{example}
+  title
+  <String>
+\end{example}
+For example
+\begin{example}
+  title
+  "This is a title"
+\end{example}
+
+%--------------------------------------------------------------------------
+\section{Call Statement}
+\label{s:call}
+\index{call statement|hyperbf}
+
+It is frequently convenient to separate the lattice definition into
+several files.  Typically there might be a file (or files) that define
+the layout of the lattice (something that doesn't change often) and a
+file (or files) that define magnet strengths (something that changes
+more often).  The \vn{call} is used to read in separated lattice
+files. The syntax is
+\begin{example}
+  call, filename = <String>
+\end{example}
+Example:
+\begin{example}
+  call, filename = "../layout/my_layout.bmad"      ! Relative pathname
+  call, filename = "/nfs/cesr/lat/my_layout.bmad"  ! Absolute pathname
+\end{example}
+\bmad will read the called file until a \vn{return} or \vn{end_file}
+statement is encountered or the end of the file is reached.
+
+For filenames that have a relative pathname, the called file will be
+searched for relative to the directory of the calling file.  Thus, in
+the above example, if the file containing the call statements is in the
+directory \vn{/path/to/lat_dir}, the first call will open the file:
+\begin{example}
+  /path/to/lat_dir/../layout/my_layout.bmad 
+\end{example}
+
+Where a called file is searched for may be modified by using a
+\vn{use_local_lat_file} statement. See Section~\sref{s:use.loc} for
+more details.
+
+An XSIF (\sref{s:lattice.file.formats}) lattice file may be called
+from within a \bmad lattice file by prepending \vn{"xsif::"} to the
+file name. Example:
+\begin{example}
+  call, filename = "xsif::my_lattice.xsif"
+\end{example}
+This statement must be the first statement in the \bmad lattice file
+except for any comments or debugging statements (\sref{s:debug}). 
+The XSIF lattice file must define a
+complete lattice and cannot contain any \bmad specific statements. The
+call to the XSIF file automatically expands the lattice
+(\sref{s:expand}) and any additional statements in the \bmad lattice
+file operate on the expanded lattice.
+
+%--------------------------------------------------------------------------
+\section{Inline Call}
+\label{s:call.inline}
+\index{call!inline}
+
+Any lattice elements will have a set of attributes that need to be defined.
+As a convenience, it is possible to segregate an element attribute or attributes
+into a separate file and then ``call'' this file using an
+``inline call''. The inline call has three forms. In an element definition,
+the inline call has the form
+\begin{example}
+  <ele_name>: <ele_type>, ..., call::<file_name>, ...
+\end{example}
+or
+\begin{example}
+  <ele_name>: <ele_type>, ..., <attribute_name> = call::<file_name>, ...
+\end{example}
+where \vn{<attribute_name>} is the name of the attribute and
+\vn{<file_name>} is the name of the where the attribute structure is
+given.  The third form of the inline call occurs when an element
+attribute is redefined and has the form
+\begin{example}
+  <ele_name>[<attribute_name>] = call::<file_name>
+\end{example}
+Example:
+\begin{example}
+  c: crystal, call::my_curvature.bmad, surface = call::my_surface.bmad, ...
+\end{example}  
+
+Inline calls can be used to call binary files (useful for speeding up lattice parcing).
+See \sref{s:binary.form} for more details.
+
+%--------------------------------------------------------------------------
+\section{Binary Format}
+\label{s:binary.form}
+\index{binary format lattice files}
+
+It is possible to store certain element attributes in a binary format file which is useful for
+speeding up lattice parcing. These binary files must have a \vn{.bin} suffix. The attributes
+that support binary files are:
+\begin{example}
+  cartesian_map       ! \sref{s:cart.map}
+  cylindrical_map     ! \sref{s:cylind.map}
+  grid_field          ! \sref{s:grid.field}
+  taylor_field        ! \sref{s:taylor.field}
+\end{example}
+
+The syntax for calling a binary file is the same as an inline call (\sref{s:call.inline}).
+Example:
+\begin{example}
+  qq: quadrupole, grid_field = call::my_grid.bin, ...
+\end{example}
+
+To create a binary file or files, first create a lattice with the attributes defined with plain
+text. Next read the lattice into any program that can create \bmad lattice files (for example, the
+\tao program (\sref{s:tao.intro}) can do this) and have the program generate a lattice file.
+
+%--------------------------------------------------------------------------
+\section{Use_local_lat_file Statement}
+\label{s:use.loc}
+\index{use_local_lat_file_statement|hyperbf}
+
+It is sometimes convenient to override where \bmad looks for called
+files (see \sref{s:call}). For example, suppose it is desired to
+temporarily override the settings in a called file without modifying
+the called file itself. In this case, the \vn{use_local_lat_file}
+statement can be used. When this statement is encountered in a lattice
+file, the local directory (that is, the directory from which the
+program is run) is searched first for the called file and if a file
+of the correct name is found, that file is used.
+
+An example will make this clear. Suppose lattice file \vn{/A/lat.bmad}
+contains the call:
+\begin{example}
+  call, filename = "/B/sub.bmad"
+\end{example}
+Now suppose that you want to use \vn{lat.bmad} with a modified
+\vn{sub.bmad} but you do not want to modify \vn{/A/lat.bmad} or
+\vn{/B/sub.bmad}. The solution is to create two new files. One file,
+call it \vn{new.bmad}, which can be situated in any directory, has two
+lines in it:
+\begin{example}
+  use_local_lat_file
+  call, filename = "/A/lat.bmad"
+\end{example}
+The second new file is the modified \vn{sub.bmad} and it must be in the
+directory from which the program is run.
+
+%--------------------------------------------------------------------------
+\section{Return and End_File Statements}
+\index{return statement|hyperbf}
+\index{end_file statement|hyperbf}
+
+\vn{Return} and \vn{end_file} have identical effect and tell \bmad to
+ignore anything beyond the \vn{return} or \vn{end_file} statement in
+the file.
+
+%----------------------------------------------------------------------------
+\section{Expand_Lattice Statement}
+\label{s:expand.lat}
+\index{expand_lattice|hyperbf}
+
+Normally, lattice expansion happens automatically at the end of the parsing of the lattice file but
+an explicit \vn{expand_lattice} statement in a lattice file will cause immediate expansion. See
+\sref{s:expand} for details.
+
+%----------------------------------------------------------------------------
+\section{Lattice Expansion}
+\label{s:expand}
+\index{lattice!expansion|hyperbf}
+
+At some point in parsing a lattice file, the ordered sequence (or sequences if there are multiple
+branches) of elements that form a lattice must be constructed. This process is called \vn{lattice
+expansion} since the element sequence can be built up from sub--sequences
+(\sref{c:sequence}). Normally, lattice expansion happens automatically at the end of the parsing of
+the lattice file (or files) but an explicit \vn{expand_lattice} statement in a lattice file will cause
+immediate expansion. The reason why lattice expansion may be necessary before the end of the file is
+due to the fact that some operations need to be done after lattice expansion. This includes:
+\begin{Itemize}
+\item 
+\index{ran}
+\index{ran_gauss}
+The \vn{ran} and \vn{ran_gauss} functions, when used with elements
+that show up multiple times in a lattice, generally need to be used
+after lattice expansion. See \sref{s:functions}.
+\item
+Some dependent variables may be set as if they are independent
+variables but only if done before lattice expansion. See \sref{s:depend}.
+\index{multipass}
+\item 
+Setting the \vn{phi0_multipass} attribute for an 
+\vn{Lcavity} or \vn{RFcavity} multipass
+slave may only be done after lattice expansion (\sref{s:multipass}).
+\item
+\index{tags for Lines and Lists}
+Setting individual element attributes for tagged elements can only be done
+after lattice expansion (\sref{s:tag}).
+\end{Itemize}
+
+Notice that all \vn{line}s (\sref{s:lines.wo.arg}), \vn{list}s (\sref{s:replace.list}), and \vn{use}
+(\sref{s:use}) statements necessary for lattice expansion must come before an \vn{expand_lattice}
+statement.
+
+Lattice expansion is only done once so it is an error if multiple
+\vn{expand_lattice} statements are present.
+
+The steps used for lattice expansion are:
+\begin{enumerate}
+\item
+Instantiate all of the lines listed in the last \vn{use} statement (\sref{s:use}). If an instantiated line has
+\vn{fork} or \vn{photon_fork} (\sref{s:fork}) elements, instantiate the lines connected to the fork
+elements if the \vn{fork} or \vn{photon_fork} is connected to a new branch. Instantiation of a given
+line involves:
+\begin{enumerate}
+\item
+Line expansion (\sref{c:sequence}) where the element sequence is constructed from the line and sub-lines.
+\item
+Adding any superpositions (\sref{s:super}).
+\end{enumerate}
+\item
+Form multipass lords and mark the appropriate multipass slaves (\sref{s:multipass}).
+\item
+Add girder control elements (\sref{s:girder}).
+\item
+Add group (\sref{s:group}) and overlay (\sref{s:overlay}) control elements.
+\end{enumerate}
+
+\index{secondary lattice file}
+A lattice file where all the statements are post lattice expansion
+valid is called a ``\vn{secondary lattice file}''.  To promote
+flexibility, \bmad has methods for parsing lattices in a two step
+process: First, a ``primary'' lattice file that defines the basic
+lattice is read. After the primary lattice has been parsed and lattice
+expansion has been done, the second step is to read in one or more
+secondary lattice files. Such secondary lattice files can be used, for
+example, to set such things as element misalignments. The point here
+is that there are no calls (\sref{s:call}) of the secondary files in
+the primary file so the primary lattice file does not have to get
+modified when different secondary files are to be used.
+
+%--------------------------------------------------------------------------
+\section{Debugging Statements}
+\label{s:debug}
+\index{no_digested statement}
+\index{no_superimpose statement}
+\index{parser_debug statement}
+\index{debug_marker statement}
+\index{no_digested statement}
+\index{lattice files!parser debugging}
+
+There are a few statements
+which can help in debugging the \bmad lattice parser
+itself. That is, these statements are generally only used by programmers.
+These statements are:
+\begin{example}
+  debug_marker
+  no_digested
+  no_superimpose
+  parser_debug
+\end{example}
+
+The \vn{debug_marker} statement is used for marking a place in the lattice file
+where program execution is to be halted. This only works when running
+a program in conjunction with a program debugging tool. 
+
+The \vn{no_digested} statement if present, will prevent \bmad from 
+creating a digested file (\sref{s:digested}. That is, the lattice file will always
+be parsed when a program is run.
+
+The \vn{no_superimpose} statement is used to suppress superpositions
+(\sref{s:super}). This is useful for debugging purposes.
+
+The \vn{parser_debug} statement will cause information about the
+lattice to be printed out at the terminal. It is recommended that this
+statement be used with small test lattices since it can generate a lot
+of output. The syntax is
+\begin{example}
+  parser_debug <switches>
+\end{example}
+Valid \vn{<switches>} are
+\begin{example}
+  beam_start          ! Print the beam_start information.
+  ele <n1> <n2> ...   ! Print full info on selected elements.
+  lattice             ! Print a list of lattice element information.
+  lord                ! Print full information on all lord elements.
+  seq                 ! Print sequence information.
+  slave               ! Print full information on all slave elements.
+  var                 ! Print variable information.
+\end{example}
+Here $<n1>$, $<n2>$, etc. are the index of the selected elements in
+the lattice.  Example
+\begin{example}
+  parser_debug var lat ele 34 78
+\end{example}
+

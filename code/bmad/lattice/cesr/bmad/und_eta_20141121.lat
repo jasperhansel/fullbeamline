@@ -1,0 +1,349 @@
+! BMAD input file
+! same quads, betas, eta, as chess_20050617 north of Q8E,W
+! with CesrTA IR
+!+
+! Fri Nov 21 16:31:45 2014 => Documented by latdoc.
+! Beam energy is  5.289 GeV
+! 	 Qx	 Qy	 Fx	 Fy	 Emitt(nm rad)
+! e+	 11.24	 8.82	 93.6	 319.8	 95.5	
+! e-	 0.24	 0.82	 94.7	 319.3	 107.4	
+!
+!  Bx* 	 By*	 Eta*	Alphax*	Alphay*	 Eta'*	 Cr_ang(mrad)
+!  6.18	 13.9900	 1.321	 0.535	 0.156	 0.022	-0.013
+!
+!  Bx* 	 By*	 Eta*	Alphax*	Alphay* -> Positron-Electron
+! -0.08	-0.2139	-0.103	 0.017	 0.052
+!
+!  Bx 	 By	 Eta	 Eta'	Alphax	Alphay -> all at UndWMid
+!  26.0	 7.08	 0.082	-3.004	 0.676	 0.042 <= positron
+!  25.6	 7.39	 0.432  <= electron
+!
+! IP_L0 disp.: e+ x: 1.16e-04 y: 9.29e-08   e- x: 7.09e-05 y:-1.09e-14
+!
+! IP_L0 cbar:  5.9e-17    1.5e-17   IP_L3 cbar:  5.2e-17   -3.1e-17
+!              6.3e-17   -5.9e-17               -3.7e-17   -6.2e-17
+!
+! Peak Arc Betas: e+ Bx: 45.8 By: 58.1   e- Bx: 46.1 By: 58.0
+! H_Sep Bx: 09w: 16.90  08e: 19.93  45w: 18.67  45e: 11.16
+! V_Aper By: 43w: 50.29  43e: 48.84
+!
+! FB PHS:  e+ x: 0.134  y 0.695  e- x:-0.648  y-0.054
+!
+! Curr info: Pr_apert: 3.67e-02  Effic: 0.42  I_bunch: 8.30  B_param_i: 11.28
+! Worst x disp e+:-1.84e-02  at: Q24W, 	e-:-1.83e-02 at: Q24E
+! 34w: e+ Bx: 44.82  e- Bx: 43.67  e+ Eta: 1.51   Ring sigma_sep: 7.86
+! 34e: e+ Bx: 43.78  e- Bx: 43.62  e- Eta: 1.62
+!
+! Full turn 4x4 det:  0.61  Momentum_comp:  9.23e-03
+! sync_beta_path x: 6.7e-07  y: 1.9e-07  _volt x: 3.7e-10  y: 1.3e-10
+! Qs-2Qx Mag  e+:  29.36   e-:  28.27
+! *IP*  dbeta(dE) x: 8.35 y:-3.95  dbeta(dPretz) x:-6.51e-03 y:-3.92e-03
+! *max* dbeta(dE) x: 8.33 y: 22.60  dbeta(dPretz) x: 8.69e-02 y: 7.93e-02
+! Chrom x:-0.15  y: 0.68    Tonality x: 0.10  y: 0.24
+!-
+
+parameter[lattice] = und_eta_20141121
+parameter[particle] = positron
+!parameter[particle] = electron
+beam, energy =   5.28900
+
+!call, file=layout/cesrta_08.bmad
+call, file=./chess_05.bmad
+
+wigw_mid: marker, superimpose, ref = vkick_08wb
+wige_mid: marker, superimpose, ref = wig_e
+
+scv43w: marker, superimpose, ref=Q43W, ref_end, offset=0.5802
+scv43e: marker, superimpose, ref=Q43E, ref_end, offset=-1.1782
+scv13w: marker, superimpose, ref=Q13W, offset=1.0
+scv13e: marker, superimpose, ref=Q13E, offset=-1.0
+
+wig_e[b_max] = 1.17
+
+!Turn off wigglers:
+  wig1_14w[is_on] = .false.
+!  wig_damp[is_on] = .false.
+!  wig_damp[polarity] = 0
+  wig_01w[is_on] = .false.
+  wig_01w[polarity] = 0
+  wig1_02w[is_on] = .false.
+  wig1_02w[polarity] = 0
+  wig2_02w[is_on] = .false.
+  wig2_02w[polarity] = 0
+  wig1_18w[is_on] = .false.
+  wig1_18w[polarity] = 0
+  wig2_18w[is_on] = .false.
+  wig2_18w[polarity] = 0
+  wig3_18w[is_on] = .false.
+  wig3_18w[polarity] = 0	
+  wig1_02e[is_on] = .false.
+  wig1_02e[polarity] = 0
+  wig2_02e[is_on] = .false.
+  wig2_02e[polarity] = 0
+  wig_01e[is_on] = .false.
+  wig_01e[polarity] = 0
+  wig1_18e[is_on] = .false.
+  wig1_18e[polarity] = 0
+  wig2_18e[is_on] = .false.
+  wig2_18e[polarity] = 0
+  wig3_18e[is_on] = .false.
+  wig3_18e[polarity] = 0
+
+
+! element attributes
+
+q00[k1] =     -2.7054193823E-01
+q02w[k1]=      2.2693479445E-01
+q02e[k1]=      2.4907653312E-01
+q03w[k1] =     -3.5521841618E-01
+q03e[k1] =     -3.2386466707E-01
+q04w[k1] =      4.7830896286E-01
+q04e[k1] =      4.4838390727E-01
+q05w[k1] =     -3.8290932345E-01
+q05e[k1] =     -3.5399042426E-01
+Q06W[K1]=      4.7654816829E-01
+Q06E[K1]=      4.8907337795E-01
+Q07W[K1]=     -4.1193178327E-01
+Q07E[K1]=     -3.2133694650E-01
+Q08W[K1]=      2.2306914688E-01
+Q08E[K1]=      1.5132850780E-01
+Q09W[K1]=     -2.2367260844E-01
+Q09E[K1]=     -2.3496415413E-01
+Q10W[K1]=      2.6375894707E-01
+q10E[K1]=      2.5787245469E-01
+Q11W[K1]=     -1.8176379071E-01
+Q11E[K1]=     -1.8086778406E-01
+Q12W[K1]=      2.8631935121E-01
+Q12E[K1]=      2.5909554645E-01
+Q13W[K1]=     -2.3335147810E-01
+Q13E[K1]=     -2.1962435609E-01
+
+Q14W[K1]=      2.8286849127E-01
+Q15W[K1]=     -1.9417663719E-01
+q16W[K1]=      2.6635540361E-01
+q17W[K1]=     -2.2617848924E-01
+q18W[K1]=      2.5878125503E-01
+q19W[K1]=     -2.8117879827E-01
+q20W[K1]=      2.6721313929E-01
+q21W[K1]=     -2.7435087694E-01
+q22W[K1]=      2.6584686236E-01
+q23W[K1]=     -2.2570779498E-01
+q24W[K1]=      2.6768271757E-01
+q25W[K1]=     -3.1592987659E-01
+q26W[K1]=      3.0375713183E-01
+q27W[K1]=     -3.0856860044E-01
+q28W[K1]=      2.6633088284E-01
+q29W[K1]=     -2.3179789631E-01
+q30W[K1]=      2.7195330870E-01
+q31W[K1]=     -2.2029534976E-01
+q32W[K1]=      2.2991531827E-01
+q33W[K1]=     -1.9452816550E-01
+q34W[K1]=      2.3416421421E-01
+q35W[K1]=     -1.5685990236E-01
+q36W[K1]=      2.0565246946E-01
+q37W[K1]=     -1.9494113776E-01
+q38W[K1]=      2.4180514411E-01
+q39W[K1]=     -2.5074945397E-01
+q40W[K1]=      2.5767055000E-01
+q41W[K1]=     -2.4318598738E-01
+q42W[K1]=      2.3823759075E-01
+q43W[K1]=     -2.7558391054E-01
+q43aw[K1]=      2.5157478832E-01
+q44W[K1]=     -1.8253241414E-01
+q45W[K1]=      3.2869183493E-01
+q46W[K1]=     -2.4568637116E-01
+q47W[K1]=      4.6536251216E-01
+q47aw[K1]=     -3.6795469246E-01
+q48W[K1]=      4.0381822029E-01
+
+Q14E[K1]=      2.7408992177E-01
+Q15E[K1]=     -1.9680622641E-01
+q16E[K1]=      2.5698173326E-01
+q17E[K1]=     -2.0949246321E-01
+q18E[K1]=      2.5650793845E-01
+q19E[K1]=     -2.6713075473E-01
+q20E[K1]=      2.6288269753E-01
+q21E[K1]=     -2.6472389815E-01
+q22E[K1]=      2.8019934488E-01
+q23E[K1]=     -2.3893420665E-01
+q24E[K1]=      2.5931682082E-01
+q25E[K1]=     -3.0613498892E-01
+q26E[K1]=      2.9553876380E-01
+q27E[K1]=     -2.9111513487E-01
+q28E[K1]=      2.6278000484E-01
+q29E[K1]=     -2.4180694945E-01
+q30E[K1]=      2.7097445670E-01
+q31E[K1]=     -2.0796289493E-01
+q32E[K1]=      2.2651395587E-01
+q33E[K1]=     -1.8879230978E-01
+q34E[K1]=      2.2899283238E-01
+q35E[K1]=     -1.5031015101E-01
+q36E[K1]=      2.0907497712E-01
+q37E[K1]=     -2.0482400152E-01
+q38E[K1]=      2.4496198636E-01
+q39E[K1]=     -2.4334017440E-01
+q40E[K1]=      2.5349152552E-01
+q41E[K1]=     -2.3041966349E-01
+q42E[K1]=      2.3835664423E-01
+q43E[K1]=     -2.5494320714E-01
+q43aE[K1]=      2.6156979161E-01
+q44E[K1]=     -1.9659400389E-01
+q45E[K1]=      3.3684972782E-01
+q46E[K1]=     -2.2667246385E-01
+q47E[K1]=      4.7976469705E-01
+q47aE[K1]=     -3.6378056892E-01
+q48E[K1]=      4.1641957108E-01
+q49[K1] =     -3.2769525932E-01
+
+!-----------------------------------------------------
+! overlays
+!-----------------------------------------------------
+
+H_SEP_09W[HKICK] =      7.9803415129E-04
+H_SEP_08E[HKICK] =     -7.0556082414E-04
+h_sep_45W[HKICK]=     -7.6511089252E-04
+h_sep_45E[HKICK]=      7.9737177865E-04
+
+!! wig_w[k1] = -0.0592 / beam[energy]^2   ! use average to maintain E/W symm
+!! wig_e[k1] = -0.0592 / beam[energy]^2
+
+! 2014Mar4 sw
+!s08 : overlay = {SEX_08W,SEX_08E}, K2 =      6.5563208859E-01
+SEX_08W[K2] =      6.5563208859E-01
+SEX_08E[K2] =      6.5563208859E-01
+!09 : overlay = {SEX_09W,SEX_09E}, K2 =     -6.5532154536E-01
+SEX_09W[K2] =   -6.5532154536E-01
+SEX_09W[K2] =   -6.5532154536E-01
+!s10 : overlay = {SEX_10W,SEX_10E}, K2 =      3.8948590466E-01
+SEX_10W[K2] =      3.8948590466E-01
+SEX_10E[K2] =      3.8948590466E-01
+SEX_11E[K2]:= 0.
+!12 : overlay = {SEX_12W,SEX_12E}, K2 =      6.8097411430E-01                
+SEX_12W[K2] =    6.8097411430E-01
+SEX_12W[K2] =    6.8097411430E-01
+!s13 : overlay = {SEX_13W,SEX_13E}, K2 =     -8.6328157993E-01
+SEX_13W[K2] =     -8.6328157993E-01
+SEX_13E[K2] =     -8.6328157993E-01
+!s14 : overlay = {SEX_14W,SEX_14E}, K2 =      7.8795753709E-01
+SEX_14W[K2] =      7.8795753709E-01
+SEX_14E[K2] =      7.8795753709E-01
+!s15 : overlay = {SEX_15W,SEX_15E}, K2 =     -9.0287264405E-01
+SEX_15W[K2] =     -9.0287264405E-01
+SEX_15E[K2] =     -9.0287264405E-01
+!s16 : overlay = {SEX_16W,SEX_16E}, K2 =      5.9180305581E-01
+SEX_16W[K2] =      5.9180305581E-01
+SEX_16E[K2] =      5.9180305581E-01
+!s17 : overlay = {SEX_17W,SEX_17E}, K2 =     -7.0840467571E-01
+SEX_17W[K2] =     -7.0840467571E-01
+SEX_17E[K2] =     -7.0840467571E-01
+!s18 : overlay = {SEX_18W,SEX_18E}, K2 =      4.6115048990E-01
+SEX_18W[K2] =      4.6115048990E-01
+SEX_18E[K2] =      4.6115048990E-01
+!s19 : overlay = {SEX_19W,SEX_19E}, K2 =     -9.2227997059E-01
+SEX_19W[K2] =     -9.2227997059E-01
+SEX_19E[K2] =     -9.2227997059E-01
+!s20 : overlay = {SEX_20W,SEX_20E}, K2 =      6.2413304912E-01
+SEX_20W[K2] =      6.2413304912E-01
+SEX_20E[K2] =      6.2413304912E-01
+!s21 : overlay = {SEX_21W,SEX_21E}, K2 =     -9.1066816121E-01
+SEX_21W[K2] =     -9.1066816121E-01
+SEX_21E[K2] =     -9.1066816121E-01
+!s22 : overlay = {SEX_22W,SEX_22E}, K2 =      4.4828311231E-01
+SEX_22W[K2] =      4.4828311231E-01
+SEX_22E[K2] =      4.4828311231E-01
+!s23 : overlay = {SEX_23W,SEX_23E}, K2 =     -8.3475233046E-01
+SEX_23W[K2] =     -8.3475233046E-01
+SEX_23E[K2] =     -8.3475233046E-01
+!s24 : overlay = {SEX_24W,SEX_24E}, K2 =      5.4086913043E-01
+SEX_24W[K2] =      5.4086913043E-01
+SEX_24E[K2] =      5.4086913043E-01
+!s25 : overlay = {SEX_25W,SEX_25E}, K2 =     -7.5149353608E-01
+SEX_25W[K2] =     -7.5149353608E-01
+SEX_25E[K2] =     -7.5149353608E-01
+!s26 : overlay = {SEX_26W,SEX_26E}, K2 =      5.9393560376E-01
+SEX_26W[K2] =      5.9393560376E-01
+SEX_26E[K2] =      5.9393560376E-01
+!s27 : overlay = {SEX_27W,SEX_27E}, K2 =     -9.4479007775E-01
+SEX_27W[K2] =     -9.4479007775E-01
+SEX_27E[K2] =     -9.4479007775E-01
+!s28 : overlay = {SEX_28W,SEX_28E}, K2 =      5.7567608058E-01
+SEX_28W[K2] =      5.7567608058E-01
+SEX_28E[K2] =      5.7567608058E-01
+!s29 : overlay = {SEX_29W,SEX_29E}, K2 =     -8.4949547763E-01
+SEX_29W[K2] =     -8.4949547763E-01
+SEX_29E[K2] =     -8.4949547763E-01
+!s30 : overlay = {SEX_30W,SEX_30E}, K2 =      3.7191837956E-01
+SEX_30W[K2] =      3.7191837956E-01
+SEX_30E[K2] =      3.7191837956E-01
+!s31 : overlay = {SEX_31W,SEX_31E}, K2 =     -7.7301128301E-01
+SEX_31W[K2] =     -7.7301128301E-01
+SEX_31E[K2] =     -7.7301128301E-01
+!s32 : overlay = {SEX_32W,SEX_32E}, K2 =      6.0247092477E-01
+SEX_32W[K2] =      6.0247092477E-01
+SEX_32E[K2] =      6.0247092477E-01
+!s33 : overlay = {SEX_33W,SEX_33E}, K2 =     -6.1695190649E-01
+SEX_33W[K2] =     -6.1695190649E-01
+SEX_33E[K2] =     -6.1695190649E-01
+!s34 : overlay = {SEX_34W,SEX_34E}, K2 =      7.1385770181E-01
+SEX_34W[K2] =      7.1385770181E-01
+SEX_34E[K2] =      7.1385770181E-01
+!s35 : overlay = {SEX_35W,SEX_35E}, K2 =     -7.5096166059E-01
+SEX_35W[K2] =     -7.5096166059E-01
+SEX_35E[K2] =     -7.5096166059E-01
+!s36 : overlay = {SEX_36W,SEX_36E}, K2 =      5.0354198350E-01
+SEX_36W[K2] =      5.0354198350E-01
+SEX_36E[K2] =      5.0354198350E-01
+!s37 : overlay = {SEX_37W,SEX_37E}, K2 =     -9.7729290233E-01
+SEX_37W[K2] =     -9.7729290233E-01
+SEX_37E[K2] =     -9.7729290233E-01
+!s38 : overlay = {SEX_38W,SEX_38E}, K2 =      5.6725227401E-01
+SEX_38W[K2] =      5.6725227401E-01
+SEX_38E[K2] =      5.6725227401E-01
+!s39 : overlay = {SEX_39W,SEX_39E}, K2 =     -8.9507558115E-01
+SEX_39W[K2] =     -8.9507558115E-01
+SEX_39E[K2] =     -8.9507558115E-01
+!s40 : overlay = {SEX_40W,SEX_40E}, K2 =      4.2036582300E-01
+SEX_40W[K2] =      4.2036582300E-01
+SEX_40E[K2] =      4.2036582300E-01
+!s41 : overlay = {SEX_41W,SEX_41E}, K2 =     -7.5671638607E-01
+SEX_41W[K2] =     -7.5671638607E-01
+SEX_41E[K2] =     -7.5671638607E-01
+!s42 : overlay = {SEX_42W,SEX_42E}, K2 =      4.0949141226E-01
+SEX_42W[K2] =      4.0949141226E-01
+SEX_42E[K2] =      4.0949141226E-01
+!s43 : overlay = {SEX_43W,SEX_43E}, K2 =     -7.0628322666E-01
+SEX_43W[K2] =     -7.0628322666E-01
+SEX_43E[K2] =     -7.0628322666E-01
+!s44 : overlay = {SEX_44W,SEX_44E}, K2 =     -7.0344130208E-01
+SEX_44W[K2] =     -7.0344130208E-01
+SEX_44E[K2] =     -7.0344130208E-01
+!s45 : overlay = {SEX_45W,SEX_45E}, K2 =      6.1473662182E-01
+SEX_45W[K2] =      6.1473662182E-01
+SEX_45E[K2] =      6.1473662182E-01
+!s47 : overlay = {SEX_47W,SEX_47E}, K2 =      2.1209741044E-01
+SEX_47W[K2] =      2.1209741044E-01
+SEX_47E[K2] =      2.1209741044E-01
+
+use, cesr
+
+RF_W1[VOLT] := 1.5e6
+RF_W2[VOLT] := 1.5e6
+RF_E1[VOLT] := 1.5e6
+RF_E2[VOLT] := 1.5e6
+RF_W1[HARMON] := 1281
+RF_W2[HARMON] := 1281
+RF_E1[HARMON] := 1281
+RF_E2[HARMON] := 1281
+
+ ! Vars not in original file
+
+SK_Q02W[K1] =  0.0
+SK_Q02E[K1] =  0.0
+SK_Q06W[K1] =  0.0
+SK_Q06E[K1] =  0.0
+SK_Q07E[K1] =  0.0
+
+
+
+
+

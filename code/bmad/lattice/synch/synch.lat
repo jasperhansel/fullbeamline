@@ -1,0 +1,1159 @@
+! BMAD input file
+
+beam, energy =    0.300
+ 
+parameter[lattice] = synch.
+ 
+call, file=layout/synch_layout_2.bmad 
+
+  d143_1 :=  0.500; d143_2 := -0.500; d143_3 :=  0.750; d143_4 :=  0.273
+ theta143_1 := 0.272; theta143_2 := 0.272; theta143_3 :=-0.136; theta143_4 :=-0.136
+
+ TAB143_V : overlay = {B143V/d143_1 ,B143V[y_pitch]/theta143_1,B144H/d143_2, &
+           B144H[y_pitch]/theta143_2, B142V/d143_3, B142V[y_pitch]/theta143_3, &
+           B141H/d143_4, B141H[y_pitch]/theta143_4}, y_offset
+
+ TAB143_H : overlay = {B143V/d143_1 ,B143V[x_pitch]/theta143_1,B144H/d143_2, &
+           B144H[x_pitch]/theta143_2, B142V/d143_3, B142V[x_pitch]/theta143_3, &
+           B141H/d143_4, B141H[x_pitch]/theta143_4}, x_offset
+
+  d141_1 :=  0.727; d141_2 :=  0.250; d141_3 :=  0.727; d141_4 :=  0.250
+ theta141_1 := 0.136; theta141_2 := 0.136; theta141_3 :=-0.136; theta141_4 :=-0.136
+
+ TAB141_V : overlay = {B141H/d141_1 ,B141H[y_pitch]/theta141_1,B142V/d141_2, &
+           B142V[y_pitch]/theta141_2, B140H/d141_3, B140H[y_pitch]/theta141_3, &
+           B139V/d141_4, B139V[y_pitch]/theta141_4}, y_offset
+
+ TAB141_H : overlay = {B141H/d141_1 ,B141H[x_pitch]/theta141_1,B142V/d141_2, &
+           B142V[x_pitch]/theta141_2, B140H/d141_3, B140H[x_pitch]/theta141_3, &
+           B139V/d141_4, B139V[x_pitch]/theta141_4}, x_offset
+
+  d139_1 :=  0.750; d139_2 :=  0.273; d139_3 :=  0.750; d139_4 :=  0.273
+ theta139_1 := 0.136; theta139_2 := 0.136; theta139_3 :=-0.136; theta139_4 :=-0.136
+
+ TAB139_V : overlay = {B139V/d139_1 ,B139V[y_pitch]/theta139_1,B140H/d139_2, &
+           B140H[y_pitch]/theta139_2, B138V/d139_3, B138V[y_pitch]/theta139_3, &
+           B137H/d139_4, B137H[y_pitch]/theta139_4}, y_offset
+
+ TAB139_H : overlay = {B139V/d139_1 ,B139V[x_pitch]/theta139_1,B140H/d139_2, &
+           B140H[x_pitch]/theta139_2, B138V/d139_3, B138V[x_pitch]/theta139_3, &
+           B137H/d139_4, B137H[x_pitch]/theta139_4}, x_offset
+
+  d137_1 :=  0.727; d137_2 :=  0.250; d137_3 :=  0.724; d137_4 :=  0.241
+ theta137_1 := 0.136; theta137_2 := 0.136; theta137_3 :=-0.137; theta137_4 :=-0.137
+
+ TAB137_V : overlay = {B137H/d137_1 ,B137H[y_pitch]/theta137_1,B138V/d137_2, &
+           B138V[y_pitch]/theta137_2, B136H/d137_3, B136H[y_pitch]/theta137_3, &
+           B135V/d137_4, B135V[y_pitch]/theta137_4}, y_offset
+
+ TAB137_H : overlay = {B137H/d137_1 ,B137H[x_pitch]/theta137_1,B138V/d137_2, &
+           B138V[x_pitch]/theta137_2, B136H/d137_3, B136H[x_pitch]/theta137_3, &
+           B135V/d137_4, B135V[x_pitch]/theta137_4}, x_offset
+
+  d135_1 :=  0.759; d135_2 :=  0.276; d135_3 :=  0.767; d135_4 :=  0.233
+ theta135_1 := 0.137; theta135_2 := 0.137; theta135_3 :=-0.133; theta135_4 :=-0.133
+
+ TAB135_V : overlay = {B135V/d135_1 ,B135V[y_pitch]/theta135_1,B136H/d135_2, &
+           B136H[y_pitch]/theta135_2, B134V/d135_3, B134V[y_pitch]/theta135_3, &
+           B133H/d135_4, B133H[y_pitch]/theta135_4}, y_offset
+
+ TAB135_H : overlay = {B135V/d135_1 ,B135V[x_pitch]/theta135_1,B136H/d135_2, &
+           B136H[x_pitch]/theta135_2, B134V/d135_3, B134V[x_pitch]/theta135_3, &
+           B133H/d135_4, B133H[x_pitch]/theta135_4}, x_offset
+
+  d133_1 :=  0.767; d133_2 :=  0.233; d133_3 :=  0.759; d133_4 :=  0.253
+ theta133_1 := 0.133; theta133_2 := 0.133; theta133_3 :=-0.137; theta133_4 :=-0.137
+
+ TAB133_V : overlay = {B133H/d133_1 ,B133H[y_pitch]/theta133_1,B134V/d133_2, &
+           B134V[y_pitch]/theta133_2, B132H/d133_3, B132H[y_pitch]/theta133_3, &
+           B131V/d133_4, B131V[y_pitch]/theta133_4}, y_offset
+
+ TAB133_H : overlay = {B133H/d133_1 ,B133H[x_pitch]/theta133_1,B134V/d133_2, &
+           B134V[x_pitch]/theta133_2, B132H/d133_3, B132H[x_pitch]/theta133_3, &
+           B131V/d133_4, B131V[x_pitch]/theta133_4}, x_offset
+
+  d131_1 :=  0.747; d131_2 :=  0.241; d131_3 :=  0.745; d131_4 :=  0.426; d131_5 := 0.205
+theta131_1:=0.137;theta131_2:=0.137; theta131_3:=-0.138; theta131_4:=-0.138;theta131_5:=-0.138 
+
+ TAB131_V : overlay = {B131V/d131_1, B131V[y_pitch]/theta131_1, B132H/d131_2, &
+           B132H[y_pitch]/theta131_2, B130V/d131_3, B130V[y_pitch]/theta131_3, &
+           B129VA/d131_4, B129VA[y_pitch]/theta131_4, &
+           B129HB/d131_5, B129HB[y_pitch]/theta131_5}, y_offset
+
+ TAB131_H : overlay = {B131V/d131_1, B131V[x_pitch]/theta131_1,B132H/d131_2, &
+           B132H[x_pitch]/theta131_2, B130V/d131_3, B130V[x_pitch]/theta131_3, &
+           B129VA/d131_4, B129VA[x_pitch]/theta131_4, &
+           B129HB/d131_5, B129HB[x_pitch]/theta131_5}, x_offset
+
+  d129_1 :=  0.785; d129_2 :=  0.566; d129_3 :=  0.251
+ theta129_1 := 0.137; theta129_2 := 0.137; theta129_3 := 0.137
+
+ TAB129_V : overlay = {B129HB/d129_1 ,B129HB[y_pitch]/theta129_1,B129VA/d129_2, &
+           B129VA[y_pitch]/theta129_2, B130V/d129_3,B130V[y_pitch]/theta129_3}, &
+           y_offset
+
+ TAB129_H : overlay = {B129HB/d129_1 ,B129HB[x_pitch]/theta129_1,B129VA/d129_2, &
+           B129VA[x_pitch]/theta129_2, B130V/d129_3, B130V[x_pitch]/theta129_3}, &
+           x_offset
+
+  d128_3 :=  0.793; d128_4 :=  0.572; d128_5 := 0.254
+ theta128_3 :=-0.138; theta128_4 :=-0.138; theta128_5 := -0.138
+
+ TAB128_V : overlay = {B128VA/d128_3, B128VA[y_pitch]/theta128_3, &
+           B128HB/d128_4, B128HB[y_pitch]/theta128_4, &
+           B127H/d128_5, B127H[y_pitch]/theta128_5}, y_offset
+
+ TAB128_H : overlay = {B128VA/d128_3, B128VA[x_pitch]/theta128_3, &
+           B128HB/d128_4, B128HB[x_pitch]/theta128_4, &
+           B127H/d128_5, B127H[x_pitch]/theta128_5}, x_offset
+
+
+  d127_1 :=  0.745; d127_2 :=  0.426; d127_3 :=  0.205; d127_4 :=  0.750; d127_5 := 0.250
+theta127_1:=0.138; theta127_2:=0.138; theta127_3:=0.138; theta127_4:=-0.136; theta127_5:=-0.136
+
+ TAB127_V : overlay = {B127H/d127_1 ,B127H[y_pitch]/theta127_1,B128HB/d127_2, &
+           B128HB[y_pitch]/theta127_2, B128VA/d127_3, B128VA[y_pitch]/theta127_3, &
+           B126H/d127_4, B126H[y_pitch]/theta127_4, &
+           B125V/d127_5, B125V[y_pitch]/theta127_5}, y_offset
+
+ TAB127_H : overlay = {B127H/d127_1 ,B127H[x_pitch]/theta127_1,B128HB/d127_2, &
+           B128HB[x_pitch]/theta127_2, B128VA/d127_3, B128VA[x_pitch]/theta127_3, &
+           B126H/d127_4, B126H[x_pitch]/theta127_4, &
+           B125V/d127_5, B125V[x_pitch]/theta127_5}, x_offset
+
+  d125_1 :=  0.750; d125_2 :=  0.250; d125_3 :=  0.750; d125_4 :=  0.250
+ theta125_1 := 0.136; theta125_2 := 0.136; theta125_3 :=-0.136; theta125_4 :=-0.136
+
+ TAB125_V : overlay = {B125V/d125_1 ,B125V[y_pitch]/theta125_1,B126H/d125_2, &
+           B126H[y_pitch]/theta125_2, B124V/d125_3, B124V[y_pitch]/theta125_3, &
+           B123H/d125_4, B123H[y_pitch]/theta125_4}, y_offset
+
+ TAB125_H : overlay = {B125V/d125_1 ,B125V[x_pitch]/theta125_1,B126H/d125_2, &
+           B126H[x_pitch]/theta125_2, B124V/d125_3, B124V[x_pitch]/theta125_3, &
+           B123H/d125_4, B123H[x_pitch]/theta125_4}, x_offset
+
+  d123_1 :=  0.750; d123_2 :=  0.250; d123_3 :=  0.750; d123_4 :=  0.250
+ theta123_1 := 0.136; theta123_2 := 0.136; theta123_3 :=-0.136; theta123_4 :=-0.136
+
+ TAB123_V : overlay = {B123H/d123_1 ,B123H[y_pitch]/theta123_1,B124V/d123_2, &
+           B124V[y_pitch]/theta123_2, B122H/d123_3, B122H[y_pitch]/theta123_3, &
+           B121V/d123_4, B121V[y_pitch]/theta123_4}, y_offset
+
+ TAB123_H : overlay = {B123H/d123_1 ,B123H[x_pitch]/theta123_1,B124V/d123_2, &
+           B124V[x_pitch]/theta123_2, B122H/d123_3, B122H[x_pitch]/theta123_3, &
+           B121V/d123_4, B121V[x_pitch]/theta123_4}, x_offset
+
+  d121_1 :=  0.750; d121_2 :=  0.250; d121_3 :=  0.750; d121_4 :=  0.250
+ theta121_1 := 0.136; theta121_2 := 0.136; theta121_3 :=-0.136; theta121_4 :=-0.136
+
+ TAB121_V : overlay = {B121V/d121_1 ,B121V[y_pitch]/theta121_1,B122H/d121_2, &
+           B122H[y_pitch]/theta121_2, B120V/d121_3, B120V[y_pitch]/theta121_3, &
+           B119H/d121_4, B119H[y_pitch]/theta121_4}, y_offset
+
+ TAB121_H : overlay = {B121V/d121_1 ,B121V[x_pitch]/theta121_1,B122H/d121_2, &
+           B122H[x_pitch]/theta121_2, B120V/d121_3, B120V[x_pitch]/theta121_3, &
+           B119H/d121_4, B119H[x_pitch]/theta121_4}, x_offset
+
+  d119_1 :=  0.750; d119_2 :=  0.250; d119_3 :=  0.750; d119_4 :=  0.250
+ theta119_1 := 0.136; theta119_2 := 0.136; theta119_3 :=-0.136; theta119_4 :=-0.136
+
+ TAB119_V : overlay = {B119H/d119_1 ,B119H[y_pitch]/theta119_1,B120V/d119_2, &
+           B120V[y_pitch]/theta119_2, B118H/d119_3, B118H[y_pitch]/theta119_3, &
+           B117V/d119_4, B117V[y_pitch]/theta119_4}, y_offset
+
+ TAB119_H : overlay = {B119H/d119_1 ,B119H[x_pitch]/theta119_1,B120V/d119_2, &
+           B120V[x_pitch]/theta119_2, B118H/d119_3, B118H[x_pitch]/theta119_3, &
+           B117V/d119_4, B117V[x_pitch]/theta119_4}, x_offset
+
+  d117_1 :=  0.750; d117_2 :=  0.250; d117_3 :=  0.750; d117_4 :=  0.250
+ theta117_1 := 0.136; theta117_2 := 0.136; theta117_3 :=-0.136; theta117_4 :=-0.136
+
+ TAB117_V : overlay = {B117V/d117_1 ,B117V[y_pitch]/theta117_1,B118H/d117_2, &
+           B118H[y_pitch]/theta117_2, B116V/d117_3, B116V[y_pitch]/theta117_3, &
+           B115H/d117_4, B115H[y_pitch]/theta117_4}, y_offset
+
+ TAB117_H : overlay = {B117V/d117_1 ,B117V[x_pitch]/theta117_1,B118H/d117_2, &
+           B118H[x_pitch]/theta117_2, B116V/d117_3, B116V[x_pitch]/theta117_3, &
+           B115H/d117_4, B115H[x_pitch]/theta117_4}, x_offset
+
+  d115_1 :=  0.750; d115_2 :=  0.250; d115_3 :=  0.750; d115_4 :=  0.250
+ theta115_1 := 0.136; theta115_2 := 0.136; theta115_3 :=-0.136; theta115_4 :=-0.136
+
+ TAB115_V : overlay = {B115H/d115_1 ,B115H[y_pitch]/theta115_1,B116V/d115_2, &
+           B116V[y_pitch]/theta115_2, B114H/d115_3, B114H[y_pitch]/theta115_3, &
+           B113V/d115_4, B113V[y_pitch]/theta115_4}, y_offset
+
+ TAB115_H : overlay = {B115H/d115_1 ,B115H[x_pitch]/theta115_1,B116V/d115_2, &
+           B116V[x_pitch]/theta115_2, B114H/d115_3, B114H[x_pitch]/theta115_3, &
+           B113V/d115_4, B113V[x_pitch]/theta115_4}, x_offset
+
+  d113_1 :=  0.750; d113_2 :=  0.250; d113_3 :=  0.750; d113_4 :=  0.250
+ theta113_1 := 0.136; theta113_2 := 0.136; theta113_3 :=-0.136; theta113_4 :=-0.136
+
+ TAB113_V : overlay = {B113V/d113_1 ,B113V[y_pitch]/theta113_1,B114H/d113_2, &
+           B114H[y_pitch]/theta113_2, B112V/d113_3, B112V[y_pitch]/theta113_3, &
+           B111H/d113_4, B111H[y_pitch]/theta113_4}, y_offset
+
+ TAB113_H : overlay = {B113V/d113_1 ,B113V[x_pitch]/theta113_1,B114H/d113_2, &
+           B114H[x_pitch]/theta113_2, B112V/d113_3, B112V[x_pitch]/theta113_3, &
+           B111H/d113_4, B111H[x_pitch]/theta113_4}, x_offset
+
+  d111_1 :=  0.750; d111_2 :=  0.250; d111_3 :=  0.750; d111_4 :=  0.250
+ theta111_1 := 0.136; theta111_2 := 0.136; theta111_3 :=-0.136; theta111_4 :=-0.136
+
+ TAB111_V : overlay = {B111H/d111_1 ,B111H[y_pitch]/theta111_1,B112V/d111_2, &
+           B112V[y_pitch]/theta111_2, B110H/d111_3, B110H[y_pitch]/theta111_3, &
+           B109V/d111_4, B109V[y_pitch]/theta111_4}, y_offset
+
+ TAB111_H : overlay = {B111H/d111_1 ,B111H[x_pitch]/theta111_1,B112V/d111_2, &
+           B112V[x_pitch]/theta111_2, B110H/d111_3, B110H[x_pitch]/theta111_3, &
+           B109V/d111_4, B109V[x_pitch]/theta111_4}, x_offset
+
+  d109_1 :=  0.750; d109_2 :=  0.250; d109_3 :=  0.750; d109_4 :=  0.250
+ theta109_1 := 0.136; theta109_2 := 0.136; theta109_3 :=-0.136; theta109_4 :=-0.136
+
+ TAB109_V : overlay = {B109V/d109_1 ,B109V[y_pitch]/theta109_1,B110H/d109_2, &
+           B110H[y_pitch]/theta109_2, B108V/d109_3, B108V[y_pitch]/theta109_3, &
+           B107H/d109_4, B107H[y_pitch]/theta109_4}, y_offset
+
+ TAB109_H : overlay = {B109V/d109_1 ,B109V[x_pitch]/theta109_1,B110H/d109_2, &
+           B110H[x_pitch]/theta109_2, B108V/d109_3, B108V[x_pitch]/theta109_3, &
+           B107H/d109_4, B107H[x_pitch]/theta109_4}, x_offset
+
+  d107_1 :=  0.750; d107_2 :=  0.250; d107_3 :=  0.750; d107_4 :=  0.250
+ theta107_1 := 0.136; theta107_2 := 0.136; theta107_3 :=-0.136; theta107_4 :=-0.136
+
+ TAB107_V : overlay = {B107H/d107_1 ,B107H[y_pitch]/theta107_1,B108V/d107_2, &
+           B108V[y_pitch]/theta107_2, B106H/d107_3, B106H[y_pitch]/theta107_3, &
+           B105V/d107_4, B105V[y_pitch]/theta107_4}, y_offset
+
+ TAB107_H : overlay = {B107H/d107_1 ,B107H[x_pitch]/theta107_1,B108V/d107_2, &
+           B108V[x_pitch]/theta107_2, B106H/d107_3, B106H[x_pitch]/theta107_3, &
+           B105V/d107_4, B105V[x_pitch]/theta107_4}, x_offset
+
+  d105_1 :=  0.750; d105_2 :=  0.250; d105_3 :=  0.750; d105_4 :=  0.250
+ theta105_1 := 0.136; theta105_2 := 0.136; theta105_3 :=-0.136; theta105_4 :=-0.136
+
+ TAB105_V : overlay = {B105V/d105_1 ,B105V[y_pitch]/theta105_1,B106H/d105_2, &
+           B106H[y_pitch]/theta105_2, B104V/d105_3, B104V[y_pitch]/theta105_3, &
+           B103H/d105_4, B103H[y_pitch]/theta105_4}, y_offset
+
+ TAB105_H : overlay = {B105V/d105_1 ,B105V[x_pitch]/theta105_1,B106H/d105_2, &
+           B106H[x_pitch]/theta105_2, B104V/d105_3, B104V[x_pitch]/theta105_3, &
+           B103H/d105_4, B103H[x_pitch]/theta105_4}, x_offset
+
+  d103_1 :=  0.750; d103_2 :=  0.250; d103_3 :=  0.750; d103_4 :=  0.250
+ theta103_1 := 0.136; theta103_2 := 0.136; theta103_3 :=-0.136; theta103_4 :=-0.136
+
+ TAB103_V : overlay = {B103H/d103_1 ,B103H[y_pitch]/theta103_1,B104V/d103_2, &
+           B104V[y_pitch]/theta103_2, B102H/d103_3, B102H[y_pitch]/theta103_3, &
+           B101V/d103_4, B101V[y_pitch]/theta103_4}, y_offset
+
+ TAB103_H : overlay = {B103H/d103_1 ,B103H[x_pitch]/theta103_1,B104V/d103_2, &
+           B104V[x_pitch]/theta103_2, B102H/d103_3, B102H[x_pitch]/theta103_3, &
+           B101V/d103_4, B101V[x_pitch]/theta103_4}, x_offset
+
+  d101_1 :=  0.750; d101_2 :=  0.250; d101_3 :=  0.750; d101_4 :=  0.250
+ theta101_1 := 0.136; theta101_2 := 0.136; theta101_3 :=-0.136; theta101_4 :=-0.136
+
+ TAB101_V : overlay = {B101V/d101_1 ,B101V[y_pitch]/theta101_1,B102H/d101_2, &
+           B102H[y_pitch]/theta101_2, B100V/d101_3, B100V[y_pitch]/theta101_3, &
+           B099H/d101_4, B099H[y_pitch]/theta101_4}, y_offset
+
+ TAB101_H : overlay = {B101V/d101_1 ,B101V[x_pitch]/theta101_1,B102H/d101_2, &
+           B102H[x_pitch]/theta101_2, B100V/d101_3, B100V[x_pitch]/theta101_3, &
+           B099H/d101_4, B099H[x_pitch]/theta101_4}, x_offset
+
+  d099_1 :=  0.750; d099_2 :=  0.250; d099_3 :=  0.745; d099_4 :=  0.235
+ theta099_1 := 0.136; theta099_2 := 0.136; theta099_3 :=-0.138; theta099_4 :=-0.138
+
+ TAB099_V : overlay = {B099H/d099_1 ,B099H[y_pitch]/theta099_1,B100V/d099_2, &
+           B100V[y_pitch]/theta099_2, B098H/d099_3, B098H[y_pitch]/theta099_3, &
+           B097V/d099_4, B097V[y_pitch]/theta099_4}, y_offset
+
+ TAB099_H : overlay = {B099H/d099_1 ,B099H[x_pitch]/theta099_1,B100V/d099_2, &
+           B100V[x_pitch]/theta099_2, B098H/d099_3, B098H[x_pitch]/theta099_3, &
+           B097V/d099_4, B097V[x_pitch]/theta099_4}, x_offset
+
+  d097_1 :=  0.754; d097_2 :=  0.251; d097_3 :=  0.745; d097_4 :=  0.235
+ theta097_1 := 0.137; theta097_2 := 0.137; theta097_3 :=-0.138; theta097_4 :=-0.138
+
+ TAB097_V : overlay = {B097V/d097_1 ,B097V[y_pitch]/theta097_1,B098H/d097_2, &
+           B098H[y_pitch]/theta097_2}, y_offset
+
+ TAB097_H : overlay = {B097V/d097_1 ,B097V[x_pitch]/theta097_1,B098H/d097_2, &
+           B098H[x_pitch]/theta097_2}, x_offset
+
+  d096_1 :=  0.762; d096_2 :=  0.254
+ theta096_1 :=-0.138; theta096_2 :=-0.138
+
+ TAB096_V : overlay = {B096H/d096_1 ,B096H[y_pitch]/theta096_1,B095V/d096_2, &
+           B095V[y_pitch]/theta096_2}, y_offset
+
+ TAB096_H : overlay = {B096H/d096_1 ,B096H[x_pitch]/theta096_1,B095V/d096_2, &
+           B095V[x_pitch]/theta096_2}, x_offset
+
+  d095_1 :=  0.745; d095_2 :=  0.235; d095_3 :=  0.750; d095_4 :=  0.250
+ theta095_1 := 0.138; theta095_2 := 0.138; theta095_3 :=-0.136; theta095_4 :=-0.136
+
+ TAB095_V : overlay = {B095V/d095_1 ,B095V[y_pitch]/theta095_1,B096H/d095_2, &
+           B096H[y_pitch]/theta095_2, B094V/d095_3, B094V[y_pitch]/theta095_3, &
+           B093H/d095_4, B093H[y_pitch]/theta095_4}, y_offset
+
+ TAB095_H : overlay = {B095V/d095_1 ,B095V[x_pitch]/theta095_1,B096H/d095_2, &
+           B096H[x_pitch]/theta095_2, B094V/d095_3, B094V[x_pitch]/theta095_3, &
+           B093H/d095_4, B093H[x_pitch]/theta095_4}, x_offset
+
+  d093_1 :=  0.750; d093_2 :=  0.250; d093_3 :=  0.750; d093_4 :=  0.250
+ theta093_1 := 0.136; theta093_2 := 0.136; theta093_3 :=-0.136; theta093_4 :=-0.136
+
+ TAB093_V : overlay = {B093H/d093_1 ,B093H[y_pitch]/theta093_1,B094V/d093_2, &
+           B094V[y_pitch]/theta093_2, B092H/d093_3, B092H[y_pitch]/theta093_3, &
+           B091V/d093_4, B091V[y_pitch]/theta093_4}, y_offset
+
+ TAB093_H : overlay = {B093H/d093_1 ,B093H[x_pitch]/theta093_1,B094V/d093_2, &
+           B094V[x_pitch]/theta093_2, B092H/d093_3, B092H[x_pitch]/theta093_3, &
+           B091V/d093_4, B091V[x_pitch]/theta093_4}, x_offset
+
+  d091_1 :=  0.750; d091_2 :=  0.250; d091_3 :=  0.750; d091_4 :=  0.250
+ theta091_1 := 0.136; theta091_2 := 0.136; theta091_3 :=-0.136; theta091_4 :=-0.136
+
+ TAB091_V : overlay = {B091V/d091_1 ,B091V[y_pitch]/theta091_1,B092H/d091_2, &
+           B092H[y_pitch]/theta091_2, B090V/d091_3, B090V[y_pitch]/theta091_3, &
+           B089H/d091_4, B089H[y_pitch]/theta091_4}, y_offset
+
+ TAB091_H : overlay = {B091V/d091_1 ,B091V[x_pitch]/theta091_1,B092H/d091_2, &
+           B092H[x_pitch]/theta091_2, B090V/d091_3, B090V[x_pitch]/theta091_3, &
+           B089H/d091_4, B089H[x_pitch]/theta091_4}, x_offset
+
+  d089_1 :=  0.750; d089_2 :=  0.250; d089_3 :=  0.750; d089_4 :=  0.250
+ theta089_1 := 0.136; theta089_2 := 0.136; theta089_3 :=-0.136; theta089_4 :=-0.136
+
+ TAB089_V : overlay = {B089H/d089_1 ,B089H[y_pitch]/theta089_1,B090V/d089_2, &
+           B090V[y_pitch]/theta089_2, B088H/d089_3, B088H[y_pitch]/theta089_3, &
+           B087V/d089_4, B087V[y_pitch]/theta089_4}, y_offset
+
+ TAB089_H : overlay = {B089H/d089_1 ,B089H[x_pitch]/theta089_1,B090V/d089_2, &
+           B090V[x_pitch]/theta089_2, B088H/d089_3, B088H[x_pitch]/theta089_3, &
+           B087V/d089_4, B087V[x_pitch]/theta089_4}, x_offset
+
+  d087_1 :=  0.750; d087_2 :=  0.250; d087_3 :=  0.750; d087_4 :=  0.250
+ theta087_1 := 0.136; theta087_2 := 0.136; theta087_3 :=-0.136; theta087_4 :=-0.136
+
+ TAB087_V : overlay = {B087V/d087_1 ,B087V[y_pitch]/theta087_1,B088H/d087_2, &
+           B088H[y_pitch]/theta087_2, B086V/d087_3, B086V[y_pitch]/theta087_3, &
+           B085H/d087_4, B085H[y_pitch]/theta087_4}, y_offset
+
+ TAB087_H : overlay = {B087V/d087_1 ,B087V[x_pitch]/theta087_1,B088H/d087_2, &
+           B088H[x_pitch]/theta087_2, B086V/d087_3, B086V[x_pitch]/theta087_3, &
+           B085H/d087_4, B085H[x_pitch]/theta087_4}, x_offset
+
+  d085_1 :=  0.750; d085_2 :=  0.250; d085_3 :=  0.750; d085_4 :=  0.250
+ theta085_1 := 0.136; theta085_2 := 0.136; theta085_3 :=-0.136; theta085_4 :=-0.136
+
+ TAB085_V : overlay = {B085H/d085_1 ,B085H[y_pitch]/theta085_1,B086V/d085_2, &
+           B086V[y_pitch]/theta085_2, B084H/d085_3, B084H[y_pitch]/theta085_3, &
+           B083V/d085_4, B083V[y_pitch]/theta085_4}, y_offset
+
+ TAB085_H : overlay = {B085H/d085_1 ,B085H[x_pitch]/theta085_1,B086V/d085_2, &
+           B086V[x_pitch]/theta085_2, B084H/d085_3, B084H[x_pitch]/theta085_3, &
+           B083V/d085_4, B083V[x_pitch]/theta085_4}, x_offset
+
+  d083_1 :=  0.750; d083_2 :=  0.250; d083_3 :=  0.750; d083_4 :=  0.250
+ theta083_1 := 0.136; theta083_2 := 0.136; theta083_3 :=-0.136; theta083_4 :=-0.136
+
+ TAB083_V : overlay = {B083V/d083_1 ,B083V[y_pitch]/theta083_1,B084H/d083_2, &
+           B084H[y_pitch]/theta083_2, B082V/d083_3, B082V[y_pitch]/theta083_3, &
+           B081H/d083_4, B081H[y_pitch]/theta083_4}, y_offset
+
+ TAB083_H : overlay = {B083V/d083_1 ,B083V[x_pitch]/theta083_1,B084H/d083_2, &
+           B084H[x_pitch]/theta083_2, B082V/d083_3, B082V[x_pitch]/theta083_3, &
+           B081H/d083_4, B081H[x_pitch]/theta083_4}, x_offset
+
+  d081_1 :=  0.750; d081_2 :=  0.250; d081_3 :=  0.750; d081_4 :=  0.250
+ theta081_1 := 0.136; theta081_2 := 0.136; theta081_3 :=-0.136; theta081_4 :=-0.136
+
+ TAB081_V : overlay = {B081H/d081_1 ,B081H[y_pitch]/theta081_1,B082V/d081_2, &
+           B082V[y_pitch]/theta081_2, B080H/d081_3, B080H[y_pitch]/theta081_3, &
+           B079V/d081_4, B079V[y_pitch]/theta081_4}, y_offset
+
+ TAB081_H : overlay = {B081H/d081_1 ,B081H[x_pitch]/theta081_1,B082V/d081_2, &
+           B082V[x_pitch]/theta081_2, B080H/d081_3, B080H[x_pitch]/theta081_3, &
+           B079V/d081_4, B079V[x_pitch]/theta081_4}, x_offset
+
+  d079_1 :=  0.750; d079_2 :=  0.250; d079_3 :=  0.750; d079_4 :=  0.250
+ theta079_1 := 0.136; theta079_2 := 0.136; theta079_3 :=-0.136; theta079_4 :=-0.136
+
+ TAB079_V : overlay = {B079V/d079_1 ,B079V[y_pitch]/theta079_1,B080H/d079_2, &
+           B080H[y_pitch]/theta079_2, B078V/d079_3, B078V[y_pitch]/theta079_3, &
+           B077H/d079_4, B077H[y_pitch]/theta079_4}, y_offset
+
+ TAB079_H : overlay = {B079V/d079_1 ,B079V[x_pitch]/theta079_1,B080H/d079_2, &
+           B080H[x_pitch]/theta079_2, B078V/d079_3, B078V[x_pitch]/theta079_3, &
+           B077H/d079_4, B077H[x_pitch]/theta079_4}, x_offset
+
+  d077_1 :=  0.750; d077_2 :=  0.250; d077_3 :=  0.750; d077_4 :=  0.250
+ theta077_1 := 0.136; theta077_2 := 0.136; theta077_3 :=-0.136; theta077_4 :=-0.136
+
+ TAB077_V : overlay = {B077H/d077_1 ,B077H[y_pitch]/theta077_1,B078V/d077_2, &
+           B078V[y_pitch]/theta077_2, B076H/d077_3, B076H[y_pitch]/theta077_3, &
+           B075V/d077_4, B075V[y_pitch]/theta077_4}, y_offset
+
+ TAB077_H : overlay = {B077H/d077_1 ,B077H[x_pitch]/theta077_1,B078V/d077_2, &
+           B078V[x_pitch]/theta077_2, B076H/d077_3, B076H[x_pitch]/theta077_3, &
+           B075V/d077_4, B075V[x_pitch]/theta077_4}, x_offset
+
+  d075_1 :=  0.750; d075_2 :=  0.250; d075_3 :=  0.750; d075_4 :=  0.250
+ theta075_1 := 0.136; theta075_2 := 0.136; theta075_3 :=-0.136; theta075_4 :=-0.136
+
+ TAB075_V : overlay = {B075V/d075_1 ,B075V[y_pitch]/theta075_1,B076H/d075_2, &
+           B076H[y_pitch]/theta075_2, B074V/d075_3, B074V[y_pitch]/theta075_3, &
+           B073H/d075_4, B073H[y_pitch]/theta075_4}, y_offset
+
+ TAB075_H : overlay = {B075V/d075_1 ,B075V[x_pitch]/theta075_1,B076H/d075_2, &
+           B076H[x_pitch]/theta075_2, B074V/d075_3, B074V[x_pitch]/theta075_3, &
+           B073H/d075_4, B073H[x_pitch]/theta075_4}, x_offset
+
+  d073_1 :=  0.750; d073_2 :=  0.250; d073_3 :=  0.750; d073_4 :=  0.250
+ theta073_1 := 0.136; theta073_2 := 0.136; theta073_3 :=-0.136; theta073_4 :=-0.136
+
+ TAB073_V : overlay = {B073H/d073_1 ,B073H[y_pitch]/theta073_1,B074V/d073_2, &
+           B074V[y_pitch]/theta073_2, B072H/d073_3, B072H[y_pitch]/theta073_3, &
+           B071V/d073_4, B071V[y_pitch]/theta073_4}, y_offset
+
+ TAB073_H : overlay = {B073H/d073_1 ,B073H[x_pitch]/theta073_1,B074V/d073_2, &
+           B074V[x_pitch]/theta073_2, B072H/d073_3, B072H[x_pitch]/theta073_3, &
+           B071V/d073_4, B071V[x_pitch]/theta073_4}, x_offset
+
+  d071_1 :=  0.750; d071_2 :=  0.250; d071_3 :=  0.750; d071_4 :=  0.250
+ theta071_1 := 0.136; theta071_2 := 0.136; theta071_3 :=-0.136; theta071_4 :=-0.136
+
+ TAB071_V : overlay = {B071V/d071_1 ,B071V[y_pitch]/theta071_1,B072H/d071_2, &
+           B072H[y_pitch]/theta071_2, B070V/d071_3, B070V[y_pitch]/theta071_3, &
+           B069H/d071_4, B069H[y_pitch]/theta071_4}, y_offset
+
+ TAB071_H : overlay = {B071V/d071_1 ,B071V[x_pitch]/theta071_1,B072H/d071_2, &
+           B072H[x_pitch]/theta071_2, B070V/d071_3, B070V[x_pitch]/theta071_3, &
+           B069H/d071_4, B069H[x_pitch]/theta071_4}, x_offset
+
+  d069_1 :=  0.750; d069_2 :=  0.250; d069_3 :=  0.750; d069_4 :=  0.250
+ theta069_1 := 0.136; theta069_2 := 0.136; theta069_3 :=-0.136; theta069_4 :=-0.136
+
+ TAB069_V : overlay = {B069H/d069_1 ,B069H[y_pitch]/theta069_1,B070V/d069_2, &
+           B070V[y_pitch]/theta069_2, B068H/d069_3, B068H[y_pitch]/theta069_3, &
+           B067V/d069_4, B067V[y_pitch]/theta069_4}, y_offset
+
+ TAB069_H : overlay = {B069H/d069_1 ,B069H[x_pitch]/theta069_1,B070V/d069_2, &
+           B070V[x_pitch]/theta069_2, B068H/d069_3, B068H[x_pitch]/theta069_3, &
+           B067V/d069_4, B067V[x_pitch]/theta069_4}, x_offset
+
+  d067_1 :=  0.750; d067_2 :=  0.250; d067_3 :=  0.745; d067_4 :=  0.426
+ theta067_1 := 0.136; theta067_2 := 0.136; theta067_3 :=-0.138; theta067_4 :=-0.138
+
+ TAB067_V : overlay = {B067V/d067_1 ,B067V[y_pitch]/theta067_1,B068H/d067_2, &
+           B068H[y_pitch]/theta067_2, B066V/d067_3, B066V[y_pitch]/theta067_3, &
+           B65VA/d067_4, B65VA[y_pitch]/theta067_4}, y_offset
+
+ TAB067_H : overlay = {B067V/d067_1 ,B067V[x_pitch]/theta067_1,B068H/d067_2, &
+           B068H[x_pitch]/theta067_2, B066V/d067_3, B066V[x_pitch]/theta067_3, &
+           B65VA/d067_4, B65VA[x_pitch]/theta067_4}, x_offset
+
+  d065_1 :=  0.785; d065_2 :=  0.566; d065_3 :=  0.251
+ theta065_1 := 0.137; theta065_2 := 0.137; theta065_3 := 0.137
+
+ TAB065_V : overlay = {B65HB/d065_1 ,B65HB[y_pitch]/theta065_1,B65VA/d065_2, &
+           B65VA[y_pitch]/theta065_2, B066V/d065_3, B066V[y_pitch]/theta065_3}, y_offset
+
+ TAB065_H : overlay = {B65HB/d065_1 ,B65HB[x_pitch]/theta065_1,B65VA/d065_2, &
+           B65VA[x_pitch]/theta065_2, B066V/d065_3, B066V[x_pitch]/theta065_3}, x_offset
+
+  d064_3 :=  0.793; d064_4 :=  0.572; d064_5 := 0.254
+ theta064_3 :=-0.138; theta064_4 :=-0.138; theta064_5 := -0.138
+
+ TAB064_V : overlay = {B64VA/d064_3, B64VA[y_pitch]/theta064_3, &
+           B64HB/d064_4, B64HB[y_pitch]/theta064_4, &
+           B063H/d064_5, B063H[y_pitch]/theta064_5}, y_offset
+
+ TAB064_H : overlay = {B64VA/d064_3, B64VA[x_pitch]/theta064_3, &
+           B64HB/d064_4, B64HB[x_pitch]/theta064_4, &
+           B063H/d064_5, B063H[x_pitch]/theta064_5}, x_offset
+
+  d063_1 :=  0.745; d063_2 :=  0.426; d063_3 :=  0.205; d063_4 :=  0.750; d063_5 := 0.250
+theta063_1:=0.138; theta063_2:=0.138; theta063_3:=0.138; theta063_4:=-0.136; theta063_5:=-0.136
+
+ TAB063_V : overlay = {B063H/d063_1 ,B063H[y_pitch]/theta063_1,B64HB/d063_2, &
+           B64HB[y_pitch]/theta063_2, B64VA/d063_3, B64VA[y_pitch]/theta063_3, &
+           B062H/d063_4, B062H[y_pitch]/theta063_4, &
+           B061V/d063_5, B061V[y_pitch]/theta063_5}, y_offset
+
+ TAB063_H : overlay = {B063H/d063_1 ,B063H[x_pitch]/theta063_1,B64HB/d063_2, &
+           B64HB[x_pitch]/theta063_2, B64VA/d063_3, B64VA[x_pitch]/theta063_3, &
+           B062H/d063_4, B062H[x_pitch]/theta063_4, &
+           B061V/d063_5, B061V[x_pitch]/theta063_5}, x_offset
+
+  d061_1 :=  0.750; d061_2 :=  0.250; d061_3 :=  0.747; d061_4 :=  0.241
+ theta061_1 := 0.136; theta061_2 := 0.136; theta061_3 :=-0.137; theta061_4 :=-0.137
+
+ TAB061_V : overlay = {B061V/d061_1 ,B061V[y_pitch]/theta061_1,B062H/d061_2, &
+           B062H[y_pitch]/theta061_2, B060V/d061_3, B060V[y_pitch]/theta061_3, &
+           B059H/d061_4, B059H[y_pitch]/theta061_4}, y_offset
+
+ TAB061_H : overlay = {B061V/d061_1 ,B061V[x_pitch]/theta061_1,B062H/d061_2, &
+           B062H[x_pitch]/theta061_2, B060V/d061_3, B060V[x_pitch]/theta061_3, &
+           B059H/d061_4, B059H[x_pitch]/theta061_4}, x_offset
+
+  d059_1 :=  0.759; d059_2 :=  0.253; d059_3 :=  0.767; d059_4 :=  0.233
+ theta059_1 := 0.137; theta059_2 := 0.137; theta059_3 :=-0.133; theta059_4 :=-0.133
+
+ TAB059_V : overlay = {B059H/d059_1 ,B059H[y_pitch]/theta059_1,B060V/d059_2, &
+           B060V[y_pitch]/theta059_2, B058H/d059_3, B058H[y_pitch]/theta059_3, &
+           B057V/d059_4, B057V[y_pitch]/theta059_4}, y_offset
+
+ TAB059_H : overlay = {B059H/d059_1 ,B059H[x_pitch]/theta059_1,B060V/d059_2, &
+           B060V[x_pitch]/theta059_2, B058H/d059_3, B058H[x_pitch]/theta059_3, &
+           B057V/d059_4, B057V[x_pitch]/theta059_4}, x_offset
+
+  d057_1 :=  0.767; d057_2 :=  0.233; d057_3 :=  0.759; d057_4 :=  0.276
+ theta057_1 := 0.133; theta057_2 := 0.133; theta057_3 :=-0.137; theta057_4 :=-0.137
+
+ TAB057_V : overlay = {B057V/d057_1 ,B057V[y_pitch]/theta057_1,B058H/d057_2, &
+           B058H[y_pitch]/theta057_2, B056V/d057_3, B056V[y_pitch]/theta057_3, &
+           B055H/d057_4, B055H[y_pitch]/theta057_4}, y_offset
+
+ TAB057_H : overlay = {B057V/d057_1 ,B057V[x_pitch]/theta057_1,B058H/d057_2, &
+           B058H[x_pitch]/theta057_2, B056V/d057_3, B056V[x_pitch]/theta057_3, &
+           B055H/d057_4, B055H[x_pitch]/theta057_4}, x_offset
+
+  d055_1 :=  0.724; d055_2 :=  0.241; d055_3 :=  0.727; d055_4 :=  0.250
+ theta055_1 := 0.137; theta055_2 := 0.137; theta055_3 :=-0.136; theta055_4 :=-0.136
+
+ TAB055_V : overlay = {B055H/d055_1 ,B055H[y_pitch]/theta055_1,B056V/d055_2, &
+           B056V[y_pitch]/theta055_2, B054H/d055_3, B054H[y_pitch]/theta055_3, &
+           B053V/d055_4, B053V[y_pitch]/theta055_4}, y_offset
+
+ TAB055_H : overlay = {B055H/d055_1 ,B055H[x_pitch]/theta055_1,B056V/d055_2, &
+           B056V[x_pitch]/theta055_2, B054H/d055_3, B054H[x_pitch]/theta055_3, &
+           B053V/d055_4, B053V[x_pitch]/theta055_4}, x_offset
+
+  d053_1 :=  0.750; d053_2 :=  0.273; d053_3 :=  0.750; d053_4 :=  0.273
+ theta053_1 := 0.136; theta053_2 := 0.136; theta053_3 :=-0.136; theta053_4 :=-0.136
+
+ TAB053_V : overlay = {B053V/d053_1 ,B053V[y_pitch]/theta053_1,B054H/d053_2, &
+           B054H[y_pitch]/theta053_2, B052V/d053_3, B052V[y_pitch]/theta053_3, &
+           B051H/d053_4, B051H[y_pitch]/theta053_4}, y_offset
+
+ TAB053_H : overlay = {B053V/d053_1 ,B053V[x_pitch]/theta053_1,B054H/d053_2, &
+           B054H[x_pitch]/theta053_2, B052V/d053_3, B052V[x_pitch]/theta053_3, &
+           B051H/d053_4, B051H[x_pitch]/theta053_4}, x_offset
+
+  d051_1 :=  0.727; d051_2 :=  0.250; d051_3 :=  0.727; d051_4 :=  0.250
+ theta051_1 := 0.136; theta051_2 := 0.136; theta051_3 :=-0.136; theta051_4 :=-0.136
+
+ TAB051_V : overlay = {B051H/d051_1 ,B051H[y_pitch]/theta051_1,B052V/d051_2, &
+           B052V[y_pitch]/theta051_2, B050H/d051_3, B050H[y_pitch]/theta051_3, &
+           B049V/d051_4, B049V[y_pitch]/theta051_4}, y_offset
+
+ TAB051_H : overlay = {B051H/d051_1 ,B051H[x_pitch]/theta051_1,B052V/d051_2, &
+           B052V[x_pitch]/theta051_2, B050H/d051_3, B050H[x_pitch]/theta051_3, &
+           B049V/d051_4, B049V[x_pitch]/theta051_4}, x_offset
+
+  d049_1 :=  0.750; d049_2 :=  0.273; d049_3 :=  0.750; d049_4 :=  0.250
+ theta049_1 := 0.136; theta049_2 := 0.136; theta049_3 :=-0.136; theta049_4 :=-0.136
+
+ TAB049_V : overlay = {B049V/d049_1 ,B049V[y_pitch]/theta049_1,B050H/d049_2, &
+           B050H[y_pitch]/theta049_2, B048V/d049_3, B048V[y_pitch]/theta049_3, &
+           B047H/d049_4, B047H[y_pitch]/theta049_4}, y_offset
+
+ TAB049_H : overlay = {B049V/d049_1 ,B049V[x_pitch]/theta049_1,B050H/d049_2, &
+           B050H[x_pitch]/theta049_2, B048V/d049_3, B048V[x_pitch]/theta049_3, &
+           B047H/d049_4, B047H[x_pitch]/theta049_4}, x_offset
+
+  d047_1 :=  0.750; d047_2 :=  0.250; d047_3 :=  0.750; d047_4 :=  0.250
+ theta047_1 := 0.136; theta047_2 := 0.136; theta047_3 :=-0.136; theta047_4 :=-0.136
+
+ TAB047_V : overlay = {B047H/d047_1 ,B047H[y_pitch]/theta047_1,B048V/d047_2, &
+           B048V[y_pitch]/theta047_2, B046H/d047_3, B046H[y_pitch]/theta047_3, &
+           B045V/d047_4, B045V[y_pitch]/theta047_4}, y_offset
+
+ TAB047_H : overlay = {B047H/d047_1 ,B047H[x_pitch]/theta047_1,B048V/d047_2, &
+           B048V[x_pitch]/theta047_2, B046H/d047_3, B046H[x_pitch]/theta047_3, &
+           B045V/d047_4, B045V[x_pitch]/theta047_4}, x_offset
+
+  d045_1 :=  0.750; d045_2 :=  0.250; d045_3 :=  0.750; d045_4 :=  0.250
+ theta045_1 := 0.136; theta045_2 := 0.136; theta045_3 :=-0.136; theta045_4 :=-0.136
+
+ TAB045_V : overlay = {B045V/d045_1 ,B045V[y_pitch]/theta045_1,B046H/d045_2, &
+           B046H[y_pitch]/theta045_2, B044V/d045_3, B044V[y_pitch]/theta045_3, &
+           B043H/d045_4, B043H[y_pitch]/theta045_4}, y_offset
+
+ TAB045_H : overlay = {B045V/d045_1 ,B045V[x_pitch]/theta045_1,B046H/d045_2, &
+           B046H[x_pitch]/theta045_2, B044V/d045_3, B044V[x_pitch]/theta045_3, &
+           B043H/d045_4, B043H[x_pitch]/theta045_4}, x_offset
+
+  d043_1 :=  0.750; d043_2 :=  0.250; d043_3 :=  0.750; d043_4 :=  0.250
+ theta043_1 := 0.136; theta043_2 := 0.136; theta043_3 :=-0.136; theta043_4 :=-0.136
+
+ TAB043_V : overlay = {B043H/d043_1 ,B043H[y_pitch]/theta043_1,B044V/d043_2, &
+           B044V[y_pitch]/theta043_2, B042H/d043_3, B042H[y_pitch]/theta043_3, &
+           B041V/d043_4, B041V[y_pitch]/theta043_4}, y_offset
+
+ TAB043_H : overlay = {B043H/d043_1 ,B043H[x_pitch]/theta043_1,B044V/d043_2, &
+           B044V[x_pitch]/theta043_2, B042H/d043_3, B042H[x_pitch]/theta043_3, &
+           B041V/d043_4, B041V[x_pitch]/theta043_4}, x_offset
+
+  d041_1 :=  0.750; d041_2 :=  0.250; d041_3 :=  0.750; d041_4 :=  0.250
+ theta041_1 := 0.136; theta041_2 := 0.136; theta041_3 :=-0.136; theta041_4 :=-0.136
+
+ TAB041_V : overlay = {B041V/d041_1 ,B041V[y_pitch]/theta041_1,B042H/d041_2, &
+           B042H[y_pitch]/theta041_2, B040V/d041_3, B040V[y_pitch]/theta041_3, &
+           B039H/d041_4, B039H[y_pitch]/theta041_4}, y_offset
+
+ TAB041_H : overlay = {B041V/d041_1 ,B041V[x_pitch]/theta041_1,B042H/d041_2, &
+           B042H[x_pitch]/theta041_2, B040V/d041_3, B040V[x_pitch]/theta041_3, &
+           B039H/d041_4, B039H[x_pitch]/theta041_4}, x_offset
+
+  d039_1 :=  0.750; d039_2 :=  0.250; d039_3 :=  0.750; d039_4 :=  0.250
+ theta039_1 := 0.136; theta039_2 := 0.136; theta039_3 :=-0.136; theta039_4 :=-0.136
+
+ TAB039_V : overlay = {B039H/d039_1 ,B039H[y_pitch]/theta039_1,B040V/d039_2, &
+           B040V[y_pitch]/theta039_2, B038H/d039_3, B038H[y_pitch]/theta039_3, &
+           B037V/d039_4, B037V[y_pitch]/theta039_4}, y_offset
+
+ TAB039_H : overlay = {B039H/d039_1 ,B039H[x_pitch]/theta039_1,B040V/d039_2, &
+           B040V[x_pitch]/theta039_2, B038H/d039_3, B038H[x_pitch]/theta039_3, &
+           B037V/d039_4, B037V[x_pitch]/theta039_4}, x_offset
+
+  d037_1 :=  0.750; d037_2 :=  0.250; d037_3 :=  0.750; d037_4 :=  0.250
+ theta037_1 := 0.136; theta037_2 := 0.136; theta037_3 :=-0.136; theta037_4 :=-0.136
+
+ TAB037_V : overlay = {B037V/d037_1 ,B037V[y_pitch]/theta037_1,B038H/d037_2, &
+           B038H[y_pitch]/theta037_2, B036V/d037_3, B036V[y_pitch]/theta037_3, &
+           B035H/d037_4, B035H[y_pitch]/theta037_4}, y_offset
+
+ TAB037_H : overlay = {B037V/d037_1 ,B037V[x_pitch]/theta037_1,B038H/d037_2, &
+           B038H[x_pitch]/theta037_2, B036V/d037_3, B036V[x_pitch]/theta037_3, &
+           B035H/d037_4, B035H[x_pitch]/theta037_4}, x_offset
+
+  d035_1 :=  0.750; d035_2 :=  0.250; d035_3 :=  0.745; d035_4 :=  0.426
+ theta035_1 := 0.136; theta035_2 := 0.136; theta035_3 :=-0.138; theta035_4 :=-0.138
+
+ TAB035_V : overlay = {B035H/d035_1 ,B035H[y_pitch]/theta035_1,B036V/d035_2, &
+           B036V[y_pitch]/theta035_2, B034H/d035_3, B034H[y_pitch]/theta035_3, &
+           B33HA/d035_4, B33HA[y_pitch]/theta035_4}, y_offset
+
+ TAB035_H : overlay = {B035H/d035_1 ,B035H[x_pitch]/theta035_1,B036V/d035_2, &
+           B036V[x_pitch]/theta035_2, B034H/d035_3, B034H[x_pitch]/theta035_3, &
+           B33HA/d035_4, B33HA[x_pitch]/theta035_4}, x_offset
+
+  d033_1 :=  0.785; d033_2 :=  0.566; d033_3 :=  0.251
+ theta033_1 := 0.137; theta033_2 := 0.137; theta033_3 := 0.137
+
+ TAB033_V : overlay = {B33VB/d033_1 ,B33VB[y_pitch]/theta033_1,B33HA/d033_2, &
+           B33HA[y_pitch]/theta033_2, B034H/d033_3, B034H[y_pitch]/theta033_3}, y_offset
+
+ TAB033_H : overlay = {B33VB/d033_1 ,B33VB[x_pitch]/theta033_1,B33HA/d033_2, &
+           B33HA[x_pitch]/theta033_2, B034H/d033_3, B034H[x_pitch]/theta033_3}, x_offset
+
+  d032_3 :=  0.793; d032_4 :=  0.572; d032_5 := 0.254
+ theta032_3 :=-0.138; theta032_4 :=-0.138; theta032_5 := -0.138
+
+ TAB032_V : overlay = {B32HA/d032_3, B32HA[y_pitch]/theta032_3, &
+           B32VB/d032_4, B32VB[y_pitch]/theta032_4, &
+           B031V/d032_5, B031V[y_pitch]/theta032_5}, y_offset
+
+ TAB032_H : overlay = {B32HA/d032_3, B32HA[x_pitch]/theta032_3, &
+           B32VB/d032_4, B32VB[x_pitch]/theta032_4, &
+           B031V/d032_5, B031V[x_pitch]/theta032_5}, x_offset
+
+
+
+  d031_1 :=  0.745; d031_2 :=  0.426; d031_3 :=  0.205; d031_4 :=  0.750; d031_5 := 0.234
+theta031_1:=0.138; theta031_2:=0.138; theta031_3:=0.138; theta031_4:=-0.136; theta031_5:=-0.136
+
+ TAB031_V : overlay = {B031V/d031_1 ,B031V[y_pitch]/theta031_1,B32VB/d031_2, &
+           B32VB[y_pitch]/theta031_2, B32HA/d031_3, B32HA[y_pitch]/theta031_3, &
+           B030V/d031_4, B030V[y_pitch]/theta031_4, B029H/d031_5, &
+           B029H[y_pitch]/theta031_5}, y_offset
+
+ TAB031_H : overlay = {B031V/d031_1 ,B031V[x_pitch]/theta031_1,B32VB/d031_2, &
+           B32VB[x_pitch]/theta031_2, B32HA/d031_3, B32HA[x_pitch]/theta031_3, &
+           B030V/d031_4, B030V[x_pitch]/theta031_4, B029H/d031_5, &
+           B029H[x_pitch]/theta031_5}, x_offset
+
+  d029_1 :=  0.750; d029_2 :=  0.250; d029_3 :=  0.750; d029_4 :=  0.250
+ theta029_1 := 0.136; theta029_2 := 0.136; theta029_3 :=-0.136; theta029_4 :=-0.136
+
+ TAB029_V : overlay = {B029H/d029_1 ,B029H[y_pitch]/theta029_1,B030V/d029_2, &
+           B030V[y_pitch]/theta029_2, B028H/d029_3, B028H[y_pitch]/theta029_3, &
+           B027V/d029_4, B027V[y_pitch]/theta029_4}, y_offset
+
+ TAB029_H : overlay = {B029H/d029_1 ,B029H[x_pitch]/theta029_1,B030V/d029_2, &
+           B030V[x_pitch]/theta029_2, B028H/d029_3, B028H[x_pitch]/theta029_3, &
+           B027V/d029_4, B027V[x_pitch]/theta029_4}, x_offset
+
+  d027_1 :=  0.750; d027_2 :=  0.250; d027_3 :=  0.750; d027_4 :=  0.250
+ theta027_1 := 0.136; theta027_2 := 0.136; theta027_3 :=-0.136; theta027_4 :=-0.136
+
+ TAB027_V : overlay = {B027V/d027_1 ,B027V[y_pitch]/theta027_1,B028H/d027_2, &
+           B028H[y_pitch]/theta027_2, B026V/d027_3, B026V[y_pitch]/theta027_3, &
+           B025H/d027_4, B025H[y_pitch]/theta027_4}, y_offset
+
+ TAB027_H : overlay = {B027V/d027_1 ,B027V[x_pitch]/theta027_1,B028H/d027_2, &
+           B028H[x_pitch]/theta027_2, B026V/d027_3, B026V[x_pitch]/theta027_3, &
+           B025H/d027_4, B025H[x_pitch]/theta027_4}, x_offset
+
+  d025_1 :=  0.750; d025_2 :=  0.250; d025_3 :=  0.750; d025_4 :=  0.250
+ theta025_1 := 0.136; theta025_2 := 0.136; theta025_3 :=-0.136; theta025_4 :=-0.136
+
+ TAB025_V : overlay = {B025H/d025_1 ,B025H[y_pitch]/theta025_1,B026V/d025_2, &
+           B026V[y_pitch]/theta025_2, B024H/d025_3, B024H[y_pitch]/theta025_3, &
+           B023V/d025_4, B023V[y_pitch]/theta025_4}, y_offset
+
+ TAB025_H : overlay = {B025H/d025_1 ,B025H[x_pitch]/theta025_1,B026V/d025_2, &
+           B026V[x_pitch]/theta025_2, B024H/d025_3, B024H[x_pitch]/theta025_3, &
+           B023V/d025_4, B023V[x_pitch]/theta025_4}, x_offset
+
+  d023_1 :=  0.750; d023_2 :=  0.250; d023_3 :=  0.750; d023_4 :=  0.250
+ theta023_1 := 0.136; theta023_2 := 0.136; theta023_3 :=-0.136; theta023_4 :=-0.136
+
+ TAB023_V : overlay = {B023V/d023_1 ,B023V[y_pitch]/theta023_1,B024H/d023_2, &
+           B024H[y_pitch]/theta023_2, B022V/d023_3, B022V[y_pitch]/theta023_3, &
+           B021H/d023_4, B021H[y_pitch]/theta023_4}, y_offset
+
+ TAB023_H : overlay = {B023V/d023_1 ,B023V[x_pitch]/theta023_1,B024H/d023_2, &
+           B024H[x_pitch]/theta023_2, B022V/d023_3, B022V[x_pitch]/theta023_3, &
+           B021H/d023_4, B021H[x_pitch]/theta023_4}, x_offset
+
+  d021_1 :=  0.750; d021_2 :=  0.250; d021_3 :=  0.750; d021_4 :=  0.250
+ theta021_1 := 0.136; theta021_2 := 0.136; theta021_3 :=-0.136; theta021_4 :=-0.136
+
+ TAB021_V : overlay = {B021H/d021_1 ,B021H[y_pitch]/theta021_1,B022V/d021_2, &
+           B022V[y_pitch]/theta021_2, B020H/d021_3, B020H[y_pitch]/theta021_3, &
+           B019V/d021_4, B019V[y_pitch]/theta021_4}, y_offset
+
+ TAB021_H : overlay = {B021H/d021_1 ,B021H[x_pitch]/theta021_1,B022V/d021_2, &
+           B022V[x_pitch]/theta021_2, B020H/d021_3, B020H[x_pitch]/theta021_3, &
+           B019V/d021_4, B019V[x_pitch]/theta021_4}, x_offset
+
+  d019_1 :=  0.750; d019_2 :=  0.250; d019_3 :=  0.750; d019_4 :=  0.250
+ theta019_1 := 0.136; theta019_2 := 0.136; theta019_3 :=-0.136; theta019_4 :=-0.136
+
+ TAB019_V : overlay = {B019V/d019_1 ,B019V[y_pitch]/theta019_1,B020H/d019_2, &
+           B020H[y_pitch]/theta019_2, B018V/d019_3, B018V[y_pitch]/theta019_3, &
+           B017H/d019_4, B017H[y_pitch]/theta019_4}, y_offset
+
+ TAB019_H : overlay = {B019V/d019_1 ,B019V[x_pitch]/theta019_1,B020H/d019_2, &
+           B020H[x_pitch]/theta019_2, B018V/d019_3, B018V[x_pitch]/theta019_3, &
+           B017H/d019_4, B017H[x_pitch]/theta019_4}, x_offset
+
+  d017_1 :=  0.750; d017_2 :=  0.250; d017_3 :=  0.750; d017_4 :=  0.250
+ theta017_1 := 0.136; theta017_2 := 0.136; theta017_3 :=-0.136; theta017_4 :=-0.136
+
+ TAB017_V : overlay = {B017H/d017_1 ,B017H[y_pitch]/theta017_1,B018V/d017_2, &
+           B018V[y_pitch]/theta017_2, B016H/d017_3, B016H[y_pitch]/theta017_3, &
+           B015V/d017_4, B015V[y_pitch]/theta017_4}, y_offset
+
+ TAB017_H : overlay = {B017H/d017_1 ,B017H[x_pitch]/theta017_1,B018V/d017_2, &
+           B018V[x_pitch]/theta017_2, B016H/d017_3, B016H[x_pitch]/theta017_3, &
+           B015V/d017_4, B015V[x_pitch]/theta017_4}, x_offset
+
+  d015_1 :=  0.750; d015_2 :=  0.250; d015_3 :=  0.750; d015_4 :=  0.250
+ theta015_1 := 0.136; theta015_2 := 0.136; theta015_3 :=-0.136; theta015_4 :=-0.136
+
+ TAB015_V : overlay = {B015V/d015_1 ,B015V[y_pitch]/theta015_1,B016H/d015_2, &
+           B016H[y_pitch]/theta015_2, B014V/d015_3, B014V[y_pitch]/theta015_3, &
+           B013H/d015_4, B013H[y_pitch]/theta015_4}, y_offset
+
+ TAB015_H : overlay = {B015V/d015_1 ,B015V[x_pitch]/theta015_1,B016H/d015_2, &
+           B016H[x_pitch]/theta015_2, B014V/d015_3, B014V[x_pitch]/theta015_3, &
+           B013H/d015_4, B013H[x_pitch]/theta015_4}, x_offset
+
+  d013_1 :=  0.750; d013_2 :=  0.250; d013_3 :=  0.750; d013_4 :=  0.250
+ theta013_1 := 0.136; theta013_2 := 0.136; theta013_3 :=-0.136; theta013_4 :=-0.136
+
+ TAB013_V : overlay = {B013H/d013_1 ,B013H[y_pitch]/theta013_1,B014V/d013_2, &
+           B014V[y_pitch]/theta013_2, B012H/d013_3, B012H[y_pitch]/theta013_3, &
+           B011V/d013_4, B011V[y_pitch]/theta013_4}, y_offset
+
+ TAB013_H : overlay = {B013H/d013_1 ,B013H[x_pitch]/theta013_1,B014V/d013_2, &
+           B014V[x_pitch]/theta013_2, B012H/d013_3, B012H[x_pitch]/theta013_3, &
+           B011V/d013_4, B011V[x_pitch]/theta013_4}, x_offset
+
+  d011_1 :=  0.750; d011_2 :=  0.250; d011_3 :=  0.750; d011_4 :=  0.250
+ theta011_1 := 0.136; theta011_2 := 0.136; theta011_3 :=-0.136; theta011_4 :=-0.136
+
+ TAB011_V : overlay = {B011V/d011_1 ,B011V[y_pitch]/theta011_1,B012H/d011_2, &
+           B012H[y_pitch]/theta011_2, B010V/d011_3, B010V[y_pitch]/theta011_3, &
+           B009H/d011_4, B009H[y_pitch]/theta011_4}, y_offset
+
+ TAB011_H : overlay = {B011V/d011_1 ,B011V[x_pitch]/theta011_1,B012H/d011_2, &
+           B012H[x_pitch]/theta011_2, B010V/d011_3, B010V[x_pitch]/theta011_3, &
+           B009H/d011_4, B009H[x_pitch]/theta011_4}, x_offset
+
+  d009_1 :=  0.750; d009_2 :=  0.250; d009_3 :=  0.750; d009_4 :=  0.250
+ theta009_1 := 0.136; theta009_2 := 0.136; theta009_3 :=-0.136; theta009_4 :=-0.136
+
+ TAB009_V : overlay = {B009H/d009_1 ,B009H[y_pitch]/theta009_1,B010V/d009_2, &
+           B010V[y_pitch]/theta009_2, B008H/d009_3, B008H[y_pitch]/theta009_3, &
+           B007V/d009_4, B007V[y_pitch]/theta009_4}, y_offset
+
+ TAB009_H : overlay = {B009H/d009_1 ,B009H[x_pitch]/theta009_1,B010V/d009_2, &
+           B010V[x_pitch]/theta009_2, B008H/d009_3, B008H[x_pitch]/theta009_3, &
+           B007V/d009_4, B007V[x_pitch]/theta009_4}, x_offset
+
+  d007_1 :=  0.750; d007_2 :=  0.250; d007_3 :=  0.750; d007_4 :=  0.250
+ theta007_1 := 0.136; theta007_2 := 0.136; theta007_3 :=-0.136; theta007_4 :=-0.136
+
+ TAB007_V : overlay = {B007V/d007_1 ,B007V[y_pitch]/theta007_1,B008H/d007_2, &
+           B008H[y_pitch]/theta007_2, B006V/d007_3, B006V[y_pitch]/theta007_3, &
+           B005H/d007_4, B005H[y_pitch]/theta007_4}, y_offset
+
+ TAB007_H : overlay = {B007V/d007_1 ,B007V[x_pitch]/theta007_1,B008H/d007_2, &
+           B008H[x_pitch]/theta007_2, B006V/d007_3, B006V[x_pitch]/theta007_3, &
+           B005H/d007_4, B005H[x_pitch]/theta007_4}, x_offset
+
+  d005_1 :=  0.750; d005_2 :=  0.250; d005_3 :=  0.750; d005_4 :=  0.250
+ theta005_1 := 0.136; theta005_2 := 0.136; theta005_3 :=-0.136; theta005_4 :=-0.136
+
+ TAB005_V : overlay = {B005H/d005_1 ,B005H[y_pitch]/theta005_1,B006V/d005_2, &
+           B006V[y_pitch]/theta005_2, B004H/d005_3, B004H[y_pitch]/theta005_3, &
+           B003V/d005_4, B003V[y_pitch]/theta005_4}, y_offset
+
+ TAB005_H : overlay = {B005H/d005_1 ,B005H[x_pitch]/theta005_1,B006V/d005_2, &
+           B006V[x_pitch]/theta005_2, B004H/d005_3, B004H[x_pitch]/theta005_3, &
+           B003V/d005_4, B003V[x_pitch]/theta005_4}, x_offset
+
+  d003_1 :=  0.750; d003_2 :=  0.250; d003_3 :=  0.745; d003_4 :=  0.235
+ theta003_1 := 0.136; theta003_2 := 0.136; theta003_3 :=-0.138; theta003_4 :=-0.138
+
+ TAB003_V : overlay = {B003V/d003_1 ,B003V[y_pitch]/theta003_1,B004H/d003_2, &
+           B004H[y_pitch]/theta003_2, B002V/d003_3, B002V[y_pitch]/theta003_3, &
+           B001H/d003_4, B001H[y_pitch]/theta003_4}, y_offset
+
+ TAB003_H : overlay = {B003V/d003_1 ,B003V[x_pitch]/theta003_1,B004H/d003_2, &
+           B004H[x_pitch]/theta003_2, B002V/d003_3, B002V[x_pitch]/theta003_3, &
+           B001H/d003_4, B001H[x_pitch]/theta003_4}, x_offset
+
+  d001_1 :=  0.754; d001_2 :=  0.251
+ theta001_1 := 0.137; theta001_2 := 0.137
+
+ TAB001_V : overlay = {B001H/d001_1 ,B001H[y_pitch]/theta001_1,B002V/d001_2, &
+           B002V[y_pitch]/theta001_2}, y_offset
+
+ TAB001_H : overlay = {B001H/d001_1 ,B001H[x_pitch]/theta001_1,B002V/d001_2, &
+           B002V[x_pitch]/theta001_2}, x_offset
+
+  d192_1 :=  0.762; d192_2 :=  0.254
+ theta192_1 :=-0.138; theta192_2 :=-0.138
+
+ TAB192_V : overlay = {B192V/d192_1 ,B192V[y_pitch]/theta192_1,B191H/d192_2, &
+           B191H[y_pitch]/theta192_2}, y_offset
+
+ TAB192_H : overlay = {B192V/d192_1 ,B192V[x_pitch]/theta192_1,B191H/d192_2, &
+           B191H[x_pitch]/theta192_2}, x_offset
+
+  d191_1 :=  0.745; d191_2 :=  0.235; d191_3 :=  0.750; d191_4 :=  0.250
+ theta191_1 := 0.138; theta191_2 := 0.138; theta191_3 :=-0.136; theta191_4 :=-0.136
+
+ TAB191_V : overlay = {B191H/d191_1 ,B191H[y_pitch]/theta191_1,B192V/d191_2, &
+           B192V[y_pitch]/theta191_2, B190H/d191_3, B190H[y_pitch]/theta191_3, &
+           B189V/d191_4, B189V[y_pitch]/theta191_4}, y_offset
+
+ TAB191_H : overlay = {B191H/d191_1 ,B191H[x_pitch]/theta191_1,B192V/d191_2, &
+           B192V[x_pitch]/theta191_2, B190H/d191_3, B190H[x_pitch]/theta191_3, &
+           B189V/d191_4, B189V[x_pitch]/theta191_4}, x_offset
+
+  d189_1 :=  0.750; d189_2 :=  0.250; d189_3 :=  0.750; d189_4 :=  0.250
+ theta189_1 := 0.136; theta189_2 := 0.136; theta189_3 :=-0.136; theta189_4 :=-0.136
+
+ TAB189_V : overlay = {B189V/d189_1 ,B189V[y_pitch]/theta189_1,B190H/d189_2, &
+           B190H[y_pitch]/theta189_2, B188V/d189_3, B188V[y_pitch]/theta189_3, &
+           B187H/d189_4, B187H[y_pitch]/theta189_4}, y_offset
+
+ TAB189_H : overlay = {B189V/d189_1 ,B189V[x_pitch]/theta189_1,B190H/d189_2, &
+           B190H[x_pitch]/theta189_2, B188V/d189_3, B188V[x_pitch]/theta189_3, &
+           B187H/d189_4, B187H[x_pitch]/theta189_4}, x_offset
+
+  d187_1 :=  0.750; d187_2 :=  0.250; d187_3 :=  0.750; d187_4 :=  0.250
+ theta187_1 := 0.136; theta187_2 := 0.136; theta187_3 :=-0.136; theta187_4 :=-0.136
+
+ TAB187_V : overlay = {B187H/d187_1 ,B187H[y_pitch]/theta187_1,B188V/d187_2, &
+           B188V[y_pitch]/theta187_2, B186H/d187_3, B186H[y_pitch]/theta187_3, &
+           B185V/d187_4, B185V[y_pitch]/theta187_4}, y_offset
+
+ TAB187_H : overlay = {B187H/d187_1 ,B187H[x_pitch]/theta187_1,B188V/d187_2, &
+           B188V[x_pitch]/theta187_2, B186H/d187_3, B186H[x_pitch]/theta187_3, &
+           B185V/d187_4, B185V[x_pitch]/theta187_4}, x_offset
+
+  d185_1 :=  0.750; d185_2 :=  0.250; d185_3 :=  0.750; d185_4 :=  0.250
+ theta185_1 := 0.136; theta185_2 := 0.136; theta185_3 :=-0.136; theta185_4 :=-0.136
+
+ TAB185_V : overlay = {B185V/d185_1 ,B185V[y_pitch]/theta185_1,B186H/d185_2, &
+           B186H[y_pitch]/theta185_2, B184V/d185_3, B184V[y_pitch]/theta185_3, &
+           B183H/d185_4, B183H[y_pitch]/theta185_4}, y_offset
+
+ TAB185_H : overlay = {B185V/d185_1 ,B185V[x_pitch]/theta185_1,B186H/d185_2, &
+           B186H[x_pitch]/theta185_2, B184V/d185_3, B184V[x_pitch]/theta185_3, &
+           B183H/d185_4, B183H[x_pitch]/theta185_4}, x_offset
+
+  d183_1 :=  0.750; d183_2 :=  0.250; d183_3 :=  0.750; d183_4 :=  0.250
+ theta183_1 := 0.136; theta183_2 := 0.136; theta183_3 :=-0.136; theta183_4 :=-0.136
+
+ TAB183_V : overlay = {B183H/d183_1 ,B183H[y_pitch]/theta183_1,B184V/d183_2, &
+           B184V[y_pitch]/theta183_2, B182H/d183_3, B182H[y_pitch]/theta183_3, &
+           B181V/d183_4, B181V[y_pitch]/theta183_4}, y_offset
+
+ TAB183_H : overlay = {B183H/d183_1 ,B183H[x_pitch]/theta183_1,B184V/d183_2, &
+           B184V[x_pitch]/theta183_2, B182H/d183_3, B182H[x_pitch]/theta183_3, &
+           B181V/d183_4, B181V[x_pitch]/theta183_4}, x_offset
+
+  d181_1 :=  0.750; d181_2 :=  0.250; d181_3 :=  0.750; d181_4 :=  0.250
+ theta181_1 := 0.136; theta181_2 := 0.136; theta181_3 :=-0.136; theta181_4 :=-0.136
+
+ TAB181_V : overlay = {B181V/d181_1 ,B181V[y_pitch]/theta181_1,B182H/d181_2, &
+           B182H[y_pitch]/theta181_2, B180V/d181_3, B180V[y_pitch]/theta181_3, &
+           B179H/d181_4, B179H[y_pitch]/theta181_4}, y_offset
+
+ TAB181_H : overlay = {B181V/d181_1 ,B181V[x_pitch]/theta181_1,B182H/d181_2, &
+           B182H[x_pitch]/theta181_2, B180V/d181_3, B180V[x_pitch]/theta181_3, &
+           B179H/d181_4, B179H[x_pitch]/theta181_4}, x_offset
+
+  d179_1 :=  0.750; d179_2 :=  0.250; d179_3 :=  0.750; d179_4 :=  0.250
+ theta179_1 := 0.136; theta179_2 := 0.136; theta179_3 :=-0.136; theta179_4 :=-0.136
+
+ TAB179_V : overlay = {B179H/d179_1 ,B179H[y_pitch]/theta179_1,B180V/d179_2, &
+           B180V[y_pitch]/theta179_2, B178H/d179_3, B178H[y_pitch]/theta179_3, &
+           B177V/d179_4, B177V[y_pitch]/theta179_4}, y_offset
+
+ TAB179_H : overlay = {B179H/d179_1 ,B179H[x_pitch]/theta179_1,B180V/d179_2, &
+           B180V[x_pitch]/theta179_2, B178H/d179_3, B178H[x_pitch]/theta179_3, &
+           B177V/d179_4, B177V[x_pitch]/theta179_4}, x_offset
+
+  d177_1 :=  0.750; d177_2 :=  0.250; d177_3 :=  0.750; d177_4 :=  0.250
+ theta177_1 := 0.136; theta177_2 := 0.136; theta177_3 :=-0.136; theta177_4 :=-0.136
+
+ TAB177_V : overlay = {B177V/d177_1 ,B177V[y_pitch]/theta177_1,B178H/d177_2, &
+           B178H[y_pitch]/theta177_2, B176V/d177_3, B176V[y_pitch]/theta177_3, &
+           B175H/d177_4, B175H[y_pitch]/theta177_4}, y_offset
+
+ TAB177_H : overlay = {B177V/d177_1 ,B177V[x_pitch]/theta177_1,B178H/d177_2, &
+           B178H[x_pitch]/theta177_2, B176V/d177_3, B176V[x_pitch]/theta177_3, &
+           B175H/d177_4, B175H[x_pitch]/theta177_4}, x_offset
+
+  d175_1 :=  0.750; d175_2 :=  0.250; d175_3 :=  0.750; d175_4 :=  0.250
+ theta175_1 := 0.136; theta175_2 := 0.136; theta175_3 :=-0.136; theta175_4 :=-0.136
+
+ TAB175_V : overlay = {B175H/d175_1 ,B175H[y_pitch]/theta175_1,B176V/d175_2, &
+           B176V[y_pitch]/theta175_2, B174H/d175_3, B174H[y_pitch]/theta175_3, &
+           B173V/d175_4, B173V[y_pitch]/theta175_4}, y_offset
+
+ TAB175_H : overlay = {B175H/d175_1 ,B175H[x_pitch]/theta175_1,B176V/d175_2, &
+           B176V[x_pitch]/theta175_2, B174H/d175_3, B174H[x_pitch]/theta175_3, &
+           B173V/d175_4, B173V[x_pitch]/theta175_4}, x_offset
+
+  d173_1 :=  0.750; d173_2 :=  0.250; d173_3 :=  0.750; d173_4 :=  0.250
+ theta173_1 := 0.136; theta173_2 := 0.136; theta173_3 :=-0.136; theta173_4 :=-0.136
+
+ TAB173_V : overlay = {B173V/d173_1 ,B173V[y_pitch]/theta173_1,B174H/d173_2, &
+           B174H[y_pitch]/theta173_2, B172V/d173_3, B172V[y_pitch]/theta173_3, &
+           B171H/d173_4, B171H[y_pitch]/theta173_4}, y_offset
+
+ TAB173_H : overlay = {B173V/d173_1 ,B173V[x_pitch]/theta173_1,B174H/d173_2, &
+           B174H[x_pitch]/theta173_2, B172V/d173_3, B172V[x_pitch]/theta173_3, &
+           B171H/d173_4, B171H[x_pitch]/theta173_4}, x_offset
+
+  d171_1 :=  0.750; d171_2 :=  0.250; d171_3 :=  0.750; d171_4 :=  0.250
+ theta171_1 := 0.136; theta171_2 := 0.136; theta171_3 :=-0.136; theta171_4 :=-0.136
+
+ TAB171_V : overlay = {B171H/d171_1 ,B171H[y_pitch]/theta171_1,B172V/d171_2, &
+           B172V[y_pitch]/theta171_2, B170H/d171_3, B170H[y_pitch]/theta171_3, &
+           B169V/d171_4, B169V[y_pitch]/theta171_4}, y_offset
+
+ TAB171_H : overlay = {B171H/d171_1 ,B171H[x_pitch]/theta171_1,B172V/d171_2, &
+           B172V[x_pitch]/theta171_2, B170H/d171_3, B170H[x_pitch]/theta171_3, &
+           B169V/d171_4, B169V[x_pitch]/theta171_4}, x_offset
+
+  d169_1 :=  0.750; d169_2 :=  0.250; d169_3 :=  0.750; d169_4 :=  0.250
+ theta169_1 := 0.136; theta169_2 := 0.136; theta169_3 :=-0.136; theta169_4 :=-0.136
+
+ TAB169_V : overlay = {B169V/d169_1 ,B169V[y_pitch]/theta169_1,B170H/d169_2, &
+           B170H[y_pitch]/theta169_2, B168V/d169_3, B168V[y_pitch]/theta169_3, &
+           B167H/d169_4, B167H[y_pitch]/theta169_4}, y_offset
+
+ TAB169_H : overlay = {B169V/d169_1 ,B169V[x_pitch]/theta169_1,B170H/d169_2, &
+           B170H[x_pitch]/theta169_2, B168V/d169_3, B168V[x_pitch]/theta169_3, &
+           B167H/d169_4, B167H[x_pitch]/theta169_4}, x_offset
+
+  d167_1 :=  0.750; d167_2 :=  0.250; d167_3 :=  0.750; d167_4 :=  0.250
+ theta167_1 := 0.136; theta167_2 := 0.136; theta167_3 :=-0.136; theta167_4 :=-0.136
+
+ TAB167_V : overlay = {B167H/d167_1 ,B167H[y_pitch]/theta167_1,B168V/d167_2, &
+           B168V[y_pitch]/theta167_2, B166H/d167_3, B166H[y_pitch]/theta167_3, &
+           B165V/d167_4, B165V[y_pitch]/theta167_4}, y_offset
+
+ TAB167_H : overlay = {B167H/d167_1 ,B167H[x_pitch]/theta167_1,B168V/d167_2, &
+           B168V[x_pitch]/theta167_2, B166H/d167_3, B166H[x_pitch]/theta167_3, &
+           B165V/d167_4, B165V[x_pitch]/theta167_4}, x_offset
+
+  d165_1 :=  0.750; d165_2 :=  0.250; d165_3 :=  0.750; d165_4 :=  0.250
+ theta165_1 := 0.136; theta165_2 := 0.136; theta165_3 :=-0.136; theta165_4 :=-0.136
+
+ TAB165_V : overlay = {B165V/d165_1 ,B165V[y_pitch]/theta165_1,B166H/d165_2, &
+           B166H[y_pitch]/theta165_2, B164V/d165_3, B164V[y_pitch]/theta165_3, &
+           B163H/d165_4, B163H[y_pitch]/theta165_4}, y_offset
+
+ TAB165_H : overlay = {B165V/d165_1 ,B165V[x_pitch]/theta165_1,B166H/d165_2, &
+           B166H[x_pitch]/theta165_2, B164V/d165_3, B164V[x_pitch]/theta165_3, &
+           B163H/d165_4, B163H[x_pitch]/theta165_4}, x_offset
+
+  d163_1 :=  0.750; d163_2 :=  0.250; d163_3 :=  0.745; d163_4 :=  0.426; d163_5 := 0.205
+theta163_1:=0.136; theta163_2:=0.136; theta163_3:=-0.138; theta163_4:=-0.138;theta163_5:=-0.138
+
+ TAB163_V : overlay = {B163H/d163_1 ,B163H[y_pitch]/theta163_1,B164V/d163_2, &
+           B164V[y_pitch]/theta163_2, B162H/d163_3, B162H[y_pitch]/theta163_3, &
+           B161HA/d163_4, B161HA[y_pitch]/theta163_4, &
+           B161VB/d163_5, B161VB[y_pitch]/theta163_5}, y_offset
+
+ TAB163_H : overlay = {B163H/d163_1 ,B163H[x_pitch]/theta163_1,B164V/d163_2, &
+           B164V[x_pitch]/theta163_2, B162H/d163_3, B162H[x_pitch]/theta163_3, &
+           B161HA/d163_4, B161HA[x_pitch]/theta163_4, &
+           B161VB/d163_5, B161VB[x_pitch]/theta163_5}, x_offset
+
+  d161_1 :=  0.785; d161_2 :=  0.566; d161_3 :=  0.251
+ theta161_1 := 0.137; theta161_2 := 0.137; theta161_3 := 0.137
+
+ TAB161_V : overlay = {B161VB/d161_1 ,B161VB[y_pitch]/theta161_1,B161HA/d161_2, &
+           B161HA[y_pitch]/theta161_2, B162H/d161_3, B162H[y_pitch]/theta161_3}, y_offset
+
+ TAB161_H : overlay = {B161VB/d161_1 ,B161VB[x_pitch]/theta161_1,B161HA/d161_2, &
+           B161HA[x_pitch]/theta161_2, B162H/d161_3, B162H[x_pitch]/theta161_3}, x_offset
+
+ d160_3 :=  0.793; d160_4 :=  0.572; d160_5 := 0.254
+ theta160_3 :=-0.138; theta160_4 :=-0.138; theta160_5 := -0.138
+
+ TAB160_V : overlay = {B160HA/d160_3, B160HA[y_pitch]/theta160_3, &
+           B160VB/d160_4, B160VB[y_pitch]/theta160_4, &
+           B159V/d160_5, B159V[y_pitch]/theta160_5}, y_offset
+
+ TAB160_H : overlay = {B160HA/d160_3, B160HA[x_pitch]/theta160_3, &
+           B160VB/d160_4, B160VB[x_pitch]/theta160_4, &
+           B159V/d160_5, B159V[x_pitch]/theta160_5}, x_offset
+
+
+  d159_1 :=  0.745; d159_2 :=  0.426; d159_3 :=  0.205; d159_4 :=  0.750; d159_5 := 0.250
+theta159_1:=0.138; theta159_2:=0.138; theta159_3:=0.138; theta159_4:=-0.136; theta159_5:=-0.136
+
+ TAB159_V : overlay = {B159V/d159_1 ,B159V[y_pitch]/theta159_1,B160VB/d159_2, &
+           B160VB[y_pitch]/theta159_2, B160HA/d159_3, B160HA[y_pitch]/theta159_3, &
+           B158V/d159_4, B158V[y_pitch]/theta159_4, &
+           B157H/d159_5, B157H[y_pitch]/theta159_5}, y_offset
+
+ TAB159_H : overlay = {B159V/d159_1 ,B159V[x_pitch]/theta159_1,B160VB/d159_2, &
+           B160VB[x_pitch]/theta159_2, B160HA/d159_3, B160HA[x_pitch]/theta159_3, &
+           B158V/d159_4, B158V[x_pitch]/theta159_4, &
+           B157H/d159_5, B157H[x_pitch]/theta159_5}, x_offset
+
+  d157_1 :=  0.750; d157_2 :=  0.250; d157_3 :=  0.750; d157_4 :=  0.250
+ theta157_1 := 0.136; theta157_2 := 0.136; theta157_3 :=-0.136; theta157_4 :=-0.136
+
+ TAB157_V : overlay = {B157H/d157_1 ,B157H[y_pitch]/theta157_1,B158V/d157_2, &
+           B158V[y_pitch]/theta157_2, B156H/d157_3, B156H[y_pitch]/theta157_3, &
+           B155V/d157_4, B155V[y_pitch]/theta157_4}, y_offset
+
+ TAB157_H : overlay = {B157H/d157_1 ,B157H[x_pitch]/theta157_1,B158V/d157_2, &
+           B158V[x_pitch]/theta157_2, B156H/d157_3, B156H[x_pitch]/theta157_3, &
+           B155V/d157_4, B155V[x_pitch]/theta157_4}, x_offset
+
+  d155_1 :=  0.750; d155_2 :=  0.250; d155_3 :=  0.750; d155_4 :=  0.250
+ theta155_1 := 0.136; theta155_2 := 0.136; theta155_3 :=-0.136; theta155_4 :=-0.136
+
+ TAB155_V : overlay = {B155V/d155_1 ,B155V[y_pitch]/theta155_1,B156H/d155_2, &
+           B156H[y_pitch]/theta155_2, B154V/d155_3, B154V[y_pitch]/theta155_3, &
+           B153H/d155_4, B153H[y_pitch]/theta155_4}, y_offset
+
+ TAB155_H : overlay = {B155V/d155_1 ,B155V[x_pitch]/theta155_1,B156H/d155_2, &
+           B156H[x_pitch]/theta155_2, B154V/d155_3, B154V[x_pitch]/theta155_3, &
+           B153H/d155_4, B153H[x_pitch]/theta155_4}, x_offset
+
+  d153_1 :=  0.750; d153_2 :=  0.250; d153_3 :=  0.750; d153_4 :=  0.250
+ theta153_1 := 0.136; theta153_2 := 0.136; theta153_3 :=-0.136; theta153_4 :=-0.136
+
+ TAB153_V : overlay = {B153H/d153_1 ,B153H[y_pitch]/theta153_1,B154V/d153_2, &
+           B154V[y_pitch]/theta153_2, B152H/d153_3, B152H[y_pitch]/theta153_3, &
+           B151V/d153_4, B151V[y_pitch]/theta153_4}, y_offset
+
+ TAB153_H : overlay = {B153H/d153_1 ,B153H[x_pitch]/theta153_1,B154V/d153_2, &
+           B154V[x_pitch]/theta153_2, B152H/d153_3, B152H[x_pitch]/theta153_3, &
+           B151V/d153_4, B151V[x_pitch]/theta153_4}, x_offset
+
+  d151_1 :=  0.750; d151_2 :=  0.250; d151_3 :=  0.750; d151_4 :=  0.250
+ theta151_1 := 0.136; theta151_2 := 0.136; theta151_3 :=-0.136; theta151_4 :=-0.136
+
+ TAB151_V : overlay = {B151V/d151_1 ,B151V[y_pitch]/theta151_1,B152H/d151_2, &
+           B152H[y_pitch]/theta151_2, B150V/d151_3, B150V[y_pitch]/theta151_3, &
+           B149H/d151_4, B149H[y_pitch]/theta151_4}, y_offset
+
+ TAB151_H : overlay = {B151V/d151_1 ,B151V[x_pitch]/theta151_1,B152H/d151_2, &
+           B152H[x_pitch]/theta151_2, B150V/d151_3, B150V[x_pitch]/theta151_3, &
+           B149H/d151_4, B149H[x_pitch]/theta151_4}, x_offset
+
+  d149_1 :=  0.750; d149_2 :=  0.250; d149_3 :=  0.750; d149_4 :=  0.250
+ theta149_1 := 0.136; theta149_2 := 0.136; theta149_3 :=-0.136; theta149_4 :=-0.136
+
+ TAB149_V : overlay = {B149H/d149_1 ,B149H[y_pitch]/theta149_1,B150V/d149_2, &
+           B150V[y_pitch]/theta149_2, B148H/d149_3, B148H[y_pitch]/theta149_3, &
+           B147V/d149_4, B147V[y_pitch]/theta149_4}, y_offset
+
+ TAB149_H : overlay = {B149H/d149_1 ,B149H[x_pitch]/theta149_1,B150V/d149_2, &
+           B150V[x_pitch]/theta149_2, B148H/d149_3, B148H[x_pitch]/theta149_3, &
+           B147V/d149_4, B147V[x_pitch]/theta149_4}, x_offset
+
+  d147_1 :=  0.750; d147_2 :=  0.250; d147_3 :=  0.750; d147_4 := 0.250
+ theta147_1 := 0.136; theta147_2 := 0.136; theta147_3 :=-0.136; theta147_4 :=-0.136
+
+ TAB147_V : overlay = {B147V/d147_1 ,B147V[y_pitch]/theta147_1,B148H/d147_2, &
+           B148H[y_pitch]/theta147_2, B146V/d147_3, B146V[y_pitch]/theta147_3, &
+           B145H/d147_4, B145H[y_pitch]/theta147_4}, y_offset
+
+ TAB147_H : overlay = {B147V/d147_1 ,B147V[x_pitch]/theta147_1,B148H/d147_2, &
+           B148H[x_pitch]/theta147_2, B146V/d147_3, B146V[x_pitch]/theta147_3, &
+           B145H/d147_4, B145H[x_pitch]/theta147_4}, x_offset
+
+  d145_1 :=  0.750; d145_2 :=  0.250; d145_3 :=  0.750; d145_4 := 0.250
+ theta145_1 := 0.136; theta145_2 := 0.136; theta145_3 :=-0.136; theta145_4 :=-0.136
+
+ TAB145_V : overlay = {B145H/d145_1 ,B145H[y_pitch]/theta145_1,B146V/d145_2, &
+           B146V[y_pitch]/theta145_2, B144H/d145_3, B144H[y_pitch]/theta145_3, &
+           B143V/d145_4, B143V[y_pitch]/theta145_4}, y_offset
+
+ TAB145_H : overlay = {B145H/d145_1 ,B145H[x_pitch]/theta145_1,B146V/d145_2, &
+           B146V[x_pitch]/theta145_2, B144H/d145_3, B144H[x_pitch]/theta145_3, &
+           B143V/d145_4, B143V[x_pitch]/theta145_4}, x_offset
+
+!TAB192_H: overlay = {B005H}, x_offset
+!
+!TAB193_H: overlay = {B003V}, x_offset
+!
+!TAB194_H: overlay = {B005H[x_pitch]}, x_offset
+!
+!TAB195_H: overlay = {B003V[x_pitch]}, x_offset
+!
+!TAB196_H: overlay = {B004H}, x_offset
+!
+!TAB197_H: overlay = {B006V}, x_offset
+!
+!TAB198_H: overlay = {B004H[x_pitch]}, x_offset
+!
+!TAB199_H: overlay = {B006V[x_pitch]}, x_offset
+
+
+!TAB143_V[y_offset] := 0.001
+
+
+!KCH4[HKICK] := 0.001
+
+ 
+
+use, ring
+
+ 

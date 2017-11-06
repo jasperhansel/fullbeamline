@@ -1,0 +1,2 @@
+! Energy 1
+parameter[e_tot] = 42e6

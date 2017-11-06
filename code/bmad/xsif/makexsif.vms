@@ -1,0 +1,124 @@
+.SUFFIXES:
+.SUFFIXES: .out .OBJ .f90 .for .f .f90$$MOD
+# Makefile for xsif
+# created by me.
+# 
+
+OSSUF =
+XSIFLIBS =[-.lib]libxsif$(OSSUF).OLB
+XSIFMOD=[-.MODULES]
+CESR_UTIL=[cesr_libs.CESR_2004_0621_D.UTIL]
+#------------------------------------------------
+# Set up some standard definitions
+#------------------------------------------------
+FC     := f90
+CC     := cc
+CPP    := cc/preprocess_only/comments=as_is
+DEBUG  := n
+MAKE   := gmake
+CP     := BACKUP/REPLACE
+RM     := delete
+MV     := rename
+CD     := set def
+CAT    := type
+ECHO   := write sys$$output 
+SETPRO := set protection=(o:rwed)
+MKDIR  := create/dir
+AR     := library/replace
+
+COMMA:= ,
+SPACE:=$(EMPTY) $(EMPTY)
+
+#----------------------------------------------------
+# Set up some standard compilation and linking flags
+#----------------------------------------------------
+F90FLAGS := /SOURCE_FORM=FREE
+ifeq ($(DEBUG),n)
+	FFLAGS +=
+	XSIFLIBS =[-.lib]libxsif$(OSSUF).OLB
+	XSIFMOD=[-.MODULES]
+else
+	FFLAGS +=/DEBUG/NOOPTIMIZE
+	XSIFLIBS =[-.lib]libxsif$(OSSUF)_G.OLB
+	XSIFMOD=[-.MODULES_G]
+endif
+
+LIBOB :=  xsif_size_pars.OBJ xsif_inout.OBJ xsif_constants.OBJ xsif_elem_pars.OBJ \
+xsif_elements.OBJ xsif_interfaces.OBJ arr_to_str.OBJ arrcmp.OBJ clear.OBJ \
+decexp.OBJ decfrm.OBJ declst.OBJ decobs.OBJ decode_part_name.OBJ \
+decpar.OBJ decpnt.OBJ decuse.OBJ defpar.OBJ dump.OBJ ealign.OBJ elmdef.OBJ \
+expand.OBJ fndelm.OBJ fndpar.OBJ frmset.OBJ int_to_char.OBJ intrac.OBJ \
+jobnam.OBJ length.OBJ line.OBJ newlft.OBJ newlst.OBJ newrgt.OBJ opdef.OBJ \
+ovflow.OBJ param.OBJ parchk.OBJ parcon.OBJ parevl.OBJ parord.OBJ parprt.OBJ \
+prline.OBJ rd_filename.OBJ rd_logical.OBJ rd_wakefilename.OBJ rdend.OBJ \
+rdfail.OBJ rdfile.OBJ rdfind.OBJ rdinit.OBJ rdint.OBJ rdlabl.OBJ \
+rdline.OBJ rdlook.OBJ rdnext.OBJ rdnumb.OBJ rdpara.OBJ rdptab.OBJ rdskip.OBJ \
+rdtest.OBJ rdwarn.OBJ rdword.OBJ read_range.OBJ select.OBJ set_beam_defaults.OBJ \
+title.OBJ value.OBJ vms_timedate.OBJ xcall.OBJ xclose.OBJ xopen.OBJ xpath.OBJ \
+xpath_expand.OBJ xretrn.OBJ xsif_cmd_loop.OBJ xsif_header.OBJ xsif_io_close.OBJ \
+xsif_io_setup.OBJ xuse.OBJ xuse2.OBJ xsif_allocate_initial.OBJ more_pars.OBJ \
+more_elts.OBJ more_links.OBJ more_wakes.OBJ more_calls.OBJ xsif_mem_manage.OBJ \
+xsif_release_mem.OBJ xopen_stack_manage.OBJ xsif_stack_search.OBJ \
+xclose_stack_manage.OBJ xsif_lat_file_names_mod.OBJ
+
+#--------------------------------------------------
+#   set up actions
+#--------------------------------------------------
+ 
+all: objects mklib lib
+
+.PHONY: all mklib objects  clear lib
+
+include xsif.depend
+
+%.obj: %.f 
+	$(FC)  $(FFLAGS) $<
+	$(AR) $(XSIFLIBS) $@
+
+%.obj: %.f90 
+	$(FC)  $(FFLAGS) $<
+	$(AR) $(XSIFLIBS) $@
+
+
+mklib:
+	\@$(CESR_UTIL)makelib $(XSIFLIBS)
+
+objects: mklib  $(LIBOB)
+	@$(ECHO) "Object files made "
+
+lib: objects
+	$(CP) *.*MOD $(XSIFMOD)
+
+
+
+
+clear:
+	$(RM) *.OBJ;*
+	$(RM) *.*MOD;*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

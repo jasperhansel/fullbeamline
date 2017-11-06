@@ -1,0 +1,28 @@
+
+
+FF.wall_radius = (70)*1e-3
+
+
+
+FF.Pip00b[wall] = {
+section = {s = 0,             v(1) = {0, 0, FF.wall_radius}},
+section = {s = FF.Pip00b[L],  v(1) = {0, 0, FF.wall_radius}}}
+
+FF.Qua01[wall] = {
+section = {s = 0,            v(1) = {0, 0, FF.wall_radius}},
+section = {s = FF.Qua01[L],  v(1) = {0, 0, FF.wall_radius}}}
+
+
+FF.Qua02[wall] = {
+section = {s = 0,            v(1) = {0, 0, FF.wall_radius}},
+section = {s = FF.Qua02[L],  v(1) = {0, 0, FF.wall_radius}}}
+
+FF.Pip02a[wall] = {
+section = {s = 0,             v(1) = {0, 0, FF.wall_radius}},
+section = {s = FF.Pip02a[L],  v(1) = {0, 0, FF.wall_radius}}}
+
+
+FF.Pip00b[wall] = {section = {s = 0, v(1) = {0, 0, FF.wall_radius}}}
+!FF.Pip01[wall] = {section = {s = FF.Pip01[L], v(1) = {0, 0, FF.wall_radius}}}
+!FF.Patch02a[wall] = {section = {s = 0, v(1) = {0, 0, FF.wall_radius}}}
+!FF.Pip02[wall] = {section = {s = FF.Pip02[L], v(1) = {0, 0, FF.wall_radius}}} 

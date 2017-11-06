@@ -1,0 +1,149 @@
+!---------------- LA ------------
+
+
+LA.aperture0 = 0.110/2  ! Wide aperture
+LA.aperture1 = 0.06/2  ! Gate valve aperture
+LA.aperture2 = 0.035/2 ! End aperture
+
+!---Standard Elements
+!LA.DRIFT: DRIFT, aperture = .110/2
+!LA.PIPE:  PIPE,  aperture = .110/2
+
+LA.PIPE_CU:     PIPE, type = "CUPIPE",  aperture = LA.aperture0
+LA.PIPE_NB:     PIPE, type = "NBPIPE",  aperture = LA.aperture0
+
+!Some keys are changed because the prototype may or may not have certain elements
+!LA.QUADRUPOLE:  QUADRUPOLE, L = 0.45, aperture = LA.aperture0
+!LA.QUADRUPOLE:  PIPE, L = 0.45, aperture = LA.aperture0
+!LA.CORRECTOR:   KICKER, type = "CORRECTORCOIL", L = 0.15,   aperture = LA.aperture0,
+!						   !bl_hkick = 0, bl_vkick=0
+!						   n_ref_pass = 1
+!LA.CORRECTOR: 
+
+LA.HOMABSORBER: INSTRUMENT, type = "HOMABSORBER", L = 0.12,  aperture = LA.aperture0
+LA.GATEVALVE:   INSTRUMENT, type = "GATEVALVE",   L = 0.075, aperture = LA.aperture1
+
+LA.TAPER:       INSTRUMENT, type = "TAPER", aperture = LA.aperture0
+!LA.INTERMODULEFLEX: 	   INSTRUMENT, type = "INTERMODULEFLEX", aperture = LA.aperture2
+
+!LA.BPM: 	   INSTRUMENT, type = "BPM",           L = 0.075, aperture = LA.aperture0
+LA.BPM: 	   INSTRUMENT, type = "PIPE",           L = 0.075, aperture = LA.aperture0
+
+
+
+!---Markers
+LA.CRMOD.Mar.BEG: MARKER, aperture = LA.aperture2
+LA.CRMOD.Mar.END: MARKER, aperture = LA.aperture2
+
+!---LA elements in order
+! Total length should be: 10.316134
+LA.Pip01: PIPE, L = 0.341275, aperture = LA.aperture2
+LA.Gat01: LA.GATEVALVE
+LA.Tap01: LA.TAPER,  L = 0.14 
+LA.HOM01: LA.HOMABSORBER
+LA.Pip02: LA.PIPE_CU, L = 0.0615-0.000436
+!Cavity #1
+LA.Pip03: LA.PIPE_NB, L = 0.0837307
+LA.CAV01: cavity7
+LA.Pip04: LA.PIPE_NB, L = 0.0837307
+LA.Pip05: LA.PIPE_CU, L = 0.0615
+LA.HOM02: LA.HOMABSORBER
+LA.Pip06: LA.PIPE_CU, L = 0.0615
+!Cavity #2
+LA.Pip07: LA.PIPE_NB, L = 0.0837307
+LA.CAV02: cavity7_reverse
+LA.Pip08: LA.PIPE_NB, L = 0.0837307
+LA.Pip09: LA.PIPE_CU, L = 0.0615
+LA.HOM03: LA.HOMABSORBER
+LA.Pip10: LA.PIPE_CU, L = 0.0615
+!Cavity #3
+LA.Pip11: LA.PIPE_NB, L = 0.0837307
+LA.CAV03: cavity7
+LA.Pip12: LA.PIPE_NB, L = 0.0837307
+LA.Pip13: LA.PIPE_CU, L = 0.0615
+LA.HOM04: LA.HOMABSORBER
+LA.Pip14: LA.PIPE_CU, L = 0.0615
+!Cavity #4
+LA.Pip15: LA.PIPE_NB, L = 0.0837307
+LA.CAV04: cavity7_reverse	
+LA.Pip16: LA.PIPE_NB, L = 0.0837307
+LA.Pip17: LA.PIPE_CU, L = 0.0615
+LA.HOM05: LA.HOMABSORBER
+LA.Pip18: LA.PIPE_CU, L = 0.0615
+!Cavity #5
+LA.Pip19: LA.PIPE_NB, L = 0.0837307
+LA.CAV05: cavity7
+LA.Pip20: LA.PIPE_NB, L = 0.0837307
+LA.Pip21: LA.PIPE_CU, L = 0.0615
+LA.HOM06: LA.HOMABSORBER
+LA.Pip22: LA.PIPE_CU, L = 0.0615
+!Cavity #6
+LA.Pip23: LA.PIPE_NB, L = 0.0837307
+LA.CAV06: cavity7_reverse
+LA.Pip24: LA.PIPE_NB, L = 0.0837307
+LA.Pip25: LA.PIPE_CU, L = 0.0615 + 0.000429
+LA.HOM07: LA.HOMABSORBER
+LA.Tap02: LA.TAPER,   L = 0.05
+LA.Pip26: PIPE, L = 0.643961, aperture = LA.aperture0  
+LA.Gat02: LA.GATEVALVE
+LA.Pip27: PIPE, L = 0.408137 - 0.013, aperture = LA.aperture2
+LA.Pip28: PIPE, L = 0.013, aperture = LA.aperture2 ! Flange
+
+LA.CRMOD: LINE = (LA.CRMOD.Mar.BEG,
+  LA.Pip01, 
+	LA.Gat01,
+	LA.Tap01,
+
+	LA.HOM01,
+	LA.Pip02,
+	LA.Pip03,
+	LA.CAV01,
+	LA.Pip04,
+	LA.Pip05,
+
+	LA.HOM02,
+	LA.Pip06,
+	LA.Pip07,
+	LA.CAV02,
+	LA.Pip08,
+	LA.Pip09,
+
+	LA.HOM03,
+	LA.Pip10,
+	LA.Pip11,
+	LA.CAV03,
+	LA.Pip12,
+	LA.Pip13,
+
+	LA.HOM04,
+	LA.Pip14,
+	LA.Pip15,
+	LA.CAV04,
+	LA.Pip16,
+	LA.Pip17,
+
+	LA.HOM05,
+	LA.Pip18,
+	LA.Pip19,
+	LA.CAV05,
+	LA.Pip20,
+	LA.Pip21,
+
+	LA.HOM06,
+	LA.Pip22,
+	LA.Pip23,
+	LA.CAV06,
+	LA.Pip24,
+	LA.Pip25,
+
+	LA.HOM07,
+	LA.Tap02,
+	LA.Pip26,
+	LA.Gat02,
+	LA.Pip27,
+  LA.Pip28,
+	LA.CRMOD.Mar.END)
+
+
+
+

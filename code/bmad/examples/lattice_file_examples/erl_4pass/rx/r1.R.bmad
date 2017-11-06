@@ -1,0 +1,28 @@
+
+O_R1.PIP35[L] =   8.68176878521344E-01
+O_R1.BEN25[G] =   1.33259322089126E+00
+O_R1.BEN34[G] =  -5.63130648706713E-01
+O_R1.PIP4[L] =   3.47078509169575E-01
+
+! Make RBENDs
+call, file = r1.make_rbend.bmad 
+
+
+
+R1.Qua01[b1_gradient] = S1.Qua01[b1_gradient]
+R1.Qua02[b1_gradient] = S1.Qua02[b1_gradient]
+R1.Qua03[b1_gradient] = S1.Qua03[b1_gradient]
+R1.Qua04[b1_gradient] = S1.Qua04[b1_gradient]
+R1.Qua05[b1_gradient] = S1.Qua05[b1_gradient]
+R1.Qua06[b1_gradient] = S1.Qua06[b1_gradient]
+R1.Qua07[b1_gradient] = S1.Qua07[b1_gradient]
+R1.Qua08[b1_gradient] = S1.Qua08[b1_gradient]
+
+R1.QUA01[B1_GRADIENT] =  -7.57709417225510E-01
+R1.QUA02[B1_GRADIENT] =   9.72237983036479E-01
+R1.QUA03[B1_GRADIENT] =  -3.58171123148549E-01
+R1.QUA04[B1_GRADIENT] =  -2.58398360822727E-01
+R1.QUA05[B1_GRADIENT] =   2.13557071712796E+00
+R1.QUA06[B1_GRADIENT] =  -1.22128428163014E+00
+R1.QUA07[B1_GRADIENT] =  -3.05337641210243E-01
+R1.QUA08[B1_GRADIENT] =   8.58394780299681E-01

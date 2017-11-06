@@ -1,0 +1,34 @@
+
+S2.Ben02[e1] = S2.Ben02[g]*S2.Ben02[L]/2
+S2.Ben02[e2] = S2.Ben02[g]*S2.Ben02[L]/2
+
+S2.Ben03[e1] = S2.Ben03[g]*S2.Ben03[L]/2
+S2.Ben03[e2] = S2.Ben03[g]*S2.Ben03[L]/2
+
+S2.Ben04[e1] = S2.Ben04[g]*S2.Ben04[L]/2
+S2.Ben04[e2] = S2.Ben04[g]*S2.Ben04[L]/2
+S2.Ben05[e1] = S2.Ben05[g]*S2.Ben05[L]/2
+S2.Ben05[e2] = S2.Ben05[g]*S2.Ben05[L]/2
+S2.Ben06[e1] = S2.Ben06[g]*S2.Ben06[L]/2
+S2.Ben06[e2] = S2.Ben06[g]*S2.Ben06[L]/2
+S2.Ben07[e1] = S2.Ben07[g]*S2.Ben07[L]/2
+S2.Ben07[e2] = S2.Ben07[g]*S2.Ben07[L]/2
+
+
+!S2.Ben02[e1] = S2.Ben02[angle]/2
+!S2.Ben02[e2] = S2.Ben02[angle]/2
+
+!S2.Ben03[e1] = S2.Ben03[angle]/2
+!S2.Ben03[e2] = S2.Ben03[angle]/2
+
+!S2.Ben04[e1] = S2.Ben04[angle]/2
+!S2.Ben04[e2] = S2.Ben04[angle]/2
+
+!S2.Ben05[e1] = S2.Ben05[angle]/2
+!S2.Ben05[e2] = S2.Ben05[angle]/2
+
+!S2.Ben06[e1] = S2.Ben06[angle]/2
+!S2.Ben06[e2] = S2.Ben06[angle]/2
+
+!S2.Ben07[e1] = S2.Ben07[angle]/2
+!S2.Ben07[e2] = S2.Ben07[angle]/2

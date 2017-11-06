@@ -1,0 +1,16 @@
+
+in.buncher: rfcavity, tracking_method = runge_kutta, mat6_calc_method = tracking,  
+rf_frequency = 1.3e9,
+field_calc = fieldmap,
+L = 	0.2	 !Grid extends to 0.202. Center of the cavity is at s = 0.10
+!in.buncher[grid_field] = call::in.buncher_grid.bmad
+in.buncher[tracking_method] = bmad_standard
+in.buncher[field_calc] = bmad_standard
+in.buncher[mat6_calc_method] = bmad_standard
+
+in.buncher[voltage] = 2e6 !Maximum on-axis Ez in MV/m
+
+!Clipped wall (only the non-reentrant part)
+call, file = in.buncher_wall.bmad
+
+

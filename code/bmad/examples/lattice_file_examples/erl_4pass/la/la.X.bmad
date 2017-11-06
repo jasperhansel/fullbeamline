@@ -1,0 +1,36 @@
+
+
+
+
+!la.voltage = 36e6
+!la.phi0 = 2/360
+
+
+!O_la.cavity7_voltage = la.voltage/6/cos(twopi*la.phi0)
+
+!O_LA.phi0[phi0] = la.phi0
+
+O_LA: overlay = {
+  la.cav01[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav02[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav03[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav04[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav05[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav06[gradient]: voltage/6/cos(twopi*phi0)/L,
+  la.cav01[phi0]: phi0, 
+  la.cav02[phi0]: phi0, 
+  la.cav03[phi0]: phi0, 
+  la.cav04[phi0]: phi0, 
+  la.cav05[phi0]: phi0, 
+  la.cav06[phi0]: phi0}, var = {voltage,phi0,L}
+O_LA[L] = la.cav01[L]
+O_LA[voltage] = 36e6
+O_LA[phi0] = -2/360
+
+
+!la.cav01[voltage] = la.cavity7_voltage 
+!la.cav02[voltage] = la.cavity7_voltage 
+!la.cav03[voltage] = la.cavity7_voltage 
+!la.cav04[voltage] = la.cavity7_voltage 
+!la.cav05[voltage] = la.cavity7_voltage 
+!la.cav06[voltage] = la.cavity7_voltage 

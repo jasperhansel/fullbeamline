@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Script to make the H5hut libraries.
+# Exit Codes found in /usr/include/sysexits.h
+
+#set -x
+
+
+# Function to configure, make and then install the Package - contains Package Specific build configuration
+
+func_configure_make_install () {
+
+    cd ${WORK_DIR}
+
+    if [ ! -z "${ACC_PKG}" ] ; then
+	[ -e ${ACC_PKG}/${BUILD_TYPE}/include/hdf5.h ] && export HDF5_DIR=${ACC_PKG}/${BUILD_TYPE}
+    else
+	export HDF5_DIR=${OUTPUT_DIR}
+    fi
+
+    [ "${BUILD_TYPE}" == "debug" ] && CONFIGURE_DEBUG="--enable-debug"
+
+    if [ ! -e ALREADY_BUILT ] ; then
+	./autogen.sh
+
+	./configure --prefix=${OUTPUT_DIR} \
+            --enable-shared \
+            --enable-fortran \
+            --with-hdf5=${HDF5_DIR} \
+            ${CONFIGURE_DEBUG}
+
+	${GMAKE} -j ${ACC_SET_GMAKE_JOBS} all
+	${GMAKE} install
+
+	export RETVAL=$?
+
+    fi
+
+    if [ "${ARGUMENTS[1]}" == "-test" ] ; then 
+	echo -e "\nBuilding tests for `echo ${PACKAGE_VERSION}`...\n" 
+
+	${GMAKE} check
+
+	./test/h5u_test
+
+	export RETVAL=$?
+
+    fi
+
+    if ( [ `uname` == "Darwin" ] && [ "${FC}" == "ifort" ] && [ "${RETVAL}" -eq 0 ] ) ; then ln -s /opt/intel/lib/* ${OUTPUT_DIR}/lib/ &> /dev/null 2>&1 ; fi
+
+}
+
+
+# Function that contains Package Specific files and directories to be removed
+
+func_remove_package () {
+
+    rm -f ${OUTPUT_DIR}/lib/libH5hut*
+    rm -f ${OUTPUT_DIR}/include/H5Part*.h
+    rm -f ${OUTPUT_DIR}/include/H5hut*.h
+    rm -f ${OUTPUT_DIR}/include/H5.h
+    rm -f ${OUTPUT_DIR}/include/H5Fed*.h
+    rm -f ${OUTPUT_DIR}/include/H5Block*.h
+    rm -f ${OUTPUT_DIR}/include/H5_att*.h
+    rm -rf ${OUTPUT_DIR}/include/h5core
+    rm -rf ${BUILD_TYPE}
+
+}
+
+

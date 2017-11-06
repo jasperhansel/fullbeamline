@@ -1,0 +1,149 @@
+
+
+
+
+
+call, file = cell.bmad
+
+!--- FA cell 01
+
+!--- Quads
+FA.Qua01: FF.Qua01, field_overlaps = {FA.Pip00b, FA.Pip01, FA.Qua02}
+FA.Qua02: FF.Qua02, field_overlaps = {FA.Qua02, FA.Pip01, FA.Pip02a, FA.Pip02b}
+
+
+!--- Pipes
+FA.Pip00b: FF.Pip00b
+FA.Pip01:  FF.Pip01
+FA.Pip02a: FF.Pip02a
+
+!--- Patches
+
+FA.patch01a: FF.patch1a
+FA.patch01b: FF.patch1b
+FA.patch02a: FF.patch2a
+FA.patch02b: FF.patch2b
+
+
+
+FA.cell01.angle: overlay = {
+  FA.patch01a[x_pitch]: FF.factor1 * angle,
+  FA.patch01b[x_pitch]: FF.factor1 * angle,
+  FA.patch02b[x_pitch]: FF.factor1 * angle,
+  FA.patch02a[x_pitch] :FF.factor1 * angle}, var = {angle}
+FA.cell01.angle[angle] = -4.5*pi/180
+
+
+!--- Markers
+
+!FA.Qua01.Mar.MID: marker, superimpose, ref = FA.Qua01
+!FA.Qua02.Mar.MID: marker, superimpose, ref = FA.Qua02
+
+! - - -  Lines 
+
+FA.cell01: line = (
+ FA.Pip00b, 
+ FA.Qua01,
+ FA.patch01a, FA.Pip01,  FA.patch01b, 
+ FA.Qua02, 
+ FA.patch02a, FA.Pip02a,  FA.patch02b)
+
+
+
+!--- FA cell 02
+
+!--- Quads
+FA.Qua03: FF.Qua01, field_overlaps = {FA.Pip02a, FA.Pip02b, FA.Pip03, FA.Qua04}
+FA.Qua04: FF.Qua02, field_overlaps = {FA.Qua04, FA.Pip03, FA.Pip04a, FA.Pip04b}
+
+
+!--- Pipes
+FA.Pip02b: FF.Pip00b
+FA.Pip03:  FF.Pip01
+FA.Pip04a: FF.Pip02a
+
+!--- Patches
+
+FA.patch03a: FF.patch1a
+FA.patch03b: FF.patch1b
+FA.patch04a: FF.patch2a
+FA.patch04b: FF.patch2b
+
+
+
+FA.cell02.angle: overlay = {
+  FA.patch03a[x_pitch]: FF.factor1 * angle,
+  FA.patch03b[x_pitch]: FF.factor1 * angle,
+  FA.patch04b[x_pitch]: FF.factor1 * angle,
+  FA.patch04a[x_pitch] :FF.factor1 * angle}, var = {angle}
+FA.cell02.angle[angle] = -4.5*pi/180
+
+
+!--- Markers
+
+!FA.Qua03.Mar.MID: marker, superimpose, ref = FA.Qua03
+!FA.Qua04.Mar.MID: marker, superimpose, ref = FA.Qua04
+
+! - - -  Lines 
+
+FA.cell02: line = (
+ FA.Pip02b, 
+ FA.Qua03,
+ FA.patch03a, FA.Pip03,  FA.patch03b, 
+ FA.Qua04, 
+ FA.patch04a, FA.Pip04a,  FA.patch04b)
+
+
+
+!--- FA cell 03
+
+!--- Quads
+FA.Qua05: FF.Qua01, field_overlaps = {FA.Pip04a, FA.Pip04b, FA.Pip05, FA.Qua06}
+FA.Qua06: FF.Qua02, field_overlaps = {FA.Qua06, FA.Pip05, FA.Pip06a}
+
+
+!--- Pipes
+FA.Pip04b: FF.Pip00b
+FA.Pip05:  FF.Pip01
+FA.Pip06a: FF.Pip02a
+
+!--- Patches
+
+FA.patch05a: FF.patch1a
+FA.patch05b: FF.patch1b
+FA.patch06a: FF.patch2a
+FA.patch06b: FF.patch2b
+
+
+
+FA.cell03.angle: overlay = {
+  FA.patch05a[x_pitch]: FF.factor1 * angle,
+  FA.patch05b[x_pitch]: FF.factor1 * angle,
+  FA.patch06b[x_pitch]: FF.factor1 * angle,
+  FA.patch06a[x_pitch] :FF.factor1 * angle}, var = {angle}
+FA.cell03.angle[angle] = -4.5*pi/180
+
+
+!--- Markers
+
+!FA.Qua05.Mar.MID: marker, superimpose, ref = FA.Qua05
+!FA.Qua06.Mar.MID: marker, superimpose, ref = FA.Qua06
+
+! - - -  Lines 
+
+FA.cell03: line = (
+ FA.Pip04b, 
+ FA.Qua05,
+ FA.patch05a, FA.Pip05,  FA.patch05b, 
+ FA.Qua06, 
+ FA.patch06a, FA.Pip06a,  FA.patch06b)
+
+
+
+
+!cell1: line = (FA.Mar.BEG1, FA.Pip01,  FA.Qua01, FA.Pip02, FF.P1, FA.Qua02, FF.P2,  FA.Pip03a, FA.Mar.END1)
+!cell2: line = (FA.Mar.BEG2, FA.Pip03b, FA.Qua03, FA.Pip04, FF.P1, FA.Qua04, FF.P2,  FA.Pip05a, FA.Mar.END2) 
+!cell3: line = (FA.Mar.BEG3, FA.Pip05b, FA.Qua05, FA.Pip06, FF.P1, FA.Qua06, FF.P2,  FA.Pip07,  FA.Mar.END3)
+
+
+open_cell3: line = (FA.cell01, FA.cell02, FA.cell03)

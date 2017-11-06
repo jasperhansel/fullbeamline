@@ -1,0 +1,1353 @@
+ call, file = wiggler_def_c2.bmad
+ 
+ b01: sbend, l = 6.574262, angle = 0.074799746, e1=0.018699937, e2=0.018699937
+ b02: sbend, l = 3.237903, angle = 0.102289270 ! rho =  31.65434
+ b03: rbend, l = 2.945314, angle = 0.020944245 ! rho = 140.6264
+ b04: rbend, l = 1.643524, angle = 0.018699330 ! rho =  87.8915
+ b06: rbend, l = 3.287171, angle = 0.037400530 ! rho =  87.8915
+ b07: sbend, l = 3.177222, angle = 0.091254660 ! rho =  34.81718
+ b08: sbend, l = 6.575289, angle = 0.112200220, e1=0.02805, e2=0.02805 ! 58.60
+ 
+ip_l0: marker 
+q00w: quadrupole, l =  0.184000 
+det_00w: marker, alias = "0w" 
+sc_q01w: quadrupole, l =  0.661500, type = "scir quadcur   1" 
+sc_sk_q01w: quadrupole, l =  0.680000, superimpose, ref = sc_q01w, &
+        type = "scir skqucur   1" 
+sc_q02w: quadrupole, l =  0.661500, type = "scir quadcur   2" 
+sc_sk_q02w: quadrupole, l =  0.680000, superimpose, ref = sc_q02w, &
+        type = "scir skqucur   2" 
+det_01w: marker, alias = "1w" 
+hvkick_01w: kicker, l =  0.172700 
+det_02w: marker, alias = "2w" 
+sk_q02w: quadrupole, tilt = pi/4, l =  0.172700, type = "csr sqewquad   2" 
+sk_q03w: quadrupole, tilt = pi/4, l =  0.172700, type = "csr sqewquad   3" 
+b03w:  b03 
+b03aw: b04 
+det_03w: marker, alias = "3w" 
+q03w: quadrupole, l =  0.600000, type = "csr quad cur   3" 
+b04w:  b02 
+sk_q04w: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad   4" 
+q04w: quadrupole, l =  0.600000, type = "csr quad cur   4" 
+det_04w: marker, alias = "4w" 
+b05w:  b02 
+sk_q05w: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad   5" 
+q05w: quadrupole, l =  0.600000, type = "csr quad cur   5" 
+det_05w: marker, alias = "5w" 
+b06w:  b02 
+sk_q06w: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad   6" 
+det_06w1: marker, alias = "6w1" 
+q06w: quadrupole, l =  0.600000, type = "csr quad cur   6" 
+det_06w: marker, alias = "6w" 
+b07w:  b02 
+q07w: quadrupole, l =  0.600000, type = "csr quad cur   7" 
+det_07w: marker, alias = "7w" 
+vkick_07w: kicker, l =  0.127000 
+sk_q07w: quadrupole, tilt = pi/4, l =  0.152000, type = "csr sqewquad   7" 
+h_sep_08w: elseparator, l =  2.442000, type = "csr hsp volt   1" 
+q08w: quadrupole, l =  0.600000, type = "csr quad cur   8" 
+sex_08w: sextupole, l =  0.272000, type = "csr sext cur   8" 
+det_08w: marker, alias = "8w" 
+rf_w1: rfcavity, l =  1.800000 
+rf_w2: rfcavity, l =  1.800000 
+det_08aw: marker, alias = "8aw" 
+vkick_08wa: kicker, l =  0.063500 
+q08aw: quadrupole, l =  0.600000, type = "csr qadd cur   7" 
+wig_w: wiggler, b_max = 0.78, n_pole = 50, l =  3.000000 
+det_09w: marker, alias = "9w" 
+q09w: quadrupole, l =  0.600000, type = "csr quad cur   9" 
+sex_09w: sextupole, l =  0.272000, type = "csr sext cur   9" 
+sk_q09w: quadrupole, tilt = pi/4, l =  0.152000 
+q10w: quadrupole, l =  0.600000, type = "csr quad cur  10" 
+sex_10w: sextupole, l =  0.272000, type = "csr sext cur  10" 
+det_10w: marker, alias = "10w" 
+b11w:  b01 
+det_11w: marker, alias = "11w" 
+q11w: quadrupole, l =  0.600000, type = "csr quad cur  11" 
+sex_11w: sextupole, l =  0.272000, type = "csr sext cur  11" 
+b12w:  b01 
+q12w: quadrupole, l =  0.600000, type = "csr quad cur  12" 
+sex_12w: sextupole, l =  0.272000, type = "csr sext cur  12" 
+det_12w: marker, alias = "12w" 
+det_12w1: marker, alias = "12w1" 
+det_12w2: marker, alias = "12w2" 
+b13w:  b01 
+q13w: quadrupole, l =  0.600000, type = "csr quad cur  13" 
+sex_13w: sextupole, l =  0.272000, type = "csr sext cur  13" 
+det_13w: marker, alias = "13w" 
+b14w:  b01 
+q14w: quadrupole, l =  0.600000, type = "csr quad cur  14" 
+sex_14w: sextupole, l =  0.272000, type = "csr sext cur  14" 
+det_14w: marker, alias = "14w" 
+b15w:  b01 
+q15w: quadrupole, l =  0.600000, type = "csr quad cur  15" 
+sex_15w: sextupole, l =  0.272000, type = "csr sext cur  15" 
+det_15w: marker, alias = "15w" 
+b16w:  b01 
+q16w: quadrupole, l =  0.600000, type = "csr quad cur  16" 
+sex_16w: sextupole, l =  0.272000, type = "csr sext cur  16" 
+det_16w: marker, alias = "16w" 
+vkick_16w: kicker, l =  0.250000 
+b17w:  b01 
+q17w: quadrupole, l =  0.600000, type = "csr quad cur  17" 
+sex_17w: sextupole, l =  0.272000, type = "csr sext cur  17" 
+det_17w: marker, alias = "17w" 
+b18w:  b01 
+q18w: quadrupole, l =  0.600000, type = "csr quad cur  18" 
+sex_18w: sextupole, l =  0.272000, type = "csr sext cur  18" 
+det_18w: marker, alias = "18w" 
+q19w: quadrupole, l =  0.600000, type = "csr quad cur  19" 
+sex_19w: sextupole, l =  0.272000, type = "csr sext cur  19" 
+det_19w: marker, alias = "19w" 
+b20w:  b01 
+q20w: quadrupole, l =  0.600000, type = "csr quad cur  20" 
+sex_20w: sextupole, l =  0.272000, type = "csr sext cur  20" 
+det_20w: marker, alias = "20w" 
+b21w:  b01 
+q21w: quadrupole, l =  0.600000, type = "csr quad cur  21" 
+sex_21w: sextupole, l =  0.272000, type = "csr sext cur  21" 
+det_21w: marker, alias = "21w" 
+b22w:  b01 
+q22w: quadrupole, l =  0.600000, type = "csr quad cur  22" 
+sex_22w: sextupole, l =  0.272000, type = "csr sext cur  22" 
+det_22w: marker, alias = "22w" 
+b23w:  b01 
+q23w: quadrupole, l =  0.600000, type = "csr quad cur  23" 
+sex_23w: sextupole, l =  0.272000, type = "csr sext cur  23" 
+det_23w: marker, alias = "23w" 
+sk_sex_23w: sextupole, tilt = pi/6, l =  0.128500, type = "csr sqewsext   2" 
+b24w:  b01 
+q24w: quadrupole, l =  0.600000, type = "csr quad cur  24" 
+sex_24w: sextupole, l =  0.272000, type = "csr sext cur  24" 
+det_24w: marker, alias = "24w" 
+b25w:  b01 
+q25w: quadrupole, l =  0.600000, type = "csr quad cur  25" 
+sex_25w: sextupole, l =  0.272000, type = "csr sext cur  25" 
+det_25w: marker, alias = "25w" 
+b26w:  b01 
+q26w: quadrupole, l =  0.600000, type = "csr quad cur  26" 
+sex_26w: sextupole, l =  0.272000, type = "csr sext cur  26" 
+det_26w: marker, alias = "26w" 
+bump_26w: kicker, l =  0.229500 
+b27w:  b01 
+q27w: quadrupole, l =  0.600000, type = "csr quad cur  27" 
+sex_27w: sextupole, l =  0.272000, type = "csr sext cur  27" 
+det_27w: marker, alias = "27w" 
+b28w:  b01 
+q28w: quadrupole, l =  0.600000, type = "csr quad cur  28" 
+sex_28w: sextupole, l =  0.272000, type = "csr sext cur  28" 
+det_28w: marker, alias = "28w" 
+bump_28w: kicker, l =  0.229500 
+b29w:  b01 
+q29w: quadrupole, l =  0.600000, type = "csr quad cur  29" 
+sex_29w: sextupole, l =  0.272000, type = "csr sext cur  29" 
+det_29w: marker, alias = "29w" 
+sk_q29w: quadrupole, tilt = pi/4, l =  0.408000, type = "csr sqewquad  29" 
+b30w:  b01 
+q30w: quadrupole, l =  0.600000, type = "csr quad cur  30" 
+sex_30w: sextupole, l =  0.272000, type = "csr sext cur  30" 
+det_30w: marker, alias = "30w" 
+b31w:  b01 
+q31w: quadrupole, l =  0.600000, type = "csr quad cur  31" 
+sex_31w: sextupole, l =  0.272000, type = "csr sext cur  31" 
+det_31w: marker, alias = "31w" 
+b32w:  b01 
+q32w: quadrupole, l =  0.600000, type = "csr quad cur  32" 
+sex_32w: sextupole, l =  0.272000, type = "csr sext cur  32" 
+det_32w: marker, alias = "32w" 
+b33w:  b01 
+q33w: quadrupole, l =  0.600000, type = "csr quad cur  33" 
+sex_33w: sextupole, l =  0.272000, type = "csr sext cur  33" 
+det_33w: marker, alias = "33w" 
+det_34w: marker, alias = "34w" 
+q34w: quadrupole, l =  0.600000, type = "csr quad cur  34" 
+sex_34w: sextupole, l =  0.272000, type = "csr sext cur  34" 
+b35w:  b01 
+q35w: quadrupole, l =  0.600000, type = "csr quad cur  35" 
+sex_35w: sextupole, l =  0.272000, type = "csr sext cur  35" 
+det_35w: marker, alias = "35w" 
+b36w:  b01 
+pinger_36w: kicker, l =  0.229000 
+bump_36w: kicker, l =  0.225000 
+q36w: quadrupole, l =  0.600000, type = "csr quad cur  36" 
+sex_36w: sextupole, l =  0.272000, type = "csr sext cur  36" 
+det_36w: marker, alias = "36w" 
+b37w:  b01 
+q37w: quadrupole, l =  0.600000, type = "csr quad cur  37" 
+sex_37w: sextupole, l =  0.272000, type = "csr sext cur  37" 
+det_37w: marker, alias = "37w" 
+b38w:  b01 
+q38w: quadrupole, l =  0.600000, type = "csr quad cur  38" 
+sex_38w: sextupole, l =  0.272000, type = "csr sext cur  38" 
+det_38w: marker, alias = "38w" 
+b39w:  b01 
+q39w: quadrupole, l =  0.600000, type = "csr quad cur  39" 
+sex_39w: sextupole, l =  0.272000, type = "csr sext cur  39" 
+det_39w: marker, alias = "39w" 
+b40w:  b01 
+q40w: quadrupole, l =  0.600000, type = "csr quad cur  40" 
+sex_40w: sextupole, l =  0.272000, type = "csr sext cur  40" 
+det_40w: marker, alias = "40w" 
+b41w:  b01 
+q41w: quadrupole, l =  0.600000, type = "csr quad cur  41" 
+sex_41w: sextupole, l =  0.272000, type = "csr sext cur  41" 
+det_41w: marker, alias = "41w" 
+b42w:  b01 
+q42w: quadrupole, l =  0.600000, type = "csr quad cur  42" 
+sex_42w: sextupole, l =  0.272000, type = "csr sext cur  42" 
+det_42w: marker, alias = "42w" 
+b43w:  b01 
+q43w: quadrupole, l =  0.600000, type = "csr quad cur  43" 
+sex_43w: sextupole, l =  0.272000, type = "csr sext cur  43" 
+det_43w: marker, alias = "43w" 
+q43aw: quadrupole, l =  0.600000, type = "csr qadd cur   5" 
+b44w:  b08 
+q44w: quadrupole, l =  0.600000, type = "csr quad cur  44" 
+sex_44w: sextupole, l =  0.272000, type = "csr sext cur  44" 
+det_44w: marker, alias = "44w" 
+h_sep_45w: elseparator, l =  2.389400, type = "csr hsp volt   3" 
+oct_45w: octupole, l =  0.381000, type = "csr octu cur   1" 
+det_45w: marker, alias = "45w" 
+q45w: quadrupole, l =  0.600000, type = "csr quad cur  45" 
+sex_45w: sextupole, l =  0.272000, type = "csr sext cur  45" 
+b46w:  b08 
+q46w: quadrupole, l =  0.600000, type = "csr quad cur  46" 
+det_46w: marker, alias = "46w" 
+b47w:  b06 
+q47w: quadrupole, l =  0.600000, type = "csr quad cur  47" 
+sk_q47w: quadrupole, tilt = pi/4, l =  0.128000, type = "csr sqewquad  47" 
+b47aw: b07 
+q47aw: quadrupole, l =  0.600000, type = "csr qadd cur   2" 
+det_47w: marker, alias = "47w" 
+vkick_47w: kicker, l =  0.254000 
+b48w:  b03 
+v_sep_48w: elseparator, l =  2.647000, type = "csr vsp volt   1" 
+det_48w: marker, alias = "48w" 
+q48w: quadrupole, l =  0.600000, type = "csr quad cur  48" 
+vkick_48w: kicker, l =  0.203000 
+hkick_49w: kicker, l =  0.127000 
+oct_48w: octupole, l =  0.381000, type = "csr octu cur   2" 
+vkick_49w: kicker, l =  0.127000 
+sk_q48w: quadrupole, tilt = pi/4, l =  0.254000, type = "csr sqewquad  48" 
+q49w: quadrupole, l =  0.950000, type = "csr quad cur  49" 
+det_49w: marker, alias = "49w" 
+q49aw: quadrupole, l =  0.440000, type = "csr qadd cur   1" 
+ip_l3: marker 
+q49ae: quadrupole, l =  0.440000, type = "csr qadd cur   4" 
+det_49e: marker, alias = "49e" 
+q49e: quadrupole, l =  0.950000, type = "csr quad cur  50" 
+sk_q48e: quadrupole, tilt = pi/4, l =  0.254000, type = "csr sqewquad  51" 
+vkick_49e: kicker, l =  0.127000 
+oct_48e: octupole, l =  0.381000, type = "csr octu cur   3" 
+hkick_49e: kicker, l =  0.127000 
+vkick_48e: kicker, l =  0.203000 
+q48e: quadrupole, l =  0.600000, type = "csr quad cur  51" 
+det_48e: marker, alias = "48e" 
+v_sep_48e: elseparator, l =  2.647000, type = "csr vsp volt   2" 
+b48e:  b03 
+vkick_47e: kicker, l =  0.254000 
+det_47e: marker, alias = "47e" 
+q47ae: quadrupole, l =  0.600000, type = "csr qadd cur   3" 
+b47ae: b07 
+sk_q47e: quadrupole, tilt = pi/4, l =  0.125000, type = "csr sqewquad  52" 
+q47e: quadrupole, l =  0.600000, type = "csr quad cur  52" 
+b47e:  b06 
+det_46e: marker, alias = "46e" 
+q46e: quadrupole, l =  0.600000, type = "csr quad cur  53" 
+b46e:  b08 
+sex_45e: sextupole, l =  0.272000, type = "csr sext cur  54" 
+q45e: quadrupole, l =  0.600000, type = "csr quad cur  54" 
+det_45e: marker, alias = "45e" 
+oct_45e: octupole, l =  0.381000, type = "csr octu cur   4" 
+h_sep_45e: elseparator, l =  2.389400, type = "csr hsp volt   4" 
+det_44e: marker, alias = "44e" 
+sex_44e: sextupole, l =  0.272000, type = "csr sext cur  55" 
+q44e: quadrupole, l =  0.600000, type = "csr quad cur  55" 
+b44e:  b08 
+q43ae: quadrupole, l =  0.600000, type = "csr qadd cur   6" 
+det_43e: marker, alias = "43e" 
+sex_43e: sextupole, l =  0.272000, type = "csr sext cur  56" 
+q43e: quadrupole, l =  0.600000, type = "csr quad cur  56" 
+b43e:  b01 
+det_42e: marker, alias = "42e" 
+sex_42e: sextupole, l =  0.272000, type = "csr sext cur  57" 
+q42e: quadrupole, l =  0.600000, type = "csr quad cur  57" 
+b42e:  b01 
+det_41e: marker, alias = "41e" 
+sex_41e: sextupole, l =  0.272000, type = "csr sext cur  58" 
+q41e: quadrupole, l =  0.600000, type = "csr quad cur  58" 
+b41e:  b01 
+det_40e: marker, alias = "40e" 
+sex_40e: sextupole, l =  0.272000, type = "csr sext cur  59" 
+q40e: quadrupole, l =  0.600000, type = "csr quad cur  59" 
+b40e:  b01 
+det_39e: marker, alias = "39e" 
+sex_39e: sextupole, l =  0.272000, type = "csr sext cur  60" 
+q39e: quadrupole, l =  0.600000, type = "csr quad cur  60" 
+b39e:  b01 
+bump_38e: kicker, l =  0.229000 
+det_38e: marker, alias = "38e" 
+sex_38e: sextupole, l =  0.272000, type = "csr sext cur  61" 
+q38e: quadrupole, l =  0.600000, type = "csr quad cur  61" 
+b38e:  b01 
+det_37e: marker, alias = "37e" 
+sex_37e: sextupole, l =  0.272000, type = "csr sext cur  62" 
+q37e: quadrupole, l =  0.600000, type = "csr quad cur  62" 
+b37e:  b01 
+det_36e: marker, alias = "36e" 
+sex_36e: sextupole, l =  0.272000, type = "csr sext cur  63" 
+q36e: quadrupole, l =  0.600000, type = "csr quad cur  63" 
+bump_36e: kicker, l =  0.230200 
+pinger_36e: kicker, l =  0.511200 
+b36e:  b01 
+det_35e: marker, alias = "35e" 
+sex_35e: sextupole, l =  0.272000, type = "csr sext cur  64" 
+q35e: quadrupole, l =  0.600000, type = "csr quad cur  64" 
+b35e:  b01 
+sex_34e: sextupole, l =  0.272000, type = "csr sext cur  65" 
+q34e: quadrupole, l =  0.600000, type = "csr quad cur  65" 
+det_33e: marker, alias = "33e" 
+sex_33e: sextupole, l =  0.272000, type = "csr sext cur  66" 
+q33e: quadrupole, l =  0.600000, type = "csr quad cur  66" 
+b33e:  b01 
+det_32e: marker, alias = "32e" 
+sex_32e: sextupole, l =  0.272000, type = "csr sext cur  67" 
+q32e: quadrupole, l =  0.600000, type = "csr quad cur  67" 
+b32e:  b01 
+det_31e: marker, alias = "31e" 
+sex_31e: sextupole, l =  0.272000, type = "csr sext cur  68" 
+q31e: quadrupole, l =  0.600000, type = "csr quad cur  68" 
+b31e:  b01 
+det_30e: marker, alias = "30e" 
+sex_30e: sextupole, l =  0.272000, type = "csr sext cur  69" 
+q30e: quadrupole, l =  0.600000, type = "csr quad cur  69" 
+b30e:  b01 
+sk_q29e: quadrupole, tilt = pi/4, l =  0.407700, type = "csr sqewquad  70" 
+det_29e: marker, alias = "29e" 
+sex_29e: sextupole, l =  0.272000, type = "csr sext cur  70" 
+q29e: quadrupole, l =  0.600000, type = "csr quad cur  70" 
+b29e:  b01 
+bump_28e: kicker, l =  0.228600 
+det_28e: marker, alias = "28e" 
+sex_28e: sextupole, l =  0.272000, type = "csr sext cur  71" 
+q28e: quadrupole, l =  0.600000, type = "csr quad cur  71" 
+b28e:  b01 
+det_27e: marker, alias = "27e" 
+sex_27e: sextupole, l =  0.272000, type = "csr sext cur  72" 
+q27e: quadrupole, l =  0.600000, type = "csr quad cur  72" 
+b27e:  b01 
+bump_26e: kicker, l =  0.228600 
+det_26e: marker, alias = "26e" 
+sex_26e: sextupole, l =  0.272000, type = "csr sext cur  73" 
+q26e: quadrupole, l =  0.600000, type = "csr quad cur  73" 
+b26e:  b01 
+det_25e: marker, alias = "25e" 
+sex_25e: sextupole, l =  0.272000, type = "csr sext cur  74" 
+q25e: quadrupole, l =  0.600000, type = "csr quad cur  74" 
+b25e:  b01 
+det_24e: marker, alias = "24e" 
+sex_24e: sextupole, l =  0.272000, type = "csr sext cur  75" 
+q24e: quadrupole, l =  0.600000, type = "csr quad cur  75" 
+b24e:  b01 
+sk_sex_23e: sextupole, tilt = pi/6, l =  0.126200, type = "csr sqewsext   3" 
+det_23e: marker, alias = "23e" 
+sex_23e: sextupole, l =  0.272000, type = "csr sext cur  76" 
+q23e: quadrupole, l =  0.600000, type = "csr quad cur  76" 
+b23e:  b01 
+det_22e: marker, alias = "22e" 
+sex_22e: sextupole, l =  0.272000, type = "csr sext cur  77" 
+q22e: quadrupole, l =  0.600000, type = "csr quad cur  77" 
+b22e:  b01 
+det_21e: marker, alias = "21e" 
+sex_21e: sextupole, l =  0.272000, type = "csr sext cur  78" 
+q21e: quadrupole, l =  0.600000, type = "csr quad cur  78" 
+b21e:  b01 
+det_20e: marker, alias = "20e" 
+sex_20e: sextupole, l =  0.272000, type = "csr sext cur  79" 
+q20e: quadrupole, l =  0.600000, type = "csr quad cur  79" 
+b20e:  b01 
+sex_19e: sextupole, l =  0.272000, type = "csr sext cur  80" 
+q19e: quadrupole, l =  0.600000, type = "csr quad cur  80" 
+det_19e: marker, alias = "19e" 
+! wig3_18e: wiggler, l = 1.60 
+! wig2_18e: wiggler, l = 1.60 
+! wig1_18e: wiggler, l = 1.60 
+det_18e: marker, alias = "18e" 
+sex_18e: sextupole, l =  0.272000, type = "csr sext cur  81" 
+q18e: quadrupole, l =  0.600000, type = "csr quad cur  81" 
+b18e:  b01 
+det_17e: marker, alias = "17e" 
+sex_17e: sextupole, l =  0.272000, type = "csr sext cur  82" 
+q17e: quadrupole, l =  0.600000, type = "csr quad cur  82" 
+b17e:  b01 
+det_16e: marker, alias = "16e" 
+sex_16e: sextupole, l =  0.272000, type = "csr sext cur  83" 
+q16e: quadrupole, l =  0.600000, type = "csr quad cur  83" 
+b16e:  b01 
+sex_15e: sextupole, l =  0.272000, type = "csr sext cur  84" 
+q15e: quadrupole, l =  0.600000, type = "csr quad cur  84" 
+det_15e: marker, alias = "15e" 
+! wig_15e:  wiggler, l = 1.60 
+b15e:  b08 
+sex_14e: sextupole, l =  0.272000, type = "csr sext cur  85" 
+q14e: quadrupole, l =  0.600000, type = "csr quad cur  85" 
+det_14e: marker, alias = "14e" 
+! wig2_14e: wiggler, l = 1.60 
+sk_q14e: quadrupole, tilt = pi/4, l =  0.150000, type = "csr sqewquad  85" 
+! wig1_14e: wiggler, l = 1.60 
+det_13e: marker, alias = "13e" 
+sex_13e: sextupole, l =  0.272000, type = "csr sext cur  86" 
+q13e: quadrupole, l =  0.600000, type = "csr quad cur  86" 
+b13e:  b08 
+sex_12e: sextupole, l =  0.272000, type = "csr sext cur  87" 
+q12e: quadrupole, l =  0.600000, type = "csr quad cur  87" 
+det_12e: marker, alias = "12e" 
+b12e:  b01 
+det_11e: marker, alias = "11e" 
+sex_11e: sextupole, l =  0.272000, type = "csr sext cur  88" 
+q11e: quadrupole, l =  0.600000, type = "csr quad cur  88" 
+b11e:  b01 
+det_10e: marker, alias = "10e" 
+sex_10e: sextupole, l =  0.272000, type = "csr sext cur  89" 
+q10e: quadrupole, l =  0.600000, type = "csr quad cur  89" 
+vkick_09e: kicker, l =  0.102000 
+sex_09e: sextupole, l =  0.272000, type = "csr sext cur  90" 
+q09e: quadrupole, l =  0.600000, type = "csr quad cur  90" 
+det_09e: marker, alias = "9e" 
+rf_e1: rfcavity, l =  1.800000 
+rf_e2: rfcavity, l =  1.800000 
+hkick_08e: kicker, l =  0.255000 
+vkick_08e: kicker, l =  0.102000 
+det_08e: marker, alias = "8e" 
+sex_08e: sextupole, l =  0.272000, type = "csr sext cur  91" 
+q08e: quadrupole, l =  0.600000, type = "csr quad cur  91" 
+h_sep_08e: elseparator, l =  2.442000, type = "csr hsp volt   6" 
+sk_q07e: quadrupole, tilt = pi/4, l =  0.152000, type = "csr sqewquad  92" 
+hkick_07e: kicker, l =  0.245000 
+wig_e: wiggler, b_max = 1.17, n_pole = 24, l =  2.355000 
+vkick_07e: kicker, l =  0.254000 
+sk_sex_07e: sextupole, tilt = pi/6, l =  0.126200, type = "csr sqewsext   4" 
+det_07e: marker, alias = "7e" 
+q07e: quadrupole, l =  0.600000, type = "csr quad cur  92" 
+b07e:  b02 
+q06e: quadrupole, l =  0.600000, type = "csr quad cur  93" 
+det_06e: marker, alias = "6e" 
+sk_q06e: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad  93" 
+b06e:  b02 
+q05e: quadrupole, l =  0.600000, type = "csr quad cur  94" 
+det_05e: marker, alias = "5e" 
+sk_q05e: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad  94" 
+b05e:  b02 
+q04e: quadrupole, l =  0.600000, type = "csr quad cur  95" 
+det_04e: marker, alias = "4e" 
+sk_q04e: quadrupole, tilt = pi/4, l =  0.152400, type = "csr sqewquad  95" 
+b04e:  b02 
+q03e: quadrupole, l =  0.600000, type = "csr quad cur  96" 
+det_03e: marker, alias = "3e" 
+b03ae: b04 
+b03e:  b03 
+sk_q03e: quadrupole, tilt = pi/4, l =  0.172700, type = "csr sqewquad  96" 
+sk_q02e: quadrupole, tilt = pi/4, l =  0.172700, type = "csr sqewquad  97" 
+det_02e: marker, alias = "2e" 
+hvkick_01e: kicker, l =  0.172700 
+det_01e: marker, alias = "1e" 
+sk_sex_02e: sextupole, tilt = pi/6, l =  0.072000, type = "scir sksxcur   1" 
+sc_q02e: quadrupole, l =  0.661500, type = "scir quadcur   3" 
+sc_sk_q02e: quadrupole, l =  0.680000, superimpose, ref = sc_q02e, &
+        type = "scir skqucur   3" 
+sc_q01e: quadrupole, l =  0.661500, type = "scir quadcur   4" 
+sc_sk_q01e: quadrupole, l =  0.680000, superimpose, ref = sc_q01e, &
+        type = "scir skqucur   4" 
+det_00e: marker, alias = "0e" 
+q00e: quadrupole, l =  0.184000 
+ 
+ ! drifts
+d001: drift, l =   0.429000
+d002: drift, l =   0.062250
+d003: drift, l =   0.161000
+d004: drift, l =   0.250500
+d005: drift, l =   1.192000
+d006: drift, l =   1.791868
+d007: drift, l =   0.815000
+d008: drift, l =   1.750300
+d009: drift, l =   0.103300
+d010: drift, l =   0.423383
+d011: drift, l =   0.377210
+d012: drift, l =   0.550070
+d013: drift, l =   0.059400
+d014: drift, l =   0.235380
+d015: drift, l =   0.237499
+d016: drift, l =   0.322400
+d017: drift, l =   0.162400
+d018: drift, l =   0.332750
+d019: drift, l =   0.215500
+d020: drift, l =   0.344400
+d021: drift, l =   0.170400
+d022: drift, l =   0.324751
+d023: drift, l =   0.221499
+d024: drift, l =   0.268000
+d025: drift, l =   0.070400
+d026: drift, l =   0.176400
+d027: drift, l =   0.318751
+d028: drift, l =   0.298009
+d029: drift, l =   0.098400
+d030: drift, l =   0.059000
+d031: drift, l =   1.105000
+d032: drift, l =   0.546000
+d033: drift, l =   0.493598
+d034: drift, l =   0.061400
+d035: drift, l =   0.292000
+d036: drift, l =   0.755430
+d037: drift, l =   1.199840
+d038: drift, l =   0.739930
+d039: drift, l =   0.003500
+d040: drift, l =   0.106400
+d041: drift, l =   0.183400
+d042: drift, l =   0.258982
+d043: drift, l =   0.098400
+d044: drift, l =   0.065400
+d045: drift, l =   1.534000
+d046: drift, l =   3.887170
+d047: drift, l =   0.064400
+d048: drift, l =   0.110000
+d049: drift, l =   0.426640
+d050: drift, l =   0.235970
+d051: drift, l =   0.190400
+d052: drift, l =   0.063400
+d053: drift, l =   0.268411
+d054: drift, l =   0.157140
+d055: drift, l =   0.064150
+d056: drift, l =   0.024250
+d057: drift, l =   0.435000
+d058: drift, l =   0.098000
+d059: drift, l =   0.439640
+d060: drift, l =   0.157140
+d061: drift, l =   0.068500
+d062: drift, l =   0.045800
+d063: drift, l =   0.486740
+d064: drift, l =   0.157140
+d065: drift, l =   0.065150
+d066: drift, l =   0.026850
+d067: drift, l =   2.429040
+d068: drift, l =   0.157140
+d069: drift, l =   0.064900
+d070: drift, l =   0.047600
+d071: drift, l =   0.488540
+d072: drift, l =   0.157140
+d073: drift, l =   0.066650
+d074: drift, l =   0.047450
+d075: drift, l =  -0.006700
+d076: drift, l =   0.243640
+d077: drift, l =   0.157139
+d078: drift, l =   0.063300
+d079: drift, l =   0.050200
+d080: drift, l =   0.487540
+d081: drift, l =   0.157140
+d082: drift, l =   0.057600
+d083: drift, l =   0.031500
+d084: drift, l =   5.698900
+d085: drift, l =   0.062900
+d086: drift, l =   0.041500
+d087: drift, l =   0.496640
+d088: drift, l =   0.157140
+d089: drift, l =   0.066350
+d090: drift, l =   0.046150
+d091: drift, l =   0.488540
+d092: drift, l =   0.157140
+d093: drift, l =   0.063850
+d094: drift, l =   0.048650
+d095: drift, l =   0.488540
+d096: drift, l =   0.157140
+d097: drift, l =   0.066100
+d098: drift, l =   0.045600
+d099: drift, l =   0.489340
+d100: drift, l =   0.157140
+d101: drift, l =   0.065400
+d102: drift, l =   0.025200
+d103: drift, l =   0.554800
+d104: drift, l =   1.827141
+d105: drift, l =   0.157140
+d106: drift, l =   0.063550
+d107: drift, l =   0.048550
+d108: drift, l =   0.488940
+d109: drift, l =   0.157140
+d110: drift, l =   0.064900
+d111: drift, l =   0.047200
+d112: drift, l =   0.488940
+d113: drift, l =   0.157140
+d114: drift, l =   0.066900
+d115: drift, l =   0.023800
+d116: drift, l =   0.141300
+d117: drift, l =   0.364540
+d118: drift, l =   0.157140
+d119: drift, l =   0.067150
+d120: drift, l =   0.047950
+d121: drift, l =   0.485940
+d122: drift, l =   0.157140
+d123: drift, l =   0.065900
+d124: drift, l =   0.026700
+d125: drift, l =   0.143200
+d126: drift, l =   0.360741
+d127: drift, l =   0.157139
+d128: drift, l =   0.064650
+d129: drift, l =   0.026550
+d130: drift, l =   0.703200
+d131: drift, l =   0.478640
+d132: drift, l =   0.157140
+d133: drift, l =   0.064400
+d134: drift, l =   0.025800
+d135: drift, l =   0.735840
+d136: drift, l =   0.157140
+d137: drift, l =   0.066400
+d138: drift, l =   0.047200
+d139: drift, l =   0.487440
+d140: drift, l =   0.157140
+d141: drift, l =   0.061150
+d142: drift, l =   0.025250
+d143: drift, l =   0.739640
+d144: drift, l =   0.157140
+d145: drift, l =   0.064400
+d146: drift, l =   0.026800
+d147: drift, l =   3.070700
+d148: drift, l =   1.936100
+d149: drift, l =   0.036900
+d150: drift, l =   0.259400
+d151: drift, l =   0.157140
+d152: drift, l =   0.064150
+d153: drift, l =   0.031950
+d154: drift, l =   0.657401
+d155: drift, l =   1.713100
+d156: drift, l =   0.178400
+d157: drift, l =   0.425400
+d158: drift, l =   0.065150
+d159: drift, l =   0.025050
+d160: drift, l =   0.321340
+d161: drift, l =   0.157140
+d162: drift, l =   0.065400
+d163: drift, l =   0.045700
+d164: drift, l =   0.489940
+d165: drift, l =   0.157140
+d166: drift, l =   0.063400
+d167: drift, l =   0.026800
+d168: drift, l =   0.735840
+d169: drift, l =   0.157140
+d170: drift, l =   0.063400
+d171: drift, l =   0.048700
+d172: drift, l =   0.488940
+d173: drift, l =   0.157140
+d174: drift, l =   0.064900
+d175: drift, l =   0.047700
+d176: drift, l =   0.488440
+d177: drift, l =   0.157141
+d178: drift, l =   0.065400
+d179: drift, l =   0.046200
+d180: drift, l =   0.489440
+d181: drift, l =   0.157140
+d182: drift, l =   0.065900
+d183: drift, l =   0.023800
+d184: drift, l =   0.511340
+d185: drift, l =   0.157140
+d186: drift, l =   0.061400
+d187: drift, l =   0.030300
+d188: drift, l =   2.232072
+d189: drift, l =   0.449827
+d190: drift, l =   0.182599
+d191: drift, l =   0.063100
+d192: drift, l =   0.027100
+d193: drift, l =   0.853000
+d194: drift, l =   0.711810
+d195: drift, l =   0.982000
+d196: drift, l =   0.060400
+d197: drift, l =   0.064500
+d198: drift, l =   0.536540
+d199: drift, l =   0.182599
+d200: drift, l =   0.092500
+d201: drift, l =   1.233500
+d202: drift, l =   0.853800
+d203: drift, l =   0.134400
+d204: drift, l =   0.843240
+d205: drift, l =   0.501750
+d206: drift, l =   0.113747
+d207: drift, l =  -0.058000
+d208: drift, l =   0.480383
+d209: drift, l =   0.336671
+d210: drift, l =   0.189000
+d211: drift, l =   0.199320
+d212: drift, l =   0.126320
+d213: drift, l =   0.234222
+d214: drift, l =   0.048500
+d215: drift, l =   0.126500
+d216: drift, l =   0.038500
+d217: drift, l =   0.361958
+d218: drift, l =   0.260958
+d219: drift, l =   1.192000
+d220: drift, l =   0.129078
+d221: drift, l =   0.136054
+d222: drift, l =   1.179000
+d223: drift, l =   0.266958
+d224: drift, l =   0.307958
+d225: drift, l =   0.045500
+d226: drift, l =   0.123500
+d227: drift, l =   0.063500
+d228: drift, l =   0.269222
+d229: drift, l =   0.126320
+d230: drift, l =   0.190320
+d231: drift, l =   0.198000
+d232: drift, l =   0.336671
+d233: drift, l =   0.469383
+d234: drift, l =  -0.053800
+d235: drift, l =   0.120547
+d236: drift, l =   0.501750
+d237: drift, l =   0.846240
+d238: drift, l =   0.134400
+d239: drift, l =   0.853800
+d240: drift, l =   1.237301
+d241: drift, l =   0.088700
+d242: drift, l =   0.182600
+d243: drift, l =   0.537139
+d244: drift, l =   0.063900
+d245: drift, l =   0.071400
+d246: drift, l =   1.171000
+d247: drift, l =   0.525300
+d248: drift, l =   0.839610
+d249: drift, l =   0.026000
+d250: drift, l =   0.064100
+d251: drift, l =   0.182599
+d252: drift, l =   0.450737
+d253: drift, l =   2.223463
+d254: drift, l =   0.035400
+d255: drift, l =   0.064000
+d256: drift, l =   0.157140
+d257: drift, l =   0.502640
+d258: drift, l =   0.037400
+d259: drift, l =   0.061000
+d260: drift, l =   0.157140
+d261: drift, l =   0.488540
+d262: drift, l =   0.048700
+d263: drift, l =   0.063800
+d264: drift, l =   0.157140
+d265: drift, l =   0.488740
+d266: drift, l =   0.047400
+d267: drift, l =   0.064900
+d268: drift, l =   0.157140
+d269: drift, l =   0.488740
+d270: drift, l =   0.047000
+d271: drift, l =   0.065300
+d272: drift, l =   0.157140
+d273: drift, l =   0.363640
+d274: drift, l =   0.129000
+d275: drift, l =   0.042700
+d276: drift, l =   0.061700
+d277: drift, l =   0.157140
+d278: drift, l =   0.488440
+d279: drift, l =   0.048500
+d280: drift, l =   0.064100
+d281: drift, l =   0.157140
+d282: drift, l =   0.321640
+d283: drift, l =   0.026200
+d284: drift, l =   0.063700
+d285: drift, l =   0.322700
+d286: drift, l =   0.119000
+d287: drift, l =   1.587800
+d288: drift, l =   0.655531
+d289: drift, l =   0.036550
+d290: drift, l =   0.061550
+d291: drift, l =   0.157140
+d292: drift, l =   0.253500
+d293: drift, l =   0.042800
+d294: drift, l =   5.008300
+d295: drift, l =   0.025400
+d296: drift, l =   0.064300
+d297: drift, l =   0.157140
+d298: drift, l =   0.735140
+d299: drift, l =   0.029500
+d300: drift, l =   0.061400
+d301: drift, l =   0.157140
+d302: drift, l =   0.489040
+d303: drift, l =   0.047700
+d304: drift, l =   0.064300
+d305: drift, l =   0.157140
+d306: drift, l =   0.735140
+d307: drift, l =   0.025900
+d308: drift, l =   0.065000
+d309: drift, l =   0.157140
+d310: drift, l =   0.507040
+d311: drift, l =   0.674900
+d312: drift, l =   0.026700
+d313: drift, l =   0.064700
+d314: drift, l =   0.157140
+d315: drift, l =   0.358940
+d316: drift, l =   0.148600
+d317: drift, l =   0.024900
+d318: drift, l =   0.065000
+d319: drift, l =   0.157140
+d320: drift, l =   0.486440
+d321: drift, l =   0.050200
+d322: drift, l =   0.064400
+d323: drift, l =   0.157140
+d324: drift, l =   0.360940
+d325: drift, l =   0.145300
+d326: drift, l =   0.027700
+d327: drift, l =   0.063500
+d328: drift, l =   0.157140
+d329: drift, l =   0.486240
+d330: drift, l =   0.050600
+d331: drift, l =   0.064200
+d332: drift, l =   0.157140
+d333: drift, l =   0.487740
+d334: drift, l =   0.048200
+d335: drift, l =   0.065100
+d336: drift, l =   0.157140
+d337: drift, l =   1.856341
+d338: drift, l =   0.526000
+d339: drift, l =   0.028900
+d340: drift, l =   0.063600
+d341: drift, l =   0.157140
+d342: drift, l =   0.486940
+d343: drift, l =   0.050100
+d344: drift, l =   0.064000
+d345: drift, l =   0.157140
+d346: drift, l =   0.488540
+d347: drift, l =   0.045500
+d348: drift, l =   0.067000
+d349: drift, l =   0.157140
+d350: drift, l =   0.487040
+d351: drift, l =   0.046800
+d352: drift, l =   0.067200
+d353: drift, l =   0.157140
+d354: drift, l =   0.538040
+d355: drift, l =   0.063000
+d356: drift, l =   0.143400
+d357: drift, l =   0.107010
+d358: drift, l =   0.127690
+d359: drift, l =   0.127690
+d360: drift, l =   0.391310
+d361: drift, l =   0.028200
+d362: drift, l =   0.062700
+d363: drift, l =   0.157140
+d364: drift, l =   0.489340
+d365: drift, l =   0.044800
+d366: drift, l =   0.066900
+d367: drift, l =   0.157141
+d368: drift, l =   0.487239
+d369: drift, l =   0.050000
+d370: drift, l =   0.063800
+d371: drift, l =   0.157140
+d372: drift, l =   0.538840
+d373: drift, l =   0.062200
+d374: drift, l =   0.059400
+d375: drift, l =   0.112780
+d376: drift, l =   0.490563
+d377: drift, l =   0.157698
+d378: drift, l =   0.064100
+d379: drift, l =   0.036400
+d380: drift, l =   1.622400
+d381: drift, l =   0.220155
+d382: drift, l =   0.123295
+d383: drift, l =   0.604705
+d384: drift, l =   0.013250
+d385: drift, l =   0.062150
+d386: drift, l =   0.189253
+d387: drift, l =   0.604919
+d388: drift, l =   0.060150
+d389: drift, l =   0.894400
+d390: drift, l =   1.123300
+d391: drift, l =   0.486841
+d392: drift, l =   0.049450
+d393: drift, l =   0.064750
+d394: drift, l =   0.157140
+d395: drift, l =   0.486840
+d396: drift, l =   0.050200
+d397: drift, l =   0.064000
+d398: drift, l =   5.105170
+d399: drift, l =   0.367500
+d400: drift, l =   0.063900
+d401: drift, l =   0.109400
+d402: drift, l =   1.645930
+d403: drift, l =   1.199400
+d404: drift, l =   1.279200
+d405: drift, l =   0.063000
+d406: drift, l =   0.180000
+d407: drift, l =   0.063800
+d408: drift, l =   0.064600
+d409: drift, l =   0.499400
+d410: drift, l =   0.404650
+d411: drift, l =   0.046000
+d412: drift, l =   0.030000
+d413: drift, l =   0.374000
+d414: drift, l =   0.230800
+d415: drift, l =   0.048000
+d416: drift, l =   0.216400
+d417: drift, l =   0.298010
+d418: drift, l =   0.495151
+d419: drift, l =   0.067400
+d420: drift, l =   0.238000
+d421: drift, l =   0.254501
+d422: drift, l =   0.495150
+d423: drift, l =   0.061400
+d424: drift, l =   0.275000
+d425: drift, l =   0.223501
+d426: drift, l =   0.495151
+d427: drift, l =   0.054100
+d428: drift, l =   0.239300
+d429: drift, l =   0.266500
+d430: drift, l =   0.235381
+d431: drift, l =   0.058900
+d432: drift, l =   0.550570
+d433: drift, l =   0.377210
+d434: drift, l =   0.422383
+d435: drift, l =   0.102300
+d436: drift, l =   1.752300
+d437: drift, l =   0.815000
+d438: drift, l =   1.791891
+d439: drift, l =   0.588000
+d440: drift, l =   0.532000
+d441: drift, l =   0.250500
+d442: drift, l =   0.161000
+d443: drift, l =   0.062250
+d444: drift, l =   0.429000
+ 
+ 
+ ! cesr ring
+ 
+cesr: line = (ip_l0, d001, q00w, d002, det_00w, d003, sc_q01w, d004, &
+ sc_q02w, d005, det_01w, d006, hvkick_01w, d007, det_02w, d008, sk_q02w, &
+ d009, sk_q03w, d010, b03w, d011, b03aw, d012, det_03w, d013, q03w, &
+ d014, b04w, d015, sk_q04w, d016, q04w, d017, det_04w, d018, b05w, &
+ d019, sk_q05w, d020, q05w, d021, det_05w, d022, b06w, d023, sk_q06w, &
+ d024, det_06w1, d025, q06w, d026, det_06w, d027, b07w, d028, q07w, &
+ d029, det_07w, d030, vkick_07w, d031, sk_q07w, d032, h_sep_08w, d033, &
+ q08w, d034, sex_08w, d035, det_08w, d036, rf_w1, d037, rf_w2, d038, &
+ det_08aw, d039, vkick_08wa, d040, q08aw, d041, wig_w, d042, det_09w, &
+ d043, q09w, d044, sex_09w, d045, sk_q09w, d046, q10w, d047, sex_10w, &
+ d048, det_10w, d049, b11w, d050, det_11w, d051, q11w, d052, sex_11w, &
+ d053, b12w, d054, q12w, d055, sex_12w, d056, det_12w, d057, det_12w1, &
+ d058, det_12w2, d059, b13w, d060, q13w, d061, sex_13w, d062, det_13w, &
+ d063, b14w, d064, q14w, d065, sex_14w, d066, det_14w, d067, b15w, &
+ d068, q15w, d069, sex_15w, d070, det_15w, d071, b16w, d072, q16w, &
+ d073, sex_16w, d074, det_16w, d075, vkick_16w, d076, b17w, d077, &
+ q17w, d078, sex_17w, d079, det_17w, d080, b18w, d081, q18w, d082, &
+ sex_18w, d083, det_18w, d084, q19w, d085, sex_19w, d086, det_19w, &
+ d087, b20w, d088, q20w, d089, sex_20w, d090, det_20w, d091, b21w, &
+ d092, q21w, d093, sex_21w, d094, det_21w, d095, b22w, d096, q22w, &
+ d097, sex_22w, d098, det_22w, d099, b23w, d100, q23w, d101, sex_23w, &
+ d102, det_23w, d103, sk_sex_23w, d104, b24w, d105, q24w, d106, sex_24w, &
+ d107, det_24w, d108, b25w, d109, q25w, d110, sex_25w, d111, det_25w, &
+ d112, b26w, d113, q26w, d114, sex_26w, d115, det_26w, d116, bump_26w, &
+ d117, b27w, d118, q27w, d119, sex_27w, d120, det_27w, d121, b28w, &
+ d122, q28w, d123, sex_28w, d124, det_28w, d125, bump_28w, d126, b29w, &
+ d127, q29w, d128, sex_29w, d129, det_29w, d130, sk_q29w, d131, b30w, &
+ d132, q30w, d133, sex_30w, d134, det_30w, d135, b31w, d136, q31w, &
+ d137, sex_31w, d138, det_31w, d139, b32w, d140, q32w, d141, sex_32w, &
+ d142, det_32w, d143, b33w, d144, q33w, d145, sex_33w, d146, det_33w, &
+ d147, det_34w, d148, q34w, d149, sex_34w, d150, b35w, d151, q35w, &
+ d152, sex_35w, d153, det_35w, d154, b36w, d155, pinger_36w, d156, &
+ bump_36w, d157, q36w, d158, sex_36w, d159, det_36w, d160, b37w, d161, &
+ q37w, d162, sex_37w, d163, det_37w, d164, b38w, d165, q38w, d166, &
+ sex_38w, d167, det_38w, d168, b39w, d169, q39w, d170, sex_39w, d171, &
+ det_39w, d172, b40w, d173, q40w, d174, sex_40w, d175, det_40w, d176, &
+ b41w, d177, q41w, d178, sex_41w, d179, det_41w, d180, b42w, d181, &
+ q42w, d182, sex_42w, d183, det_42w, d184, b43w, d185, q43w, d186, &
+ sex_43w, d187, det_43w, d188, q43aw, d189, b44w, d190, q44w, d191, &
+ sex_44w, d192, det_44w, d193, h_sep_45w, d194, oct_45w, d195, det_45w, &
+ d196, q45w, d197, sex_45w, d198, b46w, d199, q46w, d200, det_46w, &
+ d201, b47w, d202, q47w, d203, sk_q47w, d204, b47aw, d205, q47aw, &
+ d206, det_47w, d207, vkick_47w, d208, b48w, d209, v_sep_48w, d210, &
+ det_48w, d211, q48w, d212, vkick_48w, d213, hkick_49w, d214, oct_48w, &
+ d215, vkick_49w, d216, sk_q48w, d217, q49w, d218, det_49w, d219, &
+ q49aw, d220, ip_l3, d221, q49ae, d222, det_49e, d223, q49e, d224, &
+ sk_q48e, d225, vkick_49e, d226, oct_48e, d227, hkick_49e, d228, vkick_48e, &
+ d229, q48e, d230, det_48e, d231, v_sep_48e, d232, b48e, d233, vkick_47e, &
+ d234, det_47e, d235, q47ae, d236, b47ae, d237, sk_q47e, d238, q47e, &
+ d239, b47e, d240, det_46e, d241, q46e, d242, b46e, d243, sex_45e, &
+ d244, q45e, d245, det_45e, d246, oct_45e, d247, h_sep_45e, d248, &
+ det_44e, d249, sex_44e, d250, q44e, d251, b44e, d252, q43ae, d253, &
+ det_43e, d254, sex_43e, d255, q43e, d256, b43e, d257, det_42e, d258, &
+ sex_42e, d259, q42e, d260, b42e, d261, det_41e, d262, sex_41e, d263, &
+ q41e, d264, b41e, d265, det_40e, d266, sex_40e, d267, q40e, d268, &
+ b40e, d269, det_39e, d270, sex_39e, d271, q39e, d272, b39e, d273, &
+ bump_38e, d274, det_38e, d275, sex_38e, d276, q38e, d277, b38e, d278, &
+ det_37e, d279, sex_37e, d280, q37e, d281, b37e, d282, det_36e, d283, &
+ sex_36e, d284, q36e, d285, bump_36e, d286, pinger_36e, d287, b36e, &
+ d288, det_35e, d289, sex_35e, d290, q35e, d291, b35e, d292, sex_34e, &
+ d293, q34e, d294, det_33e, d295, sex_33e, d296, q33e, d297, b33e, &
+ d298, det_32e, d299, sex_32e, d300, q32e, d301, b32e, d302, det_31e, &
+ d303, sex_31e, d304, q31e, d305, b31e, d306, det_30e, d307, sex_30e, &
+ d308, q30e, d309, b30e, d310, sk_q29e, d311, det_29e, d312, sex_29e, &
+ d313, q29e, d314, b29e, d315, bump_28e, d316, det_28e, d317, sex_28e, &
+ d318, q28e, d319, b28e, d320, det_27e, d321, sex_27e, d322, q27e, &
+ d323, b27e, d324, bump_26e, d325, det_26e, d326, sex_26e, d327, q26e, &
+ d328, b26e, d329, det_25e, d330, sex_25e, d331, q25e, d332, b25e, &
+ d333, det_24e, d334, sex_24e, d335, q24e, d336, b24e, d337, sk_sex_23e, &
+ d338, det_23e, d339, sex_23e, d340, q23e, d341, b23e, d342, det_22e, &
+ d343, sex_22e, d344, q22e, d345, b22e, d346, det_21e, d347, sex_21e, &
+ d348, q21e, d349, b21e, d350, det_20e, d351, sex_20e, d352, q20e, &
+ d353, b20e, d354, sex_19e, d355, q19e, d356, det_19e, d357, wig3_18e, &
+ d358, wig2_18e, d359, wig1_18e, d360, det_18e, d361, sex_18e, d362, &
+ q18e, d363, b18e, d364, det_17e, d365, sex_17e, d366, q17e, d367, &
+ b17e, d368, det_16e, d369, sex_16e, d370, q16e, d371, b16e, d372, &
+ sex_15e, d373, q15e, d374, det_15e, d375, wig_15e, d376, b15e, d377, &
+ sex_14e, d378, q14e, d379, det_14e, d380, wig2_14e, d381, sk_q14e, &
+ d382, wig1_14e, d383, det_13e, d384, sex_13e, d385, q13e, d386, b13e, &
+ d387, sex_12e, d388, q12e, d389, det_12e, d390, b12e, d391, det_11e, &
+ d392, sex_11e, d393, q11e, d394, b11e, d395, det_10e, d396, sex_10e, &
+ d397, q10e, d398, vkick_09e, d399, sex_09e, d400, q09e, d401, det_09e, &
+ d402, rf_e1, d403, rf_e2, d404, hkick_08e, d405, vkick_08e, d406, &
+ det_08e, d407, sex_08e, d408, q08e, d409, h_sep_08e, d410, sk_q07e, &
+ d411, hkick_07e, d412, wig_e, d413, vkick_07e, d414, sk_sex_07e, &
+ d415, det_07e, d416, q07e, d417, b07e, d418, q06e, d419, det_06e, &
+ d420, sk_q06e, d421, b06e, d422, q05e, d423, det_05e, d424, sk_q05e, &
+ d425, b05e, d426, q04e, d427, det_04e, d428, sk_q04e, d429, b04e, &
+ d430, q03e, d431, det_03e, d432, b03ae, d433, b03e, d434, sk_q03e, &
+ d435, sk_q02e, d436, det_02e, d437, hvkick_01e, d438, det_01e, d439, &
+ sk_sex_02e, d440, sc_q02e, d441, sc_q01e, d442, det_00e, d443, q00e, &
+ d444)                                                           
+ 
+ ! steering overlays
+ 
+h01w: overlay = {hvkick_01w}, hkick, alias = "1w", type = "csr horz cur   1" 
+v01w: overlay = {hvkick_01w}, vkick, alias = "1w", type = "csr vert cur   1" 
+hb01: overlay = {b04w /0.5, b05w /0.5}, hkick, alias = "hb1", &
+        type = "csr hbnd cur   1" 
+h02w: overlay = {b03w}, hkick, alias = "2w", type = "csr horz cur   2" 
+v02w: overlay = {sk_q03w}, vkick, alias = "2w", type = "csr vert cur   2" 
+hb02: overlay = {b06w /0.5, b07w /0.5}, hkick, alias = "hb2", &
+        type = "csr hbnd cur   2" 
+h03w: overlay = {b03aw}, hkick, alias = "3w", type = "csr horz cur   3" 
+hb03: overlay = {b47aw}, hkick, alias = "hb3", type = "csr hbnd cur   3" 
+h04w: overlay = {b04w}, hkick, alias = "4w", type = "csr horz cur   4" 
+v04w: overlay = {sk_q04w}, vkick, alias = "4w", type = "csr vert cur   4" 
+hb04: overlay = {b47ae}, hkick, alias = "hb4", type = "csr hbnd cur   4" 
+v05w: overlay = {sk_q05w}, vkick, alias = "5w", type = "csr vert cur   5" 
+hb05: overlay = {b07e /0.5, b06e /0.5}, hkick, alias = "hb5", &
+        type = "csr hbnd cur   5" 
+v06w: overlay = {sk_q06w}, vkick, alias = "6w", type = "csr vert cur   6" 
+hb06: overlay = {b05e /0.5, b04e /0.5}, hkick, alias = "hb6", &
+        type = "csr hbnd cur   6" 
+h07w: overlay = {sk_q07w}, hkick, alias = "7w", type = "csr horz cur   7" 
+v07w: overlay = {vkick_07w}, vkick, alias = "7w", type = "csr vert cur   7" 
+v08w: overlay = {sex_08w}, vkick, alias = "8w", type = "csr vert cur   8" 
+h09w: overlay = {sk_q09w}, hkick, alias = "9w", type = "csr horz cur   9" 
+v09w: overlay = {sex_09w}, vkick, alias = "9w", type = "csr vert cur   9" 
+h10w: overlay = {b11w}, hkick, alias = "10w", type = "csr horz cur  10" 
+v10w: overlay = {vkick_08wa}, vkick, alias = "10w", type = "csr vert cur  10" 
+v11w: overlay = {sex_11w}, vkick, alias = "11w", type = "csr vert cur  11" 
+h12w: overlay = {b12w /0.5, b13w /0.5}, hkick, alias = "12w", &
+        type = "csr horz cur  12" 
+v13w: overlay = {sex_13w}, vkick, alias = "13w", type = "csr vert cur  13" 
+h14w: overlay = {b14w /0.5, b15w /0.5}, hkick, alias = "14w", &
+        type = "csr horz cur  14" 
+v15w: overlay = {sex_15w}, vkick, alias = "15w", type = "csr vert cur  15" 
+h16w: overlay = {b16w /0.5, b17w /0.5}, hkick, alias = "16w", &
+        type = "csr horz cur  16" 
+v16w: overlay = {vkick_16w}, vkick, alias = "16w", type = "csr vert cur  16" 
+v17w: overlay = {sex_17w}, vkick, alias = "17w", type = "csr vert cur  17" 
+h18w: overlay = {b18w}, hkick, alias = "18w", type = "csr horz cur  18" 
+v19w: overlay = {sex_19w}, vkick, alias = "19w", type = "csr vert cur  19" 
+h20w: overlay = {b20w /0.5, b21w /0.5}, hkick, alias = "20w", &
+        type = "csr horz cur  20" 
+v21w: overlay = {sex_21w}, vkick, alias = "21w", type = "csr vert cur  21" 
+h22w: overlay = {b22w /0.5, b23w /0.5}, hkick, alias = "22w", &
+        type = "csr horz cur  22" 
+v23w: overlay = {sex_23w}, vkick, alias = "23w", type = "csr vert cur  23" 
+h24w: overlay = {b24w /0.5, b25w /0.5}, hkick, alias = "24w", &
+        type = "csr horz cur  24" 
+v25w: overlay = {sex_25w}, vkick, alias = "25w", type = "csr vert cur  25" 
+h26w: overlay = {b26w /0.5, b27w /0.5}, hkick, alias = "26w", &
+        type = "csr horz cur  26" 
+v27w: overlay = {sex_27w}, vkick, alias = "27w", type = "csr vert cur  27" 
+h28w: overlay = {b28w /0.5, b29w /0.5}, hkick, alias = "28w", &
+        type = "csr horz cur  28" 
+v29w: overlay = {sex_29w}, vkick, alias = "29w", type = "csr vert cur  29" 
+h30w: overlay = {b30w /0.5, b31w /0.5}, hkick, alias = "30w", &
+        type = "csr horz cur  30" 
+v31w: overlay = {sex_31w}, vkick, alias = "31w", type = "csr vert cur  31" 
+h32w: overlay = {b32w /0.5, b33w /0.5}, hkick, alias = "32w", &
+        type = "csr horz cur  32" 
+v33w: overlay = {sex_33w}, vkick, alias = "33w", type = "csr vert cur  33" 
+h34w: overlay = {b35w}, hkick, alias = "34w", type = "csr horz cur  34" 
+v35w: overlay = {sex_35w}, vkick, alias = "35w", type = "csr vert cur  35" 
+h36w: overlay = {b36w /0.5, b37w /0.5}, hkick, alias = "36w", &
+        type = "csr horz cur  36" 
+v37w: overlay = {sex_37w}, vkick, alias = "37w", type = "csr vert cur  37" 
+h38w: overlay = {b38w /0.5, b39w /0.5}, hkick, alias = "38w", &
+        type = "csr horz cur  38" 
+v39w: overlay = {sex_39w}, vkick, alias = "39w", type = "csr vert cur  39" 
+h40w: overlay = {b40w /0.5, b41w /0.5}, hkick, alias = "40w", &
+        type = "csr horz cur  40" 
+v41w: overlay = {sex_41w}, vkick, alias = "41w", type = "csr vert cur  41" 
+h42w: overlay = {b42w /0.5, b43w /0.5}, hkick, alias = "42w", &
+        type = "csr horz cur  42" 
+v43w: overlay = {sex_43w}, vkick, alias = "43w", type = "csr vert cur  43" 
+h44w: overlay = {b44w}, hkick, alias = "44w", type = "csr horz cur  44" 
+v45w: overlay = {sex_45w}, vkick, alias = "45w", type = "csr vert cur  45" 
+h46w: overlay = {b46w}, hkick, alias = "46w", type = "csr horz cur  46" 
+h47w: overlay = {b48w}, hkick, alias = "47w", type = "csr horz cur  47" 
+v47w: overlay = {vkick_47w}, vkick, alias = "47w", type = "csr vert cur  47" 
+v48w: overlay = {vkick_48w}, vkick, alias = "48w", type = "csr vert cur  48" 
+h49w: overlay = {hkick_49w}, hkick, alias = "49w", type = "csr horz cur  49" 
+v49w: overlay = {vkick_49w}, vkick, alias = "49w", type = "csr vert cur  49" 
+h49e: overlay = {hkick_49e}, hkick, alias = "49e", type = "csr horz cur  50" 
+v49e: overlay = {vkick_49e}, vkick, alias = "49e", type = "csr vert cur  50" 
+v48e: overlay = {vkick_48e}, vkick, alias = "48e", type = "csr vert cur  51" 
+h47e: overlay = {b48e}, hkick, alias = "47e", type = "csr horz cur  52" 
+v47e: overlay = {vkick_47e}, vkick, alias = "47e", type = "csr vert cur  52" 
+h46e: overlay = {b46e}, hkick, alias = "46e", type = "csr horz cur  53" 
+v45e: overlay = {sex_45e}, vkick, alias = "45e", type = "csr vert cur  54" 
+h44e: overlay = {b44e}, hkick, alias = "44e", type = "csr horz cur  55" 
+v43e: overlay = {sex_43e}, vkick, alias = "43e", type = "csr vert cur  56" 
+h42e: overlay = {b43e /0.5, b42e /0.5}, hkick, alias = "42e", &
+        type = "csr horz cur  57" 
+v41e: overlay = {sex_41e}, vkick, alias = "41e", type = "csr vert cur  58" 
+h40e: overlay = {b41e /0.5, b40e /0.5}, hkick, alias = "40e", &
+        type = "csr horz cur  59" 
+v39e: overlay = {sex_39e}, vkick, alias = "39e", type = "csr vert cur  60" 
+h38e: overlay = {b39e /0.5, b38e /0.5}, hkick, alias = "38e", &
+        type = "csr horz cur  61" 
+v37e: overlay = {sex_37e}, vkick, alias = "37e", type = "csr vert cur  62" 
+h36e: overlay = {b37e /0.5, b36e /0.5}, hkick, alias = "36e", &
+        type = "csr horz cur  63" 
+v35e: overlay = {sex_35e}, vkick, alias = "35e", type = "csr vert cur  64" 
+h34e: overlay = {b35e}, hkick, alias = "34e", type = "csr horz cur  65" 
+v34e: overlay = {sex_34e}, vkick, alias = "34e", type = "csr vert cur  65" 
+v33e: overlay = {sex_33e}, vkick, alias = "33e", type = "csr vert cur  66" 
+h32e: overlay = {b33e /0.5, b32e /0.5}, hkick, alias = "32e", &
+        type = "csr horz cur  67" 
+v31e: overlay = {sex_31e}, vkick, alias = "31e", type = "csr vert cur  68" 
+h30e: overlay = {b31e /0.5, b30e /0.5}, hkick, alias = "30e", &
+        type = "csr horz cur  69" 
+v29e: overlay = {sex_29e}, vkick, alias = "29e", type = "csr vert cur  70" 
+h28e: overlay = {b29e /0.5, b28e /0.5}, hkick, alias = "28e", &
+        type = "csr horz cur  71" 
+v27e: overlay = {sex_27e}, vkick, alias = "27e", type = "csr vert cur  72" 
+h26e: overlay = {b27e /0.5, b26e /0.5}, hkick, alias = "26e", &
+        type = "csr horz cur  73" 
+v25e: overlay = {sex_25e}, vkick, alias = "25e", type = "csr vert cur  74" 
+h24e: overlay = {b25e /0.5, b24e /0.5}, hkick, alias = "24e", &
+        type = "csr horz cur  75" 
+v23e: overlay = {sex_23e}, vkick, alias = "23e", type = "csr vert cur  76" 
+h22e: overlay = {b23e /0.5, b22e /0.5}, hkick, alias = "22e", &
+        type = "csr horz cur  77" 
+v21e: overlay = {sex_21e}, vkick, alias = "21e", type = "csr vert cur  78" 
+h20e: overlay = {b21e /0.5, b20e /0.5}, hkick, alias = "20e", &
+        type = "csr horz cur  79" 
+v19e: overlay = {sex_19e}, vkick, alias = "19e", type = "csr vert cur  80" 
+h18e: overlay = {b18e}, hkick, alias = "18e", type = "csr horz cur  81" 
+v17e: overlay = {sex_17e}, vkick, alias = "17e", type = "csr vert cur  82" 
+h16e: overlay = {b17e /0.5, b16e /0.5}, hkick, alias = "16e", &
+        type = "csr horz cur  83" 
+v15e: overlay = {sex_15e}, vkick, alias = "15e", type = "csr vert cur  84" 
+h14e: overlay = {b15e}, hkick, alias = "14e", type = "csr horz cur  85" 
+v13e: overlay = {sex_13e}, vkick, alias = "13e", type = "csr vert cur  86" 
+h12e: overlay = {b13e /0.5, b12e /0.5}, hkick, alias = "12e", &
+        type = "csr horz cur  87" 
+v11e: overlay = {sex_11e}, vkick, alias = "11e", type = "csr vert cur  88" 
+h10e: overlay = {b11e}, hkick, alias = "10e", type = "csr horz cur  89" 
+v09e: overlay = {vkick_09e}, vkick, alias = "9e", type = "csr vert cur  90" 
+h08e: overlay = {hkick_08e /0.5, hkick_07e /0.5}, hkick, alias = "8e", &
+        type = "csr horz cur  91" 
+v08e: overlay = {vkick_08e}, vkick, alias = "8e", type = "csr vert cur  91" 
+v07e: overlay = {vkick_07e}, vkick, alias = "7e", type = "csr vert cur  92" 
+v06e: overlay = {sk_q06e}, vkick, alias = "6e", type = "csr vert cur  93" 
+v05e: overlay = {sk_q05e}, vkick, alias = "5e", type = "csr vert cur  94" 
+h04e: overlay = {b04e}, hkick, alias = "4e", type = "csr horz cur  95" 
+v04e: overlay = {sk_q04e}, vkick, alias = "4e", type = "csr vert cur  95" 
+h03e: overlay = {b03ae}, hkick, alias = "3e", type = "csr horz cur  96" 
+h02e: overlay = {b03e}, hkick, alias = "2e", type = "csr horz cur  97" 
+v02e: overlay = {sk_q03e}, vkick, alias = "2e", type = "csr vert cur  97" 
+h01e: overlay = {hvkick_01e}, hkick, alias = "1e", type = "csr horz cur  98" 
+v01e: overlay = {hvkick_01e}, vkick, alias = "1e", type = "csr vert cur  98" 
+
+!----------------------------------------------------------------------------
+
+s_tee1 = 1.32700
+s_tee2 = 2.44095
+s_tee3 = 2.95742
+
+s_q1 =    1.16700
+s_q2 =    2.07900
+
+y_tee3 = 2.547925
+
+sqrt2 = 0.707107
+
+dx_drho1w = -sqrt2
+dx_drho2w =  sqrt2
+dx_drho3w = -sqrt2
+dx_drho4w =  sqrt2
+
+dy_drho1w =  sqrt2
+dy_drho2w =  sqrt2
+dy_drho3w =  sqrt2
+dy_drho4w =  sqrt2
+
+dx_drho1e = -sqrt2
+dx_drho2e =  sqrt2
+dx_drho3e = -sqrt2
+dx_drho4e =  sqrt2
+
+dy_drho1e =  sqrt2
+dy_drho2e =  sqrt2
+dy_drho3e =  sqrt2
+dy_drho4e =  sqrt2
+
+ds1 = 1 / (s_tee1 - s_tee2)  ! slope when tee 1 moves unit distance
+ds2 = -ds1                   ! slope when tee 2 moves unit distance
+
+dintercept1 = s_tee2 / (s_tee2 - s_tee1)
+dintercept2 = 1 - dintercept1
+
+dq1_t1 = ds1 * s_q1 + dintercept1
+dq1_t2 = ds2 * s_q1 + dintercept2
+dq2_t1 = ds1 * s_q2 + dintercept1
+dq2_t2 = ds2 * s_q2 + dintercept2
+
+x_tee3_1 = (s_tee3 - s_tee2) / (s_tee1 - s_tee2)
+x_tee3_2 = 1 - x_tee3_1
+
+dt1 = x_tee3_1 / y_tee3  ! dt when tee 1 moves unit distance
+dt2 = x_tee3_2 / y_tee3
+dt3 = -1 / y_tee3
+
+!---------------------------------
+
+sc_tee_1w_x: overlay = { &
+    sc_q01w[x_pitch]/ds1,    sc_q01w[x_offset]/dq1_t1,    sc_q01w[tilt]/dt1, &
+    sc_q02w[x_pitch]/ds1,    sc_q02w[x_offset]/dq2_t1,    sc_q02w[tilt]/dt1, &
+ sc_sk_q01w[x_pitch]/ds1, sc_sk_q01w[x_offset]/dq1_t1, sc_sk_q01w[tilt]/dt1, &
+ sc_sk_q02w[x_pitch]/ds1, sc_sk_q02w[x_offset]/dq2_t1, sc_sk_q02w[tilt]/dt1}, &
+                                                                      x_offset
+
+sc_tee_2w_x: overlay = { &
+    sc_q01w[x_pitch]/ds2,    sc_q01w[x_offset]/dq1_t2,    sc_q01w[tilt]/dt2, &
+    sc_q02w[x_pitch]/ds2,    sc_q02w[x_offset]/dq2_t2,    sc_q02w[tilt]/dt2, &
+ sc_sk_q01w[x_pitch]/ds2, sc_sk_q01w[x_offset]/dq1_t2, sc_sk_q01w[tilt]/dt2, &
+ sc_sk_q02w[x_pitch]/ds2, sc_sk_q02w[x_offset]/dq2_t2, sc_sk_q02w[tilt]/dt2}, &
+                                                                     x_offset
+
+sc_tee_1w_y: overlay = { &
+       sc_q01w[y_pitch]/ds1,    sc_q01w[y_offset]/dq1_t1, &
+       sc_q02w[y_pitch]/ds1,    sc_q02w[y_offset]/dq2_t1, &
+    sc_sk_q01w[y_pitch]/ds1, sc_sk_q01w[y_offset]/dq1_t1, &
+    sc_sk_q02w[y_pitch]/ds1, sc_sk_q02w[y_offset]/dq2_t1}, y_offset
+
+sc_tee_2w_y: overlay = {&
+       sc_q01w[y_pitch]/ds2,    sc_q01w[y_offset]/dq1_t2, &
+       sc_q02w[y_pitch]/ds2,    sc_q02w[y_offset]/dq2_t2, &
+    sc_sk_q01w[y_pitch]/ds2, sc_sk_q01w[y_offset]/dq1_t2, &
+    sc_sk_q02w[y_pitch]/ds2, sc_sk_q02w[y_offset]/dq2_t2}, y_offset
+
+sc_cam_1w: overlay = { &
+    sc_tee_1w_x[x_offset]/dx_drho1w, &
+    sc_tee_1w_y[y_offset]/dy_drho1w}, rho
+
+sc_cam_2w: overlay = { &
+    sc_tee_1w_x[x_offset]/dx_drho2w, &
+    sc_tee_1w_y[y_offset]/dy_drho2w}, rho
+
+sc_cam_3w: overlay = {&
+    sc_tee_2w_x[x_offset]/dx_drho3w, &
+    sc_tee_2w_y[y_offset]/dy_drho3w}, rho
+
+sc_cam_4w: overlay = { &
+    sc_tee_2w_x[x_offset]/dx_drho4w, &
+    sc_tee_2w_y[y_offset]/dy_drho4w}, rho
+
+sc_cam_5w: overlay = { &
+    sc_q01w[tilt]/dt3, sc_sk_q01w[tilt]/dt3, &
+    sc_q02w[tilt]/dt3, sc_sk_q02w[tilt]/dt3}, rho
+
+!------------------------------------------------------------------
+
+sc_tee_1e_x: overlay = { &
+    sc_q01e[x_pitch]/-ds1,    sc_q01e[x_offset]/dq1_t1,    sc_q01e[tilt]/dt1, &
+    sc_q02e[x_pitch]/-ds1,    sc_q02e[x_offset]/dq2_t1,    sc_q02e[tilt]/dt1, &
+ sc_sk_q01e[x_pitch]/-ds1, sc_sk_q01e[x_offset]/dq1_t1, sc_sk_q01e[tilt]/dt1, &
+ sc_sk_q02e[x_pitch]/-ds1, sc_sk_q02e[x_offset]/dq2_t1, sc_sk_q02e[tilt]/dt1}, &
+                                                                      x_offset
+
+sc_tee_2e_x: overlay = { &
+    sc_q01e[x_pitch]/-ds2,    sc_q01e[x_offset]/dq1_t2,    sc_q01e[tilt]/dt2, &
+    sc_q02e[x_pitch]/-ds2,    sc_q02e[x_offset]/dq2_t2,    sc_q02e[tilt]/dt2, &
+ sc_sk_q01e[x_pitch]/-ds2, sc_sk_q01e[x_offset]/dq1_t2, sc_sk_q01e[tilt]/dt2, &
+ sc_sk_q02e[x_pitch]/-ds2, sc_sk_q02e[x_offset]/dq2_t2, sc_sk_q02e[tilt]/dt2}, &
+                                                                     x_offset
+
+sc_tee_1e_y: overlay = { &
+       sc_q01e[y_pitch]/-ds1,    sc_q01e[y_offset]/dq1_t1, &
+       sc_q02e[y_pitch]/-ds1,    sc_q02e[y_offset]/dq2_t1, &
+    sc_sk_q01e[y_pitch]/-ds1, sc_sk_q01e[y_offset]/dq1_t1, &
+    sc_sk_q02e[y_pitch]/-ds1, sc_sk_q02e[y_offset]/dq2_t1}, y_offset
+
+sc_tee_2e_y: overlay = {&
+       sc_q01e[y_pitch]/-ds2,    sc_q01e[y_offset]/dq1_t2, &
+       sc_q02e[y_pitch]/-ds2,    sc_q02e[y_offset]/dq2_t2, &
+    sc_sk_q01e[y_pitch]/-ds2, sc_sk_q01e[y_offset]/dq1_t2, &
+    sc_sk_q02e[y_pitch]/-ds2, sc_sk_q02e[y_offset]/dq2_t2}, y_offset
+
+sc_cam_1e: overlay = { &
+    sc_tee_1e_x[x_offset]/dx_drho1e, &
+    sc_tee_1e_y[y_offset]/dy_drho1e}, rho
+
+sc_cam_2e: overlay = { &
+    sc_tee_1e_x[x_offset]/dx_drho2e, &
+    sc_tee_1e_y[y_offset]/dy_drho2e}, rho
+
+sc_cam_3e: overlay = {&
+    sc_tee_2e_x[x_offset]/dx_drho3e, &
+    sc_tee_2e_y[y_offset]/dy_drho3e}, rho
+
+sc_cam_4e: overlay = { &
+    sc_tee_2e_x[x_offset]/dx_drho4e, &
+    sc_tee_2e_y[y_offset]/dy_drho4e}, rho
+
+sc_cam_5e: overlay = { &
+    sc_q01e[tilt]/dt3, sc_sk_q01e[tilt]/dt3, &
+    sc_q02e[tilt]/dt3, sc_sk_q02e[tilt]/dt3}, rho
+
+!--------------------------------------------------------------------------
+
+tilt_q = 0.0785
+
+q00w[tilt] =  tilt_q
+q00e[tilt] = -tilt_q
+
+sc_tilt_w: overlay = {sc_q01w, sc_q02w, sc_sk_q01w, sc_sk_q02w}, tilt = tilt_q
+sc_tilt_sk_w: overlay = {sc_sk_q01w, sc_sk_q02w}, tilt = pi/4
+
+sc_tilt_e: overlay = {sc_q01e, sc_q02e, sc_sk_q01e, sc_sk_q02e}, tilt = -tilt_q
+sc_tilt_sk_e: overlay = {sc_sk_q01e, sc_sk_q02e}, tilt = -pi/4
+
+!--------------------------------------------------------------------------
+
+sc_v01w: overlay = {sc_q01w}, vkick
+sc_v02w: overlay = {sc_q02w}, vkick
+
+sc_v01e: overlay = {sc_q01e}, vkick
+sc_v02e: overlay = {sc_q02e}, vkick
+
+!--------------------------------------------------------------------------
+
+group_tee_1w_x: group = {sc_cam_1w/dx_drho1w, sc_cam_2w/dx_drho2w}, rho
+group_tee_1w_y: group = {sc_cam_1w/dy_drho1w, sc_cam_2w/dy_drho2w}, rho
+group_tee_2w_x: group = {sc_cam_3w/dx_drho3w, sc_cam_4w/dx_drho4w}, rho
+group_tee_2w_y: group = {sc_cam_3w/dy_drho3w, sc_cam_4w/dy_drho4w}, rho
+
+group_tee_1e_x: group = {sc_cam_1e/dx_drho1e, sc_cam_2e/dx_drho2e}, rho
+group_tee_1e_y: group = {sc_cam_1e/dy_drho1e, sc_cam_2e/dy_drho2e}, rho
+group_tee_2e_x: group = {sc_cam_3e/dx_drho3e, sc_cam_4e/dx_drho4e}, rho
+group_tee_2e_y: group = {sc_cam_3e/dy_drho3e, sc_cam_4e/dy_drho4e}, rho
+
+!--------------------------------------------------------------------------
+
+q01w_x_offset: overlay = {sc_q01w, sc_sk_q01w}, x_offset
+q01w_y_offset: overlay = {sc_q01w, sc_sk_q01w}, y_offset
+q02w_x_offset: overlay = {sc_q02w, sc_sk_q02w}, x_offset
+q02w_y_offset: overlay = {sc_q02w, sc_sk_q02w}, y_offset
+
+q01e_x_offset: overlay = {sc_q01e, sc_sk_q01e}, x_offset
+q01e_y_offset: overlay = {sc_q01e, sc_sk_q01e}, y_offset
+q02e_x_offset: overlay = {sc_q02e, sc_sk_q02e}, x_offset
+q02e_y_offset: overlay = {sc_q02e, sc_sk_q02e}, y_offset
+ 
+ end_file

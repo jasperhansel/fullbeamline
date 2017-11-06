@@ -1,0 +1,58 @@
+!field
+call, file = ../../../fields/iron_quad_200MeV/CBETA_cell_QF.bmad
+call, file = ../../../fields/iron_quad_200MeV/CBETA_cell_QD.bmad
+
+FF.Qua01[field] =  CBETA_CELL_QF[field]
+FF.Qua02[field] =  CBETA_CELL_QD[field]
+
+FF.Qua01[field_calc] = grid
+FF.Qua01[tracking_method] = runge_kutta
+FF.Qua01[mat6_calc_method] = tracking 
+FF.Qua02[field_calc] = grid
+FF.Qua02[tracking_method] = runge_kutta
+FF.Qua02[mat6_calc_method] = tracking
+
+
+FF.x_limit = 0.05
+
+FF.Qua01[aperture_at] = both_ends
+FF.Qua01[offset_moves_aperture] = T
+FF.Qua01[x_limit] = FF.x_limit 
+
+FF.Qua02[aperture_at] = both_ends
+FF.Qua02[offset_moves_aperture] = T
+FF.Qua02[x_limit] = FF.x_limit 
+
+FF.Pip00b[aperture_at] = both_ends
+FF.Pip00b[x_limit] = FF.x_limit 
+FF.Pip01[aperture_at] = both_ends
+FF.Pip01[x_limit] = FF.x_limit 
+FF.Pip02a[aperture_at] = both_ends
+FF.Pip02a[x_limit] = FF.x_limit 
+
+FF.pip[tracking_method] = runge_kutta
+FF.Pip00b[tracking_method] = runge_kutta
+FF.Pip01[tracking_method] = runge_kutta
+FF.Pip02a[tracking_method] = runge_kutta
+FF.Pip02[tracking_method] = runge_kutta
+
+FF.Pip00b[mat6_calc_method]=tracking
+FF.Pip01[mat6_calc_method]=tracking
+FF.Pip02a[mat6_calc_method]=tracking
+FF.Pip02[mat6_calc_method]=tracking
+
+! Symplectify 
+FF.Qua01[symplectify] = T
+FF.Qua02[symplectify] = T
+FF.Pip00b[symplectify] = T
+FF.Pip01[symplectify] = T
+FF.Pip02a[symplectify] = T
+FF.Pip02[symplectify] = T 
+
+!FF.Qua01[field_overlaps] = {FF.Pip00b, FF.Pip01, FF.Qua02}
+!FF.Qua02[field_overlaps] = {FF.Qua01, FF.Pip01,  FF.Pip02a}
+
+
+! With dummies, overlap pipes periodically. 
+FF.Qua01[field_overlaps] = {FF.Pip00b, FF.Pip01, FF.Qua02, FF.Pip02a}
+FF.Qua02[field_overlaps] = {FF.Qua01, FF.Pip01,  FF.Pip02a, FF.Pip00b}

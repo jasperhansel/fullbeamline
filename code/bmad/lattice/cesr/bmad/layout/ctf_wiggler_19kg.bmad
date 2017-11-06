@@ -1,0 +1,7 @@
+wig_drift: drift, l=1.6
+parameter[taylor_order] = 3
+call, file=wig1_14w_19kg.bmad
+wig1_14w[tracking_method]=taylor
+wig1_14w[mat6_calc_method]=taylor
+wig_damp:wig1_14w
+

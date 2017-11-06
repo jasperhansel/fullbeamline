@@ -1,0 +1,962 @@
+
+!--- TA cell 01
+
+!--- Quads
+TA.Qua01: FF.Qua01
+TA.Qua02: FF.Qua02
+
+
+!--- Pipes
+TA.Pip01: FF.Pip01
+TA.Pip02: FF.Pip02
+
+!--- Patches
+
+TA.patch01a: FF.patch1
+TA.patch01b: FF.patch2
+TA.patch02a: FF.patch3
+TA.patch02b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL01.Mar.BEG: marker
+
+!TA.Qua01.Mar.MID: marker, superimpose, ref = TA.Qua01
+!TA.Qua02.Mar.MID: marker, superimpose, ref = TA.Qua02
+
+! - - -  Lines 
+
+TA.cell01: line = (
+ TA.CELL01.Mar.BEG,
+ TA.patch01a, 
+ TA.Qua01,
+ TA.patch01b, TA.Pip01, TA.patch02a,  
+ TA.Qua02, 
+ TA.patch02b, TA.Pip02)
+
+ 
+
+
+!--- TA cell 02
+
+!--- Quads
+TA.Qua03: FF.Qua01
+TA.Qua04: FF.Qua02
+
+
+!--- Pipes
+TA.Pip03: FF.Pip01
+TA.Pip04: FF.Pip02
+
+!--- Patches
+
+TA.patch03a: FF.patch1
+TA.patch03b: FF.patch2
+TA.patch04a: FF.patch3
+TA.patch04b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL02.Mar.BEG: marker
+
+!TA.Qua03.Mar.MID: marker, superimpose, ref = TA.Qua03
+!TA.Qua04.Mar.MID: marker, superimpose, ref = TA.Qua04
+
+! - - -  Lines 
+
+TA.cell02: line = (
+ TA.CELL02.Mar.BEG,
+ TA.patch03a, 
+ TA.Qua03,
+ TA.patch03b, TA.Pip03, TA.patch04a,  
+ TA.Qua04, 
+ TA.patch04b, TA.Pip04)
+
+ 
+
+
+!--- TA cell 03
+
+!--- Quads
+TA.Qua05: FF.Qua01
+TA.Qua06: FF.Qua02
+
+
+!--- Pipes
+TA.Pip05: FF.Pip01
+TA.Pip06: FF.Pip02
+
+!--- Patches
+
+TA.patch05a: FF.patch1
+TA.patch05b: FF.patch2
+TA.patch06a: FF.patch3
+TA.patch06b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL03.Mar.BEG: marker
+
+!TA.Qua05.Mar.MID: marker, superimpose, ref = TA.Qua05
+!TA.Qua06.Mar.MID: marker, superimpose, ref = TA.Qua06
+
+! - - -  Lines 
+
+TA.cell03: line = (
+ TA.CELL03.Mar.BEG,
+ TA.patch05a, 
+ TA.Qua05,
+ TA.patch05b, TA.Pip05, TA.patch06a,  
+ TA.Qua06, 
+ TA.patch06b, TA.Pip06)
+
+ 
+
+
+!--- TA cell 04
+
+!--- Quads
+TA.Qua07: FF.Qua01
+TA.Qua08: FF.Qua02
+
+
+!--- Pipes
+TA.Pip07: FF.Pip01
+TA.Pip08: FF.Pip02
+
+!--- Patches
+
+TA.patch07a: FF.patch1
+TA.patch07b: FF.patch2
+TA.patch08a: FF.patch3
+TA.patch08b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL04.Mar.BEG: marker
+
+!TA.Qua07.Mar.MID: marker, superimpose, ref = TA.Qua07
+!TA.Qua08.Mar.MID: marker, superimpose, ref = TA.Qua08
+
+! - - -  Lines 
+
+TA.cell04: line = (
+ TA.CELL04.Mar.BEG,
+ TA.patch07a, 
+ TA.Qua07,
+ TA.patch07b, TA.Pip07, TA.patch08a,  
+ TA.Qua08, 
+ TA.patch08b, TA.Pip08)
+
+ 
+
+
+!--- TA cell 05
+
+!--- Quads
+TA.Qua09: FF.Qua01
+TA.Qua10: FF.Qua02
+
+
+!--- Pipes
+TA.Pip09: FF.Pip01
+TA.Pip10: FF.Pip02
+
+!--- Patches
+
+TA.patch09a: FF.patch1
+TA.patch09b: FF.patch2
+TA.patch10a: FF.patch3
+TA.patch10b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL05.Mar.BEG: marker
+
+!TA.Qua09.Mar.MID: marker, superimpose, ref = TA.Qua09
+!TA.Qua10.Mar.MID: marker, superimpose, ref = TA.Qua10
+
+! - - -  Lines 
+
+TA.cell05: line = (
+ TA.CELL05.Mar.BEG,
+ TA.patch09a, 
+ TA.Qua09,
+ TA.patch09b, TA.Pip09, TA.patch10a,  
+ TA.Qua10, 
+ TA.patch10b, TA.Pip10)
+
+ 
+
+
+!--- TA cell 06
+
+!--- Quads
+TA.Qua11: FF.Qua01
+TA.Qua12: FF.Qua02
+
+
+!--- Pipes
+TA.Pip11: FF.Pip01
+TA.Pip12: FF.Pip02
+
+!--- Patches
+
+TA.patch11a: FF.patch1
+TA.patch11b: FF.patch2
+TA.patch12a: FF.patch3
+TA.patch12b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL06.Mar.BEG: marker
+
+!TA.Qua11.Mar.MID: marker, superimpose, ref = TA.Qua11
+!TA.Qua12.Mar.MID: marker, superimpose, ref = TA.Qua12
+
+! - - -  Lines 
+
+TA.cell06: line = (
+ TA.CELL06.Mar.BEG,
+ TA.patch11a, 
+ TA.Qua11,
+ TA.patch11b, TA.Pip11, TA.patch12a,  
+ TA.Qua12, 
+ TA.patch12b, TA.Pip12)
+
+ 
+
+
+!--- TA cell 07
+
+!--- Quads
+TA.Qua13: FF.Qua01
+TA.Qua14: FF.Qua02
+
+
+!--- Pipes
+TA.Pip13: FF.Pip01
+TA.Pip14: FF.Pip02
+
+!--- Patches
+
+TA.patch13a: FF.patch1
+TA.patch13b: FF.patch2
+TA.patch14a: FF.patch3
+TA.patch14b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL07.Mar.BEG: marker
+
+!TA.Qua13.Mar.MID: marker, superimpose, ref = TA.Qua13
+!TA.Qua14.Mar.MID: marker, superimpose, ref = TA.Qua14
+
+! - - -  Lines 
+
+TA.cell07: line = (
+ TA.CELL07.Mar.BEG,
+ TA.patch13a, 
+ TA.Qua13,
+ TA.patch13b, TA.Pip13, TA.patch14a,  
+ TA.Qua14, 
+ TA.patch14b, TA.Pip14)
+
+ 
+
+
+!--- TA cell 08
+
+!--- Quads
+TA.Qua15: FF.Qua01
+TA.Qua16: FF.Qua02
+
+
+!--- Pipes
+TA.Pip15: FF.Pip01
+TA.Pip16: FF.Pip02
+
+!--- Patches
+
+TA.patch15a: FF.patch1
+TA.patch15b: FF.patch2
+TA.patch16a: FF.patch3
+TA.patch16b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL08.Mar.BEG: marker
+
+!TA.Qua15.Mar.MID: marker, superimpose, ref = TA.Qua15
+!TA.Qua16.Mar.MID: marker, superimpose, ref = TA.Qua16
+
+! - - -  Lines 
+
+TA.cell08: line = (
+ TA.CELL08.Mar.BEG,
+ TA.patch15a, 
+ TA.Qua15,
+ TA.patch15b, TA.Pip15, TA.patch16a,  
+ TA.Qua16, 
+ TA.patch16b, TA.Pip16)
+
+ 
+
+
+!--- TA cell 09
+
+!--- Quads
+TA.Qua17: FF.Qua01
+TA.Qua18: FF.Qua02
+
+
+!--- Pipes
+TA.Pip17: FF.Pip01
+TA.Pip18: FF.Pip02
+
+!--- Patches
+
+TA.patch17a: FF.patch1
+TA.patch17b: FF.patch2
+TA.patch18a: FF.patch3
+TA.patch18b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL09.Mar.BEG: marker
+
+!TA.Qua17.Mar.MID: marker, superimpose, ref = TA.Qua17
+!TA.Qua18.Mar.MID: marker, superimpose, ref = TA.Qua18
+
+! - - -  Lines 
+
+TA.cell09: line = (
+ TA.CELL09.Mar.BEG,
+ TA.patch17a, 
+ TA.Qua17,
+ TA.patch17b, TA.Pip17, TA.patch18a,  
+ TA.Qua18, 
+ TA.patch18b, TA.Pip18)
+
+ 
+
+
+!--- TA cell 10
+
+!--- Quads
+TA.Qua19: FF.Qua01
+TA.Qua20: FF.Qua02
+
+
+!--- Pipes
+TA.Pip19: FF.Pip01
+TA.Pip20: FF.Pip02
+
+!--- Patches
+
+TA.patch19a: FF.patch1
+TA.patch19b: FF.patch2
+TA.patch20a: FF.patch3
+TA.patch20b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL10.Mar.BEG: marker
+
+!TA.Qua19.Mar.MID: marker, superimpose, ref = TA.Qua19
+!TA.Qua20.Mar.MID: marker, superimpose, ref = TA.Qua20
+
+! - - -  Lines 
+
+TA.cell10: line = (
+ TA.CELL10.Mar.BEG,
+ TA.patch19a, 
+ TA.Qua19,
+ TA.patch19b, TA.Pip19, TA.patch20a,  
+ TA.Qua20, 
+ TA.patch20b, TA.Pip20)
+
+ 
+
+
+!--- TA cell 11
+
+!--- Quads
+TA.Qua21: FF.Qua01
+TA.Qua22: FF.Qua02
+
+
+!--- Pipes
+TA.Pip21: FF.Pip01
+TA.Pip22: FF.Pip02
+
+!--- Patches
+
+TA.patch21a: FF.patch1
+TA.patch21b: FF.patch2
+TA.patch22a: FF.patch3
+TA.patch22b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL11.Mar.BEG: marker
+
+!TA.Qua21.Mar.MID: marker, superimpose, ref = TA.Qua21
+!TA.Qua22.Mar.MID: marker, superimpose, ref = TA.Qua22
+
+! - - -  Lines 
+
+TA.cell11: line = (
+ TA.CELL11.Mar.BEG,
+ TA.patch21a, 
+ TA.Qua21,
+ TA.patch21b, TA.Pip21, TA.patch22a,  
+ TA.Qua22, 
+ TA.patch22b, TA.Pip22)
+
+ 
+
+
+!--- TA cell 12
+
+!--- Quads
+TA.Qua23: FF.Qua01
+TA.Qua24: FF.Qua02
+
+
+!--- Pipes
+TA.Pip23: FF.Pip01
+TA.Pip24: FF.Pip02
+
+!--- Patches
+
+TA.patch23a: FF.patch1
+TA.patch23b: FF.patch2
+TA.patch24a: FF.patch3
+TA.patch24b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL12.Mar.BEG: marker
+
+!TA.Qua23.Mar.MID: marker, superimpose, ref = TA.Qua23
+!TA.Qua24.Mar.MID: marker, superimpose, ref = TA.Qua24
+
+! - - -  Lines 
+
+TA.cell12: line = (
+ TA.CELL12.Mar.BEG,
+ TA.patch23a, 
+ TA.Qua23,
+ TA.patch23b, TA.Pip23, TA.patch24a,  
+ TA.Qua24, 
+ TA.patch24b, TA.Pip24)
+
+ 
+
+
+!--- TA cell 13
+
+!--- Quads
+TA.Qua25: FF.Qua01
+TA.Qua26: FF.Qua02
+
+
+!--- Pipes
+TA.Pip25: FF.Pip01
+TA.Pip26: FF.Pip02
+
+!--- Patches
+
+TA.patch25a: FF.patch1
+TA.patch25b: FF.patch2
+TA.patch26a: FF.patch3
+TA.patch26b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL13.Mar.BEG: marker
+
+!TA.Qua25.Mar.MID: marker, superimpose, ref = TA.Qua25
+!TA.Qua26.Mar.MID: marker, superimpose, ref = TA.Qua26
+
+! - - -  Lines 
+
+TA.cell13: line = (
+ TA.CELL13.Mar.BEG,
+ TA.patch25a, 
+ TA.Qua25,
+ TA.patch25b, TA.Pip25, TA.patch26a,  
+ TA.Qua26, 
+ TA.patch26b, TA.Pip26)
+
+ 
+
+
+!--- TA cell 14
+
+!--- Quads
+TA.Qua27: FF.Qua01
+TA.Qua28: FF.Qua02
+
+
+!--- Pipes
+TA.Pip27: FF.Pip01
+TA.Pip28: FF.Pip02
+
+!--- Patches
+
+TA.patch27a: FF.patch1
+TA.patch27b: FF.patch2
+TA.patch28a: FF.patch3
+TA.patch28b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL14.Mar.BEG: marker
+
+!TA.Qua27.Mar.MID: marker, superimpose, ref = TA.Qua27
+!TA.Qua28.Mar.MID: marker, superimpose, ref = TA.Qua28
+
+! - - -  Lines 
+
+TA.cell14: line = (
+ TA.CELL14.Mar.BEG,
+ TA.patch27a, 
+ TA.Qua27,
+ TA.patch27b, TA.Pip27, TA.patch28a,  
+ TA.Qua28, 
+ TA.patch28b, TA.Pip28)
+
+ 
+
+
+!--- TA cell 15
+
+!--- Quads
+TA.Qua29: FF.Qua01
+TA.Qua30: FF.Qua02
+
+
+!--- Pipes
+TA.Pip29: FF.Pip01
+TA.Pip30: FF.Pip02
+
+!--- Patches
+
+TA.patch29a: FF.patch1
+TA.patch29b: FF.patch2
+TA.patch30a: FF.patch3
+TA.patch30b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL15.Mar.BEG: marker
+
+!TA.Qua29.Mar.MID: marker, superimpose, ref = TA.Qua29
+!TA.Qua30.Mar.MID: marker, superimpose, ref = TA.Qua30
+
+! - - -  Lines 
+
+TA.cell15: line = (
+ TA.CELL15.Mar.BEG,
+ TA.patch29a, 
+ TA.Qua29,
+ TA.patch29b, TA.Pip29, TA.patch30a,  
+ TA.Qua30, 
+ TA.patch30b, TA.Pip30)
+
+ 
+
+
+!--- TA cell 16
+
+!--- Quads
+TA.Qua31: FF.Qua01
+TA.Qua32: FF.Qua02
+
+
+!--- Pipes
+TA.Pip31: FF.Pip01
+TA.Pip32: FF.Pip02
+
+!--- Patches
+
+TA.patch31a: FF.patch1
+TA.patch31b: FF.patch2
+TA.patch32a: FF.patch3
+TA.patch32b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL16.Mar.BEG: marker
+
+!TA.Qua31.Mar.MID: marker, superimpose, ref = TA.Qua31
+!TA.Qua32.Mar.MID: marker, superimpose, ref = TA.Qua32
+
+! - - -  Lines 
+
+TA.cell16: line = (
+ TA.CELL16.Mar.BEG,
+ TA.patch31a, 
+ TA.Qua31,
+ TA.patch31b, TA.Pip31, TA.patch32a,  
+ TA.Qua32, 
+ TA.patch32b, TA.Pip32)
+
+ 
+
+
+!--- TA cell 17
+
+!--- Quads
+TA.Qua33: FF.Qua01
+TA.Qua34: FF.Qua02
+
+
+!--- Pipes
+TA.Pip33: FF.Pip01
+TA.Pip34: FF.Pip02
+
+!--- Patches
+
+TA.patch33a: FF.patch1
+TA.patch33b: FF.patch2
+TA.patch34a: FF.patch3
+TA.patch34b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL17.Mar.BEG: marker
+
+!TA.Qua33.Mar.MID: marker, superimpose, ref = TA.Qua33
+!TA.Qua34.Mar.MID: marker, superimpose, ref = TA.Qua34
+
+! - - -  Lines 
+
+TA.cell17: line = (
+ TA.CELL17.Mar.BEG,
+ TA.patch33a, 
+ TA.Qua33,
+ TA.patch33b, TA.Pip33, TA.patch34a,  
+ TA.Qua34, 
+ TA.patch34b, TA.Pip34)
+
+ 
+
+
+!--- TA cell 18
+
+!--- Quads
+TA.Qua35: FF.Qua01
+TA.Qua36: FF.Qua02
+
+
+!--- Pipes
+TA.Pip35: FF.Pip01
+TA.Pip36: FF.Pip02
+
+!--- Patches
+
+TA.patch35a: FF.patch1
+TA.patch35b: FF.patch2
+TA.patch36a: FF.patch3
+TA.patch36b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL18.Mar.BEG: marker
+
+!TA.Qua35.Mar.MID: marker, superimpose, ref = TA.Qua35
+!TA.Qua36.Mar.MID: marker, superimpose, ref = TA.Qua36
+
+! - - -  Lines 
+
+TA.cell18: line = (
+ TA.CELL18.Mar.BEG,
+ TA.patch35a, 
+ TA.Qua35,
+ TA.patch35b, TA.Pip35, TA.patch36a,  
+ TA.Qua36, 
+ TA.patch36b, TA.Pip36)
+
+ 
+
+
+!--- TA cell 19
+
+!--- Quads
+TA.Qua37: FF.Qua01
+TA.Qua38: FF.Qua02
+
+
+!--- Pipes
+TA.Pip37: FF.Pip01
+TA.Pip38: FF.Pip02
+
+!--- Patches
+
+TA.patch37a: FF.patch1
+TA.patch37b: FF.patch2
+TA.patch38a: FF.patch3
+TA.patch38b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL19.Mar.BEG: marker
+
+!TA.Qua37.Mar.MID: marker, superimpose, ref = TA.Qua37
+!TA.Qua38.Mar.MID: marker, superimpose, ref = TA.Qua38
+
+! - - -  Lines 
+
+TA.cell19: line = (
+ TA.CELL19.Mar.BEG,
+ TA.patch37a, 
+ TA.Qua37,
+ TA.patch37b, TA.Pip37, TA.patch38a,  
+ TA.Qua38, 
+ TA.patch38b, TA.Pip38)
+
+ 
+
+
+!--- TA cell 20
+
+!--- Quads
+TA.Qua39: FF.Qua01
+TA.Qua40: FF.Qua02
+
+
+!--- Pipes
+TA.Pip39: FF.Pip01
+TA.Pip40: FF.Pip02
+
+!--- Patches
+
+TA.patch39a: FF.patch1
+TA.patch39b: FF.patch2
+TA.patch40a: FF.patch3
+TA.patch40b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL20.Mar.BEG: marker
+
+!TA.Qua39.Mar.MID: marker, superimpose, ref = TA.Qua39
+!TA.Qua40.Mar.MID: marker, superimpose, ref = TA.Qua40
+
+! - - -  Lines 
+
+TA.cell20: line = (
+ TA.CELL20.Mar.BEG,
+ TA.patch39a, 
+ TA.Qua39,
+ TA.patch39b, TA.Pip39, TA.patch40a,  
+ TA.Qua40, 
+ TA.patch40b, TA.Pip40)
+
+ 
+
+
+!--- TA cell 21
+
+!--- Quads
+TA.Qua41: FF.Qua01
+TA.Qua42: FF.Qua02
+
+
+!--- Pipes
+TA.Pip41: FF.Pip01
+TA.Pip42: FF.Pip02
+
+!--- Patches
+
+TA.patch41a: FF.patch1
+TA.patch41b: FF.patch2
+TA.patch42a: FF.patch3
+TA.patch42b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL21.Mar.BEG: marker
+
+!TA.Qua41.Mar.MID: marker, superimpose, ref = TA.Qua41
+!TA.Qua42.Mar.MID: marker, superimpose, ref = TA.Qua42
+
+! - - -  Lines 
+
+TA.cell21: line = (
+ TA.CELL21.Mar.BEG,
+ TA.patch41a, 
+ TA.Qua41,
+ TA.patch41b, TA.Pip41, TA.patch42a,  
+ TA.Qua42, 
+ TA.patch42b, TA.Pip42)
+
+ 
+
+
+!--- TA cell 22
+
+!--- Quads
+TA.Qua43: FF.Qua01
+TA.Qua44: FF.Qua02
+
+
+!--- Pipes
+TA.Pip43: FF.Pip01
+TA.Pip44: FF.Pip02
+
+!--- Patches
+
+TA.patch43a: FF.patch1
+TA.patch43b: FF.patch2
+TA.patch44a: FF.patch3
+TA.patch44b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL22.Mar.BEG: marker
+
+!TA.Qua43.Mar.MID: marker, superimpose, ref = TA.Qua43
+!TA.Qua44.Mar.MID: marker, superimpose, ref = TA.Qua44
+
+! - - -  Lines 
+
+TA.cell22: line = (
+ TA.CELL22.Mar.BEG,
+ TA.patch43a, 
+ TA.Qua43,
+ TA.patch43b, TA.Pip43, TA.patch44a,  
+ TA.Qua44, 
+ TA.patch44b, TA.Pip44)
+
+ 
+
+
+!--- TA cell 23
+
+!--- Quads
+TA.Qua45: FF.Qua01
+TA.Qua46: FF.Qua02
+
+
+!--- Pipes
+TA.Pip45: FF.Pip01
+TA.Pip46: FF.Pip02
+
+!--- Patches
+
+TA.patch45a: FF.patch1
+TA.patch45b: FF.patch2
+TA.patch46a: FF.patch3
+TA.patch46b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL23.Mar.BEG: marker
+
+!TA.Qua45.Mar.MID: marker, superimpose, ref = TA.Qua45
+!TA.Qua46.Mar.MID: marker, superimpose, ref = TA.Qua46
+
+! - - -  Lines 
+
+TA.cell23: line = (
+ TA.CELL23.Mar.BEG,
+ TA.patch45a, 
+ TA.Qua45,
+ TA.patch45b, TA.Pip45, TA.patch46a,  
+ TA.Qua46, 
+ TA.patch46b, TA.Pip46)
+
+ 
+
+
+!--- TA cell 24
+
+!--- Quads
+TA.Qua47: FF.Qua01
+TA.Qua48: FF.Qua02
+
+
+!--- Pipes
+TA.Pip47: FF.Pip01
+TA.Pip48: FF.Pip02
+
+!--- Patches
+
+TA.patch47a: FF.patch1
+TA.patch47b: FF.patch2
+TA.patch48a: FF.patch3
+TA.patch48b: FF.patch4
+
+
+!--- Markers
+
+TA.CELL24.Mar.BEG: marker
+
+!TA.Qua47.Mar.MID: marker, superimpose, ref = TA.Qua47
+!TA.Qua48.Mar.MID: marker, superimpose, ref = TA.Qua48
+
+! - - -  Lines 
+
+TA.cell24: line = (
+ TA.CELL24.Mar.BEG,
+ TA.patch47a, 
+ TA.Qua47,
+ TA.patch47b, TA.Pip47, TA.patch48a,  
+ TA.Qua48, 
+ TA.patch48b, TA.Pip48)
+
+ 
+
+!--- TA.transition_cells
+TA.transition_cells: line = (
+  TA.CELL01,
+  TA.CELL02,
+  TA.CELL03,
+  TA.CELL04,
+  TA.CELL05,
+  TA.CELL06,
+  TA.CELL07,
+  TA.CELL08,
+  TA.CELL09,
+  TA.CELL10,
+  TA.CELL11,
+  TA.CELL12,
+  TA.CELL13,
+  TA.CELL14,
+  TA.CELL15,
+  TA.CELL16,
+  TA.CELL17,
+  TA.CELL18,
+  TA.CELL19,
+  TA.CELL20,
+  TA.CELL21,
+  TA.CELL22,
+  TA.CELL23,
+  TA.CELL24)

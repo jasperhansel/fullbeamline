@@ -1,0 +1,53 @@
+BEGINNING[BETA_A]  =  1.88127102
+BEGINNING[ALPHA_A] = -2.13051077
+BEGINNING[BETA_B]  =  1.43168114
+BEGINNING[ALPHA_B] = -0.65700189
+beginning[eta_x]   =  0
+beginning[etap_x]   =  0
+
+PARAMETER[particle] = electron
+parameter[geometry] = open
+
+parameter[e_tot] = 6e6
+
+parameter[absolute_time_tracking] = F
+
+
+
+!la.fakecavity: lcavity, rf_frequency = 1.3e9, l = 1, voltage = -61e6
+!la.mar.beg: marker
+!la.mar.end: marker
+
+!la.demer.ben01.angle =1*pi/180
+!la.demer.ben01: sbend, L = 0.3, fringe_type = full, angle = la.demer.ben01.angle, e1=0,e2=la.demer.ben01.angle
+!la.demer.patch1: patch
+!la: line[multipass] = (la.mar.beg, la.fakecavity, la.demer.ben01, la.mar.end)
+
+call, file = ../la/la.bmad
+call, file = ../la/la.X.bmad
+
+
+call, file = du.bmad
+dummy0: pipe, L = 1
+dummy: pipe, L = 1.247 + 41.5097
+
+m1: match, beta_a0=1, beta_a1=1, beta_b0=1,beta_b1=1, match_end_orbit = T, z1= -50e-3
+
+
+la.demer.patch1: patch
+
+!LA.DEMER.BEN01[b_field] = -1.4748206E-02
+
+Mar.beg: marker
+recirculate: floor_shift, origin_ele = Mar.BEG
+
+!lat: line = (dummy0, la, dummy, m1, recirculate, la, la.demer.patch1, du)
+lat: line = (Mar.beg, LA, 
+recirculate, LA, du)
+use, lat
+
+expand_lattice
+call, file = ../la/la.recovery2.bmad
+
+
+

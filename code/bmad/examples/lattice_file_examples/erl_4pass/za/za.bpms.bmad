@@ -1,0 +1,13 @@
+ZA.BPM01: instrument, superimpose, ref = ZA.Pip01
+ZA.BPM02: instrument, superimpose, ref = ZA.Pip03
+ZA.BPM03: instrument, superimpose, ref = ZA.Pip05
+ZA.BPM04: instrument, superimpose, ref = ZA.Pip07
+ZA.BPM05: instrument, superimpose, ref = ZA.Pip09
+ZA.BPM06: instrument, superimpose, ref = ZA.Pip11
+ZA.BPM07: instrument, superimpose, ref = ZA.Pip13
+ZA.BPM08: instrument, superimpose, ref = ZA.Pip15
+ZA.BPM09: instrument, superimpose, ref = ZA.Pip17
+ZA.BPM10: instrument, superimpose, ref = ZA.Pip19
+ZA.BPM11: instrument, superimpose, ref = ZA.Pip21
+ZA.BPM12: instrument, superimpose, ref = ZA.Pip23
+ZA.BPM13: instrument, superimpose, ref = ZA.Pip25

@@ -1,0 +1,15 @@
+wig_8pole_17kg: wiggler, l= 1.6,n_pole=8, B_max=1.7, &
+                mat6_calc_method = bmad_standard
+wig1_14e:wig_8pole_17kg
+wig2_14e:wig_8pole_17kg
+wig_15e:wig_8pole_17kg
+wig1_18e:wig_8pole_17kg
+wig2_18e:wig_8pole_17kg
+wig3_18e:wig_8pole_17kg
+wig1_14w:wig_8pole_17kg
+wig2_14w:wig_8pole_17kg
+wig_15w:wig_8pole_17kg
+wig1_18w:wig_8pole_17kg
+wig2_18w:wig_8pole_17kg
+wig3_18w:wig_8pole_17kg
+

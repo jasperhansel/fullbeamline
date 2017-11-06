@@ -1,0 +1,138 @@
+
+! FFAG Prototype Cell
+
+
+
+
+!--- Quads
+FF.Qua: QUAD, fringe_type = full, field_master = T, scale_multipoles = F
+FF.Qua01: FF.Qua, L = 0.133, type = "FFAG_QF"
+FF.Qua02: FF.Qua, L = 0.122, type = "FFAG_QD"
+
+
+
+
+!--- Pipes
+FF.pip: pipe, aperture_at = both_ends, x_limit = 44e-3, y_limit = 12e-3
+FF.Pip00b: FF.pip, L = 0.06
+FF.Pip01:  FF.Pip, L = 0.07
+FF.Pip02a: FF.Pip, L = 0.06
+FF.Pip02:  FF.Pip, L = 0.12  ! Only used in straight cells
+
+!--- Patches
+
+FF.patch1: patch 
+FF.patch2: patch
+FF.patch3: patch
+FF.patch4: patch
+
+FF.Ltot = (FF.Qua01[L] + FF.Pip01[L] + FF.Qua02[L] + FF.Pip02[L])
+FF.angle = -5*pi/180
+
+FF.patch1[x_pitch] = (FF.Pip02[L] +FF.Qua01[L])/FF.Ltot * FF.angle/2
+FF.patch2[x_pitch] = (FF.Pip01[L] +FF.Qua01[L])/FF.Ltot * FF.angle/2
+FF.patch3[x_pitch] = (FF.Pip01[L] +FF.Qua02[L])/FF.Ltot * FF.angle/2
+FF.patch4[x_pitch] = (FF.Pip02[L] +FF.Qua02[L])/FF.Ltot * FF.angle/2
+
+!--- Markers
+FF.Mar.BEG: MARKER
+FF.Mar.END: MARKER
+FF.Qua01.Mar.BEG: MARKER
+FF.Qua01.Mar.END: MARKER
+!FF.Qua01.Mar.MID: MARKER, superimpose, ref = FF.Qua01
+FF.Qua02.Mar.BEG: MARKER
+FF.Qua02.Mar.END: MARKER
+!FF.Qua02.Mar.MID: MARKER, superimpose, ref = FF.Qua02
+
+!--- Apertures
+FF.Mar.BEG[aperture_type] = elliptical
+FF.Qua01[aperture_type] = elliptical
+!FF.QUA01.MAR.MID[aperture_type] = elliptical
+FF.Qua02[aperture_type] = elliptical
+FF.Qua01[aperture_at] = both_ends
+FF.Qua02[aperture_at] = both_ends
+
+O_aperture_x: overlay = {
+  FF.Mar.BEG[x1_limit], FF.Mar.BEG[x2_limit],
+  FF.Qua01[x1_limit], FF.Qua01[x2_limit],
+  FF.Qua01.Mar.BEG[x1_limit], FF.Qua01.Mar.BEG[x2_limit],
+  FF.Qua02.Mar.BEG[x1_limit], FF.Qua02.Mar.BEG[x2_limit],
+  !FF.Qua01.Mar.MID[x1_limit], FF.Qua01.Mar.MID[x2_limit],
+  FF.Qua02[x1_limit], FF.Qua02[x2_limit]}, var = {x_limit}
+O_aperture_x[x_limit] = (84e-3)/2
+
+
+O_aperture_y: overlay = {
+  FF.Mar.BEG[y1_limit], FF.Mar.BEG[y2_limit],
+  FF.Qua01[y1_limit], FF.Qua01[y2_limit],
+  FF.Qua01.Mar.BEG[y1_limit], FF.Qua01.Mar.BEG[y2_limit],
+  FF.Qua02.Mar.BEG[y1_limit], FF.Qua02.Mar.BEG[y2_limit],
+  !FF.Qua01.Mar.MID[y1_limit], FF.Qua01.Mar.MID[y2_limit],
+  FF.Qua02[y1_limit], FF.Qua02[y2_limit]}, var = {y_limit}
+O_aperture_y[y_limit] =(24e-3)/2
+
+
+ 
+! Scott solution 2016 May 9
+FF.QUA01[B1_GRADIENT] = -10.620985849931532
+FF.QUA02[B1_GRADIENT] =  10.016651755070429
+FF.QUA01[X_OFFSET] = -7.1820899274544639e-03
+FF.QUA02[X_OFFSET] =  20.131871679706329e-03
+
+! Field map offsets
+!FF.QUA01[X_OFFSET] = -4.089e-3
+!FF.QUA02[X_OFFSET] = 17.313e-3
+
+ 
+
+! Soft edges
+!FF.QUA01[FQ1] =  -2.3e-4
+!FF.QUA02[FQ1] =  -2.5e-4
+
+!FF.qua01[FQ2] = 2e-6
+!FF.qua02[FQ2] = 6.6e-6
+
+ 
+!FF.Qua01[field_overlaps] = FF.Pip00b
+!FF.Qua01[field_overlaps] = FF.Pip01
+!FF.Qua01[field_overlaps] = FF.Qua02
+
+!FF.Qua02[field_overlaps] = FF.Qua01
+!FF.Qua02[field_overlaps] = FF.Pip01
+!FF.Qua02[field_overlaps] = FF.Pip02a
+!FF.Qua02[field_overlaps] = D1 ! wrap-around only!
+
+
+! 3D models
+FF.Qua01[descrip] = "3DMODEL=FFAG_Iron/QF.blend"
+FF.Qua02[descrip] = "3DMODEL=FFAG_Iron/QD.blend"
+
+! - - -  Lines
+
+! Dummy lines for periodic field overlaps
+F1: fiducial, origin_ele = FF.Mar.BEG
+F2: fiducial, origin_ele = FF.Mar.END
+FF.dummy1: line =  (FF.Qua02, FF.patch4, FF.Pip02a, F1)   
+FF.dummy2: line =  (F2, FF.Pip00b, FF.patch1, FF.Qua01)
+
+FF.arc_cell: line = (FF.Mar.BEG,  FF.patch1, 
+ FF.Qua01.Mar.BEG, FF.Qua01, FF.Qua01.Mar.END,
+ FF.patch2, FF.Pip01, FF.patch3,  
+ FF.Qua02.Mar.BEG, FF.Qua02, FF.Qua02.Mar.END,
+ FF.patch4, FF.Pip02a,  FF.Pip00b,
+ FF.Mar.END)
+
+FF.straight_cell: line = (FF.Mar.BEG, 
+ FF.Qua01.Mar.BEG,
+ FF.Qua01,
+ FF.Qua01.Mar.END,
+ FF.Pip01,
+ FF.Qua02.Mar.BEG,
+ FF.Qua02, 
+ FF.Qua02.Mar.END,
+ FF.Pip02, 
+ FF.Mar.END)
+
+
+
+

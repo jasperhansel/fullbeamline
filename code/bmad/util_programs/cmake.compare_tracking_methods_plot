@@ -1,0 +1,20 @@
+set (EXENAME compare_tracking_methods_plot)
+
+set (SRC_FILES
+  compare_tracking_methods_plot/compare_tracking_methods_plot.f90
+)
+
+set (LINK_LIBS
+  bmad 
+  xsif
+  xrlf03
+  xrl
+  sim_utils
+  recipes_f-90_LEPP 
+  forest
+  xsif
+  ${PLOT_LINK_LIBS} 
+  fgsl
+  gsl
+  gslcblas
+)

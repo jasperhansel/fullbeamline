@@ -1,0 +1,89 @@
+
+
+
+
+!call, file = cell/cell.bmad
+!call, file = cell/cell.use_fields.bmad
+
+
+
+!- - - - - - FA pure arc
+
+!FA.align_patch: patch
+
+call, file = fa.cells.bmad
+
+FA.Mar.BEG: marker
+FA.Mar.END: marker
+
+
+FA.Straight.Mar.BEG: marker
+FA.Straight.Mar.END: marker
+
+
+FA.straight: line[multipass]  = (FA.Straight.Mar.BEG,
+  FA.straight_cells,
+  FA.Straight.Mar.END, 
+  FA.Mar.END)
+
+FA.short: line[multipass] = (FA.Mar.BEG,
+  FA.CELL01, 
+  FA.CELL02)
+
+FA: line[multipass] = (FA.Mar.BEG,
+  FA.circle_cells, 
+  FA.Mar.END)
+
+
+! Single pass version
+FA_single: line = (FA.Mar.BEG,
+  FA.circle_cells, 
+  FA.Mar.END)
+
+!- - - - - - TA transition
+call, file = ta.cells.bmad
+call, file = ta.geometry.bmad
+
+TA.Mar.BEG: marker
+TA.Mar.END: marker
+
+
+TA: line[multipass] = (TA.Mar.BEG,
+  TA.transition_cells,
+  TA.Mar.END)
+
+TA_single: line = (TA.Mar.BEG,
+  TA.transition_cells,
+  TA.Mar.END)
+
+!- - - - - - TB transition
+call, file = tb.cells.bmad
+call, file = tb.geometry.bmad
+
+TB.Mar.BEG: marker
+TB.Mar.END: marker
+
+TB: line[multipass] = (TB.Mar.BEG,
+  -TB.transition_cells,
+  TB.Mar.END)
+  
+  
+!- - - - - - FB
+call, file = fb.cells.bmad
+
+FB.Mar.BEG: marker
+FB.Mar.END: marker
+
+
+FB.short: line[multipass] = (
+ -FB.CELL02,
+ -FB.CELL01  ,
+  FB.Mar.END)
+
+FB: line[multipass] = (FB.Mar.BEG,
+ -FB.circle_cells,
+  FB.Mar.END)
+
+
+
+

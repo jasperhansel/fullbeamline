@@ -1,0 +1,642 @@
+
+!--- FB cell 01
+
+!--- Quads
+FB.Qua01: FF.Qua01
+FB.Qua02: FF.Qua02
+
+
+!--- Pipes
+FB.Pip01: FF.Pip01
+FB.Pip02: FF.Pip02
+
+!--- Patches
+
+FB.patch01a: FF.patch1
+FB.patch01b: FF.patch2
+FB.patch02a: FF.patch3
+FB.patch02b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL01.Mar.BEG: marker
+
+!FB.Qua01.Mar.MID: marker, superimpose, ref = FB.Qua01
+!FB.Qua02.Mar.MID: marker, superimpose, ref = FB.Qua02
+
+! - - -  Lines 
+
+FB.cell01: line = (
+ FB.CELL01.Mar.BEG,
+ FB.patch01a, 
+ FB.Qua01,
+ FB.patch01b, FB.Pip01, FB.patch02a,  
+ FB.Qua02, 
+ FB.patch02b, FB.Pip02)
+
+ 
+
+
+!--- FB cell 02
+
+!--- Quads
+FB.Qua03: FF.Qua01
+FB.Qua04: FF.Qua02
+
+
+!--- Pipes
+FB.Pip03: FF.Pip01
+FB.Pip04: FF.Pip02
+
+!--- Patches
+
+FB.patch03a: FF.patch1
+FB.patch03b: FF.patch2
+FB.patch04a: FF.patch3
+FB.patch04b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL02.Mar.BEG: marker
+
+!FB.Qua03.Mar.MID: marker, superimpose, ref = FB.Qua03
+!FB.Qua04.Mar.MID: marker, superimpose, ref = FB.Qua04
+
+! - - -  Lines 
+
+FB.cell02: line = (
+ FB.CELL02.Mar.BEG,
+ FB.patch03a, 
+ FB.Qua03,
+ FB.patch03b, FB.Pip03, FB.patch04a,  
+ FB.Qua04, 
+ FB.patch04b, FB.Pip04)
+
+ 
+
+
+!--- FB cell 03
+
+!--- Quads
+FB.Qua05: FF.Qua01
+FB.Qua06: FF.Qua02
+
+
+!--- Pipes
+FB.Pip05: FF.Pip01
+FB.Pip06: FF.Pip02
+
+!--- Patches
+
+FB.patch05a: FF.patch1
+FB.patch05b: FF.patch2
+FB.patch06a: FF.patch3
+FB.patch06b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL03.Mar.BEG: marker
+
+!FB.Qua05.Mar.MID: marker, superimpose, ref = FB.Qua05
+!FB.Qua06.Mar.MID: marker, superimpose, ref = FB.Qua06
+
+! - - -  Lines 
+
+FB.cell03: line = (
+ FB.CELL03.Mar.BEG,
+ FB.patch05a, 
+ FB.Qua05,
+ FB.patch05b, FB.Pip05, FB.patch06a,  
+ FB.Qua06, 
+ FB.patch06b, FB.Pip06)
+
+ 
+
+
+!--- FB cell 04
+
+!--- Quads
+FB.Qua07: FF.Qua01
+FB.Qua08: FF.Qua02
+
+
+!--- Pipes
+FB.Pip07: FF.Pip01
+FB.Pip08: FF.Pip02
+
+!--- Patches
+
+FB.patch07a: FF.patch1
+FB.patch07b: FF.patch2
+FB.patch08a: FF.patch3
+FB.patch08b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL04.Mar.BEG: marker
+
+!FB.Qua07.Mar.MID: marker, superimpose, ref = FB.Qua07
+!FB.Qua08.Mar.MID: marker, superimpose, ref = FB.Qua08
+
+! - - -  Lines 
+
+FB.cell04: line = (
+ FB.CELL04.Mar.BEG,
+ FB.patch07a, 
+ FB.Qua07,
+ FB.patch07b, FB.Pip07, FB.patch08a,  
+ FB.Qua08, 
+ FB.patch08b, FB.Pip08)
+
+ 
+
+
+!--- FB cell 05
+
+!--- Quads
+FB.Qua09: FF.Qua01
+FB.Qua10: FF.Qua02
+
+
+!--- Pipes
+FB.Pip09: FF.Pip01
+FB.Pip10: FF.Pip02
+
+!--- Patches
+
+FB.patch09a: FF.patch1
+FB.patch09b: FF.patch2
+FB.patch10a: FF.patch3
+FB.patch10b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL05.Mar.BEG: marker
+
+!FB.Qua09.Mar.MID: marker, superimpose, ref = FB.Qua09
+!FB.Qua10.Mar.MID: marker, superimpose, ref = FB.Qua10
+
+! - - -  Lines 
+
+FB.cell05: line = (
+ FB.CELL05.Mar.BEG,
+ FB.patch09a, 
+ FB.Qua09,
+ FB.patch09b, FB.Pip09, FB.patch10a,  
+ FB.Qua10, 
+ FB.patch10b, FB.Pip10)
+
+ 
+
+
+!--- FB cell 06
+
+!--- Quads
+FB.Qua11: FF.Qua01
+FB.Qua12: FF.Qua02
+
+
+!--- Pipes
+FB.Pip11: FF.Pip01
+FB.Pip12: FF.Pip02
+
+!--- Patches
+
+FB.patch11a: FF.patch1
+FB.patch11b: FF.patch2
+FB.patch12a: FF.patch3
+FB.patch12b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL06.Mar.BEG: marker
+
+!FB.Qua11.Mar.MID: marker, superimpose, ref = FB.Qua11
+!FB.Qua12.Mar.MID: marker, superimpose, ref = FB.Qua12
+
+! - - -  Lines 
+
+FB.cell06: line = (
+ FB.CELL06.Mar.BEG,
+ FB.patch11a, 
+ FB.Qua11,
+ FB.patch11b, FB.Pip11, FB.patch12a,  
+ FB.Qua12, 
+ FB.patch12b, FB.Pip12)
+
+ 
+
+
+!--- FB cell 07
+
+!--- Quads
+FB.Qua13: FF.Qua01
+FB.Qua14: FF.Qua02
+
+
+!--- Pipes
+FB.Pip13: FF.Pip01
+FB.Pip14: FF.Pip02
+
+!--- Patches
+
+FB.patch13a: FF.patch1
+FB.patch13b: FF.patch2
+FB.patch14a: FF.patch3
+FB.patch14b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL07.Mar.BEG: marker
+
+!FB.Qua13.Mar.MID: marker, superimpose, ref = FB.Qua13
+!FB.Qua14.Mar.MID: marker, superimpose, ref = FB.Qua14
+
+! - - -  Lines 
+
+FB.cell07: line = (
+ FB.CELL07.Mar.BEG,
+ FB.patch13a, 
+ FB.Qua13,
+ FB.patch13b, FB.Pip13, FB.patch14a,  
+ FB.Qua14, 
+ FB.patch14b, FB.Pip14)
+
+ 
+
+
+!--- FB cell 08
+
+!--- Quads
+FB.Qua15: FF.Qua01
+FB.Qua16: FF.Qua02
+
+
+!--- Pipes
+FB.Pip15: FF.Pip01
+FB.Pip16: FF.Pip02
+
+!--- Patches
+
+FB.patch15a: FF.patch1
+FB.patch15b: FF.patch2
+FB.patch16a: FF.patch3
+FB.patch16b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL08.Mar.BEG: marker
+
+!FB.Qua15.Mar.MID: marker, superimpose, ref = FB.Qua15
+!FB.Qua16.Mar.MID: marker, superimpose, ref = FB.Qua16
+
+! - - -  Lines 
+
+FB.cell08: line = (
+ FB.CELL08.Mar.BEG,
+ FB.patch15a, 
+ FB.Qua15,
+ FB.patch15b, FB.Pip15, FB.patch16a,  
+ FB.Qua16, 
+ FB.patch16b, FB.Pip16)
+
+ 
+
+
+!--- FB cell 09
+
+!--- Quads
+FB.Qua17: FF.Qua01
+FB.Qua18: FF.Qua02
+
+
+!--- Pipes
+FB.Pip17: FF.Pip01
+FB.Pip18: FF.Pip02
+
+!--- Patches
+
+FB.patch17a: FF.patch1
+FB.patch17b: FF.patch2
+FB.patch18a: FF.patch3
+FB.patch18b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL09.Mar.BEG: marker
+
+!FB.Qua17.Mar.MID: marker, superimpose, ref = FB.Qua17
+!FB.Qua18.Mar.MID: marker, superimpose, ref = FB.Qua18
+
+! - - -  Lines 
+
+FB.cell09: line = (
+ FB.CELL09.Mar.BEG,
+ FB.patch17a, 
+ FB.Qua17,
+ FB.patch17b, FB.Pip17, FB.patch18a,  
+ FB.Qua18, 
+ FB.patch18b, FB.Pip18)
+
+ 
+
+
+!--- FB cell 10
+
+!--- Quads
+FB.Qua19: FF.Qua01
+FB.Qua20: FF.Qua02
+
+
+!--- Pipes
+FB.Pip19: FF.Pip01
+FB.Pip20: FF.Pip02
+
+!--- Patches
+
+FB.patch19a: FF.patch1
+FB.patch19b: FF.patch2
+FB.patch20a: FF.patch3
+FB.patch20b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL10.Mar.BEG: marker
+
+!FB.Qua19.Mar.MID: marker, superimpose, ref = FB.Qua19
+!FB.Qua20.Mar.MID: marker, superimpose, ref = FB.Qua20
+
+! - - -  Lines 
+
+FB.cell10: line = (
+ FB.CELL10.Mar.BEG,
+ FB.patch19a, 
+ FB.Qua19,
+ FB.patch19b, FB.Pip19, FB.patch20a,  
+ FB.Qua20, 
+ FB.patch20b, FB.Pip20)
+
+ 
+
+
+!--- FB cell 11
+
+!--- Quads
+FB.Qua21: FF.Qua01
+FB.Qua22: FF.Qua02
+
+
+!--- Pipes
+FB.Pip21: FF.Pip01
+FB.Pip22: FF.Pip02
+
+!--- Patches
+
+FB.patch21a: FF.patch1
+FB.patch21b: FF.patch2
+FB.patch22a: FF.patch3
+FB.patch22b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL11.Mar.BEG: marker
+
+!FB.Qua21.Mar.MID: marker, superimpose, ref = FB.Qua21
+!FB.Qua22.Mar.MID: marker, superimpose, ref = FB.Qua22
+
+! - - -  Lines 
+
+FB.cell11: line = (
+ FB.CELL11.Mar.BEG,
+ FB.patch21a, 
+ FB.Qua21,
+ FB.patch21b, FB.Pip21, FB.patch22a,  
+ FB.Qua22, 
+ FB.patch22b, FB.Pip22)
+
+ 
+
+
+!--- FB cell 12
+
+!--- Quads
+FB.Qua23: FF.Qua01
+FB.Qua24: FF.Qua02
+
+
+!--- Pipes
+FB.Pip23: FF.Pip01
+FB.Pip24: FF.Pip02
+
+!--- Patches
+
+FB.patch23a: FF.patch1
+FB.patch23b: FF.patch2
+FB.patch24a: FF.patch3
+FB.patch24b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL12.Mar.BEG: marker
+
+!FB.Qua23.Mar.MID: marker, superimpose, ref = FB.Qua23
+!FB.Qua24.Mar.MID: marker, superimpose, ref = FB.Qua24
+
+! - - -  Lines 
+
+FB.cell12: line = (
+ FB.CELL12.Mar.BEG,
+ FB.patch23a, 
+ FB.Qua23,
+ FB.patch23b, FB.Pip23, FB.patch24a,  
+ FB.Qua24, 
+ FB.patch24b, FB.Pip24)
+
+ 
+
+
+!--- FB cell 13
+
+!--- Quads
+FB.Qua25: FF.Qua01
+FB.Qua26: FF.Qua02
+
+
+!--- Pipes
+FB.Pip25: FF.Pip01
+FB.Pip26: FF.Pip02
+
+!--- Patches
+
+FB.patch25a: FF.patch1
+FB.patch25b: FF.patch2
+FB.patch26a: FF.patch3
+FB.patch26b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL13.Mar.BEG: marker
+
+!FB.Qua25.Mar.MID: marker, superimpose, ref = FB.Qua25
+!FB.Qua26.Mar.MID: marker, superimpose, ref = FB.Qua26
+
+! - - -  Lines 
+
+FB.cell13: line = (
+ FB.CELL13.Mar.BEG,
+ FB.patch25a, 
+ FB.Qua25,
+ FB.patch25b, FB.Pip25, FB.patch26a,  
+ FB.Qua26, 
+ FB.patch26b, FB.Pip26)
+
+ 
+
+
+!--- FB cell 14
+
+!--- Quads
+FB.Qua27: FF.Qua01
+FB.Qua28: FF.Qua02
+
+
+!--- Pipes
+FB.Pip27: FF.Pip01
+FB.Pip28: FF.Pip02
+
+!--- Patches
+
+FB.patch27a: FF.patch1
+FB.patch27b: FF.patch2
+FB.patch28a: FF.patch3
+FB.patch28b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL14.Mar.BEG: marker
+
+!FB.Qua27.Mar.MID: marker, superimpose, ref = FB.Qua27
+!FB.Qua28.Mar.MID: marker, superimpose, ref = FB.Qua28
+
+! - - -  Lines 
+
+FB.cell14: line = (
+ FB.CELL14.Mar.BEG,
+ FB.patch27a, 
+ FB.Qua27,
+ FB.patch27b, FB.Pip27, FB.patch28a,  
+ FB.Qua28, 
+ FB.patch28b, FB.Pip28)
+
+ 
+
+
+!--- FB cell 15
+
+!--- Quads
+FB.Qua29: FF.Qua01
+FB.Qua30: FF.Qua02
+
+
+!--- Pipes
+FB.Pip29: FF.Pip01
+FB.Pip30: FF.Pip02
+
+!--- Patches
+
+FB.patch29a: FF.patch1
+FB.patch29b: FF.patch2
+FB.patch30a: FF.patch3
+FB.patch30b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL15.Mar.BEG: marker
+
+!FB.Qua29.Mar.MID: marker, superimpose, ref = FB.Qua29
+!FB.Qua30.Mar.MID: marker, superimpose, ref = FB.Qua30
+
+! - - -  Lines 
+
+FB.cell15: line = (
+ FB.CELL15.Mar.BEG,
+ FB.patch29a, 
+ FB.Qua29,
+ FB.patch29b, FB.Pip29, FB.patch30a,  
+ FB.Qua30, 
+ FB.patch30b, FB.Pip30)
+
+ 
+
+
+!--- FB cell 16
+
+!--- Quads
+FB.Qua31: FF.Qua01
+FB.Qua32: FF.Qua02
+
+
+!--- Pipes
+FB.Pip31: FF.Pip01
+FB.Pip32: FF.Pip02
+
+!--- Patches
+
+FB.patch31a: FF.patch1
+FB.patch31b: FF.patch2
+FB.patch32a: FF.patch3
+FB.patch32b: FF.patch4
+
+
+!--- Markers
+
+FB.CELL16.Mar.BEG: marker
+
+!FB.Qua31.Mar.MID: marker, superimpose, ref = FB.Qua31
+!FB.Qua32.Mar.MID: marker, superimpose, ref = FB.Qua32
+
+! - - -  Lines 
+
+FB.cell16: line = (
+ FB.CELL16.Mar.BEG,
+ FB.patch31a, 
+ FB.Qua31,
+ FB.patch31b, FB.Pip31, FB.patch32a,  
+ FB.Qua32, 
+ FB.patch32b, FB.Pip32)
+
+ 
+
+!--- FB.circle_cells
+FB.circle_cells: line = (
+  FB.CELL01,
+  FB.CELL02,
+  FB.CELL03,
+  FB.CELL04,
+  FB.CELL05,
+  FB.CELL06,
+  FB.CELL07,
+  FB.CELL08,
+  FB.CELL09,
+  FB.CELL10,
+  FB.CELL11,
+  FB.CELL12,
+  FB.CELL13,
+  FB.CELL14,
+  FB.CELL15,
+  FB.CELL16)

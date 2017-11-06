@@ -1,0 +1,114 @@
+
+
+
+! Injector HTC ERL loop test
+
+
+! Prototype bend
+B0.L = 0.2 
+B0: SBEND, L = B0.L, aperture = 0.0254
+
+angle1 = -25*pi/180
+B1: B0, angle = angle1   , e1=0, e2 = angle1
+B2: B0, angle = -2*angle1, e1 = -angle1, e2 = -angle1, L = 2*B0.L
+B3: B0, angle = angle1   , e1 = angle1, e2=0
+
+B4: B0, angle = angle1   , e1=0, e2 = angle1, e_tot = 5e6
+B5: B0, angle = -2*angle1, e1 = -angle1, e2 = -angle1, L = 2*B0.L
+B6: B0, angle = angle1   , e1 = angle1, e2=0
+
+B7: B0, L = 0.1
+B8: B0, L = 0.5, angle = 90*pi/180
+B9: B0, L = 0.5, angle = 90*pi/180
+B10: B0, L = 0.5, angle = 90*pi/180
+B11: B0, L = 0.5, angle = 90*pi/180
+B12: B0, L = 0.1
+
+! HTC
+call, file = in.htc.bmad
+
+Q0: Quadrupole, L = 0.1, aperture = 0.0254
+Q3: Q0, superimpose, ref = D3
+Q4: Q0, superimpose, ref = D4
+Q91: Q0, superimpose, ref = D9, ref_origin = beginning, ele_origin = beginning, offset = 0.05
+Q92: Q0, superimpose, ref = D9
+Q93: Q0, superimpose, ref = D9, ref_origin = end, ele_origin = end, offset = -.05
+
+!Q101: Q0, superimpose, ref = D10, ele_origin = beginning, ref_origin = beginning, offset = .05
+!Q102: Q0, superimpose, ref = D10, ele_origin = beginning, ref_origin = beginning, offset = 2
+!Q103: Q0, superimpose, ref = D10, ele_origin = end, ref_origin = end, offset = -2
+!Q104: Q0, superimpose, ref = D10, ele_origin = end, ref_origin = end, offset = -.05
+
+Q111: Q0, superimpose, ref = D11, ref_origin = beginning, ele_origin = beginning, offset = 0.05
+Q112: Q0, superimpose, ref = D11
+Q113: Q0, superimpose, ref = D11, ref_origin = end, ele_origin = end, offset = -.05
+
+CAVITY7SIMPLE: LCAVITY, L = CAVITY7[L], rf_frequency = CAVITY7[rf_frequency], n_cell =  CAVITY7[n_cell]
+CAVITY7SIMPLE[gradient] = 15e6
+
+HTCsimple: line = (IN.HTC.Mar.BEG, IN.HTC.Pip01, CAVITY7SIMPLE, IN.HTC.Pip02, IN.HTC.Mar.END)
+
+
+patch1: patch, flexible = T
+patch2: patch, x_offset = -34.42941029e-3, x_pitch = asin(-324.87343341e-3)
+P0: pipe, aperture = 0.0254
+
+D1: P0, L = .5
+D2: P0, L = .5
+D3: P0, L = .5
+D4: P0, L = .5
+D5: P0, L = .5
+D6: P0, L = .5
+D7: P0, L = .5
+D8: P0, L = .1
+D9: P0, L = 1
+D10: P0, L = 4
+D11: P0, L = 1
+D12: P0, L = .1
+D13: P0, L = .5
+
+M1: marker
+
+M2: marker
+M3: marker
+M4: marker
+M5: marker
+
+!IN.LOOP: LINE = (D7, B7, D8, B8, D9, B9, M2,  D10, B10, D11, B11, D12, B12, M3, D13 )
+IN.LOOP: LINE = (D7, B7, D8, M5, B8, D9, B9, M2,  D10, B10, D11, B11, D12, B12, M3, patch1 )
+
+HTC_multi: line[multipass] = (B3, D3, HTCsimple, M1, D4, B4)
+
+HTC_with_Loop: Line = (B1, D1, B2, D2, HTC_multi, patch2, IN.LOOP, HTC_multi, D5, B5, D6, B6, m4)
+
+O_D9_D11: Overlay = {D9, D11}, L 
+O_D9_D11[L] = 1
+
+O_B7_b12: overlay = {B7, B12}, g
+
+
+! Geometry
+
+D10[L] =   5.31590028154518E+00
+O_B7_B12[G] =   1.05452900383088E+00
+D7[L] =   4.44768819719387E-01
+O_D9_D11[L] =   1.00050945241261E+00
+
+
+
+
+
+! Optics
+
+Q91[K1] =  -1.33600000000000E+01
+Q92[K1] =   3.28000000000000E+01
+Q93[K1] =  -1.28000000000000E+01
+Q3[K1] =  -1.44000000000000E+00
+Q4[K1] =  -3.68000000000000E+00
+
+Q111[k1] = Q93[k1]
+Q112[k1] = Q92[k1]
+Q113[k1] = Q91[k1]
+
+
+

@@ -1,0 +1,13 @@
+ZB.BPM01: instrument, superimpose, ref = ZB.Pip01
+ZB.BPM02: instrument, superimpose, ref = ZB.Pip03
+ZB.BPM03: instrument, superimpose, ref = ZB.Pip05
+ZB.BPM04: instrument, superimpose, ref = ZB.Pip07
+ZB.BPM05: instrument, superimpose, ref = ZB.Pip09
+ZB.BPM06: instrument, superimpose, ref = ZB.Pip11
+ZB.BPM07: instrument, superimpose, ref = ZB.Pip13
+ZB.BPM08: instrument, superimpose, ref = ZB.Pip15
+ZB.BPM09: instrument, superimpose, ref = ZB.Pip17
+ZB.BPM10: instrument, superimpose, ref = ZB.Pip19
+ZB.BPM11: instrument, superimpose, ref = ZB.Pip21
+ZB.BPM12: instrument, superimpose, ref = ZB.Pip23
+ZB.BPM13: instrument, superimpose, ref = ZB.Pip25

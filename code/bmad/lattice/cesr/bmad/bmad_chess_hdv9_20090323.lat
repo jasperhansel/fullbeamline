@@ -1,0 +1,301 @@
+
+! BMAD input file
+
+parameter[lattice] = chess_hdv9_20090323
+beam, energy =   5.289
+call, file=layout/cesrta_05.bmad
+
+wig_w[b_max] = 0.78
+wig_e[b_max] = 1.17
+
+wig_01w[is_on]= .false.
+wig1_02w[is_on]= .false.
+wig2_02w[is_on]= .false.
+wig1_18w[is_on]= .false.
+wig2_18w[is_on]= .false.
+wig3_18w[is_on]= .false.
+wig_01e[is_on]= .false.
+wig1_02e[is_on]= .false.
+wig2_02e[is_on]= .false.
+wig1_18e[is_on]= .false.
+wig2_18e[is_on]= .false.
+wig3_18e[is_on]= .false.
+
+
+wig_damp_drift: drift, l=1.6
+dwig: drift, l=0.065
+
+! element attributes
+deltax= 0.0007
+deltay=-0.0007
+deltas = -0.004
+
+Q00[k1] =  -2.0468241150587685E-01 + deltax
+Q01W[k1] =  -0.0E-01 + deltay
+Q01E[k1] =  -0.0E-01 + deltay
+!Q02 : overlay = {Q02W,Q02E },K1 =   2.4283140465527323E-01
+Q02W[K1] = 2.4283140465527323E-01  + deltax
+Q02E[K1] = 2.4283140465527323E-01 + deltax
+!Q03 : overlay = {Q03W,Q03E },K1 =  -3.5589871972507237E-01
+Q03W[K1] = -3.5589871972507237E-01 + deltay
+Q03E[K1] = -3.5589871972507237E-01 + deltay
+!Q04 : overlay = {Q04W,Q04E },K1 =   4.4126322445338501E-01
+Q04W[K1] = 4.4126322445338501E-01  + deltax
+Q04E[K1] = 4.4126322445338501E-01 + deltax
+!Q05 : overlay = {Q05W,Q05E },K1 =  -3.2912010917761814E-01
+Q05W[K1] = -3.2912010917761814E-01 + deltay
+Q05E[K1] = -3.2912010917761814E-01 + deltay
+!Q06 : overlay = {Q06W,Q06E },K1 =   4.9999800124458027E-01
+Q06W[K1] = 4.9999800124458027E-01 + deltax
+Q06E[K1] = 4.9999800124458027E-01 + deltax
+!Q07 : overlay = {Q07W,Q07E },K1 =  -3.9955637323983734E-01
+Q07W[K1] = -3.9955637323983734E-01 + deltay
+Q07E[K1] = -3.9955637323983734E-01 + deltay
+
+Q08W[K1]=   2.0676248984581502E-01 + deltax
+Q08E[K1]=   2.2681646831443983E-01 + deltax
+Q08AW[K1]:=   8.6616305862144277E-02
+Q09W[K1]:=  -2.7583923906190894E-01 + deltay
+Q09E[K1]:=  -2.6634652432313621E-01 + deltay
+Q10W[K1]:=   2.8730801260322070E-01 + deltax
+Q10E[K1]:=   2.8485778576529880E-01 + deltax
+
+!Q11 : overlay = {Q11W,Q11E },K1 =  -2.3033224880364639E-01
+Q11W[K1] = -2.3033224880364639E-01 + deltay
+Q11E[K1] = -2.3033224880364639E-01 + deltay
+!Q12 : overlay = {Q12W,Q12E },K1 =   3.6535577462849350E-01
+Q12W[K1] = 3.6535577462849350E-01 + deltax
+Q12E[K1] = 3.6535577462849350E-01 + deltax
+!Q13 : overlay = {Q13W,Q13E },K1 =  -3.2143275183219028E-01
+Q13W[K1] = -3.2143275183219028E-01 + deltay
+Q13E[K1] = -3.2143275183219028E-01 + deltay
+!Q14 : overlay = {Q14W,Q14E },K1 =   3.7429010578291844E-01
+Q14W[K1] = 3.7429010578291844E-01 + deltax
+Q14E[K1] = 3.7429010578291844E-01 + deltax
+!Q15 : overlay = {Q15W,Q15E },K1 =  -3.0195715139053314E-01
+Q15W[K1] = -3.0195715139053314E-01 + deltay
+Q15E[K1] = -3.0195715139053314E-01 + deltay
+!Q16 : overlay = {Q16W,Q16E },K1 =   3.7130931582294951E-01
+Q16W[K1] = 3.7130931582294951E-01 + deltax
+Q16E[K1] = 3.7130931582294951E-01 + deltax
+!Q17 : overlay = {Q17W,Q17E },K1 =  -3.5563050422320852E-01
+Q17W[K1] = -3.5563050422320852E-01 + deltay
+Q17E[K1] = -3.5563050422320852E-01 + deltay
+!Q18 : overlay = {Q18W,Q18E },K1 =   3.4125698906947760E-01
+Q18W[K1] = 3.4125698906947760E-01 + deltax
+Q18E[K1] = 3.4125698906947760E-01 + deltax
+!Q19 : overlay = {Q19W,Q19E },K1 =  -3.2732116733790373E-01
+Q19W[K1] = -3.2732116733790373E-01 + deltay
+Q19E[K1] = -3.2732116733790373E-01 + deltay
+!Q20 : overlay = {Q20W,Q20E },K1 =   2.9957068477110910E-01
+Q20W[K1] = 2.9957068477110910E-01 + deltax
+Q20E[K1] = 2.9957068477110910E-01 + deltax
+!Q21 : overlay = {Q21W,Q21E },K1 =  -2.2522822097489253E-01
+Q21W[K1] = -2.2522822097489253E-01 + deltay
+Q21E[K1] = -2.2522822097489253E-01 + deltay
+!Q22 : overlay = {Q22W,Q22E },K1 =   3.4720535470440600E-01
+Q22W[K1] = 3.4720535470440600E-01 + deltax
+Q22E[K1] = 3.4720535470440600E-01 + deltax
+!Q23 : overlay = {Q23W,Q23E },K1 =  -2.3041582160206484E-01
+Q23W[K1] = -2.3041582160206484E-01 + deltay
+Q23E[K1] = -2.3041582160206484E-01 + deltay
+!Q24 : overlay = {Q24W,Q24E },K1 =   3.5893906153687000E-01
+Q24W[K1] = 3.5893906153687000E-01 + deltax
+Q24E[K1] = 3.5893906153687000E-01 + deltax
+!Q25 : overlay = {Q25W,Q25E },K1 =  -2.6557887456834073E-01
+Q25W[K1] = -2.6557887456834073E-01 + deltay
+Q25E[K1] = -2.6557887456834073E-01 + deltay
+!Q26 : overlay = {Q26W,Q26E },K1 =   3.8283333228470584E-01
+Q26W[K1] = 3.8283333228470584E-01 + deltax
+Q26E[K1] = 3.8283333228470584E-01 + deltax
+!Q27 : overlay = {Q27W,Q27E },K1 =  -2.5067131669267279E-01
+Q27W[K1] = -2.5067131669267279E-01 + deltay
+Q27E[K1] = -2.5067131669267279E-01 + deltay
+!Q28 : overlay = {Q28W,Q28E },K1 =   3.6129903587878143E-01
+Q28W[K1] = 3.6129903587878143E-01 + deltax
+Q28E[K1] = 3.6129903587878143E-01 + deltax
+!Q29 : overlay = {Q29W,Q29E },K1 =  -2.4407071834026814E-01
+Q29W[K1] = -2.4407071834026814E-01 + deltay
+Q29E[K1] = -2.4407071834026814E-01 + deltay
+!Q30 : overlay = {Q30W,Q30E },K1 =   2.9388383668224738E-01
+Q30W[K1] = 2.9388383668224738E-01 + deltax
+Q30E[K1] = 2.9388383668224738E-01 + deltax
+!Q31 : overlay = {Q31W,Q31E },K1 =  -2.1992584577508770E-01
+Q31W[K1] = -2.1992584577508770E-01 + deltay
+Q31E[K1] = -2.1992584577508770E-01 + deltay
+!Q32 : overlay = {Q32W,Q32E },K1 =   2.5329392287969626E-01
+Q32W[K1] = 2.5329392287969626E-01 + deltax
+Q32E[K1] = 2.5329392287969626E-01 + deltax
+!Q33 : overlay = {Q33W,Q33E },K1 =  -2.2400331064778004E-01
+Q33W[K1] = -2.2400331064778004E-01 + deltay
+Q33E[K1] = -2.2400331064778004E-01 + deltay
+!Q34 : overlay = {Q34W,Q34E },K1 =   2.7101005811958295E-01
+Q34W[K1] = 2.7101005811958295E-01 + deltax
+Q34E[K1] = 2.7101005811958295E-01 + deltax
+!Q35 : overlay = {Q35W,Q35E },K1 =  -1.9834157716385994E-01
+Q35W[K1] = -1.9834157716385994E-01 + deltay
+Q35E[K1] = -1.9834157716385994E-01 + deltay
+!Q36 : overlay = {Q36W,Q36E },K1 =   3.0160796796105155E-01
+Q36W[K1] = 3.0160796796105155E-01 + deltax
+Q36E[K1] = 3.0160796796105155E-01 + deltax
+!Q37 : overlay = {Q37W,Q37E },K1 =  -3.0931866941890296E-01
+Q37W[K1] = -3.0931866941890296E-01 + deltay
+Q37E[K1] = -3.0931866941890296E-01 + deltay
+!Q38 : overlay = {Q38W,Q38E },K1 =   3.8460024850365004E-01
+Q38W[K1] = 3.8460024850365004E-01 + deltax
+Q38E[K1] = 3.8460024850365004E-01 + deltax
+!Q39 : overlay = {Q39W,Q39E },K1 =  -2.9000382489351767E-01
+Q39W[K1] = -2.9000382489351767E-01 + deltay
+Q39E[K1] = -2.9000382489351767E-01 + deltay
+!Q40 : overlay = {Q40W,Q40E },K1 =   3.7303869636309361E-01
+Q40W[K1] = 3.7303869636309361E-01 + deltax
+Q40E[K1] = 3.7303869636309361E-01 + deltax
+!Q41 : overlay = {Q41W,Q41E },K1 =  -2.3006972552436936E-01
+Q41W[K1] = -2.3006972552436936E-01 + deltay
+Q41E[K1] = -2.3006972552436936E-01 + deltay
+!Q42 : overlay = {Q42W,Q42E },K1 =   3.1001454219183111E-01
+Q42W[K1] = 3.1001454219183111E-01 + deltax
+Q42E[K1] = 3.1001454219183111E-01 + deltax
+!Q43 : overlay = {Q43W,Q43E },K1 =  -2.9990471611562591E-01
+Q43W[K1] = -2.9990471611562591E-01 + deltay
+Q43E[K1] = -2.9990471611562591E-01 + deltay
+!Q43a : overlay = {Q43AW,Q43AE },K1 =   3.7311175710104033E-01
+Q43AW[K1] = 3.7311175710104033E-01 + deltax
+Q43AE[K1] = 3.7311175710104033E-01 + deltax
+!Q44 : overlay = {Q44W,Q44E },K1 =  -2.2754608465979853E-01
+Q44W[K1] = -2.2754608465979853E-01 + deltay
+Q44E[K1] = -2.2754608465979853E-01 + deltay
+!Q45 : overlay = {Q45W,Q45E },K1 =   3.7775233296880462E-01
+Q45W[K1] = 3.7775233296880462E-01 + deltax
+Q45E[K1] = 3.7775233296880462E-01 + deltax
+!Q46 : overlay = {Q46W,Q46E },K1 =  -2.8638562594237904E-01
+Q46W[K1] = -2.8638562594237904E-01 + deltay
+Q46E[K1] = -2.8638562594237904E-01 + deltay
+!Q47 : overlay = {Q47W,Q47E },K1 =   3.9999944604830001E-01
+Q47W[K1] = 3.9999944604830001E-01 + deltax
+Q47E[K1] = 3.9999944604830001E-01 + deltax
+!Q47a : overlay = {Q47AW,Q47AE },K1 =  -3.2627089183509284E-01
+Q47AW[K1] = -3.2627089183509284E-01 + deltay
+Q47AE[K1] = -3.2627089183509284E-01 + deltay
+!Q48 : overlay = {Q48W,Q48E },K1 =   2.9992044386344274E-01
+Q48W[K1] = 2.9992044386344274E-01
+Q48E[K1] = 2.9992044386344274E-01
+q49[k1]  =  -2.5938233243916081E-01
+
+
+fact = 0.2
+
+!H_SEP_08 : overlay = {H_SEP_08W,H_SEP_08E/-1}, HKICK =  -1.02448E-04
+H_SEP_08W[HKICK] =  -0.0e-05
+H_SEP_08E[HKICK] =  -0.0E-04
+!H_SEP_45 : overlay = {H_SEP_45W,H_SEP_45E/-1}, HKICK =  -2.51994E-04
+H_SEP_45W[HKICK] =  -0.0E-05
+H_SEP_45E[HKICK] =  -0.0E-05
+
+
+RF_W1[VOLT] := 3.75e6
+RF_W2[VOLT] := 3.75e6
+RF_E1[VOLT] := 3.75e6
+RF_E2[VOLT] := 3.75e6
+RF_W1[HARMON] := 1281
+RF_W2[HARMON] := 1281
+RF_E1[HARMON] := 1281
+RF_E2[HARMON] := 1281
+
+sexh =1.03
+sexv =-1.58
+
+SEX_08W[k2]:= sexh
+SEX_08E[k2]:= sexh
+SEX_09W[k2]:= sexv
+SEX_09E[k2]:= sexv
+SEX_10W[k2]:= sexh
+SEX_10E[k2]:= sexh
+SEX_11E[k2]:= sexv
+SEX_12W[k2]:= sexh
+SEX_12E[k2]:= sexh
+SEX_13W[k2]:= sexv
+SEX_13E[k2]:= sexv
+SEX_14W[k2]:= sexh
+SEX_14E[k2]:= sexh
+SEX_15W[k2]:= sexv
+SEX_15E[k2]:= sexv
+SEX_16W[k2]:= sexh
+SEX_16E[k2]:= sexh
+SEX_17W[k2]:= sexv
+SEX_17E[k2]:= sexv
+SEX_18W[k2]:= sexh
+SEX_18E[k2]:= sexh
+SEX_19W[k2]:= sexv
+SEX_19E[k2]:= sexv
+SEX_20W[k2]:= sexh
+SEX_20E[k2]:= sexh
+SEX_21W[k2]:= sexv
+SEX_21E[k2]:= sexv
+SEX_22W[k2]:= sexh
+SEX_22E[k2]:= sexh
+SEX_23W[k2]:= sexv
+SEX_23E[k2]:= sexv
+SEX_24W[k2]:= sexh
+SEX_24E[k2]:= sexh
+SEX_25W[k2]:= sexv
+SEX_25E[k2]:= sexv
+SEX_26W[k2]:= sexh
+SEX_26E[k2]:= sexh
+SEX_27W[k2]:= sexv
+SEX_27E[k2]:= sexv
+SEX_28W[k2]:= sexh
+SEX_28E[k2]:= sexh
+SEX_29W[k2]:= sexv
+SEX_29E[k2]:= sexv
+SEX_30W[k2]:= sexh
+SEX_30E[k2]:= sexh
+SEX_31W[k2]:= sexv
+SEX_31E[k2]:= sexv
+SEX_32W[k2]:= sexh
+SEX_32E[k2]:= sexh
+SEX_33W[k2]:= sexv
+SEX_33E[k2]:= sexv
+SEX_34W[k2]:= sexh
+SEX_34E[k2]:= sexh
+SEX_35W[k2]:= sexv
+SEX_35E[k2]:= sexv
+SEX_36W[k2]:= sexh
+SEX_36E[k2]:= sexh
+SEX_37W[k2]:= sexv
+SEX_37E[k2]:= sexv
+SEX_38W[k2]:= sexh
+SEX_38E[k2]:= sexh
+SEX_39W[k2]:= sexv
+SEX_39E[k2]:= sexv
+SEX_40W[k2]:= sexh
+SEX_40E[k2]:= sexh
+SEX_41W[k2]:= sexv
+SEX_41E[k2]:= sexv
+SEX_42W[k2]:= sexh
+SEX_42E[k2]:= sexh
+SEX_43W[k2]:= sexv
+SEX_43E[k2]:= sexv
+SEX_44W[k2]:= sexh
+SEX_44E[k2]:= sexh
+SEX_45W[k2]:= sexv
+SEX_45E[k2]:= sexv
+
+
+
+call, file=XQUNEING_1_2fam.dat
+call, file=XQUNEING_2_2fam.dat
+
+use, cesr
+
+ ! Vars not in original file
+
+SK_Q02W[K1] =  0.0
+SK_Q02E[K1] =  0.0
+SK_Q06W[K1] =  0.0
+SK_Q06E[K1] =  0.0
+SK_Q07W[K1] =  0.0
+SK_Q07E[K1] =  0.0
+
+
+

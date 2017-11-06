@@ -1,0 +1,63 @@
+
+
+!call, file = /home/cem52/erl/CERL/lattice_devel/Phase1B/model/in.bmad
+call, file = orig_in.bmad
+call, file = merge/in.merge.bmad
+
+!in.gun[descrip] = "3DMODEL=MK2_Gun/MK2_Gun_bare.blend"
+in.gun[descrip] =  "3DMODEL=../../../../Scratch/STL/MK-2_Gun_STL/MK2_Gun.blend"
+
+in.a1.sol01[descrip] = "3DMODEL=7107-032_L0_Solenoid_STL/7107-032_L0_Solenoid.blend"
+in.a1.sol02[descrip] = "3DMODEL=7107-032_L0_Solenoid_STL/7107-032_L0_Solenoid.blend"
+
+in.a1.bun01[descrip] = "3DMODEL=7104-009-L0_Buncher_STL/7104-009-L0_Buncher_bare.blend"
+
+in.merge.ben01[descrip] = "3DMODEL=7107-033_2_piece_dipole_STL/7107-033_2_piece_dipole.blend"
+in.merge.ben02[descrip] = "3DMODEL=7107-033_2_piece_dipole_STL/7107-033_2_piece_dipole.blend"
+in.merge.ben03[descrip] = "3DMODEL=7107-033_2_piece_dipole_STL/7107-033_2_piece_dipole.blend"
+
+in.a3.qua01[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+in.a3.qua02[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+in.a3.qua03[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+in.a3.qua04[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+
+in.merge.qua01[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+in.merge.qua02[descrip] = "3DMODEL=7107-037_Short_Quad_STL/7107-037_Short_Quad_bare.blend"
+
+in.crmod.rfc01[descrip] = "3DMODEL=7100_002-ICM-cavity_STL/7100_002-ICM-cavity_reverse.blend"
+in.crmod.rfc02[descrip] = "3DMODEL=7100_002-ICM-cavity_STL/7100_002-ICM-cavity.blend"
+in.crmod.rfc03[descrip] = "3DMODEL=7100_002-ICM-cavity_STL/7100_002-ICM-cavity_reverse.blend"
+in.crmod.rfc04[descrip] = "3DMODEL=7100_002-ICM-cavity_STL/7100_002-ICM-cavity.blend"
+in.crmod.rfc05[descrip] = "3DMODEL=7100_002-ICM-cavity_STL/7100_002-ICM-cavity_reverse.blend"
+
+in.crmod.hom02[descrip] = "3DMODEL=7102-017-78_mm_HOM_Load/7102-017-78_mm_HOM_Load_bare.blend"
+in.crmod.hom03[descrip] = "3DMODEL=7102-018-106_mm_HOM_Load/7102-018-106_mm_HOM_Load_bare.blend"
+in.crmod.hom04[descrip] = "3DMODEL=7102-017-78_mm_HOM_Load/7102-017-78_mm_HOM_Load_bare.blend"
+in.crmod.hom05[descrip] = "3DMODEL=7102-018-106_mm_HOM_Load/7102-018-106_mm_HOM_Load_bare.blend"
+in.crmod.hom06[descrip] = "3DMODEL=7102-017-78_mm_HOM_Load/7102-017-78_mm_HOM_Load_bare.blend"
+
+
+in.crmod.tap02[descrip] = "3DMODEL=../../../../Scratch/STL/7102-103-ICM_gutted_STL/7102-103-ICM_gutted.blend"
+
+
+!--- Line
+in.TELES: LINE = (IN.A3.Mar.BEG, &
+   	       IN.A3.Pip01,
+	       IN.A3.Mar.END)
+
+
+
+IN_with_MERGE_part1: LINE = (IN.Mar.BEG, 
+	    IN.GUN,
+        IN.A1,
+        IN.CRMOD,
+        in.TELES,
+	IN.MERGE.part1,
+	IN.Mar.END)
+	
+	
+IN_before_MERGE: LINE = (IN.Mar.BEG, 
+	    IN.GUN,
+        IN.A1,
+        IN.CRMOD,
+        in.TELES)

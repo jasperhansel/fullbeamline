@@ -1,0 +1,11 @@
+
+R1.PIP04b[L] = R1.PIP04a[L]
+R1.PIP05a[L] = R1.PIP03a[L]
+R1.PIP05b[L] = R1.PIP03b[L]
+
+R1.PIP06[L] = R1.PIP02[L]
+R1.PIP07[L] = R1.PIP01[L]
+
+R1.Ben05[g] = R1.Ben04[g]
+R1.Ben06[g] = R1.Ben03[g]
+R1.Ben07[g] = R1.Ben02[g]

@@ -1,0 +1,25 @@
+BEGINNING[BETA_A]  = 50
+BEGINNING[ALPHA_A]=  0
+BEGINNING[BETA_B] = 50
+BEGINNING[ALPHA_B] = 0
+
+PARAMETER[particle] = electron
+parameter[geometry] = open
+parameter[absolute_time_tracking] = T
+
+parameter[p0c] = 0
+
+
+call, file = apex_gun.bmad
+gun: apex_gun    
+    
+gun[voltage] = 750e3
+gun[autoscale_amplitude ]  = T
+gun[autoscale_phase ]  = T
+
+m1:marker
+
+lat: LINE = (gun, m1)
+
+use, lat
+

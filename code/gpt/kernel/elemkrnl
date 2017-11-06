@@ -1,0 +1,152 @@
+# List of all generalized elements
+
+TErectcavity		Accel/TErectcavity
+TM010cylcavity		Accel/TM010cylcavity
+TM110cylcavity      Accel/TM110cylcavity
+TMrectcavity		Accel/TMrectcavity
+trwcell             Accel/trwcell
+trwlinac            Accel/trwlinac
+trwlinbm            Accel/trwlinbm
+
+barmagnet           BStatic/barmagnet
+bzsolenoid          BStatic/bzsolenoid
+linecurrent         BStatic/linecur
+magdipole			BStatic/magdipole
+magline             BStatic/magline
+magplate            BStatic/magplate
+magpoint            BStatic/magpoint
+quadrupole          BStatic/quad
+rectcoil            BStatic/rectcoil
+rectmagnet          BStatic/rectmagnet
+sectormagnet        BStatic/sectormagnet
+sextupole           BStatic/sextupole
+solenoid            BStatic/solenoid
+
+circlecharge        EStatic/circlecharge
+ecyl                EStatic/ecyl
+ehole               EStatic/ehole
+erect               EStatic/erect
+linecharge          EStatic/linecharge
+platecharge         EStatic/platecharge
+pointcharge         EStatic/pointcharge
+pointchargeset      EStatic/pointchargeset
+
+undueqfo            FEL/undueqfo
+unduplan            FEL/unduplan
+gauss00mf           FEL/G00mf
+
+map1D_B				Maps/map1D_B
+map1D_E				Maps/map1D_E
+map1D_TM			Maps/map1D_TM
+map2D_B             Maps/map2D_B
+map2D_E             Maps/map2D_E
+map2D_Et            Maps/map2D_Et
+map2Dr_E            Maps/map2Dr_E
+map2D_V             Maps/map2D_V
+map25D_E            Maps/map25D_E
+map25D_B            Maps/map25D_B
+map25D_TM           Maps/map25D_TM
+map3D_E             Maps/map3D_E
+map3D_B             Maps/map3D_B
+map3D_V             Maps/map3D_V
+map3D_remove        Maps/map3D_remove
+map3D_TM            Maps/map3D_TM
+map3D_Ecomplex      Maps/map3D_Ecomplex
+map3D_Hcomplex      Maps/map3D_Hcomplex
+
+@ccs                Misc/axis
+ccsflip             Misc/ccsflip
+collision			Misc/collision
+drift               Misc/drift
+gravity             Misc/gravity
+randomize           Misc/randomiz
+run                 Misc/run
+viscosity           Misc/viscosit
+
+bend                Obsolete/bend
+bz                  Obsolete/bz
+ezcell              Obsolete/ezcell
+setrmacro           Obsolete/setrmacr
+@start              Obsolete/start
+startcyl            Obsolete/startcyl
+startgrid           Obsolete/startgri
+startpar            Obsolete/startpar
+startpgb            Obsolete/startpgb
+setcathode			Obsolete/setcath
+startcathode	    Obsolete/startcat
+
+acceptance          Output/accept
+@accuracy           Output/accuracy
+dtmaxpars           Output/dtmaxpars
+dtmaxt              Output/dtmaxt
+outputvalue         Output/outvalue
+pp                  Output/pp
+@screen             Output/screen
+@snapshot           Output/tout
+tcontinue           Output/tcontinu
+@tout               Output/tout
+
+Gminmax				Remove/Gminmax
+multislit           Remove/multislit
+rmax                Remove/rmax
+stdxyzmax			Remove/stdxyzmax
+xymax               Remove/xymax
+zminmax             Remove/zminmax
+
+settotalcharge      SC/setcharg
+spacecharge3D       SC/sc3d
+spacecharge3Dclassic SC/sc3dclas
+spacecharge3Dmesh	SC/sc3dmesh
+spacecharge2Dcircle SC/sc2dcirc
+setcharge2Dcircle   SC/setcharr
+spacecharge2Dline   SC/sc2dline
+spacecharge3Dtree	SC/sc3dtree
+
+copperscatter		Scatter/coppscat
+forwardscatter      Scatter/forwscat
+scatterbitmap       Scatter/scatterbitmap
+scattercone         Scatter/scatcone
+scatteriris         Scatter/scatiris
+scatterpipe         Scatter/scatpipe
+scatterplate        Scatter/scatplat
+scattersphere       Scatter/scatsphe
+scattertorus        Scatter/scattoru
+
+setparticles	    Start/setpars
+setrmacrodist		Start/setrmacrodist
+setstartpar	    Start/setstrpa
+setstartline        Start/setstrli
+setstartxyzgrid		Start/setxyzgrid
+setfile		    Start/setfile
+setellipse          Start/setellipse
+setscale            Start/setscale
+settransform	    Start/settrans
+setshuffle	    Start/setshuff
+setmove		    Start/setmove
+setmirror		Start/setmirror
+setcopy             Start/setcopy
+setcurvature	Start/setcurvature
+settcopy		Start/settcopy
+setreduce	    Start/setreduc
+
+setxdist	    Start/setxdist
+setxydistbmp    Start/setxydistbmp
+setydist	    Start/setydist
+setzdist	    Start/setzdist
+setphidist	    Start/setphidi
+setrxydist	    Start/setrxydi
+settdist		Start/settdist
+setGBxdist	    Start/setGBxdi
+setGBydist	    Start/setGBydi
+setGBzdist	    Start/setGBzdi
+setGBrxydist	    Start/setGBrxy
+setGBphidist	    Start/setGBphi
+setGBthetadist	    Start/setGBthe
+setGdist	    Start/setGdist
+
+setGBxemittance	    Start/setbxemi
+setGByemittance     Start/setbyemi
+
+addxdiv		    Start/addxdiv
+addydiv		    Start/addydiv
+addzdiv		    Start/addzdiv
