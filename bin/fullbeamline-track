@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+
+import hashlib
+import os
+import subprocess
+
+
+def getParameters():
+    with open('__fullbeamline/parameters.txt', 'r') as f:
+        file_contents = f.read()
+    parameters = []
+    for line in file_contents.splitlines():
+        parameters.append((line.split()[0], float(line.split()[2])))
+    return tuple(parameters)
+
+
+def parameterFileHash():
+    with open('__fullbeamline/parameters.txt', 'rb') as f:
+        return hashlib.md5(f.read()).hexdigest()
+
+
+def main():
+    parameters = getParameters()
+    output_file_name = '__fullbeamline/output{}.gdf'.format(parameterFileHash())
+    if not os.path.isfile(output_file_name):
+        gpt_command = 'gpt -o {} gpt_input'.format(output_file_name)
+        for name_value_tuple in parameters:
+            gpt_command += ' {}={}'.format(*name_value_tuple)
+        subprocess.run(gpt_command, shell=True, check=True)
+    os.link(output_file_name, '__fullbeamline/output.gdf')
+    subprocess.run('gdfa -o __fullbeamline/statistics.gdf __fullbeamline/output.gdf position avgt numpar Q', shell=True, check=True)
+    subprocess.run('gdf2a -o __fullbeamline/statistics.txt -w 16 __fullbeamline/statistics.gdf', shell=True, check=True)
+    subprocess.run('gdf2a -o __fullbeamline/output.txt -w 16 __fullbeamline/output.gdf x y z Bx By Bz G t', shell=True, check=True)
+    os.remove('__fullbeamline/statistics.gdf')
+    os.remove('__fullbeamline/output.gdf')
+    os.remove('__fullbeamline/parameters.txt')
+
+
+if __name__ == '__main__':
+    main()
