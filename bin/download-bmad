@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+
+
+import re
+import os.path
+import shutil
+import sys
+import tarfile
+import tempfile
+import urllib.request
+
+
+chunk_size = 256 * 1024
+
+
+def download(destination):
+    """
+    Downloads and decompresses the latest version of Bmad from Cornell's website
+    so that the Bmad directory is located at the path 'destination'.
+    """
+    with urllib.request.urlopen('https://www.classe.cornell.edu/~cesrulib/downloads/tarballs/') as response:
+        tarball_directory_index_html = response.read().decode('utf-8')
+    bmad_version_name = re.compile('bmad_dist_\d{4}_\d{4}').search(tarball_directory_index_html).group()
+    bmad_tarball_url = 'https://www.classe.cornell.edu/~cesrulib/downloads/tarballs/{}.tgz'.format(bmad_version_name)
+    with tempfile.TemporaryFile() as bmad_tarball_file:
+        with urllib.request.urlopen(bmad_tarball_url) as response:
+            chunks = 0
+            while True:
+                chunk = response.read(chunk_size)
+                if not chunk:
+                    break;
+                bmad_tarball_file.write(chunk)
+        bmad_tarball_file.seek(0)
+        with tempfile.TemporaryDirectory() as directory:
+            with tarfile.open(mode='r:gz', fileobj=bmad_tarball_file) as tar:
+                tar.extractall(path=directory)
+            bmad_folder_name = os.path.join(directory, bmad_version_name)
+            shutil.move(bmad_folder_name, destination)
+
+
+def main():
+    if len(sys.argv) != 2:
+        print('\033[31merror:\033[0m expected single command line argument')
+    else:
+        download(sys.argv[1])
+
+
+if __name__ == '__main__':
+    main()

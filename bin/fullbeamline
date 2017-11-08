@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+type gpt &> /dev/null
+if [ $? -ne 0 ]; then
+  echo 'gpt not installed'
+  exit
+fi
+
+
+if [ -z $GPTLICENSE ]; then
+  echo 'gpt license not set'
+  exit
+fi
+
+
+if [ -z $DIST_BASE_DIR ]; then
+  echo 'bmad dir not set'
+  exit
+fi
+
+
+type tao &> /dev/null
+if [ $? -ne 0 ]; then
+  echo 'tao not installed'
+  exit
+fi
+
+
+mkdir __fullbeamline
+tao
+rm -rf __fullbeamline
